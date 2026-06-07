@@ -399,6 +399,21 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
 <div class="slot-input"><span class="slot-code">1K</span><input type="text" id="sd14" placeholder="Equipo" list="g-K" autocomplete="off"></div>
 <div class="slot-input"><span class="slot-code">3 DEIJL</span><input type="text" id="sd15" placeholder="Equipo" list="teams-all" autocomplete="off"></div></div>
 
+    <div class="section-title">⚽ 8avos (16 equipos)</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:8px;" id="tx8avos">
+      <div class="slot-input"><span class="slot-code">#1</span><input type="text" id="r8_0" placeholder="Equipo" list="teams-all" autocomplete="off"></div><div class="slot-input"><span class="slot-code">#2</span><input type="text" id="r8_1" placeholder="Equipo" list="teams-all" autocomplete="off"></div><div class="slot-input"><span class="slot-code">#3</span><input type="text" id="r8_2" placeholder="Equipo" list="teams-all" autocomplete="off"></div><div class="slot-input"><span class="slot-code">#4</span><input type="text" id="r8_3" placeholder="Equipo" list="teams-all" autocomplete="off"></div><div class="slot-input"><span class="slot-code">#5</span><input type="text" id="r8_4" placeholder="Equipo" list="teams-all" autocomplete="off"></div><div class="slot-input"><span class="slot-code">#6</span><input type="text" id="r8_5" placeholder="Equipo" list="teams-all" autocomplete="off"></div><div class="slot-input"><span class="slot-code">#7</span><input type="text" id="r8_6" placeholder="Equipo" list="teams-all" autocomplete="off"></div><div class="slot-input"><span class="slot-code">#8</span><input type="text" id="r8_7" placeholder="Equipo" list="teams-all" autocomplete="off"></div><div class="slot-input"><span class="slot-code">#9</span><input type="text" id="r8_8" placeholder="Equipo" list="teams-all" autocomplete="off"></div><div class="slot-input"><span class="slot-code">#10</span><input type="text" id="r8_9" placeholder="Equipo" list="teams-all" autocomplete="off"></div><div class="slot-input"><span class="slot-code">#11</span><input type="text" id="r8_10" placeholder="Equipo" list="teams-all" autocomplete="off"></div><div class="slot-input"><span class="slot-code">#12</span><input type="text" id="r8_11" placeholder="Equipo" list="teams-all" autocomplete="off"></div><div class="slot-input"><span class="slot-code">#13</span><input type="text" id="r8_12" placeholder="Equipo" list="teams-all" autocomplete="off"></div><div class="slot-input"><span class="slot-code">#14</span><input type="text" id="r8_13" placeholder="Equipo" list="teams-all" autocomplete="off"></div><div class="slot-input"><span class="slot-code">#15</span><input type="text" id="r8_14" placeholder="Equipo" list="teams-all" autocomplete="off"></div><div class="slot-input"><span class="slot-code">#16</span><input type="text" id="r8_15" placeholder="Equipo" list="teams-all" autocomplete="off"></div>
+    </div>
+
+    <div class="section-title">⚽ Cuartos (8 equipos)</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:8px;" id="txCuartos">
+      <div class="slot-input"><span class="slot-code">#1</span><input type="text" id="r4_0" placeholder="Equipo" list="teams-all" autocomplete="off"></div><div class="slot-input"><span class="slot-code">#2</span><input type="text" id="r4_1" placeholder="Equipo" list="teams-all" autocomplete="off"></div><div class="slot-input"><span class="slot-code">#3</span><input type="text" id="r4_2" placeholder="Equipo" list="teams-all" autocomplete="off"></div><div class="slot-input"><span class="slot-code">#4</span><input type="text" id="r4_3" placeholder="Equipo" list="teams-all" autocomplete="off"></div><div class="slot-input"><span class="slot-code">#5</span><input type="text" id="r4_4" placeholder="Equipo" list="teams-all" autocomplete="off"></div><div class="slot-input"><span class="slot-code">#6</span><input type="text" id="r4_5" placeholder="Equipo" list="teams-all" autocomplete="off"></div><div class="slot-input"><span class="slot-code">#7</span><input type="text" id="r4_6" placeholder="Equipo" list="teams-all" autocomplete="off"></div><div class="slot-input"><span class="slot-code">#8</span><input type="text" id="r4_7" placeholder="Equipo" list="teams-all" autocomplete="off"></div>
+    </div>
+
+    <div class="section-title">⚽ Semifinales (4 equipos)</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:8px;">
+      <div class="slot-input"><span class="slot-code">#1</span><input type="text" id="r2_0" placeholder="Equipo" list="teams-all" autocomplete="off"></div><div class="slot-input"><span class="slot-code">#2</span><input type="text" id="r2_1" placeholder="Equipo" list="teams-all" autocomplete="off"></div><div class="slot-input"><span class="slot-code">#3</span><input type="text" id="r2_2" placeholder="Equipo" list="teams-all" autocomplete="off"></div><div class="slot-input"><span class="slot-code">#4</span><input type="text" id="r2_3" placeholder="Equipo" list="teams-all" autocomplete="off"></div>
+    </div>
+
     <div class="section-title">🏆 Finales</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:500px;">
       <div><label>🏆 Campeón</label><input type="text" id="txCamp" list="teams-all" autocomplete="off"></div>
@@ -593,6 +608,22 @@ function generarJSON() {
     const eq = document.getElementById('sd'+i).value.trim();
     if (eq) data.ronda_16avos.push({slot, equipo: eq});
   });
+  
+  // 8avos
+  for (let i=0; i<16; i++) {
+    const eq = document.getElementById('r8_'+i).value.trim();
+    if (eq) data.ronda_8avos.push({equipo: eq});
+  }
+  // Cuartos
+  for (let i=0; i<8; i++) {
+    const eq = document.getElementById('r4_'+i).value.trim();
+    if (eq) data.ronda_cuartos.push({equipo: eq});
+  }
+  // Semifinales
+  for (let i=0; i<4; i++) {
+    const eq = document.getElementById('r2_'+i).value.trim();
+    if (eq) data.ronda_semifinales.push({equipo: eq});
+  }
   
   document.getElementById('txOutput').value = JSON.stringify(data, null, 2);
 }
