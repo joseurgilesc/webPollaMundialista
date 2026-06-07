@@ -209,7 +209,7 @@ def _extraer_grupos(grilla: dict) -> dict:
             
             equipo = limpiar_equipo(equipo)
             try:
-                pos = int(pos_str)
+                pos = int(float(pos_str))
             except (ValueError, TypeError):
                 pos = None
             
