@@ -135,7 +135,7 @@ tr:hover td { background: #f8fafc; }
 
 /* Chart */
 .chart-row { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
-.chart-label { width: 110px; font-size: 0.75rem; text-align: right; color: var(--muted); flex-shrink: 0; font-weight: 600; }
+.chart-label { width: 160px; font-size: 0.72rem; text-align: right; color: var(--muted); flex-shrink: 0; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .chart-bars { flex: 1; display: flex; gap: 2px; height: 22px; border-radius: 5px; overflow: hidden; }
 .chart-bar { height: 100%; transition: width 0.6s ease; }
 .c16 { background: var(--teal); } .c8 { background: var(--navy); } .c4 { background: #7c3aed; }
@@ -394,10 +394,10 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
 
 </div>
 
-<footer>Actualizado: 07/06/2026 10:21 · Puntajes recalculados automáticamente</footer>
+<footer>Actualizado: 07/06/2026 10:22 · Puntajes recalculados automáticamente</footer>
 
 <script>
-const D=[{"nombre": "Carlos Jaram", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "Juana Corder", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "Juana Corder", "letra": "B", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "Mari\u0301a del C", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "SANTIAGO COR", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "MARIA EUGENI", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "SANTIAGO COR", "letra": "B", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "VERONICA COR", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}];
+const D=[{"nombre": "Carlos Jaramillo Medina", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "Juana Cordero", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "Juana Cordero", "letra": "B", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "Mari\u0301a del Carmen Co\u0301rdova Co\u0301rdova", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "SANTIAGO CORDOVA C.", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "MARIA EUGENIA GUILLEN", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "SANTIAGO CORDOVA C.", "letra": "B", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "VERONICA CORDOVA", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}];
 const R=['r16','r8','r4','r2','rf'];
 const C=document.getElementById('chart');
 D.forEach(d=>{
