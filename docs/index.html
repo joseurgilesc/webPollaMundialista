@@ -603,15 +603,22 @@ const SHARE_DATA = {"acumulado": 110, "costo": 10, "pollas": 11, "leaderboard": 
 
 function shareWhatsApp() {
   const d = SHARE_DATA;
-  let text = '🏆 *Polla Mundialista 2026*%0A%0A';
-  text += '💰 Acumulado: *$' + d.acumulado.toLocaleString() + '* (' + d.pollas + ' pollas × $' + d.costo + ')%0A%0A';
-  text += '📊 *Leaderboard:*%0A';
+  let text = '🏆 *Polla Mundialista 2026*
+
+';
+  text += '💰 Acumulado: *$' + d.acumulado.toLocaleString() + '* (' + d.pollas + ' pollas × $' + d.costo + ')
+
+';
+  text += '📊 *Leaderboard:*
+';
   d.leaderboard.forEach((p, i) => {
     const medal = i===0?'🥇':i===1?'🥈':i===2?'🥉':'';
-    text += (i+1) + '. ' + p.nombre + (p.letra!=='A'?' ('+p.letra+')':'') + ' — ' + p.total + ' pts%0A';
+    text += (i+1) + '. ' + p.nombre + (p.letra!=='A'?' ('+p.letra+')':'') + ' — ' + p.total + ' pts
+';
   });
-  text += '%0A🔗 Ver más: https://joseurgilesc.github.io/webPollaMundialista/';
-  window.open('https://wa.me/?text=' + text, '_blank');
+  text += '
+🔗 Ver más: https://joseurgilesc.github.io/webPollaMundialista/';
+  window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
 }
 
 function findPolla(ref) {
