@@ -399,34 +399,28 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
 <div class="slot-input"><span class="slot-code">1K</span><input type="text" id="sd14" placeholder="Equipo" list="g-K" autocomplete="off"></div>
 <div class="slot-input"><span class="slot-code">3 DEIJL</span><input type="text" id="sd15" placeholder="Equipo" list="teams-all" autocomplete="off"></div></div>
 
-    <div class="section-title">⚽ 8avos (16 equipos — de 16avos)</div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:8px;" id="tx8avos">
-      <div class="slot-input"><span class="slot-code">#1</span><input type="text" id="r8_0" placeholder="Equipo" list="from-r16" autocomplete="off" onfocus="updateDatalist('from-r16', getRoundTeams(0))"></div><div class="slot-input"><span class="slot-code">#2</span><input type="text" id="r8_1" placeholder="Equipo" list="from-r16" autocomplete="off" onfocus="updateDatalist('from-r16', getRoundTeams(0))"></div><div class="slot-input"><span class="slot-code">#3</span><input type="text" id="r8_2" placeholder="Equipo" list="from-r16" autocomplete="off" onfocus="updateDatalist('from-r16', getRoundTeams(0))"></div><div class="slot-input"><span class="slot-code">#4</span><input type="text" id="r8_3" placeholder="Equipo" list="from-r16" autocomplete="off" onfocus="updateDatalist('from-r16', getRoundTeams(0))"></div><div class="slot-input"><span class="slot-code">#5</span><input type="text" id="r8_4" placeholder="Equipo" list="from-r16" autocomplete="off" onfocus="updateDatalist('from-r16', getRoundTeams(0))"></div><div class="slot-input"><span class="slot-code">#6</span><input type="text" id="r8_5" placeholder="Equipo" list="from-r16" autocomplete="off" onfocus="updateDatalist('from-r16', getRoundTeams(0))"></div><div class="slot-input"><span class="slot-code">#7</span><input type="text" id="r8_6" placeholder="Equipo" list="from-r16" autocomplete="off" onfocus="updateDatalist('from-r16', getRoundTeams(0))"></div><div class="slot-input"><span class="slot-code">#8</span><input type="text" id="r8_7" placeholder="Equipo" list="from-r16" autocomplete="off" onfocus="updateDatalist('from-r16', getRoundTeams(0))"></div><div class="slot-input"><span class="slot-code">#9</span><input type="text" id="r8_8" placeholder="Equipo" list="from-r16" autocomplete="off" onfocus="updateDatalist('from-r16', getRoundTeams(0))"></div><div class="slot-input"><span class="slot-code">#10</span><input type="text" id="r8_9" placeholder="Equipo" list="from-r16" autocomplete="off" onfocus="updateDatalist('from-r16', getRoundTeams(0))"></div><div class="slot-input"><span class="slot-code">#11</span><input type="text" id="r8_10" placeholder="Equipo" list="from-r16" autocomplete="off" onfocus="updateDatalist('from-r16', getRoundTeams(0))"></div><div class="slot-input"><span class="slot-code">#12</span><input type="text" id="r8_11" placeholder="Equipo" list="from-r16" autocomplete="off" onfocus="updateDatalist('from-r16', getRoundTeams(0))"></div><div class="slot-input"><span class="slot-code">#13</span><input type="text" id="r8_12" placeholder="Equipo" list="from-r16" autocomplete="off" onfocus="updateDatalist('from-r16', getRoundTeams(0))"></div><div class="slot-input"><span class="slot-code">#14</span><input type="text" id="r8_13" placeholder="Equipo" list="from-r16" autocomplete="off" onfocus="updateDatalist('from-r16', getRoundTeams(0))"></div><div class="slot-input"><span class="slot-code">#15</span><input type="text" id="r8_14" placeholder="Equipo" list="from-r16" autocomplete="off" onfocus="updateDatalist('from-r16', getRoundTeams(0))"></div><div class="slot-input"><span class="slot-code">#16</span><input type="text" id="r8_15" placeholder="Equipo" list="from-r16" autocomplete="off" onfocus="updateDatalist('from-r16', getRoundTeams(0))"></div>
+    <div class="section-title">⚽ 8avos (16 equipos — pares de 16avos)</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px;">
+      <div class="slot-input"><span class="slot-code" id="r8l_0">#1</span><input type="text" id="r8_0" placeholder="Equipo" autocomplete="off" onfocus="filterPares('r8_0',0,0)"></div><div class="slot-input"><span class="slot-code" id="r8l_1">#2</span><input type="text" id="r8_1" placeholder="Equipo" autocomplete="off" onfocus="filterPares('r8_1',1,0)"></div><div class="slot-input"><span class="slot-code" id="r8l_2">#3</span><input type="text" id="r8_2" placeholder="Equipo" autocomplete="off" onfocus="filterPares('r8_2',2,0)"></div><div class="slot-input"><span class="slot-code" id="r8l_3">#4</span><input type="text" id="r8_3" placeholder="Equipo" autocomplete="off" onfocus="filterPares('r8_3',3,0)"></div><div class="slot-input"><span class="slot-code" id="r8l_4">#5</span><input type="text" id="r8_4" placeholder="Equipo" autocomplete="off" onfocus="filterPares('r8_4',4,0)"></div><div class="slot-input"><span class="slot-code" id="r8l_5">#6</span><input type="text" id="r8_5" placeholder="Equipo" autocomplete="off" onfocus="filterPares('r8_5',5,0)"></div><div class="slot-input"><span class="slot-code" id="r8l_6">#7</span><input type="text" id="r8_6" placeholder="Equipo" autocomplete="off" onfocus="filterPares('r8_6',6,0)"></div><div class="slot-input"><span class="slot-code" id="r8l_7">#8</span><input type="text" id="r8_7" placeholder="Equipo" autocomplete="off" onfocus="filterPares('r8_7',7,0)"></div><div class="slot-input"><span class="slot-code" id="r8l_8">#9</span><input type="text" id="r8_8" placeholder="Equipo" autocomplete="off" onfocus="filterPares('r8_8',8,0)"></div><div class="slot-input"><span class="slot-code" id="r8l_9">#10</span><input type="text" id="r8_9" placeholder="Equipo" autocomplete="off" onfocus="filterPares('r8_9',9,0)"></div><div class="slot-input"><span class="slot-code" id="r8l_10">#11</span><input type="text" id="r8_10" placeholder="Equipo" autocomplete="off" onfocus="filterPares('r8_10',10,0)"></div><div class="slot-input"><span class="slot-code" id="r8l_11">#12</span><input type="text" id="r8_11" placeholder="Equipo" autocomplete="off" onfocus="filterPares('r8_11',11,0)"></div><div class="slot-input"><span class="slot-code" id="r8l_12">#13</span><input type="text" id="r8_12" placeholder="Equipo" autocomplete="off" onfocus="filterPares('r8_12',12,0)"></div><div class="slot-input"><span class="slot-code" id="r8l_13">#14</span><input type="text" id="r8_13" placeholder="Equipo" autocomplete="off" onfocus="filterPares('r8_13',13,0)"></div><div class="slot-input"><span class="slot-code" id="r8l_14">#15</span><input type="text" id="r8_14" placeholder="Equipo" autocomplete="off" onfocus="filterPares('r8_14',14,0)"></div><div class="slot-input"><span class="slot-code" id="r8l_15">#16</span><input type="text" id="r8_15" placeholder="Equipo" autocomplete="off" onfocus="filterPares('r8_15',15,0)"></div>
     </div>
 
-    <div class="section-title">⚽ Cuartos (8 equipos — de 8avos)</div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:8px;" id="txCuartos">
-      <div class="slot-input"><span class="slot-code">#1</span><input type="text" id="r4_0" placeholder="Equipo" list="from-r8" autocomplete="off" onfocus="updateDatalist('from-r8', getRoundTeams(1))"></div><div class="slot-input"><span class="slot-code">#2</span><input type="text" id="r4_1" placeholder="Equipo" list="from-r8" autocomplete="off" onfocus="updateDatalist('from-r8', getRoundTeams(1))"></div><div class="slot-input"><span class="slot-code">#3</span><input type="text" id="r4_2" placeholder="Equipo" list="from-r8" autocomplete="off" onfocus="updateDatalist('from-r8', getRoundTeams(1))"></div><div class="slot-input"><span class="slot-code">#4</span><input type="text" id="r4_3" placeholder="Equipo" list="from-r8" autocomplete="off" onfocus="updateDatalist('from-r8', getRoundTeams(1))"></div><div class="slot-input"><span class="slot-code">#5</span><input type="text" id="r4_4" placeholder="Equipo" list="from-r8" autocomplete="off" onfocus="updateDatalist('from-r8', getRoundTeams(1))"></div><div class="slot-input"><span class="slot-code">#6</span><input type="text" id="r4_5" placeholder="Equipo" list="from-r8" autocomplete="off" onfocus="updateDatalist('from-r8', getRoundTeams(1))"></div><div class="slot-input"><span class="slot-code">#7</span><input type="text" id="r4_6" placeholder="Equipo" list="from-r8" autocomplete="off" onfocus="updateDatalist('from-r8', getRoundTeams(1))"></div><div class="slot-input"><span class="slot-code">#8</span><input type="text" id="r4_7" placeholder="Equipo" list="from-r8" autocomplete="off" onfocus="updateDatalist('from-r8', getRoundTeams(1))"></div>
+    <div class="section-title">⚽ Cuartos (8 equipos — pares de 8avos)</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px;">
+      <div class="slot-input"><span class="slot-code" id="r4l_0">#1</span><input type="text" id="r4_0" placeholder="Equipo" autocomplete="off" onfocus="filterPares('r4_0',0,1)"></div><div class="slot-input"><span class="slot-code" id="r4l_1">#2</span><input type="text" id="r4_1" placeholder="Equipo" autocomplete="off" onfocus="filterPares('r4_1',1,1)"></div><div class="slot-input"><span class="slot-code" id="r4l_2">#3</span><input type="text" id="r4_2" placeholder="Equipo" autocomplete="off" onfocus="filterPares('r4_2',2,1)"></div><div class="slot-input"><span class="slot-code" id="r4l_3">#4</span><input type="text" id="r4_3" placeholder="Equipo" autocomplete="off" onfocus="filterPares('r4_3',3,1)"></div><div class="slot-input"><span class="slot-code" id="r4l_4">#5</span><input type="text" id="r4_4" placeholder="Equipo" autocomplete="off" onfocus="filterPares('r4_4',4,1)"></div><div class="slot-input"><span class="slot-code" id="r4l_5">#6</span><input type="text" id="r4_5" placeholder="Equipo" autocomplete="off" onfocus="filterPares('r4_5',5,1)"></div><div class="slot-input"><span class="slot-code" id="r4l_6">#7</span><input type="text" id="r4_6" placeholder="Equipo" autocomplete="off" onfocus="filterPares('r4_6',6,1)"></div><div class="slot-input"><span class="slot-code" id="r4l_7">#8</span><input type="text" id="r4_7" placeholder="Equipo" autocomplete="off" onfocus="filterPares('r4_7',7,1)"></div>
     </div>
 
-    <div class="section-title">⚽ Semifinales (4 equipos — de cuartos)</div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:8px;">
-      <div class="slot-input"><span class="slot-code">#1</span><input type="text" id="r2_0" placeholder="Equipo" list="from-r4" autocomplete="off" onfocus="updateDatalist('from-r4', getRoundTeams(2))"></div><div class="slot-input"><span class="slot-code">#2</span><input type="text" id="r2_1" placeholder="Equipo" list="from-r4" autocomplete="off" onfocus="updateDatalist('from-r4', getRoundTeams(2))"></div><div class="slot-input"><span class="slot-code">#3</span><input type="text" id="r2_2" placeholder="Equipo" list="from-r4" autocomplete="off" onfocus="updateDatalist('from-r4', getRoundTeams(2))"></div><div class="slot-input"><span class="slot-code">#4</span><input type="text" id="r2_3" placeholder="Equipo" list="from-r4" autocomplete="off" onfocus="updateDatalist('from-r4', getRoundTeams(2))"></div>
+    <div class="section-title">⚽ Semifinales (4 equipos — pares de cuartos)</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px;">
+      <div class="slot-input"><span class="slot-code" id="r2l_0">#1</span><input type="text" id="r2_0" placeholder="Equipo" autocomplete="off" onfocus="filterPares('r2_0',0,2)"></div><div class="slot-input"><span class="slot-code" id="r2l_1">#2</span><input type="text" id="r2_1" placeholder="Equipo" autocomplete="off" onfocus="filterPares('r2_1',1,2)"></div><div class="slot-input"><span class="slot-code" id="r2l_2">#3</span><input type="text" id="r2_2" placeholder="Equipo" autocomplete="off" onfocus="filterPares('r2_2',2,2)"></div><div class="slot-input"><span class="slot-code" id="r2l_3">#4</span><input type="text" id="r2_3" placeholder="Equipo" autocomplete="off" onfocus="filterPares('r2_3',3,2)"></div>
     </div>
 
-    <div class="section-title">🏆 Finales (de semifinales)</div>
+    <div class="section-title">🏆 Finales</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:500px;">
-      <div><label>🏆 Campeón</label><input type="text" id="txCamp" list="from-r2" autocomplete="off" onfocus="updateDatalist('from-r2', getRoundTeams(3))"></div>
-      <div><label>🥈 Segundo</label><input type="text" id="txSeg" list="from-r2" autocomplete="off" onfocus="updateDatalist('from-r2', getRoundTeams(3))"></div>
-      <div><label>🥉 Tercero</label><input type="text" id="txTerc" list="from-r2" autocomplete="off" onfocus="updateDatalist('from-r2', getRoundTeams(3))"></div>
-      <div><label>4to puesto</label><input type="text" id="txCuarto" list="from-r2" autocomplete="off" onfocus="updateDatalist('from-r2', getRoundTeams(3))"></div>
+      <div><label>🏆 Campeón</label><input type="text" id="txCamp" placeholder="Equipo" autocomplete="off" onfocus="filterPares('txCamp',0,3)"></div>
+      <div><label>🥈 Segundo</label><input type="text" id="txSeg" placeholder="Equipo" autocomplete="off" onfocus="filterPares('txSeg',0,3)"></div>
+      <div><label>🥉 Tercero</label><input type="text" id="txTerc" placeholder="Equipo" autocomplete="off" onfocus="filterPares('txTerc',0,3)"></div>
+      <div><label>4to puesto</label><input type="text" id="txCuarto" placeholder="Equipo" autocomplete="off" onfocus="filterPares('txCuarto',0,3)"></div>
     </div>
-
-    <!-- Datalists dinámicos -->
-    <datalist id="from-r16"></datalist>
-    <datalist id="from-r8"></datalist>
-    <datalist id="from-r4"></datalist>
-    <datalist id="from-r2"></datalist>
     
     <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap;">
       <button class="btn" onclick="generarJSON()">📄 Generar JSON</button>
@@ -579,39 +573,58 @@ function guardarPagos() {
 }
 
 // ── Transcripción ──
-function getRoundTeams(round) {
-  // round: 0=16avos, 1=8avos, 2=cuartos, 3=semis
-  const teams = new Set();
-  if (round === 0) {
-    for (let i=0; i<16; i++) {
-      const v = document.getElementById('si'+i)?.value.trim();
-      if (v) teams.add(v);
-      const v2 = document.getElementById('sd'+i)?.value.trim();
-      if (v2) teams.add(v2);
-    }
-  } else if (round === 1) {
-    for (let i=0; i<16; i++) {
-      const v = document.getElementById('r8_'+i)?.value.trim();
-      if (v) teams.add(v);
-    }
-  } else if (round === 2) {
-    for (let i=0; i<8; i++) {
-      const v = document.getElementById('r4_'+i)?.value.trim();
-      if (v) teams.add(v);
-    }
-  } else if (round === 3) {
-    for (let i=0; i<4; i++) {
-      const v = document.getElementById('r2_'+i)?.value.trim();
-      if (v) teams.add(v);
-    }
-  }
-  return [...teams];
+// Filtrado por pares: cada slot recibe de 4 índices de la ronda anterior (2 pares)
+const R16_IDS = []; // se llena: [si0,...,si15, sd0,...,sd15]
+for (let i=0;i<16;i++) R16_IDS.push('si'+i);
+for (let i=0;i<16;i++) R16_IDS.push('sd'+i);
+
+function getTeamsFromIds(ids) {
+  const teams = [];
+  ids.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) { const v = el.value.trim(); if (v) teams.push(v); }
+  });
+  return [...new Set(teams)];
 }
 
-function updateDatalist(listId, teams) {
-  const dl = document.getElementById(listId);
-  if (!dl) return;
+function filterPares(inputId, slotIdx, round) {
+  // round: 0=16avos→8avos, 1=8avos→cuartos, 2=cuartos→semis, 3=semis→finales
+  let parentIds = [];
+  
+  if (round === 0) {
+    // Cada slot de 8avos recibe de 4 índices de 16avos (2 pares de partidos)
+    const base = slotIdx * 4;
+    parentIds = [R16_IDS[base], R16_IDS[base+1], R16_IDS[base+2], R16_IDS[base+3]];
+    // Actualizar label
+    const lbl = document.getElementById('r8l_'+slotIdx);
+    if (lbl) lbl.textContent = '#'+(slotIdx+1)+' ← '+R16_IDS[base]+'-'+R16_IDS[base+1]+' vs '+R16_IDS[base+2]+'-'+R16_IDS[base+3];
+  } else if (round === 1) {
+    // Cuartos: grupos de 2 slots de 8avos
+    const base = slotIdx * 2;
+    parentIds = ['r8_'+base, 'r8_'+(base+1)];
+    const lbl = document.getElementById('r4l_'+slotIdx);
+    if (lbl) lbl.textContent = '#'+(slotIdx+1)+' ← r8_'+base+' vs r8_'+(base+1);
+  } else if (round === 2) {
+    // Semis: grupos de 2 slots de cuartos
+    const base = slotIdx * 2;
+    parentIds = ['r4_'+base, 'r4_'+(base+1)];
+    const lbl = document.getElementById('r2l_'+slotIdx);
+    if (lbl) lbl.textContent = '#'+(slotIdx+1)+' ← r4_'+base+' vs r4_'+(base+1);
+  } else if (round === 3) {
+    // Finales: todos los equipos de semis
+    parentIds = ['r2_0','r2_1','r2_2','r2_3'];
+  }
+  
+  const teams = getTeamsFromIds(parentIds);
+  // Crear datalist temporal
+  let dl = document.getElementById('dl-temp');
+  if (!dl) {
+    dl = document.createElement('datalist');
+    dl.id = 'dl-temp';
+    document.body.appendChild(dl);
+  }
   dl.innerHTML = teams.map(t => `<option value="${t}">`).join('');
+  document.getElementById(inputId).setAttribute('list', 'dl-temp');
 }
 
 function generarJSON() {
