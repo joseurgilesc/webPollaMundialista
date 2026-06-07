@@ -614,23 +614,47 @@ def generar_admin(participantes: dict) -> str:
     <div class="section-title">⚽ Bracket — 16avos (lado derecho)</div>
     <div class="bracket-side">{slots_html(slots_der, 'sd', 0)}</div>
 
+    <div class="section-title">⚽ 8avos (16 equipos — pares de 16avos)</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px;">
+      {"".join(f'<div class="slot-input"><span class="slot-code" id="r8l_{i}">#{i+1}</span><input type="text" id="r8_{i}" placeholder="Equipo" autocomplete="off" onfocus="filterPares(\'r8_{i}\',{i},0)"></div>' for i in range(16))}
+    </div>
+
+    <div class="section-title">⚽ Cuartos (8 equipos — pares de 8avos)</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px;">
+      {"".join(f'<div class="slot-input"><span class="slot-code" id="r4l_{i}">#{i+1}</span><input type="text" id="r4_{i}" placeholder="Equipo" autocomplete="off" onfocus="filterPares(\'r4_{i}\',{i},1)"></div>' for i in range(8))}
+    </div>
+
+    <div class="section-title">⚽ Semifinales (4 equipos — pares de cuartos)</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px;">
+      {"".join(f'<div class="slot-input"><span class="slot-code" id="r2l_{i}">#{i+1}</span><input type="text" id="r2_{i}" placeholder="Equipo" autocomplete="off" onfocus="filterPares(\'r2_{i}\',{i},2)"></div>' for i in range(4))}
+    </div>
+
     <div class="section-title">🏆 Finales</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:500px;">
-      <div><label>🏆 Campeón</label><input type="text" id="txCamp" list="teams-all" autocomplete="off"></div>
-      <div><label>🥈 Segundo</label><input type="text" id="txSeg" list="teams-all" autocomplete="off"></div>
-      <div><label>🥉 Tercero</label><input type="text" id="txTerc" list="teams-all" autocomplete="off"></div>
-      <div><label>4to puesto</label><input type="text" id="txCuarto" list="teams-all" autocomplete="off"></div>
+      <div><label>🏆 Campeón</label><input type="text" id="txCamp" placeholder="Equipo" autocomplete="off" onfocus="filterPares('txCamp',0,3)"></div>
+      <div><label>🥈 Segundo</label><input type="text" id="txSeg" placeholder="Equipo" autocomplete="off" onfocus="filterPares('txSeg',0,3)"></div>
+      <div><label>🥉 Tercero</label><input type="text" id="txTerc" placeholder="Equipo" autocomplete="off" onfocus="filterPares('txTerc',0,3)"></div>
+      <div><label>4to puesto</label><input type="text" id="txCuarto" placeholder="Equipo" autocomplete="off" onfocus="filterPares('txCuarto',0,3)"></div>
     </div>
     
     <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap;">
       <button class="btn" onclick="generarJSON()">📄 Generar JSON</button>
-      <button class="btn btn-green" onclick="copiarJSON()">📋 Copiar al portapapeles</button>
+      <button class="btn btn-green" onclick="guardarPolla()">💾 Guardar polla</button>
+      <button class="btn btn-green" onclick="copiarJSON()">📋 Copiar</button>
+      <button class="btn btn-outline btn-sm" onclick="document.getElementById('importFile').click()">📥 Importar</button>
       <button class="btn btn-outline btn-sm" onclick="limpiarForm()">🗑️ Limpiar</button>
     </div>
-    <textarea id="txOutput" style="margin-top:14px;height:200px;font-family:'SF Mono',monospace;font-size:0.72rem;" placeholder="El JSON aparecerá aquí..."></textarea>
+    <input type="file" id="importFile" accept=".json" style="display:none;" onchange="importarJSON(this)">
+    <textarea id="txOutput" style="margin-top:14px;height:180px;font-family:'SF Mono',monospace;font-size:0.72rem;" placeholder="El JSON aparecerá aquí..."></textarea>
     <div style="font-size:0.7rem;color:var(--muted);margin-top:4px;">
       Copiá el JSON → creá el archivo en <code>data/pollas/</code> → ejecutá <code>python3 scripts/calificar.py</code>
     </div>
+  </div>
+
+  <!-- Pollas guardadas -->
+  <div class="card">
+    <h3 style="color:var(--navy);margin-bottom:8px;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.06em;">💾 Pollas guardadas (localStorage)</h3>
+    <div id="savedPollas" style="font-size:0.82rem;color:var(--muted);">Cargando...</div>
   </div>
 
   <!-- Resultados y API -->
@@ -773,6 +797,58 @@ function guardarPagos() {{
 }}
 
 // ── Transcripción ──
+// Filtrado por pares: CADA slot recibe exactamente 2 opciones (su partido previo)
+// 16avos: 32 slots en 16 partidos → par[0]=(si0,si1), par[1]=(si2,si3)...
+// 8avos:  16 slots en 8 partidos → r8_0 recibe de par[0], r8_1 de par[1]...
+// Cuartos: 8 slots en 4 partidos → r4_0 recibe de (r8_0,r8_1), r4_1 de (r8_2,r8_3)...
+const R16_PAIRS = [];
+for (let i=0;i<8;i++) {{ R16_PAIRS.push(['si'+(i*2), 'si'+(i*2+1)]); }}
+for (let i=0;i<8;i++) {{ R16_PAIRS.push(['sd'+(i*2), 'sd'+(i*2+1)]); }}
+
+function getTeamsFromIds(ids) {{
+  const teams = [];
+  ids.forEach(id => {{
+    const el = document.getElementById(id);
+    if (el) {{ const v = el.value.trim(); if (v) teams.push(v); }}
+  }});
+  return [...new Set(teams)];
+}}
+
+function filterPares(inputId, slotIdx, round) {{
+  // round 0=8avos, 1=cuartos, 2=semis, 3=finales
+  // Cada slot recibe de su PAR específico en la ronda anterior
+  let parentIds = [];
+  
+  if (round === 0) {{
+    // 8avos: slot i recibe del par i de 16avos (2 equipos)
+    parentIds = R16_PAIRS[slotIdx];
+    const lbl = document.getElementById('r8l_'+slotIdx);
+    if (lbl) lbl.textContent = (slotIdx+1)+' ← '+parentIds[0]+' vs '+parentIds[1];
+  }} else if (round === 1) {{
+    // Cuartos: slot i recibe del par i de 8avos → (r8_i*2, r8_i*2+1)
+    parentIds = ['r8_'+(slotIdx*2), 'r8_'+(slotIdx*2+1)];
+    const lbl = document.getElementById('r4l_'+slotIdx);
+    if (lbl) lbl.textContent = (slotIdx+1)+' ← r8_'+(slotIdx*2)+' vs r8_'+(slotIdx*2+1);
+  }} else if (round === 2) {{
+    // Semis: par i de cuartos → (r4_i*2, r4_i*2+1)
+    parentIds = ['r4_'+(slotIdx*2), 'r4_'+(slotIdx*2+1)];
+    const lbl = document.getElementById('r2l_'+slotIdx);
+    if (lbl) lbl.textContent = (slotIdx+1)+' ← r4_'+(slotIdx*2)+' vs r4_'+(slotIdx*2+1);
+  }} else if (round === 3) {{
+    // Finales: todos los semis (4 opciones)
+    parentIds = ['r2_0','r2_1','r2_2','r2_3'];
+  }}
+  
+  const teams = getTeamsFromIds(parentIds);
+  let dl = document.getElementById('dl-temp');
+  if (!dl) {{
+    dl = document.createElement('datalist'); dl.id = 'dl-temp';
+    document.body.appendChild(dl);
+  }}
+  dl.innerHTML = teams.map(t => `<option value="${{t}}">`).join('');
+  document.getElementById(inputId).setAttribute('list', 'dl-temp');
+}}
+
 function generarJSON() {{
   const data = {{
     archivo_original: document.getElementById('txArchivo').value,
@@ -809,6 +885,22 @@ function generarJSON() {{
     if (eq) data.ronda_16avos.push({{slot, equipo: eq}});
   }});
   
+  // 8avos
+  for (let i=0; i<16; i++) {{
+    const eq = document.getElementById('r8_'+i).value.trim();
+    if (eq) data.ronda_8avos.push({{equipo: eq}});
+  }}
+  // Cuartos
+  for (let i=0; i<8; i++) {{
+    const eq = document.getElementById('r4_'+i).value.trim();
+    if (eq) data.ronda_cuartos.push({{equipo: eq}});
+  }}
+  // Semifinales
+  for (let i=0; i<4; i++) {{
+    const eq = document.getElementById('r2_'+i).value.trim();
+    if (eq) data.ronda_semifinales.push({{equipo: eq}});
+  }}
+  
   document.getElementById('txOutput').value = JSON.stringify(data, null, 2);
 }}
 
@@ -824,6 +916,104 @@ function limpiarForm() {{
   document.querySelectorAll('#adminContent input[type=text], #adminContent textarea').forEach(el => el.value = '');
   document.getElementById('txOutput').value = '';
   showToast('🗑️ Formulario limpiado');
+}}
+
+function importarJSON(input) {{
+  const file = input.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e) {{
+    try {{
+      const data = JSON.parse(e.target.result);
+      cargarPolla(data);
+      showToast('📥 JSON importado: ' + (data.participante || file.name));
+    }} catch(err) {{
+      showToast('❌ Error: ' + err.message);
+    }}
+  }};
+  reader.readAsText(file);
+  input.value = '';
+}}
+
+function cargarPolla(data) {{
+  if (data.participante) document.getElementById('txNombre').value = data.participante;
+  if (data.archivo_original) document.getElementById('txArchivo').value = data.archivo_original;
+  if (data.grupos) {{
+    Object.entries(data.grupos).forEach(([g, eqs]) => {{
+      Object.entries(eqs).forEach(([equipo, pos]) => {{
+        const el = document.getElementById('g'+g+'_'+pos);
+        if (el) el.value = equipo;
+      }});
+    }});
+  }}
+  const slotMap = {{}};
+  SLOTS_IZQ.forEach((s,i) => slotMap[s] = 'si'+i);
+  SLOTS_DER.forEach((s,i) => slotMap[s] = 'sd'+i);
+  (data.ronda_16avos || []).forEach(entry => {{
+    const id = slotMap[entry.slot];
+    if (id) document.getElementById(id).value = entry.equipo || '';
+  }});
+  (data.ronda_8avos || []).forEach((e, i) => {{ const el = document.getElementById('r8_'+i); if (el) el.value = e.equipo || ''; }});
+  (data.ronda_cuartos || []).forEach((e, i) => {{ const el = document.getElementById('r4_'+i); if (el) el.value = e.equipo || ''; }});
+  (data.ronda_semifinales || []).forEach((e, i) => {{ const el = document.getElementById('r2_'+i); if (el) el.value = e.equipo || ''; }});
+  const f = data.finales || {{}};
+  if (f.campeon) document.getElementById('txCamp').value = f.campeon;
+  if (f.segundo) document.getElementById('txSeg').value = f.segundo;
+  if (f.tercero) document.getElementById('txTerc').value = f.tercero;
+  if (f.cuarto) document.getElementById('txCuarto').value = f.cuarto;
+}}
+
+function guardarPolla() {{
+  generarJSON();
+  const json = document.getElementById('txOutput').value;
+  if (!json || json === '{{}}') {{ showToast('⚠️ Nada que guardar'); return; }}
+  const data = JSON.parse(json);
+  const nombre = data.participante || 'Sin nombre';
+  const key = 'polla_' + nombre.toLowerCase().replace(/[^a-z0-9]/g,'_');
+  
+  const saved = JSON.parse(localStorage.getItem('pollas_guardadas') || '{{}}');
+  saved[key] = {{ nombre, data, fecha: new Date().toISOString() }};
+  localStorage.setItem('pollas_guardadas', JSON.stringify(saved));
+  
+  // También descargar archivo
+  const blob = new Blob([json], {{type:'application/json'}});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = key + '.json';
+  a.click(); URL.revokeObjectURL(url);
+  
+  renderSavedPollas();
+  showToast('💾 Guardado: ' + nombre);
+}}
+
+function renderSavedPollas() {{
+  const saved = JSON.parse(localStorage.getItem('pollas_guardadas') || '{{}}');
+  const keys = Object.keys(saved);
+  if (!keys.length) {{
+    document.getElementById('savedPollas').innerHTML = '<span style="color:var(--muted);">Ninguna polla guardada aún</span>';
+    return;
+  }}
+  let h = '';
+  keys.forEach(k => {{
+    const s = saved[k];
+    h += `<div class="file-item" style="margin-bottom:4px;">
+      <span style="font-weight:600;color:var(--navy);cursor:pointer;" onclick="cargarPolla(saved['${{k}}'].data);showToast('📂 Cargada: ${{s.nombre}}')">📄 ${{s.nombre}}</span>
+      <span style="font-size:0.7rem;color:var(--muted);">${{new Date(s.fecha).toLocaleDateString()}}</span>
+      <span style="cursor:pointer;color:var(--red);font-size:0.7rem;" onclick="deletePolla('${{k}}')">🗑️</span>
+    </div>`;
+  }});
+  h += '<div style="font-size:0.68rem;color:var(--muted);margin-top:6px;">Clic en el nombre para cargar · Se descarga JSON automático al guardar</div>';
+  document.getElementById('savedPollas').innerHTML = h;
+  // Exponer saved globalmente
+  window.saved = saved;
+}}
+
+function deletePolla(key) {{
+  const saved = JSON.parse(localStorage.getItem('pollas_guardadas') || '{{}}');
+  delete saved[key];
+  localStorage.setItem('pollas_guardadas', JSON.stringify(saved));
+  renderSavedPollas();
+  showToast('🗑️ Eliminada');
 }}
 
 function showToast(msg) {{
@@ -907,7 +1097,7 @@ async function fetchAPI() {{
     showToast('✅ API: ' + (out.equipos||0) + ' equipos');
   }} catch(e) {{
     const msg = e.message.includes('Failed to fetch') || e.message.includes('NetworkError')
-      ? '❌ Error CORS: la API no permite consultas desde local.\n\nUsá el script Python en su lugar:\n  python3 scripts/fetch_resultados.py --api\n\n(O publicá el sitio en GitHub Pages — ahí funciona sin CORS)'
+      ? `❌ Error CORS: la API no permite consultas desde local. Usá el script Python: python3 scripts/fetch_resultados.py --api (O publicá en GitHub Pages y funciona)`
       : 'Error: ' + e.message;
     document.getElementById('resOutput').value = msg;
     showToast('❌ ' + (e.message.includes('Failed') ? 'CORS bloqueado' : 'Error API'));
@@ -921,6 +1111,7 @@ function renderAll() {{
   renderPending();
   renderGrupos();
   renderPagos();
+  renderSavedPollas();
 }}
 
 loadPagos();
