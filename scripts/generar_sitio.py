@@ -469,13 +469,15 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
         pollas_por_nombre[n] = pollas_por_nombre.get(n, 0) + 1
     
     filas = ""
+    max_total = max((r["puntajes"]["total"] for r in puntajes), default=0)
+    hay_puntajes = max_total > 0
     for i, r in enumerate(puntajes):
         p = r["puntajes"]
-        nombre = normalizar_nombre(r["participante"])
+        nombre = r["participante"]
         letra = r.get("polla_letra", "A")
         mostrar_letra = pollas_por_nombre.get(nombre, 1) > 1
-        medalla = {0: "🥇", 1: "🥈", 2: "🥉"}.get(i, "")
-        clase = {0: "top1", 1: "top2", 2: "top3"}.get(i, "")
+        medalla = {0: "🥇", 1: "🥈", 2: "🥉"}.get(i, "") if hay_puntajes else ""
+        clase = {0: "top1", 1: "top2", 2: "top3"}.get(i, "") if hay_puntajes else ""
         tag_html = f'<span class="polla-tag">{letra}</span>' if mostrar_letra else ""
         
         filas += f"""<tr class="{clase}">
@@ -485,8 +487,9 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
           <td>{p["semifinales"]}</td><td>{p["finales"]}</td>
           <td class="total">{p["total"]}</td></tr>"""
     
-    # Fila de máximos
-    filas += f"""<tr class="max-row">
+    # Fila de máximos (solo cuando hay puntajes)
+    if hay_puntajes:
+        filas += f"""<tr class="max-row">
       <td></td><td style="text-align:left;">Máximo posible</td>
       <td>64</td><td>32</td><td>24</td><td>16</td><td>44</td><td class="total">180</td></tr>"""
     
@@ -520,7 +523,7 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
       <h1>⚽ Polla <span class="accent">Mundialista</span> 2026</h1>
       <div style="color:var(--muted);font-size:0.8rem;">Leaderboard en tiempo real</div>
     </div>
-    <div class="badge">🔥 EN VIVO</div>
+    <div class="badge">{'🔥 EN VIVO' if hay_puntajes else '⏳ PRONTO'}</div>
   </header>
 
   <div class="card acumulado">
