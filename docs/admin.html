@@ -10,8 +10,8 @@
 
 :root {
   --navy: #0f1f4d;
-  --gold: #e8a817;
-  --teal: #0096c7;
+  --gold: #c0392b;
+  --teal: #1a6fb5;
   --bg: #ffffff;
   --card: #ffffff;
   --card-border: #e2e8f0;
@@ -95,29 +95,30 @@ body {
 /* Acumulado */
 .acumulado { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
 .acumulado .icon { font-size: 2.5rem; }
-.acumulado .monto { font-size: 2.5rem; font-weight: 800; color: var(--gold); }
+.acumulado .monto { font-size: 2.5rem; font-weight: 800; color: var(--navy); }
 .acumulado .info { font-size: 0.85rem; color: var(--muted); }
 
 /* Table */
 .table-wrap { overflow-x: auto; }
 table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
 th {
-  padding: 12px 10px;
+  padding: 8px 8px;
   text-align: center;
   color: var(--muted);
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   border-bottom: 2px solid var(--card-border);
   white-space: nowrap;
 }
-th:first-child, td:first-child { text-align: left; padding-left: 16px; }
+th:first-child, td:first-child { text-align: left; padding-left: 12px; }
 td {
-  padding: 12px 10px;
+  padding: 8px 8px;
   text-align: center;
   border-bottom: 1px solid #f1f5f9;
   white-space: nowrap;
+  font-size: 0.82rem;
 }
 tr:hover td { background: #f8fafc; }
 .rank { font-weight: 700; width: 40px; }
@@ -132,10 +133,10 @@ tr:hover td { background: #f8fafc; }
   margin-left: 6px;
   font-weight: 700;
 }
-.total { font-weight: 800; font-size: 1.05rem; color: var(--gold); }
-.top1 td { background: linear-gradient(90deg, rgba(232,168,23,0.12) 0%, rgba(232,168,23,0.04) 100%); border-left: 3px solid var(--gold); }
-.top2 td { background: rgba(180,180,190,0.06); border-left: 3px solid #a0a0b0; }
-.top3 td { background: rgba(180,140,100,0.05); border-left: 3px solid #b8846e; }
+.total { font-weight: 800; font-size: 1.05rem; color: var(--teal); }
+.top1 td { background: linear-gradient(90deg, rgba(192,57,43,0.12) 0%, rgba(192,57,43,0.04) 100%); border-left: 3px solid var(--gold); }
+.top2 td { background: rgba(26,111,181,0.06); border-left: 3px solid var(--teal); }
+.top3 td { background: rgba(100,100,120,0.05); border-left: 3px solid #888; }
 .medal { display: inline-block; width: 22px; text-align: center; font-size: 1.1rem; }
 .max-row td { color: var(--muted); font-size: 0.7rem; border-bottom: none; }
 
