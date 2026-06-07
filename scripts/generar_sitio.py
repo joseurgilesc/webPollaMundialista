@@ -473,7 +473,7 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
     hay_puntajes = max_total > 0
     for i, r in enumerate(puntajes):
         p = r["puntajes"]
-        nombre = r["participante"]
+        nombre = normalizar_nombre(r["participante"])
         letra = r.get("polla_letra", "A")
         mostrar_letra = pollas_por_nombre.get(nombre, 1) > 1
         medalla = {0: "🥇", 1: "🥈", 2: "🥉"}.get(i, "") if hay_puntajes else ""
