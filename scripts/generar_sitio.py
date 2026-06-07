@@ -612,7 +612,7 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
 
 <script>
 const POLLAS = {pollas_json};
-const SHARE_DATA = {json.dumps({"acumulado": acumulado, "costo": participantes.get("costo_por_polla", 10), "pollas": total_pollas, "leaderboard": [{"nombre": normalizar_nombre(r["participante"]), "letra": r.get("polla_letra","A"), "total": r["puntajes"]["total"]} for r in puntajes]})};
+const SHARE_DATA = {json.dumps({"acumulado": acumulado, "costo": participantes.get("costo_por_polla", 10), "pollas": total_pollas, "hay_puntajes": hay_puntajes, "leaderboard": [{"nombre": normalizar_nombre(r["participante"]), "letra": r.get("polla_letra","A"), "total": r["puntajes"]["total"]} for r in puntajes]})};
 
 function shareWhatsApp() {{
   const d = SHARE_DATA;
@@ -620,8 +620,8 @@ function shareWhatsApp() {{
   text += '\\u{{1F4B0}} Acumulado: $' + d.acumulado.toLocaleString() + ' (' + d.pollas + ' pollas x $' + d.costo + ')\\n\\n';
   text += '\\u{{1F4CA}} Tablero:\\n';
   d.leaderboard.forEach((p, i) => {{
-    const medal = i===0?'\\u{{1F947}}':i===1?'\\u{{1F948}}':i===2?'\\u{{1F949}}':'';
-    text += (i+1) + '. ' + medal + ' ' + p.nombre + (p.letra!=='A'?' ('+p.letra+')':'') + ': ' + p.total + ' pts\\n';
+    const medal = d.hay_puntajes ? (i===0?'\\u{{1F947}}':i===1?'\\u{{1F948}}':i===2?'\\u{{1F949}}':'') : '';
+    text += (i+1) + '. ' + (medal ? medal + ' ' : '') + p.nombre + (p.letra!=='A'?' ('+p.letra+')':'') + ': ' + p.total + ' pts\\n';
   }});
   text += '\\n\\u{{1F517}} https://joseurgilesc.github.io/webPollaMundialista/';
   const url = 'https://api.whatsapp.com/send?text=' + encodeURIComponent(text);
