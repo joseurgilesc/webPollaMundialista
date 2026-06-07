@@ -103,6 +103,321 @@
     "polla_letra": "A"
   },
   {
+    "participante": "Catalina Fernández de Córdova",
+    "archivo": "Polla Mundialista Final 1 CATY.pdf",
+    "puntajes": {
+      "16avos": 0,
+      "8avos": 0,
+      "cuartos": 0,
+      "semifinales": 0,
+      "finales": 0,
+      "total": 0
+    },
+    "detalle": {
+      "16avos": {
+        "aciertos_equipo": [],
+        "aciertos_posicion": [],
+        "errores": [
+          "🇩🇪 Alemania no clasificó a 16avos",
+          "🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia no clasificó a 16avos",
+          "🇫🇷 Francia no clasificó a 16avos",
+          "🇦🇺 Australia no clasificó a 16avos",
+          "🇲🇽 México no clasificó a 16avos",
+          "🇨🇦 Canadá no clasificó a 16avos",
+          "🇳🇱 Holanda no clasificó a 16avos",
+          "🇲🇦 Marruecos no clasificó a 16avos",
+          "🇨🇴 Colombia no clasificó a 16avos",
+          "🇭🇷 Croacia no clasificó a 16avos",
+          "🇪🇸 España no clasificó a 16avos",
+          "🇩🇿 Argelia no clasificó a 16avos",
+          "🇺🇸 Estados Unidos no clasificó a 16avos",
+          "🇪🇨 Ecuador no clasificó a 16avos",
+          "🇧🇪 Bélgica no clasificó a 16avos",
+          "🇯🇵 Japón no clasificó a 16avos",
+          "🇧🇷 Brasil no clasificó a 16avos",
+          "🇸🇪 Suecia no clasificó a 16avos",
+          "🇨🇮 Costa de Marfil no clasificó a 16avos",
+          "🇸🇳 Senegal no clasificó a 16avos",
+          "🇨🇿 Rep. Checa no clasificó a 16avos",
+          "🇸🇦 Arabia Saudí no clasificó a 16avos",
+          "🇬🇧 Inglaterra no clasificó a 16avos",
+          "🇦🇹 Austria no clasificó a 16avos",
+          "🇦🇷 Argentina no clasificó a 16avos",
+          "🇺🇾 Uruguay no clasificó a 16avos",
+          "🇵🇾 Paraguay no clasificó a 16avos",
+          "🇪🇬 Egipto no clasificó a 16avos",
+          "🇨🇭 Suiza no clasificó a 16avos",
+          "🇳🇴 Noruega no clasificó a 16avos",
+          "🇵🇹 Portugal no clasificó a 16avos",
+          "🇬🇭 Ghana no clasificó a 16avos"
+        ]
+      },
+      "8avos": {
+        "aciertos": [],
+        "errores": [
+          "🇩🇪 Alemania no llegó a 8avos",
+          "🇫🇷 Francia no llegó a 8avos",
+          "🇨🇦 Canadá no llegó a 8avos",
+          "🇲🇦 Marruecos no llegó a 8avos",
+          "🇨🇴 Colombia no llegó a 8avos",
+          "🇪🇸 España no llegó a 8avos",
+          "🇪🇨 Ecuador no llegó a 8avos",
+          "🇯🇵 Japón no llegó a 8avos",
+          "🇧🇷 Brasil no llegó a 8avos",
+          "🇨🇮 Costa de Marfil no llegó a 8avos",
+          "🇨🇿 Rep. Checa no llegó a 8avos",
+          "🇬🇧 Inglaterra no llegó a 8avos",
+          "🇦🇷 Argentina no llegó a 8avos",
+          "🇵🇾 Paraguay no llegó a 8avos",
+          "🇨🇭 Suiza no llegó a 8avos",
+          "🇵🇹 Portugal no llegó a 8avos"
+        ]
+      },
+      "cuartos": {
+        "aciertos": [],
+        "errores": [
+          "🇫🇷 Francia no llegó a cuartos",
+          "🇲🇦 Marruecos no llegó a cuartos",
+          "🇪🇸 España no llegó a cuartos",
+          "🇪🇨 Ecuador no llegó a cuartos",
+          "🇧🇷 Brasil no llegó a cuartos",
+          "🇬🇧 Inglaterra no llegó a cuartos",
+          "🇦🇷 Argentina no llegó a cuartos",
+          "🇵🇹 Portugal no llegó a cuartos"
+        ]
+      },
+      "semifinales": {
+        "aciertos": [],
+        "errores": [
+          "🇫🇷 Francia no llegó a semifinales",
+          "🇪🇸 España no llegó a semifinales",
+          "🇬🇧 Inglaterra no llegó a semifinales",
+          "🇦🇷 Argentina no llegó a semifinales"
+        ]
+      },
+      "finales": {
+        "aciertos": [],
+        "errores": [
+          "campeon: predijo 🇫🇷 Francia, real:  (0 pts)",
+          "segundo: predijo 🇦🇷 Argentina, real:  (0 pts)",
+          "tercero: predijo 🇪🇸 España, real:  (0 pts)",
+          "cuarto: predijo 🇬🇧 Inglaterra, real:  (0 pts)"
+        ]
+      }
+    },
+    "polla_letra": "A"
+  },
+  {
+    "participante": "Edgar Cordero",
+    "archivo": "Polla Mundialista Edgar Cordero.pdf",
+    "puntajes": {
+      "16avos": 0,
+      "8avos": 0,
+      "cuartos": 0,
+      "semifinales": 0,
+      "finales": 0,
+      "total": 0
+    },
+    "detalle": {
+      "16avos": {
+        "aciertos_equipo": [],
+        "aciertos_posicion": [],
+        "errores": [
+          "🇩🇪 Alemania no clasificó a 16avos",
+          "🇹🇷 Turquía no clasificó a 16avos",
+          "🇫🇷 Francia no clasificó a 16avos",
+          "🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia no clasificó a 16avos",
+          "🇲🇽 México no clasificó a 16avos",
+          "🇨🇦 Canadá no clasificó a 16avos",
+          "🇳🇱 Holanda no clasificó a 16avos",
+          "🇲🇦 Marruecos no clasificó a 16avos",
+          "🇨🇴 Colombia no clasificó a 16avos",
+          "🇭🇷 Croacia no clasificó a 16avos",
+          "🇪🇸 España no clasificó a 16avos",
+          "🇦🇹 Austria no clasificó a 16avos",
+          "🇺🇸 Estados Unidos no clasificó a 16avos",
+          "🇧🇦 Bosnia y Herzegovina no clasificó a 16avos",
+          "🇧🇪 Bélgica no clasificó a 16avos",
+          "🇰🇷 Corea del Sur no clasificó a 16avos",
+          "🇧🇷 Brasil no clasificó a 16avos",
+          "🇯🇵 Japón no clasificó a 16avos",
+          "🇪🇨 Ecuador no clasificó a 16avos",
+          "🇳🇴 Noruega no clasificó a 16avos",
+          "🇨🇿 Rep. Checa no clasificó a 16avos",
+          "🇸🇳 Senegal no clasificó a 16avos",
+          "🇬🇧 Inglaterra no clasificó a 16avos",
+          "🇨🇮 Costa de Marfil no clasificó a 16avos",
+          "🇦🇷 Argentina no clasificó a 16avos",
+          "🇺🇾 Uruguay no clasificó a 16avos",
+          "🇵🇾 Paraguay no clasificó a 16avos",
+          "🇪🇬 Egipto no clasificó a 16avos",
+          "🇨🇭 Suiza no clasificó a 16avos",
+          "🇸🇪 Suecia no clasificó a 16avos",
+          "🇵🇹 Portugal no clasificó a 16avos",
+          "🇬🇭 Ghana no clasificó a 16avos"
+        ]
+      },
+      "8avos": {
+        "aciertos": [],
+        "errores": [
+          "🇩🇪 Alemania no llegó a 8avos",
+          "🇫🇷 Francia no llegó a 8avos",
+          "🇨🇦 Canadá no llegó a 8avos",
+          "🇳🇱 Holanda no llegó a 8avos",
+          "🇭🇷 Croacia no llegó a 8avos",
+          "🇪🇸 España no llegó a 8avos",
+          "🇺🇸 Estados Unidos no llegó a 8avos",
+          "🇧🇪 Bélgica no llegó a 8avos",
+          "🇧🇷 Brasil no llegó a 8avos",
+          "🇪🇨 Ecuador no llegó a 8avos",
+          "🇨🇿 Rep. Checa no llegó a 8avos",
+          "🇬🇧 Inglaterra no llegó a 8avos",
+          "🇦🇷 Argentina no llegó a 8avos",
+          "🇵🇾 Paraguay no llegó a 8avos",
+          "🇸🇪 Suecia no llegó a 8avos",
+          "🇵🇹 Portugal no llegó a 8avos"
+        ]
+      },
+      "cuartos": {
+        "aciertos": [],
+        "errores": [
+          "🇫🇷 Francia no llegó a cuartos",
+          "🇳🇱 Holanda no llegó a cuartos",
+          "🇪🇸 España no llegó a cuartos",
+          "🇧🇪 Bélgica no llegó a cuartos",
+          "🇧🇷 Brasil no llegó a cuartos",
+          "🇬🇧 Inglaterra no llegó a cuartos",
+          "🇦🇷 Argentina no llegó a cuartos",
+          "🇵🇹 Portugal no llegó a cuartos"
+        ]
+      },
+      "semifinales": {
+        "aciertos": [],
+        "errores": [
+          "🇫🇷 Francia no llegó a semifinales",
+          "🇪🇸 España no llegó a semifinales",
+          "🇬🇧 Inglaterra no llegó a semifinales",
+          "🇦🇷 Argentina no llegó a semifinales"
+        ]
+      },
+      "finales": {
+        "aciertos": [],
+        "errores": [
+          "campeon: predijo 🇫🇷 Francia, real:  (0 pts)",
+          "segundo: predijo 🇬🇧 Inglaterra, real:  (0 pts)",
+          "tercero: predijo 🇪🇸 España, real:  (0 pts)",
+          "cuarto: predijo 🇦🇷 Argentina, real:  (0 pts)"
+        ]
+      }
+    },
+    "polla_letra": "A"
+  },
+  {
+    "participante": "José Urgilés Cárdenas",
+    "archivo": "Polla José Urgilés.xlsx",
+    "puntajes": {
+      "16avos": 0,
+      "8avos": 0,
+      "cuartos": 0,
+      "semifinales": 0,
+      "finales": 0,
+      "total": 0
+    },
+    "detalle": {
+      "16avos": {
+        "aciertos_equipo": [],
+        "aciertos_posicion": [],
+        "errores": [
+          "🇪🇨 ECUADOR no clasificó a 16avos",
+          "🇺🇸 ESTADOS UNIDOS no clasificó a 16avos",
+          "🇫🇷 FRANCIA no clasificó a 16avos",
+          "🇸🇪 SUECIA no clasificó a 16avos",
+          "🇰🇷 COREA DEL SUR no clasificó a 16avos",
+          "🇨🇭 SUIZA no clasificó a 16avos",
+          "🇯🇵 JAPÓN no clasificó a 16avos",
+          "🇧🇷 BRASIL no clasificó a 16avos",
+          "🇵🇹 PORTUGAL no clasificó a 16avos",
+          "🇬🇧 INGLATERRA no clasificó a 16avos",
+          "🇪🇸 ESPAÑA no clasificó a 16avos",
+          "🇩🇿 ARGELIA no clasificó a 16avos",
+          "🇹🇷 TURQUÍA no clasificó a 16avos",
+          "🇨🇮 COSTA DE MARFIL no clasificó a 16avos",
+          "🇧🇪 BÉLGICA no clasificó a 16avos",
+          "🇦🇹 AUSTRIA no clasificó a 16avos",
+          "🇲🇦 MARRUECOS no clasificó a 16avos",
+          "🇳🇱 HOLANDA no clasificó a 16avos",
+          "🇩🇪 ALEMANIA no clasificó a 16avos",
+          "🇳🇴 NORUEGA no clasificó a 16avos",
+          "🇲🇽 MÉXICO no clasificó a 16avos",
+          "🏴󠁧󠁢󠁳󠁣󠁴󠁿 ESCOCIA no clasificó a 16avos",
+          "🇭🇷 CROACIA no clasificó a 16avos",
+          "🇸🇳 SENEGAL no clasificó a 16avos",
+          "🇦🇷 ARGENTINA no clasificó a 16avos",
+          "🇺🇾 URUGUAY no clasificó a 16avos",
+          "🇵🇾 PARAGUAY no clasificó a 16avos",
+          "🇪🇬 EGIPTO no clasificó a 16avos",
+          "🇨🇦 CANADÁ no clasificó a 16avos",
+          "🇮🇷 IRÁN no clasificó a 16avos",
+          "🇨🇴 COLOMBIA no clasificó a 16avos",
+          "🇬🇭 GHANA no clasificó a 16avos"
+        ]
+      },
+      "8avos": {
+        "aciertos": [],
+        "errores": [
+          "🇪🇨 ECUADOR no llegó a 8avos",
+          "🇫🇷 FRANCIA no llegó a 8avos",
+          "🇰🇷 COREA DEL SUR no llegó a 8avos",
+          "🇧🇷 BRASIL no llegó a 8avos",
+          "🇵🇹 PORTUGAL no llegó a 8avos",
+          "🇪🇸 ESPAÑA no llegó a 8avos",
+          "🇨🇮 COSTA DE MARFIL no llegó a 8avos",
+          "🇧🇪 BÉLGICA no llegó a 8avos",
+          "🇲🇦 MARRUECOS no llegó a 8avos",
+          "🇩🇪 ALEMANIA no llegó a 8avos",
+          "🇲🇽 MÉXICO no llegó a 8avos",
+          "🇭🇷 CROACIA no llegó a 8avos",
+          "🇺🇾 URUGUAY no llegó a 8avos",
+          "🇪🇬 EGIPTO no llegó a 8avos",
+          "🇨🇦 CANADÁ no llegó a 8avos",
+          "🇬🇭 GHANA no llegó a 8avos"
+        ]
+      },
+      "cuartos": {
+        "aciertos": [],
+        "errores": [
+          "🇪🇨 ECUADOR no llegó a cuartos",
+          "🇰🇷 COREA DEL SUR no llegó a cuartos",
+          "🇵🇹 PORTUGAL no llegó a cuartos",
+          "🇧🇪 BÉLGICA no llegó a cuartos",
+          "🇲🇦 MARRUECOS no llegó a cuartos",
+          "🇭🇷 CROACIA no llegó a cuartos",
+          "🇺🇾 URUGUAY no llegó a cuartos",
+          "🇬🇭 GHANA no llegó a cuartos"
+        ]
+      },
+      "semifinales": {
+        "aciertos": [],
+        "errores": [
+          "🇪🇨 ECUADOR no llegó a semifinales",
+          "🇧🇪 BÉLGICA no llegó a semifinales",
+          "🇭🇷 CROACIA no llegó a semifinales",
+          "🇺🇾 URUGUAY no llegó a semifinales"
+        ]
+      },
+      "finales": {
+        "aciertos": [],
+        "errores": [
+          "campeon: predijo 🇪🇨 ECUADOR, real:  (0 pts)",
+          "segundo: predijo 🇭🇷 CROACIA, real:  (0 pts)",
+          "tercero: predijo 🇧🇪 BÉLGICA, real:  (0 pts)",
+          "cuarto: predijo 🇺🇾 URUGUAY, real:  (0 pts)"
+        ]
+      }
+    },
+    "polla_letra": "A"
+  },
+  {
     "participante": "Juana Cordero",
     "archivo": "Polla Mundialista JUANA 1.pdf",
     "puntajes": {

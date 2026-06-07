@@ -1,0 +1,354 @@
+{
+  "archivo_original": "Polla José Urgilés.xlsx",
+  "participante": "José Urgilés Cárdenas",
+  "grupos": {
+    "A": {
+      "🇲🇽 MÉXICO": null,
+      "🇿🇦 SUDÁFRICA": null,
+      "🇰🇷 COREA DEL SUR": null,
+      "🇨🇿 REP. CHECA": null
+    },
+    "B": {
+      "🇨🇦 CANADÁ": null,
+      "🇧🇦 BOSNIA Y HERZEGOVINA": null,
+      "🇶🇦 QATAR": null,
+      "🇨🇭 SUIZA": null
+    },
+    "C": {
+      "🇧🇷 BRASIL": null,
+      "🇲🇦 MARRUECOS": null,
+      "🇭🇹 HAITÍ": null,
+      "🏴󠁧󠁢󠁳󠁣󠁴󠁿 ESCOCIA": null
+    },
+    "D": {
+      "🇺🇸 ESTADOS UNIDOS": null,
+      "🇵🇾 PARAGUAY": null,
+      "🇦🇺 AUSTRALIA": null,
+      "🇹🇷 TURQUÍA": null
+    },
+    "E": {
+      "🇩🇪 ALEMANIA": null,
+      "🇨🇼 CURAZAO": null,
+      "🇨🇮 COSTA DE MARFIL": null,
+      "🇪🇨 ECUADOR": null
+    },
+    "F": {
+      "🇳🇱 HOLANDA": null,
+      "🇯🇵 JAPÓN": null,
+      "🇸🇪 SUECIA": null,
+      "🇹🇳 TÚNEZ": null
+    },
+    "G": {
+      "🇧🇪 BÉLGICA": null,
+      "🇪🇬 EGIPTO": null,
+      "🇮🇷 IRÁN": null,
+      "🇳🇿 NUEVA ZELANDA": null
+    },
+    "H": {
+      "🇪🇸 ESPAÑA": null,
+      "🇨🇻 CABO VERDE": null,
+      "🇸🇦 ARABIA SAUDÍ": null,
+      "🇺🇾 URUGUAY": null
+    },
+    "I": {
+      "🇫🇷 FRANCIA": null,
+      "🇸🇳 SENEGAL": null,
+      "🇮🇶 IRAK": null,
+      "🇳🇴 NORUEGA": null
+    },
+    "J": {
+      "🇦🇷 ARGENTINA": null,
+      "🇩🇿 ARGELIA": null,
+      "🇦🇹 AUSTRIA": null,
+      "🇯🇴 JORDANIA": null
+    },
+    "K": {
+      "🇵🇹 PORTUGAL": null,
+      "🇨🇩 REP. CONGO": null,
+      "🇺🇿 UZBEKISTÁN": null,
+      "🇨🇴 COLOMBIA": null
+    },
+    "L": {
+      "🇬🇧 INGLATERRA": null,
+      "🇭🇷 CROACIA": null,
+      "🇬🇭 GHANA": null,
+      "🇵🇦 PANAMÁ": null
+    }
+  },
+  "ronda_16avos": [
+    {
+      "slot": "1E",
+      "equipo": "🇪🇨 ECUADOR"
+    },
+    {
+      "slot": "3 ABCDF",
+      "equipo": "🇺🇸 ESTADOS UNIDOS"
+    },
+    {
+      "slot": "1I",
+      "equipo": "🇫🇷 FRANCIA"
+    },
+    {
+      "slot": "3 CDFGH",
+      "equipo": "🇸🇪 SUECIA"
+    },
+    {
+      "slot": "2A",
+      "equipo": "🇰🇷 COREA DEL SUR"
+    },
+    {
+      "slot": "2B",
+      "equipo": "🇨🇭 SUIZA"
+    },
+    {
+      "slot": "1F",
+      "equipo": "🇯🇵 JAPÓN"
+    },
+    {
+      "slot": "2C",
+      "equipo": "🇧🇷 BRASIL"
+    },
+    {
+      "slot": "2K",
+      "equipo": "🇵🇹 PORTUGAL"
+    },
+    {
+      "slot": "2L",
+      "equipo": "🇬🇧 INGLATERRA"
+    },
+    {
+      "slot": "1H",
+      "equipo": "🇪🇸 ESPAÑA"
+    },
+    {
+      "slot": "2J",
+      "equipo": "🇩🇿 ARGELIA"
+    },
+    {
+      "slot": "1D",
+      "equipo": "🇹🇷 TURQUÍA"
+    },
+    {
+      "slot": "3 BEFIJ",
+      "equipo": "🇨🇮 COSTA DE MARFIL"
+    },
+    {
+      "slot": "1G",
+      "equipo": "🇧🇪 BÉLGICA"
+    },
+    {
+      "slot": "3 AEFHIJ",
+      "equipo": "🇦🇹 AUSTRIA"
+    },
+    {
+      "slot": "1C",
+      "equipo": "🇲🇦 MARRUECOS"
+    },
+    {
+      "slot": "2F",
+      "equipo": "🇳🇱 HOLANDA"
+    },
+    {
+      "slot": "2E",
+      "equipo": "🇩🇪 ALEMANIA"
+    },
+    {
+      "slot": "2I",
+      "equipo": "🇳🇴 NORUEGA"
+    },
+    {
+      "slot": "1A",
+      "equipo": "🇲🇽 MÉXICO"
+    },
+    {
+      "slot": "3 CEFHI",
+      "equipo": "🏴󠁧󠁢󠁳󠁣󠁴󠁿 ESCOCIA"
+    },
+    {
+      "slot": "1L",
+      "equipo": "🇭🇷 CROACIA"
+    },
+    {
+      "slot": "3 EHIJK",
+      "equipo": "🇸🇳 SENEGAL"
+    },
+    {
+      "slot": "1J",
+      "equipo": "🇦🇷 ARGENTINA"
+    },
+    {
+      "slot": "2H",
+      "equipo": "🇺🇾 URUGUAY"
+    },
+    {
+      "slot": "2D",
+      "equipo": "🇵🇾 PARAGUAY"
+    },
+    {
+      "slot": "2G",
+      "equipo": "🇪🇬 EGIPTO"
+    },
+    {
+      "slot": "1B",
+      "equipo": "🇨🇦 CANADÁ"
+    },
+    {
+      "slot": "3 EFGIJ",
+      "equipo": "🇮🇷 IRÁN"
+    },
+    {
+      "slot": "1K",
+      "equipo": "🇨🇴 COLOMBIA"
+    },
+    {
+      "slot": "3 DEIJL",
+      "equipo": "🇬🇭 GHANA"
+    }
+  ],
+  "ronda_8avos": [
+    {
+      "equipo": "🇪🇨 ECUADOR"
+    },
+    {
+      "equipo": "🇫🇷 FRANCIA"
+    },
+    {
+      "equipo": "🇰🇷 COREA DEL SUR"
+    },
+    {
+      "equipo": "🇧🇷 BRASIL"
+    },
+    {
+      "equipo": "🇵🇹 PORTUGAL"
+    },
+    {
+      "equipo": "🇪🇸 ESPAÑA"
+    },
+    {
+      "equipo": "🇨🇮 COSTA DE MARFIL"
+    },
+    {
+      "equipo": "🇧🇪 BÉLGICA"
+    },
+    {
+      "equipo": "🇲🇦 MARRUECOS"
+    },
+    {
+      "equipo": "🇩🇪 ALEMANIA"
+    },
+    {
+      "equipo": "🇲🇽 MÉXICO"
+    },
+    {
+      "equipo": "🇭🇷 CROACIA"
+    },
+    {
+      "equipo": "🇺🇾 URUGUAY"
+    },
+    {
+      "equipo": "🇪🇬 EGIPTO"
+    },
+    {
+      "equipo": "🇨🇦 CANADÁ"
+    },
+    {
+      "equipo": "🇬🇭 GHANA"
+    }
+  ],
+  "ronda_cuartos": [
+    {
+      "equipo": "🇪🇨 ECUADOR"
+    },
+    {
+      "equipo": "🇰🇷 COREA DEL SUR"
+    },
+    {
+      "equipo": "🇵🇹 PORTUGAL"
+    },
+    {
+      "equipo": "🇧🇪 BÉLGICA"
+    },
+    {
+      "equipo": "🇲🇦 MARRUECOS"
+    },
+    {
+      "equipo": "🇭🇷 CROACIA"
+    },
+    {
+      "equipo": "🇺🇾 URUGUAY"
+    },
+    {
+      "equipo": "🇬🇭 GHANA"
+    }
+  ],
+  "ronda_semifinales": [
+    {
+      "equipo": "🇪🇨 ECUADOR"
+    },
+    {
+      "equipo": "🇧🇪 BÉLGICA"
+    },
+    {
+      "equipo": "🇭🇷 CROACIA"
+    },
+    {
+      "equipo": "🇺🇾 URUGUAY"
+    }
+  ],
+  "finales": {
+    "campeon": "🇪🇨 ECUADOR",
+    "segundo": "🇭🇷 CROACIA",
+    "tercero": "🇧🇪 BÉLGICA",
+    "cuarto": "🇺🇾 URUGUAY"
+  },
+  "errores": [
+    "Grupo A: '🇲🇽 MÉXICO' no tiene posición numérica.",
+    "Grupo A: '🇿🇦 SUDÁFRICA' no tiene posición numérica.",
+    "Grupo A: '🇰🇷 COREA DEL SUR' no tiene posición numérica.",
+    "Grupo A: '🇨🇿 REP. CHECA' no tiene posición numérica.",
+    "Grupo B: '🇨🇦 CANADÁ' no tiene posición numérica.",
+    "Grupo B: '🇧🇦 BOSNIA Y HERZEGOVINA' no tiene posición numérica.",
+    "Grupo B: '🇶🇦 QATAR' no tiene posición numérica.",
+    "Grupo B: '🇨🇭 SUIZA' no tiene posición numérica.",
+    "Grupo C: '🇧🇷 BRASIL' no tiene posición numérica.",
+    "Grupo C: '🇲🇦 MARRUECOS' no tiene posición numérica.",
+    "Grupo C: '🇭🇹 HAITÍ' no tiene posición numérica.",
+    "Grupo C: '🏴󠁧󠁢󠁳󠁣󠁴󠁿 ESCOCIA' no tiene posición numérica.",
+    "Grupo D: '🇺🇸 ESTADOS UNIDOS' no tiene posición numérica.",
+    "Grupo D: '🇵🇾 PARAGUAY' no tiene posición numérica.",
+    "Grupo D: '🇦🇺 AUSTRALIA' no tiene posición numérica.",
+    "Grupo D: '🇹🇷 TURQUÍA' no tiene posición numérica.",
+    "Grupo E: '🇩🇪 ALEMANIA' no tiene posición numérica.",
+    "Grupo E: '🇨🇼 CURAZAO' no tiene posición numérica.",
+    "Grupo E: '🇨🇮 COSTA DE MARFIL' no tiene posición numérica.",
+    "Grupo E: '🇪🇨 ECUADOR' no tiene posición numérica.",
+    "Grupo F: '🇳🇱 HOLANDA' no tiene posición numérica.",
+    "Grupo F: '🇯🇵 JAPÓN' no tiene posición numérica.",
+    "Grupo F: '🇸🇪 SUECIA' no tiene posición numérica.",
+    "Grupo F: '🇹🇳 TÚNEZ' no tiene posición numérica.",
+    "Grupo G: '🇧🇪 BÉLGICA' no tiene posición numérica.",
+    "Grupo G: '🇪🇬 EGIPTO' no tiene posición numérica.",
+    "Grupo G: '🇮🇷 IRÁN' no tiene posición numérica.",
+    "Grupo G: '🇳🇿 NUEVA ZELANDA' no tiene posición numérica.",
+    "Grupo H: '🇪🇸 ESPAÑA' no tiene posición numérica.",
+    "Grupo H: '🇨🇻 CABO VERDE' no tiene posición numérica.",
+    "Grupo H: '🇸🇦 ARABIA SAUDÍ' no tiene posición numérica.",
+    "Grupo H: '🇺🇾 URUGUAY' no tiene posición numérica.",
+    "Grupo I: '🇫🇷 FRANCIA' no tiene posición numérica.",
+    "Grupo I: '🇸🇳 SENEGAL' no tiene posición numérica.",
+    "Grupo I: '🇮🇶 IRAK' no tiene posición numérica.",
+    "Grupo I: '🇳🇴 NORUEGA' no tiene posición numérica.",
+    "Grupo J: '🇦🇷 ARGENTINA' no tiene posición numérica.",
+    "Grupo J: '🇩🇿 ARGELIA' no tiene posición numérica.",
+    "Grupo J: '🇦🇹 AUSTRIA' no tiene posición numérica.",
+    "Grupo J: '🇯🇴 JORDANIA' no tiene posición numérica.",
+    "Grupo K: '🇵🇹 PORTUGAL' no tiene posición numérica.",
+    "Grupo K: '🇨🇩 REP. CONGO' no tiene posición numérica.",
+    "Grupo K: '🇺🇿 UZBEKISTÁN' no tiene posición numérica.",
+    "Grupo K: '🇨🇴 COLOMBIA' no tiene posición numérica.",
+    "Grupo L: '🇬🇧 INGLATERRA' no tiene posición numérica.",
+    "Grupo L: '🇭🇷 CROACIA' no tiene posición numérica.",
+    "Grupo L: '🇬🇭 GHANA' no tiene posición numérica.",
+    "Grupo L: '🇵🇦 PANAMÁ' no tiene posición numérica."
+  ]
+}

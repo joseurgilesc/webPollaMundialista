@@ -173,7 +173,7 @@ tr:hover td {{ background: #f8fafc; }}
 
 /* Chart */
 .chart-row {{ display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }}
-.chart-label {{ width: 110px; font-size: 0.75rem; text-align: right; color: var(--muted); flex-shrink: 0; font-weight: 600; }}
+.chart-label {{ width: 160px; font-size: 0.72rem; text-align: right; color: var(--muted); flex-shrink: 0; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }}
 .chart-bars {{ flex: 1; display: flex; gap: 2px; height: 22px; border-radius: 5px; overflow: hidden; }}
 .chart-bar {{ height: 100%; transition: width 0.6s ease; }}
 .c16 {{ background: var(--teal); }} .c8 {{ background: var(--navy); }} .c4 {{ background: #7c3aed; }}
@@ -327,6 +327,39 @@ footer {{ text-align: center; padding: 24px; color: var(--muted); font-size: 0.7
   table {{ font-size: 0.72rem; }}
   th, td {{ padding: 8px 4px; }}
   .slot-input .slot-code {{ width: 65px; font-size: 0.65rem; }}
+  .predicciones {{ grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }}
+}}
+
+/* Predicciones */
+.predicciones {{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}}
+.pred-card {{
+  background: #f8fafc;
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 14px;
+}}
+.pred-name {{
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--navy);
+  margin-bottom: 8px;
+}}
+.pred-picks {{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 0.72rem;
+}}
+.pred-picks span {{
+  background: white;
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+  padding: 3px 8px;
+  white-space: nowrap;
 }}
 """
 
@@ -334,6 +367,31 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
     acumulado = calcular_acumulado(participantes)
     total_participantes = len(participantes.get("participantes", []))
     total_pollas = sum(p.get("pollas", 1) for p in participantes.get("participantes", []))
+    
+    # Cargar predicciones de cada polla
+    predicciones_data = []
+    for f in sorted(POLLAS_DIR.glob("*.json")):
+        with open(f, encoding="utf-8") as fp:
+            data = json.load(fp)
+            predicciones_data.append({
+                "nombre": data.get("participante", "?"),
+                "finales": data.get("finales", {}),
+                "archivo": f.stem,
+            })
+    
+    # Construir cards de predicciones
+    predicciones_html = ""
+    for pred in predicciones_data:
+        f = pred["finales"]
+        predicciones_html += f"""<div class="pred-card">
+      <div class="pred-name">{pred["nombre"]}</div>
+      <div class="pred-picks">
+        <span title="Campeón">🏆 {f.get("campeon", "?") or "—"}</span>
+        <span title="Segundo">🥈 {f.get("segundo", "?") or "—"}</span>
+        <span title="Tercero">🥉 {f.get("tercero", "?") or "—"}</span>
+        <span title="Cuarto">4° {f.get("cuarto", "?") or "—"}</span>
+      </div>
+    </div>"""
     
     # Contar pollas por participante (para decidir si mostrar letra)
     pollas_por_nombre = {}
@@ -364,7 +422,7 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
       <td>64</td><td>32</td><td>24</td><td>16</td><td>44</td><td class="total">180</td></tr>"""
     
     barras_data = json.dumps([
-        {"nombre": r["participante"][:12], "letra": r.get("polla_letra", "A"),
+        {"nombre": r["participante"], "letra": r.get("polla_letra", "A"),
          "r16": r["puntajes"]["16avos"], "r8": r["puntajes"]["8avos"],
          "r4": r["puntajes"]["cuartos"], "r2": r["puntajes"]["semifinales"],
          "rf": r["puntajes"]["finales"]} for r in puntajes
@@ -433,6 +491,13 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
       <thead><tr><th>#</th><th>Participante</th><th>16avos</th><th>8avos</th><th>Cuartos</th><th>Semis</th><th>Final</th><th>Total</th></tr></thead>
       <tbody>{filas}</tbody>
     </table></div>
+  </div>
+
+  <div class="card">
+    <h3 style="color:var(--navy);margin-bottom:16px;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.06em;">🔮 Predicciones</h3>
+    <div class="predicciones">
+      {predicciones_html}
+    </div>
   </div>
 
   <div class="card">
@@ -681,6 +746,7 @@ def generar_admin(participantes: dict) -> str:
     <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
       <button class="btn btn-sm" onclick="agregarParticipante()">+ Agregar participante</button>
       <button class="btn btn-green btn-sm" onclick="guardarPagos()">💾 Guardar</button>
+      <button class="btn btn-outline btn-sm" onclick="syncParticipantes()">🔄 Sincronizar con web</button>
       <span style="font-size:0.7rem;color:var(--muted);margin-left:auto;">Cambios en localStorage</span>
     </div>
   </div>
@@ -806,6 +872,17 @@ function agregarParticipante() {{
 function guardarPagos() {{
   localStorage.setItem('pollas_participantes', JSON.stringify(participantes));
   showToast('✅ Pagos guardados');
+}}
+
+function syncParticipantes() {{
+  const data = {{
+    costo_por_polla: COSTO,
+    participantes: participantes,
+  }};
+  const json = JSON.stringify(data, null, 2);
+  document.getElementById('resOutput').value = json;
+  document.getElementById('resOutput').scrollIntoView({{behavior:'smooth'}});
+  showToast('🔄 Copiá este JSON → data/participantes.json → ejecutá generar_sitio.py');
 }}
 
 // ── Transcripción ──
