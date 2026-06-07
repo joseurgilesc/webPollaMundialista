@@ -32,13 +32,14 @@ body {
 
 /* Top bar */
 .topbar {
-  background: linear-gradient(135deg, var(--navy), #1a3a6e);
+  background: linear-gradient(135deg, var(--navy), #1a3a6e, var(--navy));
   color: white;
-  padding: 10px 0;
+  padding: 8px 0;
   text-align: center;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 600;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
+  border-bottom: 3px solid var(--gold);
 }
 
 .app { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
@@ -48,17 +49,21 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
   flex-wrap: wrap;
   gap: 12px;
+  background: linear-gradient(135deg, #f0f7ff, white);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  border: 1px solid var(--card-border);
 }
 .header h1 {
-  font-size: clamp(24px, 5vw, 36px);
+  font-size: clamp(22px, 5vw, 34px);
   font-weight: 800;
   letter-spacing: -0.5px;
   color: var(--navy);
 }
-.header h1 .accent { color: var(--teal); }
+.header h1 .accent { color: var(--gold); }
 .header .badge {
   padding: 6px 14px;
   border-radius: 999px;
@@ -343,21 +348,21 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
     <div class="icon">💰</div>
     <div>
       <div class="stat-label" style="margin-bottom:2px;">ACUMULADO</div>
-      <div class="monto">$30</div>
+      <div class="monto">$110</div>
     </div>
     <div class="info" style="margin-left:auto;">
-      4 pollas registradas<br>
+      11 pollas registradas<br>
       $10 c/u
     </div>
   </div>
 
   <div class="grid">
     <div class="card stat-card">
-      <div class="stat-num">3</div>
+      <div class="stat-num">9</div>
       <div class="stat-label">Participantes</div>
     </div>
     <div class="card stat-card">
-      <div class="stat-num">4</div>
+      <div class="stat-num">11</div>
       <div class="stat-label">Pollas</div>
     </div>
     <div class="card stat-card">
@@ -411,22 +416,22 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
           <td>0</td><td>0</td>
           <td class="total">0</td></tr><tr class="">
           <td class="rank"> 8</td>
-          <td class="nombre">SANTIAGO CORDOVA C.<span class="polla-tag">A</span></td>
+          <td class="nombre">Santiago Cordova C.</td>
           <td>0</td><td>0</td><td>0</td>
           <td>0</td><td>0</td>
           <td class="total">0</td></tr><tr class="">
           <td class="rank"> 9</td>
-          <td class="nombre">MARIA EUGENIA GUILLEN</td>
+          <td class="nombre">Maria Eugenia Guillen</td>
           <td>0</td><td>0</td><td>0</td>
           <td>0</td><td>0</td>
           <td class="total">0</td></tr><tr class="">
           <td class="rank"> 10</td>
-          <td class="nombre">SANTIAGO CORDOVA C.<span class="polla-tag">B</span></td>
+          <td class="nombre">Santiago Cordova C.</td>
           <td>0</td><td>0</td><td>0</td>
           <td>0</td><td>0</td>
           <td class="total">0</td></tr><tr class="">
           <td class="rank"> 11</td>
-          <td class="nombre">VERONICA CORDOVA</td>
+          <td class="nombre">Veronica Cordova</td>
           <td>0</td><td>0</td><td>0</td>
           <td>0</td><td>0</td>
           <td class="total">0</td></tr><tr class="max-row">
@@ -499,7 +504,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
         <span title="Cuarto">4° 🇦🇷 Argentina</span>
       </div>
     </div><div class="pred-card">
-      <div class="pred-name">SANTIAGO CORDOVA C.</div>
+      <div class="pred-name">Santiago Cordova C.</div>
       <div class="pred-picks">
         <span title="Campeón">🏆 🇧🇷 BRASIL</span>
         <span title="Segundo">🥈 🇨🇴 COLOMBIA</span>
@@ -507,7 +512,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
         <span title="Cuarto">4° 🇦🇷 ARGENTINA</span>
       </div>
     </div><div class="pred-card">
-      <div class="pred-name">MARIA EUGENIA GUILLEN</div>
+      <div class="pred-name">Maria Eugenia Guillen</div>
       <div class="pred-picks">
         <span title="Campeón">🏆 🇧🇪 BÉLGICA</span>
         <span title="Segundo">🥈 🇰🇷 COREA DEL SUR</span>
@@ -515,7 +520,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
         <span title="Cuarto">4° 🇭🇷 CROACIA</span>
       </div>
     </div><div class="pred-card">
-      <div class="pred-name">SANTIAGO CORDOVA C.</div>
+      <div class="pred-name">Santiago Cordova C.</div>
       <div class="pred-picks">
         <span title="Campeón">🏆 🇲🇦 MARRUECOS</span>
         <span title="Segundo">🥈 🇫🇷 FRANCIA</span>
@@ -523,7 +528,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
         <span title="Cuarto">4° 🇬🇧 INGLATERRA</span>
       </div>
     </div><div class="pred-card">
-      <div class="pred-name">VERONICA CORDOVA</div>
+      <div class="pred-name">Veronica Cordova</div>
       <div class="pred-picks">
         <span title="Campeón">🏆 🇧🇷 BRASIL</span>
         <span title="Segundo">🥈 🇫🇷 FRANCIA</span>
@@ -541,10 +546,10 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
 
 </div>
 
-<footer>Actualizado: 07/06/2026 18:26 · Puntajes recalculados automáticamente</footer>
+<footer>Actualizado: 07/06/2026 18:31 · Puntajes recalculados automáticamente</footer>
 
 <script>
-const SHARE_DATA = {"acumulado": 30, "costo": 10, "pollas": 4, "leaderboard": [{"nombre": "Carlos Jaramillo Medina", "letra": "A", "total": 0}, {"nombre": "Catalina Fern\u00e1ndez de C\u00f3rdova", "letra": "A", "total": 0}, {"nombre": "Edgar Cordero", "letra": "A", "total": 0}, {"nombre": "Jos\u00e9 Urgil\u00e9s C\u00e1rdenas", "letra": "A", "total": 0}, {"nombre": "Juana Cordero", "letra": "A", "total": 0}, {"nombre": "Juana Cordero", "letra": "B", "total": 0}, {"nombre": "Mari\u0301a del Carmen Co\u0301rdova Co\u0301rdova", "letra": "A", "total": 0}, {"nombre": "SANTIAGO CORDOVA C.", "letra": "A", "total": 0}, {"nombre": "MARIA EUGENIA GUILLEN", "letra": "A", "total": 0}, {"nombre": "SANTIAGO CORDOVA C.", "letra": "B", "total": 0}, {"nombre": "VERONICA CORDOVA", "letra": "A", "total": 0}]};
+const SHARE_DATA = {"acumulado": 110, "costo": 10, "pollas": 11, "leaderboard": [{"nombre": "Carlos Jaramillo Medina", "letra": "A", "total": 0}, {"nombre": "Catalina Fern\u00e1ndez de C\u00f3rdova", "letra": "A", "total": 0}, {"nombre": "Edgar Cordero", "letra": "A", "total": 0}, {"nombre": "Jos\u00e9 Urgil\u00e9s C\u00e1rdenas", "letra": "A", "total": 0}, {"nombre": "Juana Cordero", "letra": "A", "total": 0}, {"nombre": "Juana Cordero", "letra": "B", "total": 0}, {"nombre": "Mari\u0301a del Carmen Co\u0301rdova Co\u0301rdova", "letra": "A", "total": 0}, {"nombre": "SANTIAGO CORDOVA C.", "letra": "A", "total": 0}, {"nombre": "MARIA EUGENIA GUILLEN", "letra": "A", "total": 0}, {"nombre": "SANTIAGO CORDOVA C.", "letra": "B", "total": 0}, {"nombre": "VERONICA CORDOVA", "letra": "A", "total": 0}]};
 
 function shareWhatsApp() {
   const d = SHARE_DATA;
@@ -559,7 +564,7 @@ function shareWhatsApp() {
   window.open('https://wa.me/?text=' + text, '_blank');
 }
 
-const D=[{"nombre": "Carlos Jaramillo Medina", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "Catalina Fern\u00e1ndez de C\u00f3rdova", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "Edgar Cordero", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "Jos\u00e9 Urgil\u00e9s C\u00e1rdenas", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "Juana Cordero", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "Juana Cordero", "letra": "B", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "Mari\u0301a del Carmen Co\u0301rdova Co\u0301rdova", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "SANTIAGO CORDOVA C.", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "MARIA EUGENIA GUILLEN", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "SANTIAGO CORDOVA C.", "letra": "B", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "VERONICA CORDOVA", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}];
+const D=[{"nombre": "Carlos Jaramillo Medina", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "Catalina Fern\u00e1ndez de C\u00f3rdova", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "Edgar Cordero", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "Jos\u00e9 Urgil\u00e9s C\u00e1rdenas", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "Juana Cordero", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "Juana Cordero", "letra": "B", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "Mari\u0301a del Carmen Co\u0301rdova Co\u0301rdova", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "Santiago Cordova C.", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "Maria Eugenia Guillen", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "Santiago Cordova C.", "letra": "B", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "Veronica Cordova", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}];
 const R=['r16','r8','r4','r2','rf'];
 const C=document.getElementById('chart');
 D.forEach(d=>{

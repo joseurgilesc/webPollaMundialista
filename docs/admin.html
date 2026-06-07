@@ -33,13 +33,14 @@ body {
 
 /* Top bar */
 .topbar {
-  background: linear-gradient(135deg, var(--navy), #1a3a6e);
+  background: linear-gradient(135deg, var(--navy), #1a3a6e, var(--navy));
   color: white;
-  padding: 10px 0;
+  padding: 8px 0;
   text-align: center;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 600;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
+  border-bottom: 3px solid var(--gold);
 }
 
 .app { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
@@ -49,17 +50,21 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
   flex-wrap: wrap;
   gap: 12px;
+  background: linear-gradient(135deg, #f0f7ff, white);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  border: 1px solid var(--card-border);
 }
 .header h1 {
-  font-size: clamp(24px, 5vw, 36px);
+  font-size: clamp(22px, 5vw, 34px);
   font-weight: 800;
   letter-spacing: -0.5px;
   color: var(--navy);
 }
-.header h1 .accent { color: var(--teal); }
+.header h1 .accent { color: var(--gold); }
 .header .badge {
   padding: 6px 14px;
   border-radius: 999px;
@@ -515,7 +520,7 @@ const SLOTS_IZQ = ["1E", "3 ABCDF", "1I", "3 CDFGH", "2A", "2B", "1F", "2C", "2K
 const SLOTS_DER = ["1C", "2F", "2E", "2I", "1A", "3 CEFHI", "1L", "3 EHIJK", "1J", "2H", "2D", "2G", "1B", "3 EFGIJ", "1K", "3 DEIJL"];
 const PENDIENTES = [{"nombre": "CarlosJaramillo.jpeg", "tipo": "jpeg"}, {"nombre": "Mari\u0301a del Carmen Co\u0301rdova.jpeg", "tipo": "jpeg"}, {"nombre": "Polla Mundialista Edgar Cordero.pdf", "tipo": "pdf"}, {"nombre": "Polla Mundialista Final 1 CATY.pdf", "tipo": "pdf"}, {"nombre": "Polla Mundialista JUANA 1.pdf", "tipo": "pdf"}, {"nombre": "Polla Mundialista JUANA 2.pdf", "tipo": "pdf"}, {"nombre": "[Excel] POLLA SCC1.xlsx", "tipo": "xlsx"}, {"nombre": "[Excel] POLLA SCC2.xlsx", "tipo": "xlsx"}, {"nombre": "[Excel] Polla Jose\u0301 Urgile\u0301s.xlsx", "tipo": "xlsx"}, {"nombre": "[Excel] Polla SCC3.xlsx", "tipo": "xlsx"}, {"nombre": "[Excel] Polla SCC4.xlsx", "tipo": "xlsx"}];
 
-let participantes = [{"nombre": "Santiago Cordova C.", "whatsapp": "0992481254", "pago": true, "pollas": 2}, {"nombre": "Maria Eugenia Guillen", "whatsapp": "?", "pago": false, "pollas": 1}, {"nombre": "Veronica Cordova", "whatsapp": "?", "pago": true, "pollas": 1}];
+let participantes = [{"nombre": "Santiago Cordova C.", "whatsapp": "0992481254", "pago": true, "pollas": 2}, {"nombre": "Maria Eugenia Guillen", "whatsapp": "", "pago": true, "pollas": 1}, {"nombre": "Veronica Cordova", "whatsapp": "", "pago": true, "pollas": 1}, {"nombre": "Carlos Jaramillo Medina", "whatsapp": "", "pago": true, "pollas": 1}, {"nombre": "Juana Cordero", "whatsapp": "", "pago": true, "pollas": 2}, {"nombre": "Maria del Carmen Cordova", "whatsapp": "", "pago": true, "pollas": 1}, {"nombre": "Catalina Fernandez de Cordova", "whatsapp": "", "pago": true, "pollas": 1}, {"nombre": "Edgar Cordero", "whatsapp": "", "pago": true, "pollas": 1}, {"nombre": "Jose Urgiles Cardenas", "whatsapp": "", "pago": true, "pollas": 1}];
 
 // ── Lock ──
 function unlock() {

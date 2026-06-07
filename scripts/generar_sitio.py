@@ -43,6 +43,12 @@ def calcular_acumulado(participantes: dict) -> int:
     costo = participantes.get("costo_por_polla", 10)
     return sum(p.get("pollas", 1) for p in participantes.get("participantes", []) if p.get("pago")) * costo
 
+def normalizar_nombre(nombre: str) -> str:
+    """Convierte MAYÚSCULAS a Title Case para display."""
+    if not nombre or not nombre.isupper():
+        return nombre
+    return nombre.title()
+
 def css_comun() -> str:
     return f"""
 :root {{
@@ -70,13 +76,14 @@ body {{
 
 /* Top bar */
 .topbar {{
-  background: linear-gradient(135deg, var(--navy), #1a3a6e);
+  background: linear-gradient(135deg, var(--navy), #1a3a6e, var(--navy));
   color: white;
-  padding: 10px 0;
+  padding: 8px 0;
   text-align: center;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 600;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
+  border-bottom: 3px solid var(--gold);
 }}
 
 .app {{ max-width: 960px; margin: 0 auto; padding: 24px 16px; }}
@@ -86,17 +93,21 @@ body {{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
   flex-wrap: wrap;
   gap: 12px;
+  background: linear-gradient(135deg, #f0f7ff, white);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  border: 1px solid var(--card-border);
 }}
 .header h1 {{
-  font-size: clamp(24px, 5vw, 36px);
+  font-size: clamp(22px, 5vw, 34px);
   font-weight: 800;
   letter-spacing: -0.5px;
   color: var(--navy);
 }}
-.header h1 .accent {{ color: var(--teal); }}
+.header h1 .accent {{ color: var(--gold); }}
 .header .badge {{
   padding: 6px 14px;
   border-radius: 999px;
@@ -384,7 +395,7 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
     for pred in predicciones_data:
         f = pred["finales"]
         predicciones_html += f"""<div class="pred-card">
-      <div class="pred-name">{pred["nombre"]}</div>
+      <div class="pred-name">{normalizar_nombre(pred["nombre"])}</div>
       <div class="pred-picks">
         <span title="Campeón">🏆 {f.get("campeon", "?") or "—"}</span>
         <span title="Segundo">🥈 {f.get("segundo", "?") or "—"}</span>
@@ -402,7 +413,7 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
     filas = ""
     for i, r in enumerate(puntajes):
         p = r["puntajes"]
-        nombre = r["participante"]
+        nombre = normalizar_nombre(r["participante"])
         letra = r.get("polla_letra", "A")
         mostrar_letra = pollas_por_nombre.get(nombre, 1) > 1
         medalla = {0: "🥇", 1: "🥈", 2: "🥉"}.get(i, "")
@@ -422,7 +433,7 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
       <td>64</td><td>32</td><td>24</td><td>16</td><td>44</td><td class="total">180</td></tr>"""
     
     barras_data = json.dumps([
-        {"nombre": r["participante"], "letra": r.get("polla_letra", "A"),
+        {"nombre": normalizar_nombre(r["participante"]), "letra": r.get("polla_letra", "A"),
          "r16": r["puntajes"]["16avos"], "r8": r["puntajes"]["8avos"],
          "r4": r["puntajes"]["cuartos"], "r2": r["puntajes"]["semifinales"],
          "rf": r["puntajes"]["finales"]} for r in puntajes

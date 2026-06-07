@@ -1,9 +1,59 @@
 {
   "costo_por_polla": 10,
   "participantes": [
-    {"nombre": "Santiago Cordova C.", "whatsapp": "0992481254", "pago": true, "pollas": 2},
-    {"nombre": "Maria Eugenia Guillen", "whatsapp": "?", "pago": false, "pollas": 1},
-    {"nombre": "Veronica Cordova", "whatsapp": "?", "pago": true, "pollas": 1}
-  ],
-  "_nota": "Agregá nuevos participantes y marcá pago: true/false. pollas = cantidad de pollas que entregó. El acumulado se calcula solo."
+    {
+      "nombre": "Santiago Cordova C.",
+      "whatsapp": "0992481254",
+      "pago": true,
+      "pollas": 2
+    },
+    {
+      "nombre": "Maria Eugenia Guillen",
+      "whatsapp": "",
+      "pago": true,
+      "pollas": 1
+    },
+    {
+      "nombre": "Veronica Cordova",
+      "whatsapp": "",
+      "pago": true,
+      "pollas": 1
+    },
+    {
+      "nombre": "Carlos Jaramillo Medina",
+      "whatsapp": "",
+      "pago": true,
+      "pollas": 1
+    },
+    {
+      "nombre": "Juana Cordero",
+      "whatsapp": "",
+      "pago": true,
+      "pollas": 2
+    },
+    {
+      "nombre": "Maria del Carmen Cordova",
+      "whatsapp": "",
+      "pago": true,
+      "pollas": 1
+    },
+    {
+      "nombre": "Catalina Fernandez de Cordova",
+      "whatsapp": "",
+      "pago": true,
+      "pollas": 1
+    },
+    {
+      "nombre": "Edgar Cordero",
+      "whatsapp": "",
+      "pago": true,
+      "pollas": 1
+    },
+    {
+      "nombre": "Jose Urgiles Cardenas",
+      "whatsapp": "",
+      "pago": true,
+      "pollas": 1
+    }
+  ]
 }
