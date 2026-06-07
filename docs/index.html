@@ -433,6 +433,10 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
       <td></td><td style="text-align:left;">Máximo posible</td>
       <td>64</td><td>32</td><td>24</td><td>16</td><td>44</td><td class="total">180</td></tr></tbody>
     </table></div>
+    <div style="display:flex;align-items:center;gap:8px;margin-top:10px;flex-wrap:wrap;">
+      <button class="btn btn-sm" onclick="shareWhatsApp()" style="background:#25D366;">💬 Compartir en WhatsApp</button>
+      <span style="font-size:0.7rem;color:var(--muted);">Incluye leaderboard + acumulado</span>
+    </div>
   </div>
 
   <div class="card">
@@ -537,9 +541,24 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
 
 </div>
 
-<footer>Actualizado: 07/06/2026 18:24 · Puntajes recalculados automáticamente</footer>
+<footer>Actualizado: 07/06/2026 18:26 · Puntajes recalculados automáticamente</footer>
 
 <script>
+const SHARE_DATA = {"acumulado": 30, "costo": 10, "pollas": 4, "leaderboard": [{"nombre": "Carlos Jaramillo Medina", "letra": "A", "total": 0}, {"nombre": "Catalina Fern\u00e1ndez de C\u00f3rdova", "letra": "A", "total": 0}, {"nombre": "Edgar Cordero", "letra": "A", "total": 0}, {"nombre": "Jos\u00e9 Urgil\u00e9s C\u00e1rdenas", "letra": "A", "total": 0}, {"nombre": "Juana Cordero", "letra": "A", "total": 0}, {"nombre": "Juana Cordero", "letra": "B", "total": 0}, {"nombre": "Mari\u0301a del Carmen Co\u0301rdova Co\u0301rdova", "letra": "A", "total": 0}, {"nombre": "SANTIAGO CORDOVA C.", "letra": "A", "total": 0}, {"nombre": "MARIA EUGENIA GUILLEN", "letra": "A", "total": 0}, {"nombre": "SANTIAGO CORDOVA C.", "letra": "B", "total": 0}, {"nombre": "VERONICA CORDOVA", "letra": "A", "total": 0}]};
+
+function shareWhatsApp() {
+  const d = SHARE_DATA;
+  let text = '🏆 *Polla Mundialista 2026*%0A%0A';
+  text += '💰 Acumulado: *$' + d.acumulado.toLocaleString() + '* (' + d.pollas + ' pollas × $' + d.costo + ')%0A%0A';
+  text += '📊 *Leaderboard:*%0A';
+  d.leaderboard.forEach((p, i) => {
+    const medal = i===0?'🥇':i===1?'🥈':i===2?'🥉':'';
+    text += (i+1) + '. ' + p.nombre + (p.letra!=='A'?' ('+p.letra+')':'') + ' — ' + p.total + ' pts%0A';
+  });
+  text += '%0A🔗 Ver más: https://joseurgilesc.github.io/webPollaMundialista/';
+  window.open('https://wa.me/?text=' + text, '_blank');
+}
+
 const D=[{"nombre": "Carlos Jaramillo Medina", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "Catalina Fern\u00e1ndez de C\u00f3rdova", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "Edgar Cordero", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "Jos\u00e9 Urgil\u00e9s C\u00e1rdenas", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "Juana Cordero", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "Juana Cordero", "letra": "B", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "Mari\u0301a del Carmen Co\u0301rdova Co\u0301rdova", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "SANTIAGO CORDOVA C.", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "MARIA EUGENIA GUILLEN", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "SANTIAGO CORDOVA C.", "letra": "B", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "VERONICA CORDOVA", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}];
 const R=['r16','r8','r4','r2','rf'];
 const C=document.getElementById('chart');

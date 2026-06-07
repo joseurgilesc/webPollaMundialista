@@ -491,6 +491,10 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
       <thead><tr><th>#</th><th>Participante</th><th>16avos</th><th>8avos</th><th>Cuartos</th><th>Semis</th><th>Final</th><th>Total</th></tr></thead>
       <tbody>{filas}</tbody>
     </table></div>
+    <div style="display:flex;align-items:center;gap:8px;margin-top:10px;flex-wrap:wrap;">
+      <button class="btn btn-sm" onclick="shareWhatsApp()" style="background:#25D366;">💬 Compartir en WhatsApp</button>
+      <span style="font-size:0.7rem;color:var(--muted);">Incluye leaderboard + acumulado</span>
+    </div>
   </div>
 
   <div class="card">
@@ -510,6 +514,21 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
 <footer>Actualizado: {fecha} · Puntajes recalculados automáticamente</footer>
 
 <script>
+const SHARE_DATA = {json.dumps({"acumulado": acumulado, "costo": participantes.get("costo_por_polla", 10), "pollas": total_pollas, "leaderboard": [{"nombre": r["participante"], "letra": r.get("polla_letra","A"), "total": r["puntajes"]["total"]} for r in puntajes]})};
+
+function shareWhatsApp() {{
+  const d = SHARE_DATA;
+  let text = '🏆 *Polla Mundialista 2026*%0A%0A';
+  text += '💰 Acumulado: *$' + d.acumulado.toLocaleString() + '* (' + d.pollas + ' pollas × $' + d.costo + ')%0A%0A';
+  text += '📊 *Leaderboard:*%0A';
+  d.leaderboard.forEach((p, i) => {{
+    const medal = i===0?'🥇':i===1?'🥈':i===2?'🥉':'';
+    text += (i+1) + '. ' + p.nombre + (p.letra!=='A'?' ('+p.letra+')':'') + ' — ' + p.total + ' pts%0A';
+  }});
+  text += '%0A🔗 Ver más: https://joseurgilesc.github.io/webPollaMundialista/';
+  window.open('https://wa.me/?text=' + text, '_blank');
+}}
+
 const D={barras_data};
 const R=['r16','r8','r4','r2','rf'];
 const C=document.getElementById('chart');
