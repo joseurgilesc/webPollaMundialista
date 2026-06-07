@@ -295,6 +295,44 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
   th, td { padding: 8px 4px; }
   .slot-input .slot-code { width: 65px; font-size: 0.65rem; }
   .predicciones { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+  .modal-content { margin-top: 10px; max-height: 90vh; }
+  .modal-grupos { grid-template-columns: 1fr; }
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6); z-index: 1000;
+  display: flex; align-items: flex-start; justify-content: center;
+  padding: 20px; overflow-y: auto;
+}
+.modal-content {
+  max-width: 700px; width: 100%;
+  max-height: 85vh; overflow-y: auto;
+  margin-top: 20px;
+}
+.modal-grupos {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 8px; margin-bottom: 16px;
+}
+.modal-grupo {
+  background: #f8fafc; border-radius: 8px; padding: 10px;
+  border: 1px solid var(--card-border);
+}
+.modal-grupo strong { font-size: 0.75rem; color: var(--navy); }
+.modal-grupo div { font-size: 0.7rem; color: var(--muted); margin-top: 2px; }
+.modal-slots { font-size: 0.72rem; }
+.modal-slots .slot-row {
+  display: flex; align-items: center; padding: 3px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+.slot-row .s-code { width: 80px; font-weight: 700; color: var(--navy); font-size: 0.65rem; flex-shrink: 0; }
+.slot-row .s-team { flex: 1; }
+.modal-section { margin-bottom: 14px; }
+.modal-section h4 {
+  color: var(--navy); font-size: 0.75rem; text-transform: uppercase;
+  letter-spacing: 0.04em; margin-bottom: 6px;
+  padding-bottom: 4px; border-bottom: 1px solid var(--card-border);
 }
 
 /* Predicciones */
@@ -381,57 +419,57 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
       <thead><tr><th>#</th><th>Participante</th><th>16avos</th><th>8avos</th><th>Cuartos</th><th>Semis</th><th>Final</th><th>Total</th></tr></thead>
       <tbody><tr class="top1">
           <td class="rank">🥇 1</td>
-          <td class="nombre">Carlos Jaramillo Medina</td>
+          <td class="nombre" style="cursor:pointer;" onclick="verPolla('CarlosJaramillo.jpeg')">Carlos Jaramillo Medina</td>
           <td>0</td><td>0</td><td>0</td>
           <td>0</td><td>0</td>
           <td class="total">0</td></tr><tr class="top2">
           <td class="rank">🥈 2</td>
-          <td class="nombre">Catalina Fernández de Córdova</td>
+          <td class="nombre" style="cursor:pointer;" onclick="verPolla('Polla Mundialista Final 1 CATY.pdf')">Catalina Fernández de Córdova</td>
           <td>0</td><td>0</td><td>0</td>
           <td>0</td><td>0</td>
           <td class="total">0</td></tr><tr class="top3">
           <td class="rank">🥉 3</td>
-          <td class="nombre">Edgar Cordero</td>
+          <td class="nombre" style="cursor:pointer;" onclick="verPolla('Polla Mundialista Edgar Cordero.pdf')">Edgar Cordero</td>
           <td>0</td><td>0</td><td>0</td>
           <td>0</td><td>0</td>
           <td class="total">0</td></tr><tr class="">
           <td class="rank"> 4</td>
-          <td class="nombre">José Urgilés Cárdenas</td>
+          <td class="nombre" style="cursor:pointer;" onclick="verPolla('Polla José Urgilés.xlsx')">José Urgilés Cárdenas</td>
           <td>0</td><td>0</td><td>0</td>
           <td>0</td><td>0</td>
           <td class="total">0</td></tr><tr class="">
           <td class="rank"> 5</td>
-          <td class="nombre">Juana Cordero<span class="polla-tag">A</span></td>
+          <td class="nombre" style="cursor:pointer;" onclick="verPolla('Polla Mundialista JUANA 1.pdf')">Juana Cordero<span class="polla-tag">A</span></td>
           <td>0</td><td>0</td><td>0</td>
           <td>0</td><td>0</td>
           <td class="total">0</td></tr><tr class="">
           <td class="rank"> 6</td>
-          <td class="nombre">Juana Cordero<span class="polla-tag">B</span></td>
+          <td class="nombre" style="cursor:pointer;" onclick="verPolla('Polla Mundialista JUANA 2.pdf')">Juana Cordero<span class="polla-tag">B</span></td>
           <td>0</td><td>0</td><td>0</td>
           <td>0</td><td>0</td>
           <td class="total">0</td></tr><tr class="">
           <td class="rank"> 7</td>
-          <td class="nombre">María del Carmen Córdova Córdova</td>
+          <td class="nombre" style="cursor:pointer;" onclick="verPolla('María del Carmen Córdova.jpeg')">María del Carmen Córdova Córdova</td>
           <td>0</td><td>0</td><td>0</td>
           <td>0</td><td>0</td>
           <td class="total">0</td></tr><tr class="">
           <td class="rank"> 8</td>
-          <td class="nombre">Santiago Cordova C.</td>
+          <td class="nombre" style="cursor:pointer;" onclick="verPolla('POLLA SCC1.xlsx')">Santiago Cordova C.</td>
           <td>0</td><td>0</td><td>0</td>
           <td>0</td><td>0</td>
           <td class="total">0</td></tr><tr class="">
           <td class="rank"> 9</td>
-          <td class="nombre">Maria Eugenia Guillen</td>
+          <td class="nombre" style="cursor:pointer;" onclick="verPolla('POLLA SCC2.xlsx')">Maria Eugenia Guillen</td>
           <td>0</td><td>0</td><td>0</td>
           <td>0</td><td>0</td>
           <td class="total">0</td></tr><tr class="">
           <td class="rank"> 10</td>
-          <td class="nombre">Santiago Cordova C.</td>
+          <td class="nombre" style="cursor:pointer;" onclick="verPolla('POLLA SCC3.xlsx')">Santiago Cordova C.</td>
           <td>0</td><td>0</td><td>0</td>
           <td>0</td><td>0</td>
           <td class="total">0</td></tr><tr class="">
           <td class="rank"> 11</td>
-          <td class="nombre">Veronica Cordova</td>
+          <td class="nombre" style="cursor:pointer;" onclick="verPolla('POLLA SCC4.xlsx')">Veronica Cordova</td>
           <td>0</td><td>0</td><td>0</td>
           <td>0</td><td>0</td>
           <td class="total">0</td></tr><tr class="max-row">
@@ -447,7 +485,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
   <div class="card">
     <h3 style="color:var(--navy);margin-bottom:16px;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.06em;">🔮 Predicciones</h3>
     <div class="predicciones">
-      <div class="pred-card">
+      <div class="pred-card" onclick="verPolla('polla_carlos_jaramillo_medina')" style="cursor:pointer;">
       <div class="pred-name">Carlos Jaramillo Medina</div>
       <div class="pred-picks">
         <span title="Campeón">🏆 🇩🇪 Alemania</span>
@@ -455,7 +493,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
         <span title="Tercero">🥉 🇬🇧 Inglaterra</span>
         <span title="Cuarto">4° 🇨🇮 Costa de Marfil</span>
       </div>
-    </div><div class="pred-card">
+    </div><div class="pred-card" onclick="verPolla('polla_catalina_fern_ndez_de_c_rdova')" style="cursor:pointer;">
       <div class="pred-name">Catalina Fernández de Córdova</div>
       <div class="pred-picks">
         <span title="Campeón">🏆 🇫🇷 Francia</span>
@@ -463,7 +501,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
         <span title="Tercero">🥉 🇪🇸 España</span>
         <span title="Cuarto">4° 🇬🇧 Inglaterra</span>
       </div>
-    </div><div class="pred-card">
+    </div><div class="pred-card" onclick="verPolla('polla_edgar_cordero')" style="cursor:pointer;">
       <div class="pred-name">Edgar Cordero</div>
       <div class="pred-picks">
         <span title="Campeón">🏆 🇫🇷 Francia</span>
@@ -471,7 +509,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
         <span title="Tercero">🥉 🇪🇸 España</span>
         <span title="Cuarto">4° 🇦🇷 Argentina</span>
       </div>
-    </div><div class="pred-card">
+    </div><div class="pred-card" onclick="verPolla('polla_josé_urgilés')" style="cursor:pointer;">
       <div class="pred-name">José Urgilés Cárdenas</div>
       <div class="pred-picks">
         <span title="Campeón">🏆 🇪🇨 ECUADOR</span>
@@ -479,7 +517,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
         <span title="Tercero">🥉 🇧🇪 BÉLGICA</span>
         <span title="Cuarto">4° 🇺🇾 URUGUAY</span>
       </div>
-    </div><div class="pred-card">
+    </div><div class="pred-card" onclick="verPolla('polla_juana_1')" style="cursor:pointer;">
       <div class="pred-name">Juana Cordero</div>
       <div class="pred-picks">
         <span title="Campeón">🏆 🇵🇹 Portugal</span>
@@ -487,7 +525,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
         <span title="Tercero">🥉 🇪🇸 España</span>
         <span title="Cuarto">4° 🇬🇧 Inglaterra</span>
       </div>
-    </div><div class="pred-card">
+    </div><div class="pred-card" onclick="verPolla('polla_juana_2')" style="cursor:pointer;">
       <div class="pred-name">Juana Cordero</div>
       <div class="pred-picks">
         <span title="Campeón">🏆 🇪🇸 España</span>
@@ -495,7 +533,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
         <span title="Tercero">🥉 🇬🇧 Inglaterra</span>
         <span title="Cuarto">4° 🇩🇪 Alemania</span>
       </div>
-    </div><div class="pred-card">
+    </div><div class="pred-card" onclick="verPolla('polla_mari_a_del_carmen_co_rdova_co_rdova')" style="cursor:pointer;">
       <div class="pred-name">María del Carmen Córdova Córdova</div>
       <div class="pred-picks">
         <span title="Campeón">🏆 🇧🇷 Brasil</span>
@@ -503,7 +541,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
         <span title="Tercero">🥉 🇪🇨 Ecuador</span>
         <span title="Cuarto">4° 🇦🇷 Argentina</span>
       </div>
-    </div><div class="pred-card">
+    </div><div class="pred-card" onclick="verPolla('polla_scc1')" style="cursor:pointer;">
       <div class="pred-name">Santiago Cordova C.</div>
       <div class="pred-picks">
         <span title="Campeón">🏆 🇧🇷 BRASIL</span>
@@ -511,7 +549,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
         <span title="Tercero">🥉 🇪🇨 ECUADOR</span>
         <span title="Cuarto">4° 🇦🇷 ARGENTINA</span>
       </div>
-    </div><div class="pred-card">
+    </div><div class="pred-card" onclick="verPolla('polla_scc2')" style="cursor:pointer;">
       <div class="pred-name">Maria Eugenia Guillen</div>
       <div class="pred-picks">
         <span title="Campeón">🏆 🇧🇪 BÉLGICA</span>
@@ -519,7 +557,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
         <span title="Tercero">🥉 🇸🇳 SENEGAL</span>
         <span title="Cuarto">4° 🇭🇷 CROACIA</span>
       </div>
-    </div><div class="pred-card">
+    </div><div class="pred-card" onclick="verPolla('polla_scc3')" style="cursor:pointer;">
       <div class="pred-name">Santiago Cordova C.</div>
       <div class="pred-picks">
         <span title="Campeón">🏆 🇲🇦 MARRUECOS</span>
@@ -527,7 +565,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
         <span title="Tercero">🥉 🇪🇸 ESPAÑA</span>
         <span title="Cuarto">4° 🇬🇧 INGLATERRA</span>
       </div>
-    </div><div class="pred-card">
+    </div><div class="pred-card" onclick="verPolla('polla_scc4')" style="cursor:pointer;">
       <div class="pred-name">Veronica Cordova</div>
       <div class="pred-picks">
         <span title="Campeón">🏆 🇧🇷 BRASIL</span>
@@ -546,10 +584,22 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
 
 </div>
 
-<footer>Actualizado: 07/06/2026 18:31 · Puntajes recalculados automáticamente</footer>
+<!-- Modal -->
+<div id="modal" class="modal-overlay hidden" onclick="if(event.target===this) closeModal()">
+  <div class="modal-content card">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+      <h2 id="modalTitle" style="color:var(--navy);font-size:1.1rem;"></h2>
+      <button class="btn btn-outline btn-sm" onclick="closeModal()">✕ Cerrar</button>
+    </div>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<footer>Actualizado: 07/06/2026 18:33 · Puntajes recalculados automáticamente</footer>
 
 <script>
-const SHARE_DATA = {"acumulado": 110, "costo": 10, "pollas": 11, "leaderboard": [{"nombre": "Carlos Jaramillo Medina", "letra": "A", "total": 0}, {"nombre": "Catalina Fern\u00e1ndez de C\u00f3rdova", "letra": "A", "total": 0}, {"nombre": "Edgar Cordero", "letra": "A", "total": 0}, {"nombre": "Jos\u00e9 Urgil\u00e9s C\u00e1rdenas", "letra": "A", "total": 0}, {"nombre": "Juana Cordero", "letra": "A", "total": 0}, {"nombre": "Juana Cordero", "letra": "B", "total": 0}, {"nombre": "Mari\u0301a del Carmen Co\u0301rdova Co\u0301rdova", "letra": "A", "total": 0}, {"nombre": "SANTIAGO CORDOVA C.", "letra": "A", "total": 0}, {"nombre": "MARIA EUGENIA GUILLEN", "letra": "A", "total": 0}, {"nombre": "SANTIAGO CORDOVA C.", "letra": "B", "total": 0}, {"nombre": "VERONICA CORDOVA", "letra": "A", "total": 0}]};
+const POLLAS = {"polla_carlos_jaramillo_medina": {"archivo_original": "CarlosJaramillo.jpeg", "participante": "Carlos Jaramillo Medina", "formato_original": "pdf", "grupos": {"A": {"🇲🇽 México": 1, "🇨🇿 Rep. Checa": 2, "🇿🇦 Sudáfrica": 3, "🇰🇷 Corea del Sur": 4}, "B": {"🇨🇭 Suiza": 1, "🇨🇦 Canadá": 2, "🇧🇦 Bosnia y Herzegovina": 3, "🇶🇦 Qatar": 4}, "C": {"🇧🇷 Brasil": 1, "🇲🇦 Marruecos": 2, "🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia": 3, "🇭🇹 Haití": 4}, "D": {"🇹🇷 Turquía": 1, "🇺🇸 Estados Unidos": 2, "🇵🇾 Paraguay": 3, "🇦🇺 Australia": 4}, "E": {"🇩🇪 Alemania": 1, "🇪🇨 Ecuador": 2, "🇨🇮 Costa de Marfil": 3, "🇨🇼 Curazao": 4}, "F": {"🇳🇱 Holanda": 1, "🇸🇪 Suecia": 2, "🇹🇳 Túnez": 3, "🇯🇵 Japón": 4}, "G": {"🇧🇪 Bélgica": 1, "🇳🇿 Nueva Zelanda": 2, "🇪🇬 Egipto": 3, "🇮🇷 Irán": 4}, "H": {"🇪🇸 España": 1, "🇺🇾 Uruguay": 2, "🇸🇦 Arabia Saudí": 3, "🇨🇻 Cabo Verde": 4}, "I": {"🇫🇷 Francia": 1, "🇳🇴 Noruega": 2, "🇸🇳 Senegal": 3, "🇮🇶 Irak": 4}, "J": {"🇦🇷 Argentina": 1, "🇦🇹 Austria": 2, "🇩🇿 Argelia": 3, "🇯🇴 Jordania": 4}, "K": {"🇵🇹 Portugal": 1, "🇨🇴 Colombia": 2, "🇨🇩 Rep. Congo": 3, "🇺🇿 Uzbekistán": 4}, "L": {"🇬🇧 Inglaterra": 1, "🇭🇷 Croacia": 2, "🇵🇦 Panamá": 3, "🇬🇭 Ghana": 4}}, "ronda_16avos": [{"slot": "1E", "equipo": "🇩🇪 Alemania"}, {"slot": "3 ABCDF", "equipo": "🇿🇦 Sudáfrica"}, {"slot": "1I", "equipo": "🇫🇷 Francia"}, {"slot": "3 CDFGH", "equipo": "🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia"}, {"slot": "2A", "equipo": "🇨🇿 Rep. Checa"}, {"slot": "2B", "equipo": "🇨🇦 Canadá"}, {"slot": "1F", "equipo": "🇳🇱 Holanda"}, {"slot": "2C", "equipo": "🇲🇦 Marruecos"}, {"slot": "2K", "equipo": "🇨🇴 Colombia"}, {"slot": "2L", "equipo": "🇭🇷 Croacia"}, {"slot": "1H", "equipo": "🇪🇸 España"}, {"slot": "2J", "equipo": "🇦🇹 Austria"}, {"slot": "1D", "equipo": "🇹🇷 Turquía"}, {"slot": "3 BEFIJ", "equipo": "🇧🇦 Bosnia y Herzegovina"}, {"slot": "1G", "equipo": "🇧🇪 Bélgica"}, {"slot": "3 AEFHIJ", "equipo": "🇨🇮 Costa de Marfil"}, {"slot": "1C", "equipo": "🇧🇷 Brasil"}, {"slot": "2F", "equipo": "🇸🇪 Suecia"}, {"slot": "2E", "equipo": "🇪🇨 Ecuador"}, {"slot": "2I", "equipo": "🇳🇴 Noruega"}, {"slot": "1A", "equipo": "🇲🇽 México"}, {"slot": "3 CEFHI", "equipo": "🇹🇳 Túnez"}, {"slot": "1L", "equipo": "🇬🇧 Inglaterra"}, {"slot": "3 EHIJK", "equipo": "🇸🇦 Arabia Saudí"}, {"slot": "1J", "equipo": "🇦🇷 Argentina"}, {"slot": "2H", "equipo": "🇺🇾 Uruguay"}, {"slot": "2D", "equipo": "🇺🇸 Estados Unidos"}, {"slot": "2G", "equipo": "🇲🇦 Marruecos"}, {"slot": "1B", "equipo": "🇨🇭 Suiza"}, {"slot": "3 EFGIJ", "equipo": "🇸🇳 Senegal"}, {"slot": "1K", "equipo": "🇵🇹 Portugal"}, {"slot": "3 DEIJL", "equipo": "🇩🇿 Argelia"}], "ronda_8avos": [{"equipo": "🇩🇪 Alemania"}, {"equipo": "🇫🇷 Francia"}, {"equipo": "🇨🇿 Rep. Checa"}, {"equipo": "🇲🇦 Marruecos"}, {"equipo": "🇨🇴 Colombia"}, {"equipo": "🇪🇸 España"}, {"equipo": "🇹🇷 Turquía"}, {"equipo": "🇨🇮 Costa de Marfil"}, {"equipo": "🇧🇷 Brasil"}, {"equipo": "🇪🇨 Ecuador"}, {"equipo": "🇲🇽 México"}, {"equipo": "🇬🇧 Inglaterra"}, {"equipo": "🇦🇷 Argentina"}, {"equipo": "🇲🇦 Marruecos"}, {"equipo": "🇸🇳 Senegal"}, {"equipo": "🇵🇹 Portugal"}], "ronda_cuartos": [{"equipo": "🇩🇪 Alemania"}, {"equipo": "🇲🇦 Marruecos"}, {"equipo": "🇪🇸 España"}, {"equipo": "🇨🇮 Costa de Marfil"}, {"equipo": "🇧🇷 Brasil"}, {"equipo": "🇬🇧 Inglaterra"}, {"equipo": "🇦🇷 Argentina"}, {"equipo": "🇸🇳 Senegal"}], "ronda_semifinales": [{"equipo": "🇩🇪 Alemania"}, {"equipo": "🇨🇮 Costa de Marfil"}, {"equipo": "🇬🇧 Inglaterra"}, {"equipo": "🇦🇷 Argentina"}], "finales": {"campeon": "🇩🇪 Alemania", "segundo": "🇦🇷 Argentina", "tercero": "🇬🇧 Inglaterra", "cuarto": "🇨🇮 Costa de Marfil"}}, "polla_catalina_fern_ndez_de_c_rdova": {"archivo_original": "Polla Mundialista Final 1 CATY.pdf", "participante": "Catalina Fernández de Córdova", "formato_original": "pdf", "grupos": {"A": {"🇨🇿 Rep. Checa": 1, "🇲🇽 México": 2, "🇰🇷 Corea del Sur": 3, "🇿🇦 Sudáfrica": 4}, "B": {"🇨🇭 Suiza": 1, "🇨🇦 Canadá": 2, "🇶🇦 Qatar": 3, "🇧🇦 Bosnia y Herzegovina": 4}, "C": {"🇧🇷 Brasil": 1, "🇲🇦 Marruecos": 2, "🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia": 3, "🇭🇹 Haití": 4}, "D": {"🇺🇸 Estados Unidos": 1, "🇵🇾 Paraguay": 2, "🇦🇺 Australia": 3, "🇹🇷 Turquía": 4}, "E": {"🇩🇪 Alemania": 1, "🇨🇮 Costa de Marfil": 2, "🇪🇨 Ecuador": 3, "🇨🇼 Curazao": 4}, "F": {"🇳🇱 Holanda": 1, "🇸🇪 Suecia": 2, "🇯🇵 Japón": 3, "🇹🇳 Túnez": 4}, "G": {"🇧🇪 Bélgica": 1, "🇪🇬 Egipto": 2, "🇳🇿 Nueva Zelanda": 3, "🇮🇷 Irán": 4}, "H": {"🇪🇸 España": 1, "🇺🇾 Uruguay": 2, "🇸🇦 Arabia Saudí": 3, "🇨🇻 Cabo Verde": 4}, "I": {"🇫🇷 Francia": 1, "🇸🇳 Senegal": 2, "🇳🇴 Noruega": 3, "🇮🇶 Irak": 4}, "J": {"🇦🇷 Argentina": 1, "🇩🇿 Argelia": 2, "🇦🇹 Austria": 3, "🇯🇴 Jordania": 4}, "K": {"🇵🇹 Portugal": 1, "🇨🇴 Colombia": 2, "🇺🇿 Uzbekistán": 3, "🇨🇩 Rep. Congo": 4}, "L": {"🇬🇧 Inglaterra": 1, "🇭🇷 Croacia": 2, "🇬🇭 Ghana": 3, "🇵🇦 Panamá": 4}}, "ronda_16avos": [{"slot": "1E", "equipo": "🇩🇪 Alemania"}, {"slot": "3 ABCDF", "equipo": "🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia"}, {"slot": "1I", "equipo": "🇫🇷 Francia"}, {"slot": "3 CDFGH", "equipo": "🇦🇺 Australia"}, {"slot": "2A", "equipo": "🇲🇽 México"}, {"slot": "2B", "equipo": "🇨🇦 Canadá"}, {"slot": "1F", "equipo": "🇳🇱 Holanda"}, {"slot": "2C", "equipo": "🇲🇦 Marruecos"}, {"slot": "2K", "equipo": "🇨🇴 Colombia"}, {"slot": "2L", "equipo": "🇭🇷 Croacia"}, {"slot": "1H", "equipo": "🇪🇸 España"}, {"slot": "2J", "equipo": "🇩🇿 Argelia"}, {"slot": "1D", "equipo": "🇺🇸 Estados Unidos"}, {"slot": "3 BEFIJ", "equipo": "🇪🇨 Ecuador"}, {"slot": "1G", "equipo": "🇧🇪 Bélgica"}, {"slot": "3 AEFHIJ", "equipo": "🇯🇵 Japón"}, {"slot": "1C", "equipo": "🇧🇷 Brasil"}, {"slot": "2F", "equipo": "🇸🇪 Suecia"}, {"slot": "2E", "equipo": "🇨🇮 Costa de Marfil"}, {"slot": "2I", "equipo": "🇸🇳 Senegal"}, {"slot": "1A", "equipo": "🇨🇿 Rep. Checa"}, {"slot": "3 CEFHI", "equipo": "🇸🇦 Arabia Saudí"}, {"slot": "1L", "equipo": "🇬🇧 Inglaterra"}, {"slot": "3 EHIJK", "equipo": "🇦🇹 Austria"}, {"slot": "1J", "equipo": "🇦🇷 Argentina"}, {"slot": "2H", "equipo": "🇺🇾 Uruguay"}, {"slot": "2D", "equipo": "🇵🇾 Paraguay"}, {"slot": "2G", "equipo": "🇪🇬 Egipto"}, {"slot": "1B", "equipo": "🇨🇭 Suiza"}, {"slot": "3 EFGIJ", "equipo": "🇳🇴 Noruega"}, {"slot": "1K", "equipo": "🇵🇹 Portugal"}, {"slot": "3 DEIJL", "equipo": "🇬🇭 Ghana"}], "ronda_8avos": [{"equipo": "🇩🇪 Alemania"}, {"equipo": "🇫🇷 Francia"}, {"equipo": "🇨🇦 Canadá"}, {"equipo": "🇲🇦 Marruecos"}, {"equipo": "🇨🇴 Colombia"}, {"equipo": "🇪🇸 España"}, {"equipo": "🇪🇨 Ecuador"}, {"equipo": "🇯🇵 Japón"}, {"equipo": "🇧🇷 Brasil"}, {"equipo": "🇨🇮 Costa de Marfil"}, {"equipo": "🇨🇿 Rep. Checa"}, {"equipo": "🇬🇧 Inglaterra"}, {"equipo": "🇦🇷 Argentina"}, {"equipo": "🇵🇾 Paraguay"}, {"equipo": "🇨🇭 Suiza"}, {"equipo": "🇵🇹 Portugal"}], "ronda_cuartos": [{"equipo": "🇫🇷 Francia"}, {"equipo": "🇲🇦 Marruecos"}, {"equipo": "🇪🇸 España"}, {"equipo": "🇪🇨 Ecuador"}, {"equipo": "🇧🇷 Brasil"}, {"equipo": "🇬🇧 Inglaterra"}, {"equipo": "🇦🇷 Argentina"}, {"equipo": "🇵🇹 Portugal"}], "ronda_semifinales": [{"equipo": "🇫🇷 Francia"}, {"equipo": "🇪🇸 España"}, {"equipo": "🇬🇧 Inglaterra"}, {"equipo": "🇦🇷 Argentina"}], "finales": {"campeon": "🇫🇷 Francia", "segundo": "🇦🇷 Argentina", "tercero": "🇪🇸 España", "cuarto": "🇬🇧 Inglaterra"}}, "polla_edgar_cordero": {"archivo_original": "Polla Mundialista Edgar Cordero.pdf", "participante": "Edgar Cordero", "formato_original": "pdf", "grupos": {"A": {"🇨🇿 Rep. Checa": 1, "🇲🇽 México": 2, "🇰🇷 Corea del Sur": 3, "🇿🇦 Sudáfrica": 4}, "B": {"🇨🇭 Suiza": 1, "🇨🇦 Canadá": 2, "🇧🇦 Bosnia y Herzegovina": 3, "🇶🇦 Qatar": 4}, "C": {"🇧🇷 Brasil": 1, "🇲🇦 Marruecos": 2, "🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia": 3, "🇭🇹 Haití": 4}, "D": {"🇺🇸 Estados Unidos": 1, "🇵🇾 Paraguay": 2, "🇹🇷 Turquía": 3, "🇦🇺 Australia": 4}, "E": {"🇩🇪 Alemania": 1, "🇪🇨 Ecuador": 2, "🇨🇮 Costa de Marfil": 3, "🇨🇼 Curazao": 4}, "F": {"🇳🇱 Holanda": 1, "🇯🇵 Japón": 2, "🇸🇪 Suecia": 3, "🇹🇳 Túnez": 4}, "G": {"🇧🇪 Bélgica": 1, "🇪🇬 Egipto": 2, "🇮🇷 Irán": 3, "🇳🇿 Nueva Zelanda": 4}, "H": {"🇪🇸 España": 1, "🇺🇾 Uruguay": 2, "🇸🇦 Arabia Saudí": 3, "🇨🇻 Cabo Verde": 4}, "I": {"🇫🇷 Francia": 1, "🇳🇴 Noruega": 2, "🇸🇳 Senegal": 3, "🇮🇶 Irak": 4}, "J": {"🇦🇷 Argentina": 1, "🇦🇹 Austria": 2, "🇩🇿 Argelia": 3, "🇯🇴 Jordania": 4}, "K": {"🇵🇹 Portugal": 1, "🇨🇴 Colombia": 2, "🇨🇩 Rep. Congo": 3, "🇺🇿 Uzbekistán": 4}, "L": {"🇬🇧 Inglaterra": 1, "🇭🇷 Croacia": 2, "🇬🇭 Ghana": 3, "🇵🇦 Panamá": 4}}, "ronda_16avos": [{"slot": "1E", "equipo": "🇩🇪 Alemania"}, {"slot": "3 ABCDF", "equipo": "🇹🇷 Turquía"}, {"slot": "1I", "equipo": "🇫🇷 Francia"}, {"slot": "3 CDFGH", "equipo": "🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia"}, {"slot": "2A", "equipo": "🇲🇽 México"}, {"slot": "2B", "equipo": "🇨🇦 Canadá"}, {"slot": "1F", "equipo": "🇳🇱 Holanda"}, {"slot": "2C", "equipo": "🇲🇦 Marruecos"}, {"slot": "2K", "equipo": "🇨🇴 Colombia"}, {"slot": "2L", "equipo": "🇭🇷 Croacia"}, {"slot": "1H", "equipo": "🇪🇸 España"}, {"slot": "2J", "equipo": "🇦🇹 Austria"}, {"slot": "1D", "equipo": "🇺🇸 Estados Unidos"}, {"slot": "3 BEFIJ", "equipo": "🇧🇦 Bosnia y Herzegovina"}, {"slot": "1G", "equipo": "🇧🇪 Bélgica"}, {"slot": "3 AEFHIJ", "equipo": "🇰🇷 Corea del Sur"}, {"slot": "1C", "equipo": "🇧🇷 Brasil"}, {"slot": "2F", "equipo": "🇯🇵 Japón"}, {"slot": "2E", "equipo": "🇪🇨 Ecuador"}, {"slot": "2I", "equipo": "🇳🇴 Noruega"}, {"slot": "1A", "equipo": "🇨🇿 Rep. Checa"}, {"slot": "3 CEFHI", "equipo": "🇸🇳 Senegal"}, {"slot": "1L", "equipo": "🇬🇧 Inglaterra"}, {"slot": "3 EHIJK", "equipo": "🇨🇮 Costa de Marfil"}, {"slot": "1J", "equipo": "🇦🇷 Argentina"}, {"slot": "2H", "equipo": "🇺🇾 Uruguay"}, {"slot": "2D", "equipo": "🇵🇾 Paraguay"}, {"slot": "2G", "equipo": "🇪🇬 Egipto"}, {"slot": "1B", "equipo": "🇨🇭 Suiza"}, {"slot": "3 EFGIJ", "equipo": "🇸🇪 Suecia"}, {"slot": "1K", "equipo": "🇵🇹 Portugal"}, {"slot": "3 DEIJL", "equipo": "🇬🇭 Ghana"}], "ronda_8avos": [{"equipo": "🇩🇪 Alemania"}, {"equipo": "🇫🇷 Francia"}, {"equipo": "🇨🇦 Canadá"}, {"equipo": "🇳🇱 Holanda"}, {"equipo": "🇭🇷 Croacia"}, {"equipo": "🇪🇸 España"}, {"equipo": "🇺🇸 Estados Unidos"}, {"equipo": "🇧🇪 Bélgica"}, {"equipo": "🇧🇷 Brasil"}, {"equipo": "🇪🇨 Ecuador"}, {"equipo": "🇨🇿 Rep. Checa"}, {"equipo": "🇬🇧 Inglaterra"}, {"equipo": "🇦🇷 Argentina"}, {"equipo": "🇵🇾 Paraguay"}, {"equipo": "🇸🇪 Suecia"}, {"equipo": "🇵🇹 Portugal"}], "ronda_cuartos": [{"equipo": "🇫🇷 Francia"}, {"equipo": "🇳🇱 Holanda"}, {"equipo": "🇪🇸 España"}, {"equipo": "🇧🇪 Bélgica"}, {"equipo": "🇧🇷 Brasil"}, {"equipo": "🇬🇧 Inglaterra"}, {"equipo": "🇦🇷 Argentina"}, {"equipo": "🇵🇹 Portugal"}], "ronda_semifinales": [{"equipo": "🇫🇷 Francia"}, {"equipo": "🇪🇸 España"}, {"equipo": "🇬🇧 Inglaterra"}, {"equipo": "🇦🇷 Argentina"}], "finales": {"campeon": "🇫🇷 Francia", "segundo": "🇬🇧 Inglaterra", "tercero": "🇪🇸 España", "cuarto": "🇦🇷 Argentina"}}, "polla_josé_urgilés": {"archivo_original": "Polla José Urgilés.xlsx", "participante": "José Urgilés Cárdenas", "grupos": {"A": {"🇲🇽 MÉXICO": 1, "🇿🇦 SUDÁFRICA": 3, "🇰🇷 COREA DEL SUR": 2, "🇨🇿 REP. CHECA": 4}, "B": {"🇨🇦 CANADÁ": 1, "🇧🇦 BOSNIA Y HERZEGOVINA": 4, "🇶🇦 QATAR": 3, "🇨🇭 SUIZA": 2}, "C": {"🇧🇷 BRASIL": 2, "🇲🇦 MARRUECOS": 1, "🇭🇹 HAITÍ": 4, "🏴󠁧󠁢󠁳󠁣󠁴󠁿 ESCOCIA": 3}, "D": {"🇺🇸 ESTADOS UNIDOS": 3, "🇵🇾 PARAGUAY": 2, "🇦🇺 AUSTRALIA": 4, "🇹🇷 TURQUÍA": 1}, "E": {"🇩🇪 ALEMANIA": 2, "🇨🇼 CURAZAO": 4, "🇨🇮 COSTA DE MARFIL": 3, "🇪🇨 ECUADOR": 1}, "F": {"🇳🇱 HOLANDA": 2, "🇯🇵 JAPÓN": 1, "🇸🇪 SUECIA": 3, "🇹🇳 TÚNEZ": 4}, "G": {"🇧🇪 BÉLGICA": 1, "🇪🇬 EGIPTO": 2, "🇮🇷 IRÁN": 3, "🇳🇿 NUEVA ZELANDA": 4}, "H": {"🇪🇸 ESPAÑA": 1, "🇨🇻 CABO VERDE": 4, "🇸🇦 ARABIA SAUDÍ": 3, "🇺🇾 URUGUAY": 2}, "I": {"🇫🇷 FRANCIA": 1, "🇸🇳 SENEGAL": 3, "🇮🇶 IRAK": 4, "🇳🇴 NORUEGA": 2}, "J": {"🇦🇷 ARGENTINA": 1, "🇩🇿 ARGELIA": 2, "🇦🇹 AUSTRIA": 3, "🇯🇴 JORDANIA": 4}, "K": {"🇵🇹 PORTUGAL": 2, "🇨🇩 REP. CONGO": 3, "🇺🇿 UZBEKISTÁN": 4, "🇨🇴 COLOMBIA": 1}, "L": {"🇬🇧 INGLATERRA": 2, "🇭🇷 CROACIA": 1, "🇬🇭 GHANA": 3, "🇵🇦 PANAMÁ": 4}}, "ronda_16avos": [{"slot": "1E", "equipo": "🇪🇨 ECUADOR"}, {"slot": "3 ABCDF", "equipo": "🇺🇸 ESTADOS UNIDOS"}, {"slot": "1I", "equipo": "🇫🇷 FRANCIA"}, {"slot": "3 CDFGH", "equipo": "🇸🇪 SUECIA"}, {"slot": "2A", "equipo": "🇰🇷 COREA DEL SUR"}, {"slot": "2B", "equipo": "🇨🇭 SUIZA"}, {"slot": "1F", "equipo": "🇯🇵 JAPÓN"}, {"slot": "2C", "equipo": "🇧🇷 BRASIL"}, {"slot": "2K", "equipo": "🇵🇹 PORTUGAL"}, {"slot": "2L", "equipo": "🇬🇧 INGLATERRA"}, {"slot": "1H", "equipo": "🇪🇸 ESPAÑA"}, {"slot": "2J", "equipo": "🇩🇿 ARGELIA"}, {"slot": "1D", "equipo": "🇹🇷 TURQUÍA"}, {"slot": "3 BEFIJ", "equipo": "🇨🇮 COSTA DE MARFIL"}, {"slot": "1G", "equipo": "🇧🇪 BÉLGICA"}, {"slot": "3 AEFHIJ", "equipo": "🇦🇹 AUSTRIA"}, {"slot": "1C", "equipo": "🇲🇦 MARRUECOS"}, {"slot": "2F", "equipo": "🇳🇱 HOLANDA"}, {"slot": "2E", "equipo": "🇩🇪 ALEMANIA"}, {"slot": "2I", "equipo": "🇳🇴 NORUEGA"}, {"slot": "1A", "equipo": "🇲🇽 MÉXICO"}, {"slot": "3 CEFHI", "equipo": "🏴󠁧󠁢󠁳󠁣󠁴󠁿 ESCOCIA"}, {"slot": "1L", "equipo": "🇭🇷 CROACIA"}, {"slot": "3 EHIJK", "equipo": "🇸🇳 SENEGAL"}, {"slot": "1J", "equipo": "🇦🇷 ARGENTINA"}, {"slot": "2H", "equipo": "🇺🇾 URUGUAY"}, {"slot": "2D", "equipo": "🇵🇾 PARAGUAY"}, {"slot": "2G", "equipo": "🇪🇬 EGIPTO"}, {"slot": "1B", "equipo": "🇨🇦 CANADÁ"}, {"slot": "3 EFGIJ", "equipo": "🇮🇷 IRÁN"}, {"slot": "1K", "equipo": "🇨🇴 COLOMBIA"}, {"slot": "3 DEIJL", "equipo": "🇬🇭 GHANA"}], "ronda_8avos": [{"equipo": "🇪🇨 ECUADOR"}, {"equipo": "🇫🇷 FRANCIA"}, {"equipo": "🇰🇷 COREA DEL SUR"}, {"equipo": "🇧🇷 BRASIL"}, {"equipo": "🇵🇹 PORTUGAL"}, {"equipo": "🇪🇸 ESPAÑA"}, {"equipo": "🇨🇮 COSTA DE MARFIL"}, {"equipo": "🇧🇪 BÉLGICA"}, {"equipo": "🇲🇦 MARRUECOS"}, {"equipo": "🇩🇪 ALEMANIA"}, {"equipo": "🇲🇽 MÉXICO"}, {"equipo": "🇭🇷 CROACIA"}, {"equipo": "🇺🇾 URUGUAY"}, {"equipo": "🇪🇬 EGIPTO"}, {"equipo": "🇨🇦 CANADÁ"}, {"equipo": "🇬🇭 GHANA"}], "ronda_cuartos": [{"equipo": "🇪🇨 ECUADOR"}, {"equipo": "🇰🇷 COREA DEL SUR"}, {"equipo": "🇵🇹 PORTUGAL"}, {"equipo": "🇧🇪 BÉLGICA"}, {"equipo": "🇲🇦 MARRUECOS"}, {"equipo": "🇭🇷 CROACIA"}, {"equipo": "🇺🇾 URUGUAY"}, {"equipo": "🇬🇭 GHANA"}], "ronda_semifinales": [{"equipo": "🇪🇨 ECUADOR"}, {"equipo": "🇧🇪 BÉLGICA"}, {"equipo": "🇭🇷 CROACIA"}, {"equipo": "🇺🇾 URUGUAY"}], "finales": {"campeon": "🇪🇨 ECUADOR", "segundo": "🇭🇷 CROACIA", "tercero": "🇧🇪 BÉLGICA", "cuarto": "🇺🇾 URUGUAY"}, "errores": []}, "polla_juana_1": {"archivo_original": "Polla Mundialista JUANA 1.pdf", "participante": "Juana Cordero", "formato_original": "pdf", "grupos": {"A": {"🇲🇽 México": 1, "🇰🇷 Corea del Sur": 2, "🇨🇿 Rep. Checa": 3, "🇿🇦 Sudáfrica": 4}, "B": {"🇨🇭 Suiza": 1, "🇨🇦 Canadá": 2, "🇧🇦 Bosnia y Herzegovina": 3, "🇶🇦 Qatar": 4}, "C": {"🇧🇷 Brasil": 1, "🇲🇦 Marruecos": 2, "🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia": 3, "🇭🇹 Haití": 4}, "D": {"🇺🇸 Estados Unidos": 1, "🇵🇾 Paraguay": 2, "🇹🇷 Turquía": 3, "🇦🇺 Australia": 4}, "E": {"🇩🇪 Alemania": 1, "🇨🇮 Costa de Marfil": 2, "🇪🇨 Ecuador": 3, "🇨🇼 Curazao": 4}, "F": {"🇳🇱 Holanda": 1, "🇯🇵 Japón": 2, "🇸🇪 Suecia": 3, "🇹🇳 Túnez": 4}, "G": {"🇧🇪 Bélgica": 1, "🇪🇬 Egipto": 2, "🇮🇷 Irán": 3, "🇳🇿 Nueva Zelanda": 4}, "H": {"🇪🇸 España": 1, "🇺🇾 Uruguay": 2, "🇸🇦 Arabia Saudí": 3, "🇨🇻 Cabo Verde": 4}, "I": {"🇫🇷 Francia": 1, "🇸🇳 Senegal": 2, "🇳🇴 Noruega": 3, "🇮🇶 Irak": 4}, "J": {"🇦🇷 Argentina": 1, "🇦🇹 Austria": 2, "🇩🇿 Argelia": 3, "🇯🇴 Jordania": 4}, "K": {"🇵🇹 Portugal": 1, "🇨🇴 Colombia": 2, "🇨🇩 Rep. Congo": 3, "🇺🇿 Uzbekistán": 4}, "L": {"🇬🇧 Inglaterra": 1, "🇭🇷 Croacia": 2, "🇬🇭 Ghana": 3, "🇵🇦 Panamá": 4}}, "ronda_16avos": [{"slot": "1E", "equipo": "🇩🇪 Alemania"}, {"slot": "3 ABCDF", "equipo": "🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia"}, {"slot": "1I", "equipo": "🇫🇷 Francia"}, {"slot": "3 CDFGH", "equipo": "🇹🇷 Turquía"}, {"slot": "2A", "equipo": "🇰🇷 Corea del Sur"}, {"slot": "2B", "equipo": "🇨🇦 Canadá"}, {"slot": "1F", "equipo": "🇳🇱 Holanda"}, {"slot": "2C", "equipo": "🇲🇦 Marruecos"}, {"slot": "2K", "equipo": "🇨🇴 Colombia"}, {"slot": "2L", "equipo": "🇭🇷 Croacia"}, {"slot": "1H", "equipo": "🇪🇸 España"}, {"slot": "2J", "equipo": "🇦🇹 Austria"}, {"slot": "1D", "equipo": "🇺🇸 Estados Unidos"}, {"slot": "3 BEFIJ", "equipo": "🇪🇨 Ecuador"}, {"slot": "1G", "equipo": "🇧🇪 Bélgica"}, {"slot": "3 AEFHIJ", "equipo": "🇨🇿 Rep. Checa"}, {"slot": "1C", "equipo": "🇧🇷 Brasil"}, {"slot": "2F", "equipo": "🇯🇵 Japón"}, {"slot": "2E", "equipo": "🇨🇮 Costa de Marfil"}, {"slot": "2I", "equipo": "🇸🇳 Senegal"}, {"slot": "1A", "equipo": "🇲🇽 México"}, {"slot": "3 CEFHI", "equipo": "🇳🇴 Noruega"}, {"slot": "1L", "equipo": "🇬🇧 Inglaterra"}, {"slot": "3 EHIJK", "equipo": "🇸🇦 Arabia Saudí"}, {"slot": "1J", "equipo": "🇦🇷 Argentina"}, {"slot": "2H", "equipo": "🇺🇾 Uruguay"}, {"slot": "2D", "equipo": "🇵🇾 Paraguay"}, {"slot": "2G", "equipo": "🇪🇬 Egipto"}, {"slot": "1B", "equipo": "🇨🇭 Suiza"}, {"slot": "3 EFGIJ", "equipo": "🇸🇪 Suecia"}, {"slot": "1K", "equipo": "🇵🇹 Portugal"}, {"slot": "3 DEIJL", "equipo": "🇬🇭 Ghana"}], "ronda_8avos": [{"equipo": "🇩🇪 Alemania"}, {"equipo": "🇫🇷 Francia"}, {"equipo": "🇰🇷 Corea del Sur"}, {"equipo": "🇳🇱 Holanda"}, {"equipo": "🇭🇷 Croacia"}, {"equipo": "🇪🇸 España"}, {"equipo": "🇪🇨 Ecuador"}, {"equipo": "🇧🇪 Bélgica"}, {"equipo": "🇧🇷 Brasil"}, {"equipo": "🇨🇮 Costa de Marfil"}, {"equipo": "🇳🇴 Noruega"}, {"equipo": "🇬🇧 Inglaterra"}, {"equipo": "🇺🇾 Uruguay"}, {"equipo": "🇪🇬 Egipto"}, {"equipo": "🇨🇭 Suiza"}, {"equipo": "🇵🇹 Portugal"}], "ronda_cuartos": [{"equipo": "🇫🇷 Francia"}, {"equipo": "🇳🇱 Holanda"}, {"equipo": "🇪🇸 España"}, {"equipo": "🇧🇪 Bélgica"}, {"equipo": "🇧🇷 Brasil"}, {"equipo": "🇬🇧 Inglaterra"}, {"equipo": "🇺🇾 Uruguay"}, {"equipo": "🇵🇹 Portugal"}], "ronda_semifinales": [{"equipo": "🇫🇷 Francia"}, {"equipo": "🇪🇸 España"}, {"equipo": "🇬🇧 Inglaterra"}, {"equipo": "🇵🇹 Portugal"}], "finales": {"campeon": "🇵🇹 Portugal", "segundo": "🇫🇷 Francia", "tercero": "🇪🇸 España", "cuarto": "🇬🇧 Inglaterra"}}, "polla_juana_2": {"archivo_original": "Polla Mundialista JUANA 2.pdf", "participante": "Juana Cordero", "formato_original": "pdf", "grupos": {"A": {"🇲🇽 México": 1, "🇨🇿 Rep. Checa": 2, "🇰🇷 Corea del Sur": 3, "🇿🇦 Sudáfrica": 4}, "B": {"🇨🇦 Canadá": 1, "🇨🇭 Suiza": 2, "🇧🇦 Bosnia y Herzegovina": 3, "🇶🇦 Qatar": 4}, "C": {"🇧🇷 Brasil": 1, "🇲🇦 Marruecos": 2, "🇭🇹 Haití": 3, "🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia": 4}, "D": {"🇺🇸 Estados Unidos": 1, "🇹🇷 Turquía": 2, "🇵🇾 Paraguay": 3, "🇦🇺 Australia": 4}, "E": {"🇩🇪 Alemania": 1, "🇪🇨 Ecuador": 2, "🇨🇮 Costa de Marfil": 3, "🇨🇼 Curazao": 4}, "F": {"🇳🇱 Holanda": 1, "🇸🇪 Suecia": 2, "🇯🇵 Japón": 3, "🇹🇳 Túnez": 4}, "G": {"🇧🇪 Bélgica": 1, "🇮🇷 Irán": 2, "🇪🇬 Egipto": 3, "🇳🇿 Nueva Zelanda": 4}, "H": {"🇪🇸 España": 1, "🇺🇾 Uruguay": 2, "🇸🇦 Arabia Saudí": 3, "🇨🇻 Cabo Verde": 4}, "I": {"🇫🇷 Francia": 1, "🇳🇴 Noruega": 2, "🇸🇳 Senegal": 3, "🇮🇶 Irak": 4}, "J": {"🇦🇷 Argentina": 1, "🇦🇹 Austria": 2, "🇩🇿 Argelia": 3, "🇯🇴 Jordania": 4}, "K": {"🇵🇹 Portugal": 1, "🇨🇴 Colombia": 2, "🇺🇿 Uzbekistán": 3, "🇨🇩 Rep. Congo": 4}, "L": {"🇬🇧 Inglaterra": 1, "🇭🇷 Croacia": 2, "🇬🇭 Ghana": 3, "🇵🇦 Panamá": 4}}, "ronda_16avos": [{"slot": "1E", "equipo": "🇩🇪 Alemania"}, {"slot": "3 ABCDF", "equipo": "🇵🇾 Paraguay"}, {"slot": "1I", "equipo": "🇫🇷 Francia"}, {"slot": "3 CDFGH", "equipo": "🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia"}, {"slot": "2A", "equipo": "🇨🇿 Rep. Checa"}, {"slot": "2B", "equipo": "🇨🇭 Suiza"}, {"slot": "1F", "equipo": "🇳🇱 Holanda"}, {"slot": "2C", "equipo": "🇲🇦 Marruecos"}, {"slot": "2K", "equipo": "🇨🇴 Colombia"}, {"slot": "2L", "equipo": "🇭🇷 Croacia"}, {"slot": "1H", "equipo": "🇪🇸 España"}, {"slot": "2J", "equipo": "🇦🇹 Austria"}, {"slot": "1D", "equipo": "🇺🇸 Estados Unidos"}, {"slot": "3 BEFIJ", "equipo": "🇧🇦 Bosnia y Herzegovina"}, {"slot": "1G", "equipo": "🇧🇪 Bélgica"}, {"slot": "3 AEFHIJ", "equipo": "🇰🇷 Corea del Sur"}, {"slot": "1C", "equipo": "🇧🇷 Brasil"}, {"slot": "2F", "equipo": "🇸🇪 Suecia"}, {"slot": "2E", "equipo": "🇪🇨 Ecuador"}, {"slot": "2I", "equipo": "🇳🇴 Noruega"}, {"slot": "1A", "equipo": "🇲🇽 México"}, {"slot": "3 CEFHI", "equipo": "🇸🇳 Senegal"}, {"slot": "1L", "equipo": "🇬🇧 Inglaterra"}, {"slot": "3 EHIJK", "equipo": "🇨🇮 Costa de Marfil"}, {"slot": "1J", "equipo": "🇦🇷 Argentina"}, {"slot": "2H", "equipo": "🇺🇾 Uruguay"}, {"slot": "2D", "equipo": "🇹🇷 Turquía"}, {"slot": "2G", "equipo": "🇮🇷 Irán"}, {"slot": "1B", "equipo": "🇨🇦 Canadá"}, {"slot": "3 EFGIJ", "equipo": "🇯🇵 Japón"}, {"slot": "1K", "equipo": "🇵🇹 Portugal"}, {"slot": "3 DEIJL", "equipo": "🇬🇭 Ghana"}], "ronda_8avos": [{"equipo": "🇩🇪 Alemania"}, {"equipo": "🇫🇷 Francia"}, {"equipo": "🇨🇭 Suiza"}, {"equipo": "🇲🇦 Marruecos"}, {"equipo": "🇭🇷 Croacia"}, {"equipo": "🇪🇸 España"}, {"equipo": "🇺🇸 Estados Unidos"}, {"equipo": "🇧🇪 Bélgica"}, {"equipo": "🇧🇷 Brasil"}, {"equipo": "🇪🇨 Ecuador"}, {"equipo": "🇸🇳 Senegal"}, {"equipo": "🇬🇧 Inglaterra"}, {"equipo": "🇦🇷 Argentina"}, {"equipo": "🇹🇷 Turquía"}, {"equipo": "🇨🇦 Canadá"}, {"equipo": "🇵🇹 Portugal"}], "ronda_cuartos": [{"equipo": "🇩🇪 Alemania"}, {"equipo": "🇲🇦 Marruecos"}, {"equipo": "🇪🇸 España"}, {"equipo": "🇧🇪 Bélgica"}, {"equipo": "🇪🇨 Ecuador"}, {"equipo": "🇬🇧 Inglaterra"}, {"equipo": "🇦🇷 Argentina"}, {"equipo": "🇵🇹 Portugal"}], "ronda_semifinales": [{"equipo": "🇩🇪 Alemania"}, {"equipo": "🇪🇸 España"}, {"equipo": "🇬🇧 Inglaterra"}, {"equipo": "🇦🇷 Argentina"}], "finales": {"campeon": "🇪🇸 España", "segundo": "🇦🇷 Argentina", "tercero": "🇬🇧 Inglaterra", "cuarto": "🇩🇪 Alemania"}}, "polla_mari_a_del_carmen_co_rdova_co_rdova": {"archivo_original": "María del Carmen Córdova.jpeg", "participante": "María del Carmen Córdova Córdova", "formato_original": "pdf", "grupos": {"A": {"🇲🇽 México": 1, "🇰🇷 Corea del Sur": 2, "🇿🇦 Sudáfrica": 3, "🇨🇿 Rep. Checa": 4}, "B": {"🇨🇭 Suiza": 1, "🇧🇦 Bosnia y Herzegovina": 2, "🇶🇦 Qatar": 3, "🇨🇦 Canadá": 4}, "C": {"🇧🇷 Brasil": 1, "🇲🇦 Marruecos": 2, "🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia": 3, "🇭🇹 Haití": 4}, "D": {"🇦🇺 Australia": 1, "🇵🇾 Paraguay": 2, "🇹🇷 Turquía": 3, "🇺🇸 Estados Unidos": 4}, "E": {"🇪🇨 Ecuador": 1, "🇩🇪 Alemania": 2, "🇨🇼 Curazao": 3, "🇨🇮 Costa de Marfil": 4}, "F": {"🇳🇱 Holanda": 1, "🇯🇵 Japón": 2, "🇸🇪 Suecia": 3, "🇹🇳 Túnez": 4}, "G": {"🇧🇪 Bélgica": 1, "🇳🇿 Nueva Zelanda": 2, "🇪🇬 Egipto": 3, "🇮🇷 Irán": 4}, "H": {"🇪🇸 España": 1, "🇺🇾 Uruguay": 2, "🇨🇻 Cabo Verde": 3, "🇸🇦 Arabia Saudí": 4}, "I": {"🇫🇷 Francia": 1, "🇳🇴 Noruega": 2, "🇸🇳 Senegal": 3, "🇮🇶 Irak": 4}, "J": {"🇦🇷 Argentina": 1, "🇦🇹 Austria": 2, "🇩🇿 Argelia": 3, "🇯🇴 Jordania": 4}, "K": {"🇵🇹 Portugal": 1, "🇨🇴 Colombia": 2, "🇨🇩 Rep. Congo": 3, "🇺🇿 Uzbekistán": 4}, "L": {"🇬🇧 Inglaterra": 1, "🇭🇷 Croacia": 2, "🇬🇭 Ghana": 3, "🇵🇦 Panamá": 4}}, "ronda_16avos": [{"slot": "1E", "equipo": "🇪🇨 Ecuador"}, {"slot": "3 ABCDF", "equipo": "🇸🇪 Suecia"}, {"slot": "1I", "equipo": "🇫🇷 Francia"}, {"slot": "3 CDFGH", "equipo": "🇹🇷 Turquía"}, {"slot": "2A", "equipo": "🇰🇷 Corea del Sur"}, {"slot": "2B", "equipo": "🇧🇦 Bosnia y Herzegovina"}, {"slot": "1F", "equipo": "🇳🇱 Holanda"}, {"slot": "2C", "equipo": "🇲🇦 Marruecos"}, {"slot": "2K", "equipo": "🇨🇴 Colombia"}, {"slot": "2L", "equipo": "🇭🇷 Croacia"}, {"slot": "1H", "equipo": "🇪🇸 España"}, {"slot": "2J", "equipo": "🇦🇹 Austria"}, {"slot": "1D", "equipo": "🇦🇺 Australia"}, {"slot": "3 BEFIJ", "equipo": "🇸🇳 Senegal"}, {"slot": "1G", "equipo": "🇧🇪 Bélgica"}, {"slot": "3 AEFHIJ", "equipo": "🇨🇼 Curazao"}, {"slot": "1C", "equipo": "🇧🇷 Brasil"}, {"slot": "2F", "equipo": "🇯🇵 Japón"}, {"slot": "2E", "equipo": "🇩🇪 Alemania"}, {"slot": "2I", "equipo": "🇳🇴 Noruega"}, {"slot": "1A", "equipo": "🇲🇽 México"}, {"slot": "3 CEFHI", "equipo": "🇪🇬 Egipto"}, {"slot": "1L", "equipo": "🇬🇧 Inglaterra"}, {"slot": "3 EHIJK", "equipo": "🇩🇿 Argelia"}, {"slot": "1J", "equipo": "🇦🇷 Argentina"}, {"slot": "2H", "equipo": "🇺🇾 Uruguay"}, {"slot": "2D", "equipo": "🇵🇾 Paraguay"}, {"slot": "2G", "equipo": "🇳🇿 Nueva Zelanda"}, {"slot": "1B", "equipo": "🇨🇭 Suiza"}, {"slot": "3 EFGIJ", "equipo": "🇸🇪 Suecia"}, {"slot": "1K", "equipo": "🇵🇹 Portugal"}, {"slot": "3 DEIJL", "equipo": "🇬🇭 Ghana"}], "ronda_8avos": [{"equipo": "🇪🇨 Ecuador"}, {"equipo": "🇫🇷 Francia"}, {"equipo": "🇰🇷 Corea del Sur"}, {"equipo": "🇳🇱 Holanda"}, {"equipo": "🇨🇴 Colombia"}, {"equipo": "🇪🇸 España"}, {"equipo": "🇸🇳 Senegal"}, {"equipo": "🇧🇪 Bélgica"}, {"equipo": "🇧🇷 Brasil"}, {"equipo": "🇩🇪 Alemania"}, {"equipo": "🇲🇽 México"}, {"equipo": "🇬🇧 Inglaterra"}, {"equipo": "🇦🇷 Argentina"}, {"equipo": "🇳🇿 Nueva Zelanda"}, {"equipo": "🇨🇭 Suiza"}, {"equipo": "🇵🇹 Portugal"}], "ronda_cuartos": [{"equipo": "🇪🇨 Ecuador"}, {"equipo": "🇳🇱 Holanda"}, {"equipo": "🇪🇸 España"}, {"equipo": "🇧🇪 Bélgica"}, {"equipo": "🇧🇷 Brasil"}, {"equipo": "🇲🇽 México"}, {"equipo": "🇦🇷 Argentina"}, {"equipo": "🇵🇹 Portugal"}], "ronda_semifinales": [{"equipo": "🇪🇨 Ecuador"}, {"equipo": "🇪🇸 España"}, {"equipo": "🇧🇷 Brasil"}, {"equipo": "🇦🇷 Argentina"}], "finales": {"campeon": "🇧🇷 Brasil", "segundo": "🇪🇸 España", "tercero": "🇪🇨 Ecuador", "cuarto": "🇦🇷 Argentina"}}, "polla_scc1": {"archivo_original": "POLLA SCC1.xlsx", "participante": "SANTIAGO CORDOVA C.", "grupos": {"A": {"🇲🇽 MÉXICO": 1, "🇿🇦 SUDÁFRICA": 2, "🇰🇷 COREA DEL SUR": 3, "🇨🇿 REP. CHECA": 4}, "B": {"🇨🇦 CANADÁ": 4, "🇧🇦 BOSNIA Y HERZEGOVINA": 3, "🇶🇦 QATAR": 1, "🇨🇭 SUIZA": 2}, "C": {"🇧🇷 BRASIL": 1, "🇲🇦 MARRUECOS": 2, "🇭🇹 HAITÍ": 4, "🏴󠁧󠁢󠁳󠁣󠁴󠁿 ESCOCIA": 3}, "D": {"🇺🇸 ESTADOS UNIDOS": 2, "🇵🇾 PARAGUAY": 1, "🇦🇺 AUSTRALIA": 3, "🇹🇷 TURQUÍA": 4}, "E": {"🇩🇪 ALEMANIA": 2, "🇨🇼 CURAZAO": 4, "🇨🇮 COSTA DE MARFIL": 3, "🇪🇨 ECUADOR": 1}, "F": {"🇳🇱 HOLANDA": 1, "🇯🇵 JAPÓN": 2, "🇸🇪 SUECIA": 3, "🇹🇳 TÚNEZ": 4}, "G": {"🇧🇪 BÉLGICA": 2, "🇪🇬 EGIPTO": 1, "🇮🇷 IRÁN": 4, "🇳🇿 NUEVA ZELANDA": 3}, "H": {"🇪🇸 ESPAÑA": 1, "🇨🇻 CABO VERDE": 4, "🇸🇦 ARABIA SAUDÍ": 3, "🇺🇾 URUGUAY": 2}, "I": {"🇫🇷 FRANCIA": 1, "🇸🇳 SENEGAL": 2, "🇮🇶 IRAK": 4, "🇳🇴 NORUEGA": 3}, "J": {"🇦🇷 ARGENTINA": 1, "🇩🇿 ARGELIA": 3, "🇦🇹 AUSTRIA": 2, "🇯🇴 JORDANIA": 4}, "K": {"🇵🇹 PORTUGAL": 1, "🇨🇩 REP. CONGO": 3, "🇺🇿 UZBEKISTÁN": 4, "🇨🇴 COLOMBIA": 2}, "L": {"🇬🇧 INGLATERRA": 1, "🇭🇷 CROACIA": 2, "🇬🇭 GHANA": 3, "🇵🇦 PANAMÁ": 4}}, "ronda_16avos": [{"slot": "1E", "equipo": "🇪🇨 ECUADOR"}, {"slot": "3 ABCDF", "equipo": "🇰🇷 COREA DEL SUR"}, {"slot": "1I", "equipo": "🇫🇷 FRANCIA"}, {"slot": "3 CDFGH", "equipo": "🏴󠁧󠁢󠁳󠁣󠁴󠁿 ESCOCIA"}, {"slot": "2A", "equipo": "🇿🇦 SUDÁFRICA"}, {"slot": "2B", "equipo": "🇨🇭 SUIZA"}, {"slot": "1F", "equipo": "🇳🇱 HOLANDA"}, {"slot": "2C", "equipo": "🇲🇦 MARRUECOS"}, {"slot": "2K", "equipo": "🇨🇴 COLOMBIA"}, {"slot": "2L", "equipo": "🇭🇷 CROACIA"}, {"slot": "1H", "equipo": "🇪🇸 ESPAÑA"}, {"slot": "2J", "equipo": "🇦🇹 AUSTRIA"}, {"slot": "1D", "equipo": "🇵🇾 PARAGUAY"}, {"slot": "3 BEFIJ", "equipo": "🇸🇪 SUECIA"}, {"slot": "1G", "equipo": "🇪🇬 EGIPTO"}, {"slot": "3 AEFHIJ", "equipo": "🇨🇮 COSTA DE MARFIL"}, {"slot": "1C", "equipo": "🇧🇷 BRASIL"}, {"slot": "2F", "equipo": "🇯🇵 JAPÓN"}, {"slot": "2E", "equipo": "🇩🇪 ALEMANIA"}, {"slot": "2I", "equipo": "🇸🇳 SENEGAL"}, {"slot": "1A", "equipo": "🇲🇽 MÉXICO"}, {"slot": "3 CEFHI", "equipo": "🇨🇮 COSTA DE MARFIL"}, {"slot": "1L", "equipo": "🇬🇧 INGLATERRA"}, {"slot": "3 EHIJK", "equipo": "🇨🇩 REP. CONGO"}, {"slot": "1J", "equipo": "🇦🇷 ARGENTINA"}, {"slot": "2H", "equipo": "🇺🇾 URUGUAY"}, {"slot": "2D", "equipo": "🇺🇸 ESTADOS UNIDOS"}, {"slot": "2G", "equipo": "🇧🇪 BÉLGICA"}, {"slot": "1B", "equipo": "🇶🇦 QATAR"}, {"slot": "3 EFGIJ", "equipo": "🇳🇴 NORUEGA"}, {"slot": "1K", "equipo": "🇵🇹 PORTUGAL"}, {"slot": "3 DEIJL", "equipo": "🇦🇺 AUSTRALIA"}], "ronda_8avos": [{"equipo": "🇪🇨 ECUADOR"}, {"equipo": "🇫🇷 FRANCIA"}, {"equipo": "🇿🇦 SUDÁFRICA"}, {"equipo": "🇳🇱 HOLANDA"}, {"equipo": "🇨🇴 COLOMBIA"}, {"equipo": "🇪🇸 ESPAÑA"}, {"equipo": "🇵🇾 PARAGUAY"}, {"equipo": "🇪🇬 EGIPTO"}, {"equipo": "🇧🇷 BRASIL"}, {"equipo": "🇩🇪 ALEMANIA"}, {"equipo": "🇲🇽 MÉXICO"}, {"equipo": "🇬🇧 INGLATERRA"}, {"equipo": "🇦🇷 ARGENTINA"}, {"equipo": "🇺🇸 ESTADOS UNIDOS"}, {"equipo": "🇶🇦 QATAR"}, {"equipo": "🇵🇹 PORTUGAL"}], "ronda_cuartos": [{"equipo": "🇪🇨 ECUADOR"}, {"equipo": "🇿🇦 SUDÁFRICA"}, {"equipo": "🇨🇴 COLOMBIA"}, {"equipo": "🇵🇾 PARAGUAY"}, {"equipo": "🇧🇷 BRASIL"}, {"equipo": "🇲🇽 MÉXICO"}, {"equipo": "🇦🇷 ARGENTINA"}, {"equipo": "🇶🇦 QATAR"}], "ronda_semifinales": [{"equipo": "🇪🇨 ECUADOR"}, {"equipo": "🇨🇴 COLOMBIA"}, {"equipo": "🇧🇷 BRASIL"}, {"equipo": "🇦🇷 ARGENTINA"}], "finales": {"campeon": "🇧🇷 BRASIL", "segundo": "🇨🇴 COLOMBIA", "tercero": "🇪🇨 ECUADOR", "cuarto": "🇦🇷 ARGENTINA"}, "errores": []}, "polla_scc2": {"archivo_original": "POLLA SCC2.xlsx", "participante": "MARIA EUGENIA GUILLEN", "grupos": {"A": {"🇲🇽 MÉXICO": 1, "🇿🇦 SUDÁFRICA": 2, "🇰🇷 COREA DEL SUR": 3, "🇨🇿 REP. CHECA": 4}, "B": {"🇨🇦 CANADÁ": 4, "🇧🇦 BOSNIA Y HERZEGOVINA": 3, "🇶🇦 QATAR": 1, "🇨🇭 SUIZA": 2}, "C": {"🇧🇷 BRASIL": 1, "🇲🇦 MARRUECOS": 2, "🇭🇹 HAITÍ": 4, "🏴󠁧󠁢󠁳󠁣󠁴󠁿 ESCOCIA": 3}, "D": {"🇺🇸 ESTADOS UNIDOS": 2, "🇵🇾 PARAGUAY": 1, "🇦🇺 AUSTRALIA": 3, "🇹🇷 TURQUÍA": 4}, "E": {"🇩🇪 ALEMANIA": 2, "🇨🇼 CURAZAO": 4, "🇨🇮 COSTA DE MARFIL": 3, "🇪🇨 ECUADOR": 1}, "F": {"🇳🇱 HOLANDA": 1, "🇯🇵 JAPÓN": 2, "🇸🇪 SUECIA": 3, "🇹🇳 TÚNEZ": 4}, "G": {"🇧🇪 BÉLGICA": 2, "🇪🇬 EGIPTO": 1, "🇮🇷 IRÁN": 4, "🇳🇿 NUEVA ZELANDA": 3}, "H": {"🇪🇸 ESPAÑA": 1, "🇨🇻 CABO VERDE": 4, "🇸🇦 ARABIA SAUDÍ": 3, "🇺🇾 URUGUAY": 2}, "I": {"🇫🇷 FRANCIA": 1, "🇸🇳 SENEGAL": 2, "🇮🇶 IRAK": 4, "🇳🇴 NORUEGA": 3}, "J": {"🇦🇷 ARGENTINA": 1, "🇩🇿 ARGELIA": 3, "🇦🇹 AUSTRIA": 2, "🇯🇴 JORDANIA": 4}, "K": {"🇵🇹 PORTUGAL": 1, "🇨🇩 REP. CONGO": 3, "🇺🇿 UZBEKISTÁN": 4, "🇨🇴 COLOMBIA": 2}, "L": {"🇬🇧 INGLATERRA": 1, "🇭🇷 CROACIA": 2, "🇬🇭 GHANA": 3, "🇵🇦 PANAMÁ": 4}}, "ronda_16avos": [{"slot": "1E", "equipo": "🇪🇨 ECUADOR"}, {"slot": "3 ABCDF", "equipo": "🇰🇷 COREA DEL SUR"}, {"slot": "1I", "equipo": "🇫🇷 FRANCIA"}, {"slot": "3 CDFGH", "equipo": "🏴󠁧󠁢󠁳󠁣󠁴󠁿 ESCOCIA"}, {"slot": "2A", "equipo": "🇿🇦 SUDÁFRICA"}, {"slot": "2B", "equipo": "🇨🇭 SUIZA"}, {"slot": "1F", "equipo": "🇳🇱 HOLANDA"}, {"slot": "2C", "equipo": "🇲🇦 MARRUECOS"}, {"slot": "2K", "equipo": "🇨🇴 COLOMBIA"}, {"slot": "2L", "equipo": "🇭🇷 CROACIA"}, {"slot": "1H", "equipo": "🇪🇸 ESPAÑA"}, {"slot": "2J", "equipo": "🇦🇹 AUSTRIA"}, {"slot": "1D", "equipo": "🇵🇾 PARAGUAY"}, {"slot": "3 BEFIJ", "equipo": "🇸🇪 SUECIA"}, {"slot": "1G", "equipo": "🇪🇬 EGIPTO"}, {"slot": "3 AEFHIJ", "equipo": "🇨🇮 COSTA DE MARFIL"}, {"slot": "1C", "equipo": "🇧🇷 BRASIL"}, {"slot": "2F", "equipo": "🇯🇵 JAPÓN"}, {"slot": "2E", "equipo": "🇩🇪 ALEMANIA"}, {"slot": "2I", "equipo": "🇸🇳 SENEGAL"}, {"slot": "1A", "equipo": "🇲🇽 MÉXICO"}, {"slot": "3 CEFHI", "equipo": "🇨🇮 COSTA DE MARFIL"}, {"slot": "1L", "equipo": "🇬🇧 INGLATERRA"}, {"slot": "3 EHIJK", "equipo": "🇨🇩 REP. CONGO"}, {"slot": "1J", "equipo": "🇦🇷 ARGENTINA"}, {"slot": "2H", "equipo": "🇺🇾 URUGUAY"}, {"slot": "2D", "equipo": "🇺🇸 ESTADOS UNIDOS"}, {"slot": "2G", "equipo": "🇧🇪 BÉLGICA"}, {"slot": "1B", "equipo": "🇶🇦 QATAR"}, {"slot": "3 EFGIJ", "equipo": "🇳🇴 NORUEGA"}, {"slot": "1K", "equipo": "🇵🇹 PORTUGAL"}, {"slot": "3 DEIJL", "equipo": "🇦🇺 AUSTRALIA"}], "ronda_8avos": [{"equipo": "🇰🇷 COREA DEL SUR"}, {"equipo": "🏴󠁧󠁢󠁳󠁣󠁴󠁿 ESCOCIA"}, {"equipo": "🇨🇭 SUIZA"}, {"equipo": "🇲🇦 MARRUECOS"}, {"equipo": "🇭🇷 CROACIA"}, {"equipo": "🇦🇹 AUSTRIA"}, {"equipo": "🇸🇪 SUECIA"}, {"equipo": "🇨🇮 COSTA DE MARFIL"}, {"equipo": "🇯🇵 JAPÓN"}, {"equipo": "🇸🇳 SENEGAL"}, {"equipo": "🇨🇮 COSTA DE MARFIL"}, {"equipo": "🇨🇩 REP. CONGO"}, {"equipo": "🇺🇾 URUGUAY"}, {"equipo": "🇧🇪 BÉLGICA"}, {"equipo": "🇳🇴 NORUEGA"}, {"equipo": "🇦🇺 AUSTRALIA"}], "ronda_cuartos": [{"equipo": "🇰🇷 COREA DEL SUR"}, {"equipo": "🇨🇭 SUIZA"}, {"equipo": "🇭🇷 CROACIA"}, {"equipo": "🇸🇪 SUECIA"}, {"equipo": "🇸🇳 SENEGAL"}, {"equipo": "🇨🇮 COSTA DE MARFIL"}, {"equipo": "🇧🇪 BÉLGICA"}, {"equipo": "🇦🇺 AUSTRALIA"}], "ronda_semifinales": [{"equipo": "🇰🇷 COREA DEL SUR"}, {"equipo": "🇭🇷 CROACIA"}, {"equipo": "🇸🇳 SENEGAL"}, {"equipo": "🇧🇪 BÉLGICA"}], "finales": {"campeon": "🇧🇪 BÉLGICA", "segundo": "🇰🇷 COREA DEL SUR", "tercero": "🇸🇳 SENEGAL", "cuarto": "🇭🇷 CROACIA"}, "errores": []}, "polla_scc3": {"archivo_original": "POLLA SCC3.xlsx", "participante": "SANTIAGO CORDOVA C.", "grupos": {"A": {"🇲🇽 MÉXICO": 1, "🇿🇦 SUDÁFRICA": 4, "🇰🇷 COREA DEL SUR": 2, "🇨🇿 REP. CHECA": 3}, "B": {"🇨🇦 CANADÁ": 2, "🇧🇦 BOSNIA Y HERZEGOVINA": 4, "🇶🇦 QATAR": 3, "🇨🇭 SUIZA": 1}, "C": {"🇧🇷 BRASIL": 2, "🇲🇦 MARRUECOS": 1, "🇭🇹 HAITÍ": 4, "🏴󠁧󠁢󠁳󠁣󠁴󠁿 ESCOCIA": 3}, "D": {"🇺🇸 ESTADOS UNIDOS": 1, "🇵🇾 PARAGUAY": 2, "🇦🇺 AUSTRALIA": 3, "🇹🇷 TURQUÍA": 4}, "E": {"🇩🇪 ALEMANIA": 3, "🇨🇼 CURAZAO": 4, "🇨🇮 COSTA DE MARFIL": 1, "🇪🇨 ECUADOR": 2}, "F": {"🇳🇱 HOLANDA": 1, "🇯🇵 JAPÓN": 2, "🇸🇪 SUECIA": 3, "🇹🇳 TÚNEZ": 4}, "G": {"🇧🇪 BÉLGICA": 1, "🇪🇬 EGIPTO": 3, "🇮🇷 IRÁN": 2, "🇳🇿 NUEVA ZELANDA": 4}, "H": {"🇪🇸 ESPAÑA": 1, "🇨🇻 CABO VERDE": 4, "🇸🇦 ARABIA SAUDÍ": 3, "🇺🇾 URUGUAY": 2}, "I": {"🇫🇷 FRANCIA": 1, "🇸🇳 SENEGAL": 2, "🇮🇶 IRAK": 4, "🇳🇴 NORUEGA": 3}, "J": {"🇦🇷 ARGENTINA": 1, "🇩🇿 ARGELIA": 2, "🇦🇹 AUSTRIA": 3, "🇯🇴 JORDANIA": 4}, "K": {"🇵🇹 PORTUGAL": 1, "🇨🇩 REP. CONGO": 3, "🇺🇿 UZBEKISTÁN": 4, "🇨🇴 COLOMBIA": 2}, "L": {"🇬🇧 INGLATERRA": 3, "🇭🇷 CROACIA": 2, "🇬🇭 GHANA": 1, "🇵🇦 PANAMÁ": 4}}, "ronda_16avos": [{"slot": "1E", "equipo": "🇨🇮 COSTA DE MARFIL"}, {"slot": "3 ABCDF", "equipo": "🇨🇿 REP. CHECA"}, {"slot": "1I", "equipo": "🇫🇷 FRANCIA"}, {"slot": "3 CDFGH", "equipo": "🏴󠁧󠁢󠁳󠁣󠁴󠁿 ESCOCIA"}, {"slot": "2A", "equipo": "🇰🇷 COREA DEL SUR"}, {"slot": "2B", "equipo": "🇨🇦 CANADÁ"}, {"slot": "1F", "equipo": "🇳🇱 HOLANDA"}, {"slot": "2C", "equipo": "🇧🇷 BRASIL"}, {"slot": "2K", "equipo": "🇨🇴 COLOMBIA"}, {"slot": "2L", "equipo": "🇭🇷 CROACIA"}, {"slot": "1H", "equipo": "🇪🇸 ESPAÑA"}, {"slot": "2J", "equipo": "🇩🇿 ARGELIA"}, {"slot": "1D", "equipo": "🇺🇸 ESTADOS UNIDOS"}, {"slot": "3 BEFIJ", "equipo": "🇳🇴 NORUEGA"}, {"slot": "1G", "equipo": "🇧🇪 BÉLGICA"}, {"slot": "3 AEFHIJ", "equipo": "🇩🇪 ALEMANIA"}, {"slot": "1C", "equipo": "🇲🇦 MARRUECOS"}, {"slot": "2F", "equipo": "🇯🇵 JAPÓN"}, {"slot": "2E", "equipo": "🇪🇨 ECUADOR"}, {"slot": "2I", "equipo": "🇸🇳 SENEGAL"}, {"slot": "1A", "equipo": "🇲🇽 MÉXICO"}, {"slot": "3 CEFHI", "equipo": "🇸🇪 SUECIA"}, {"slot": "1L", "equipo": "🇬🇭 GHANA"}, {"slot": "3 EHIJK", "equipo": "🇩🇪 ALEMANIA"}, {"slot": "1J", "equipo": "🇦🇷 ARGENTINA"}, {"slot": "2H", "equipo": "🇺🇾 URUGUAY"}, {"slot": "2D", "equipo": "🇵🇾 PARAGUAY"}, {"slot": "2G", "equipo": "🇮🇷 IRÁN"}, {"slot": "1B", "equipo": "🇨🇭 SUIZA"}, {"slot": "3 EFGIJ", "equipo": "🇸🇪 SUECIA"}, {"slot": "1K", "equipo": "🇵🇹 PORTUGAL"}, {"slot": "3 DEIJL", "equipo": "🇬🇧 INGLATERRA"}], "ronda_8avos": [{"equipo": "🇨🇮 COSTA DE MARFIL"}, {"equipo": "🇫🇷 FRANCIA"}, {"equipo": "🇨🇦 CANADÁ"}, {"equipo": "🇧🇷 BRASIL"}, {"equipo": "🇭🇷 CROACIA"}, {"equipo": "🇪🇸 ESPAÑA"}, {"equipo": "🇳🇴 NORUEGA"}, {"equipo": "🇧🇪 BÉLGICA"}, {"equipo": "🇲🇦 MARRUECOS"}, {"equipo": "🇸🇳 SENEGAL"}, {"equipo": "🇸🇪 SUECIA"}, {"equipo": "🇬🇭 GHANA"}, {"equipo": "🇺🇾 URUGUAY"}, {"equipo": "🇵🇾 PARAGUAY"}, {"equipo": "🇸🇪 SUECIA"}, {"equipo": "🇬🇧 INGLATERRA"}], "ronda_cuartos": [{"equipo": "🇫🇷 FRANCIA"}, {"equipo": "🇧🇷 BRASIL"}, {"equipo": "🇪🇸 ESPAÑA"}, {"equipo": "🇧🇪 BÉLGICA"}, {"equipo": "🇲🇦 MARRUECOS"}, {"equipo": "🇬🇭 GHANA"}, {"equipo": "🇺🇾 URUGUAY"}, {"equipo": "🇬🇧 INGLATERRA"}], "ronda_semifinales": [{"equipo": "🇫🇷 FRANCIA"}, {"equipo": "🇪🇸 ESPAÑA"}, {"equipo": "🇲🇦 MARRUECOS"}, {"equipo": "🇬🇧 INGLATERRA"}], "finales": {"campeon": "🇲🇦 MARRUECOS", "segundo": "🇫🇷 FRANCIA", "tercero": "🇪🇸 ESPAÑA", "cuarto": "🇬🇧 INGLATERRA"}, "errores": []}, "polla_scc4": {"archivo_original": "POLLA SCC4.xlsx", "participante": "VERONICA CORDOVA", "grupos": {"A": {"🇲🇽 MÉXICO": 3, "🇿🇦 SUDÁFRICA": 4, "🇰🇷 COREA DEL SUR": 2, "🇨🇿 REP. CHECA": 1}, "B": {"🇨🇦 CANADÁ": 4, "🇧🇦 BOSNIA Y HERZEGOVINA": 3, "🇶🇦 QATAR": 2, "🇨🇭 SUIZA": 1}, "C": {"🇧🇷 BRASIL": 2, "🇲🇦 MARRUECOS": 3, "🇭🇹 HAITÍ": 4, "🏴󠁧󠁢󠁳󠁣󠁴󠁿 ESCOCIA": 1}, "D": {"🇺🇸 ESTADOS UNIDOS": 2, "🇵🇾 PARAGUAY": 3, "🇦🇺 AUSTRALIA": 1, "🇹🇷 TURQUÍA": 4}, "E": {"🇩🇪 ALEMANIA": 2, "🇨🇼 CURAZAO": 4, "🇨🇮 COSTA DE MARFIL": 1, "🇪🇨 ECUADOR": 3}, "F": {"🇳🇱 HOLANDA": 2, "🇯🇵 JAPÓN": 3, "🇸🇪 SUECIA": 1, "🇹🇳 TÚNEZ": 4}, "G": {"🇧🇪 BÉLGICA": 1, "🇪🇬 EGIPTO": 3, "🇮🇷 IRÁN": 2, "🇳🇿 NUEVA ZELANDA": 4}, "H": {"🇪🇸 ESPAÑA": 1, "🇨🇻 CABO VERDE": 4, "🇸🇦 ARABIA SAUDÍ": 3, "🇺🇾 URUGUAY": 2}, "I": {"🇫🇷 FRANCIA": 2, "🇸🇳 SENEGAL": 1, "🇮🇶 IRAK": 4, "🇳🇴 NORUEGA": 3}, "J": {"🇦🇷 ARGENTINA": 1, "🇩🇿 ARGELIA": 3, "🇦🇹 AUSTRIA": 2, "🇯🇴 JORDANIA": 4}, "K": {"🇵🇹 PORTUGAL": 2, "🇨🇩 REP. CONGO": 3, "🇺🇿 UZBEKISTÁN": 4, "🇨🇴 COLOMBIA": 1}, "L": {"🇬🇧 INGLATERRA": 2, "🇭🇷 CROACIA": 3, "🇬🇭 GHANA": 1, "🇵🇦 PANAMÁ": 4}}, "ronda_16avos": [{"slot": "1E", "equipo": "🇨🇮 COSTA DE MARFIL"}, {"slot": "3 ABCDF", "equipo": "🇲🇽 MÉXICO"}, {"slot": "1I", "equipo": "🇸🇳 SENEGAL"}, {"slot": "3 CDFGH", "equipo": "🇵🇾 PARAGUAY"}, {"slot": "2A", "equipo": "🇰🇷 COREA DEL SUR"}, {"slot": "2B", "equipo": "🇶🇦 QATAR"}, {"slot": "1F", "equipo": "🇸🇪 SUECIA"}, {"slot": "2C", "equipo": "🇧🇷 BRASIL"}, {"slot": "2K", "equipo": "🇵🇹 PORTUGAL"}, {"slot": "2L", "equipo": "🇬🇧 INGLATERRA"}, {"slot": "1H", "equipo": "🇪🇸 ESPAÑA"}, {"slot": "2J", "equipo": "🇦🇷 ARGENTINA"}, {"slot": "1D", "equipo": "🇦🇺 AUSTRALIA"}, {"slot": "3 BEFIJ", "equipo": "🇯🇵 JAPÓN"}, {"slot": "1G", "equipo": "🇧🇪 BÉLGICA"}, {"slot": "3 AEFHIJ", "equipo": "🇸🇦 ARABIA SAUDÍ"}, {"slot": "1C", "equipo": "🏴 ESCOCIA"}, {"slot": "2F", "equipo": "🇳🇱 HOLANDA"}, {"slot": "2E", "equipo": "🇩🇪 ALEMANIA"}, {"slot": "2I", "equipo": "🇫🇷 FRANCIA"}, {"slot": "1A", "equipo": "🇨🇿 REP. CHECA"}, {"slot": "3 CEFHI", "equipo": "🇳🇴 NORUEGA"}, {"slot": "1L", "equipo": "🇬🇭 GHANA"}, {"slot": "3 EHIJK", "equipo": "🇨🇩 REP. CONGO"}, {"slot": "1J", "equipo": "🇦🇷 ARGENTINA"}, {"slot": "2H", "equipo": "🇺🇾 URUGUAY"}, {"slot": "2D", "equipo": "🇺🇸 ESTADOS UNIDOS"}, {"slot": "2G", "equipo": "🇮🇷 IRÁN"}, {"slot": "1B", "equipo": "🇨🇭 SUIZA"}, {"slot": "3 EFGIJ", "equipo": "🇳🇴 NORUEGA"}, {"slot": "1K", "equipo": "🇨🇴 COLOMBIA"}, {"slot": "3 DEIJL", "equipo": "🇪🇨 ECUADOR"}], "ronda_8avos": [{"equipo": "🇨🇮 COSTA DE MARFIL"}, {"equipo": "🇸🇳 SENEGAL"}, {"equipo": "🇰🇷 COREA DEL SUR"}, {"equipo": "🇧🇷 BRASIL"}, {"equipo": "🇵🇹 PORTUGAL"}, {"equipo": "🇪🇸 ESPAÑA"}, {"equipo": "🇯🇵 JAPÓN"}, {"equipo": "🇧🇪 BÉLGICA"}, {"equipo": "🇳🇱 HOLANDA"}, {"equipo": "🇫🇷 FRANCIA"}, {"equipo": "🇳🇴 NORUEGA"}, {"equipo": "🇬🇭 GHANA"}, {"equipo": "🇦🇷 ARGENTINA"}, {"equipo": "🇺🇸 ESTADOS UNIDOS"}, {"equipo": "🇨🇭 SUIZA"}, {"equipo": "🇨🇴 COLOMBIA"}], "ronda_cuartos": [{"equipo": "🇨🇮 COSTA DE MARFIL"}, {"equipo": "🇧🇷 BRASIL"}, {"equipo": "🇪🇸 ESPAÑA"}, {"equipo": "🇧🇪 BÉLGICA"}, {"equipo": "🇫🇷 FRANCIA"}, {"equipo": "🇬🇭 GHANA"}, {"equipo": "🇺🇸 ESTADOS UNIDOS"}, {"equipo": "🇨🇴 COLOMBIA"}], "ronda_semifinales": [{"equipo": "🇧🇷 BRASIL"}, {"equipo": "🇧🇪 BÉLGICA"}, {"equipo": "🇫🇷 FRANCIA"}, {"equipo": "🇺🇸 ESTADOS UNIDOS"}], "finales": {"campeon": "🇧🇷 BRASIL", "segundo": "🇫🇷 FRANCIA", "tercero": "🇧🇪 BÉLGICA", "cuarto": "🇺🇸 ESTADOS UNIDOS"}, "errores": []}};
+const SHARE_DATA = {"acumulado": 110, "costo": 10, "pollas": 11, "leaderboard": [{"nombre": "Carlos Jaramillo Medina", "letra": "A", "total": 0}, {"nombre": "Catalina Fern\u00e1ndez de C\u00f3rdova", "letra": "A", "total": 0}, {"nombre": "Edgar Cordero", "letra": "A", "total": 0}, {"nombre": "Jos\u00e9 Urgil\u00e9s C\u00e1rdenas", "letra": "A", "total": 0}, {"nombre": "Juana Cordero", "letra": "A", "total": 0}, {"nombre": "Juana Cordero", "letra": "B", "total": 0}, {"nombre": "Mari\u0301a del Carmen Co\u0301rdova Co\u0301rdova", "letra": "A", "total": 0}, {"nombre": "Santiago Cordova C.", "letra": "A", "total": 0}, {"nombre": "Maria Eugenia Guillen", "letra": "A", "total": 0}, {"nombre": "Santiago Cordova C.", "letra": "B", "total": 0}, {"nombre": "Veronica Cordova", "letra": "A", "total": 0}]};
 
 function shareWhatsApp() {
   const d = SHARE_DATA;
@@ -562,6 +612,64 @@ function shareWhatsApp() {
   });
   text += '%0A🔗 Ver más: https://joseurgilesc.github.io/webPollaMundialista/';
   window.open('https://wa.me/?text=' + text, '_blank');
+}
+
+function findPolla(ref) {
+  const key = ref.toLowerCase().replace(/[^a-z0-9]/g, '_');
+  for (const [k, v] of Object.entries(POLLAS)) {
+    if (k.includes(key) || key.includes(k)) return v;
+  }
+  const normRef = ref.toLowerCase();
+  for (const v of Object.values(POLLAS)) {
+    if ((v.participante||'').toLowerCase().includes(normRef)) return v;
+  }
+  return null;
+}
+
+function verPolla(ref) {
+  const polla = findPolla(ref);
+  if (!polla) { alert('Polla no encontrada'); return; }
+  document.getElementById('modalTitle').textContent = '📋 ' + (polla.participante || 'Sin nombre');
+  let html = '';
+  if (polla.grupos) {
+    html += '<div class="modal-section"><h4>🏟️ Grupos</h4><div class="modal-grupos">';
+    Object.entries(polla.grupos).forEach(([g, eqs]) => {
+      html += '<div class="modal-grupo"><strong>Grupo '+g+'</strong>';
+      Object.entries(eqs).sort((a,b)=>(a[1]||99)-(b[1]||99)).forEach(([eq, pos]) => {
+        html += '<div>'+(pos||'?')+'° '+eq+'</div>';
+      });
+      html += '</div>';
+    });
+    html += '</div></div>';
+  }
+  const rondas = [
+    ['⚽ 16avos', polla.ronda_16avos, true],
+    ['⚽ 8avos', polla.ronda_8avos, false],
+    ['⚽ Cuartos', polla.ronda_cuartos, false],
+    ['⚽ Semifinales', polla.ronda_semifinales, false],
+  ];
+  rondas.forEach(([title, entries, showSlot]) => {
+    if (!entries?.length) return;
+    html += '<div class="modal-section"><h4>'+title+'</h4><div class="modal-slots">';
+    entries.forEach((e, i) => {
+      html += '<div class="slot-row"><span class="s-code">'+(showSlot?(e.slot||''):('#'+(i+1)))+'</span><span class="s-team">'+(e.equipo||'—')+'</span></div>';
+    });
+    html += '</div></div>';
+  });
+  const f = polla.finales || {};
+  html += '<div class="modal-section"><h4>🏆 Finales</h4>';
+  html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:0.8rem;">';
+  html += '<div>🏆 <strong>Campeón:</strong> '+(f.campeon||'—')+'</div>';
+  html += '<div>🥈 <strong>Segundo:</strong> '+(f.segundo||'—')+'</div>';
+  html += '<div>🥉 <strong>Tercero:</strong> '+(f.tercero||'—')+'</div>';
+  html += '<div>4° <strong>Cuarto:</strong> '+(f.cuarto||'—')+'</div>';
+  html += '</div></div>';
+  document.getElementById('modalBody').innerHTML = html;
+  document.getElementById('modal').classList.remove('hidden');
+}
+
+function closeModal() {
+  document.getElementById('modal').classList.add('hidden');
 }
 
 const D=[{"nombre": "Carlos Jaramillo Medina", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "Catalina Fern\u00e1ndez de C\u00f3rdova", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "Edgar Cordero", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "Jos\u00e9 Urgil\u00e9s C\u00e1rdenas", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "Juana Cordero", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "Juana Cordero", "letra": "B", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "Mari\u0301a del Carmen Co\u0301rdova Co\u0301rdova", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "Santiago Cordova C.", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "Maria Eugenia Guillen", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "Santiago Cordova C.", "letra": "B", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "Veronica Cordova", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}];

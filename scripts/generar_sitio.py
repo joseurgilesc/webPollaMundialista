@@ -339,6 +339,44 @@ footer {{ text-align: center; padding: 24px; color: var(--muted); font-size: 0.7
   th, td {{ padding: 8px 4px; }}
   .slot-input .slot-code {{ width: 65px; font-size: 0.65rem; }}
   .predicciones {{ grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }}
+  .modal-content {{ margin-top: 10px; max-height: 90vh; }}
+  .modal-grupos {{ grid-template-columns: 1fr; }}
+}}
+
+/* Modal */
+.modal-overlay {{
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6); z-index: 1000;
+  display: flex; align-items: flex-start; justify-content: center;
+  padding: 20px; overflow-y: auto;
+}}
+.modal-content {{
+  max-width: 700px; width: 100%;
+  max-height: 85vh; overflow-y: auto;
+  margin-top: 20px;
+}}
+.modal-grupos {{
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 8px; margin-bottom: 16px;
+}}
+.modal-grupo {{
+  background: #f8fafc; border-radius: 8px; padding: 10px;
+  border: 1px solid var(--card-border);
+}}
+.modal-grupo strong {{ font-size: 0.75rem; color: var(--navy); }}
+.modal-grupo div {{ font-size: 0.7rem; color: var(--muted); margin-top: 2px; }}
+.modal-slots {{ font-size: 0.72rem; }}
+.modal-slots .slot-row {{
+  display: flex; align-items: center; padding: 3px 0;
+  border-bottom: 1px solid #f1f5f9;
+}}
+.slot-row .s-code {{ width: 80px; font-weight: 700; color: var(--navy); font-size: 0.65rem; flex-shrink: 0; }}
+.slot-row .s-team {{ flex: 1; }}
+.modal-section {{ margin-bottom: 14px; }}
+.modal-section h4 {{
+  color: var(--navy); font-size: 0.75rem; text-transform: uppercase;
+  letter-spacing: 0.04em; margin-bottom: 6px;
+  padding-bottom: 4px; border-bottom: 1px solid var(--card-border);
 }}
 
 /* Predicciones */
@@ -381,6 +419,7 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
     
     # Cargar predicciones de cada polla
     predicciones_data = []
+    pollas_completas = {}
     for f in sorted(POLLAS_DIR.glob("*.json")):
         with open(f, encoding="utf-8") as fp:
             data = json.load(fp)
@@ -389,12 +428,16 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
                 "finales": data.get("finales", {}),
                 "archivo": f.stem,
             })
+            pollas_completas[f.stem] = data
+    
+    pollas_json = json.dumps(pollas_completas, ensure_ascii=False)
     
     # Construir cards de predicciones
     predicciones_html = ""
     for pred in predicciones_data:
         f = pred["finales"]
-        predicciones_html += f"""<div class="pred-card">
+        archivo = pred["archivo"]
+        predicciones_html += f"""<div class="pred-card" onclick="verPolla('{archivo}')" style="cursor:pointer;">
       <div class="pred-name">{normalizar_nombre(pred["nombre"])}</div>
       <div class="pred-picks">
         <span title="Campeón">🏆 {f.get("campeon", "?") or "—"}</span>
@@ -422,7 +465,7 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
         
         filas += f"""<tr class="{clase}">
           <td class="rank">{medalla} {i+1}</td>
-          <td class="nombre">{nombre}{tag_html}</td>
+          <td class="nombre" style="cursor:pointer;" onclick="verPolla('{r.get("archivo", "")}')">{nombre}{tag_html}</td>
           <td>{p["16avos"]}</td><td>{p["8avos"]}</td><td>{p["cuartos"]}</td>
           <td>{p["semifinales"]}</td><td>{p["finales"]}</td>
           <td class="total">{p["total"]}</td></tr>"""
@@ -522,10 +565,22 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
 
 </div>
 
+<!-- Modal -->
+<div id="modal" class="modal-overlay hidden" onclick="if(event.target===this) closeModal()">
+  <div class="modal-content card">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+      <h2 id="modalTitle" style="color:var(--navy);font-size:1.1rem;"></h2>
+      <button class="btn btn-outline btn-sm" onclick="closeModal()">✕ Cerrar</button>
+    </div>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
 <footer>Actualizado: {fecha} · Puntajes recalculados automáticamente</footer>
 
 <script>
-const SHARE_DATA = {json.dumps({"acumulado": acumulado, "costo": participantes.get("costo_por_polla", 10), "pollas": total_pollas, "leaderboard": [{"nombre": r["participante"], "letra": r.get("polla_letra","A"), "total": r["puntajes"]["total"]} for r in puntajes]})};
+const POLLAS = {pollas_json};
+const SHARE_DATA = {json.dumps({"acumulado": acumulado, "costo": participantes.get("costo_por_polla", 10), "pollas": total_pollas, "leaderboard": [{"nombre": normalizar_nombre(r["participante"]), "letra": r.get("polla_letra","A"), "total": r["puntajes"]["total"]} for r in puntajes]})};
 
 function shareWhatsApp() {{
   const d = SHARE_DATA;
@@ -538,6 +593,64 @@ function shareWhatsApp() {{
   }});
   text += '%0A🔗 Ver más: https://joseurgilesc.github.io/webPollaMundialista/';
   window.open('https://wa.me/?text=' + text, '_blank');
+}}
+
+function findPolla(ref) {{
+  const key = ref.toLowerCase().replace(/[^a-z0-9]/g, '_');
+  for (const [k, v] of Object.entries(POLLAS)) {{
+    if (k.includes(key) || key.includes(k)) return v;
+  }}
+  const normRef = ref.toLowerCase();
+  for (const v of Object.values(POLLAS)) {{
+    if ((v.participante||'').toLowerCase().includes(normRef)) return v;
+  }}
+  return null;
+}}
+
+function verPolla(ref) {{
+  const polla = findPolla(ref);
+  if (!polla) {{ alert('Polla no encontrada'); return; }}
+  document.getElementById('modalTitle').textContent = '📋 ' + (polla.participante || 'Sin nombre');
+  let html = '';
+  if (polla.grupos) {{
+    html += '<div class="modal-section"><h4>🏟️ Grupos</h4><div class="modal-grupos">';
+    Object.entries(polla.grupos).forEach(([g, eqs]) => {{
+      html += '<div class="modal-grupo"><strong>Grupo '+g+'</strong>';
+      Object.entries(eqs).sort((a,b)=>(a[1]||99)-(b[1]||99)).forEach(([eq, pos]) => {{
+        html += '<div>'+(pos||'?')+'° '+eq+'</div>';
+      }});
+      html += '</div>';
+    }});
+    html += '</div></div>';
+  }}
+  const rondas = [
+    ['⚽ 16avos', polla.ronda_16avos, true],
+    ['⚽ 8avos', polla.ronda_8avos, false],
+    ['⚽ Cuartos', polla.ronda_cuartos, false],
+    ['⚽ Semifinales', polla.ronda_semifinales, false],
+  ];
+  rondas.forEach(([title, entries, showSlot]) => {{
+    if (!entries?.length) return;
+    html += '<div class="modal-section"><h4>'+title+'</h4><div class="modal-slots">';
+    entries.forEach((e, i) => {{
+      html += '<div class="slot-row"><span class="s-code">'+(showSlot?(e.slot||''):('#'+(i+1)))+'</span><span class="s-team">'+(e.equipo||'—')+'</span></div>';
+    }});
+    html += '</div></div>';
+  }});
+  const f = polla.finales || {{}};
+  html += '<div class="modal-section"><h4>🏆 Finales</h4>';
+  html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:0.8rem;">';
+  html += '<div>🏆 <strong>Campeón:</strong> '+(f.campeon||'—')+'</div>';
+  html += '<div>🥈 <strong>Segundo:</strong> '+(f.segundo||'—')+'</div>';
+  html += '<div>🥉 <strong>Tercero:</strong> '+(f.tercero||'—')+'</div>';
+  html += '<div>4° <strong>Cuarto:</strong> '+(f.cuarto||'—')+'</div>';
+  html += '</div></div>';
+  document.getElementById('modalBody').innerHTML = html;
+  document.getElementById('modal').classList.remove('hidden');
+}}
+
+function closeModal() {{
+  document.getElementById('modal').classList.add('hidden');
 }}
 
 const D={barras_data};
