@@ -289,6 +289,39 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
   table { font-size: 0.72rem; }
   th, td { padding: 8px 4px; }
   .slot-input .slot-code { width: 65px; font-size: 0.65rem; }
+  .predicciones { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+}
+
+/* Predicciones */
+.predicciones {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+.pred-card {
+  background: #f8fafc;
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 14px;
+}
+.pred-name {
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.pred-picks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 0.72rem;
+}
+.pred-picks span {
+  background: white;
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+  padding: 3px 8px;
+  white-space: nowrap;
 }
 </style>
 </head>
@@ -388,13 +421,84 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
   </div>
 
   <div class="card">
+    <h3 style="color:var(--navy);margin-bottom:16px;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.06em;">🔮 Predicciones</h3>
+    <div class="predicciones">
+      <div class="pred-card">
+      <div class="pred-name">Carlos Jaramillo Medina</div>
+      <div class="pred-picks">
+        <span title="Campeón">🏆 🇩🇪 Alemania</span>
+        <span title="Segundo">🥈 🇦🇷 Argentina</span>
+        <span title="Tercero">🥉 🇬🇧 Inglaterra</span>
+        <span title="Cuarto">4° 🇨🇮 Costa de Marfil</span>
+      </div>
+    </div><div class="pred-card">
+      <div class="pred-name">Juana Cordero</div>
+      <div class="pred-picks">
+        <span title="Campeón">🏆 🇵🇹 Portugal</span>
+        <span title="Segundo">🥈 🇫🇷 Francia</span>
+        <span title="Tercero">🥉 🇪🇸 España</span>
+        <span title="Cuarto">4° 🇬🇧 Inglaterra</span>
+      </div>
+    </div><div class="pred-card">
+      <div class="pred-name">Juana Cordero</div>
+      <div class="pred-picks">
+        <span title="Campeón">🏆 🇪🇸 España</span>
+        <span title="Segundo">🥈 🇦🇷 Argentina</span>
+        <span title="Tercero">🥉 🇬🇧 Inglaterra</span>
+        <span title="Cuarto">4° 🇩🇪 Alemania</span>
+      </div>
+    </div><div class="pred-card">
+      <div class="pred-name">María del Carmen Córdova Córdova</div>
+      <div class="pred-picks">
+        <span title="Campeón">🏆 🇧🇷 Brasil</span>
+        <span title="Segundo">🥈 🇪🇸 España</span>
+        <span title="Tercero">🥉 🇪🇨 Ecuador</span>
+        <span title="Cuarto">4° 🇦🇷 Argentina</span>
+      </div>
+    </div><div class="pred-card">
+      <div class="pred-name">SANTIAGO CORDOVA C.</div>
+      <div class="pred-picks">
+        <span title="Campeón">🏆 🇧🇷 BRASIL</span>
+        <span title="Segundo">🥈 🇨🇴 COLOMBIA</span>
+        <span title="Tercero">🥉 🇪🇨 ECUADOR</span>
+        <span title="Cuarto">4° 🇦🇷 ARGENTINA</span>
+      </div>
+    </div><div class="pred-card">
+      <div class="pred-name">MARIA EUGENIA GUILLEN</div>
+      <div class="pred-picks">
+        <span title="Campeón">🏆 🇧🇪 BÉLGICA</span>
+        <span title="Segundo">🥈 🇰🇷 COREA DEL SUR</span>
+        <span title="Tercero">🥉 🇸🇳 SENEGAL</span>
+        <span title="Cuarto">4° 🇭🇷 CROACIA</span>
+      </div>
+    </div><div class="pred-card">
+      <div class="pred-name">SANTIAGO CORDOVA C.</div>
+      <div class="pred-picks">
+        <span title="Campeón">🏆 🇲🇦 MARRUECOS</span>
+        <span title="Segundo">🥈 🇫🇷 FRANCIA</span>
+        <span title="Tercero">🥉 🇪🇸 ESPAÑA</span>
+        <span title="Cuarto">4° 🇬🇧 INGLATERRA</span>
+      </div>
+    </div><div class="pred-card">
+      <div class="pred-name">VERONICA CORDOVA</div>
+      <div class="pred-picks">
+        <span title="Campeón">🏆 🇧🇷 BRASIL</span>
+        <span title="Segundo">🥈 🇫🇷 FRANCIA</span>
+        <span title="Tercero">🥉 🇧🇪 BÉLGICA</span>
+        <span title="Cuarto">4° 🇺🇸 ESTADOS UNIDOS</span>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="card">
     <h3 style="color:var(--navy);margin-bottom:16px;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.06em;">📊 Puntos por ronda</h3>
     <div id="chart"></div>
   </div>
 
 </div>
 
-<footer>Actualizado: 07/06/2026 10:23 · Puntajes recalculados automáticamente</footer>
+<footer>Actualizado: 07/06/2026 12:03 · Puntajes recalculados automáticamente</footer>
 
 <script>
 const D=[{"nombre": "Carlos Jaramillo Medina", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "Juana Cordero", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "Juana Cordero", "letra": "B", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "Mari\u0301a del Carmen Co\u0301rdova Co\u0301rdova", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "SANTIAGO CORDOVA C.", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "MARIA EUGENIA GUILLEN", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "SANTIAGO CORDOVA C.", "letra": "B", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "VERONICA CORDOVA", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}];

@@ -290,6 +290,39 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
   table { font-size: 0.72rem; }
   th, td { padding: 8px 4px; }
   .slot-input .slot-code { width: 65px; font-size: 0.65rem; }
+  .predicciones { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+}
+
+/* Predicciones */
+.predicciones {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+.pred-card {
+  background: #f8fafc;
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 14px;
+}
+.pred-name {
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.pred-picks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 0.72rem;
+}
+.pred-picks span {
+  background: white;
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+  padding: 3px 8px;
+  white-space: nowrap;
 }
 
 .section-title {
