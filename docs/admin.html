@@ -466,6 +466,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
     <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
       <button class="btn btn-sm" onclick="agregarParticipante()">+ Agregar participante</button>
       <button class="btn btn-green btn-sm" onclick="guardarPagos()">💾 Guardar</button>
+      <button class="btn btn-outline btn-sm" onclick="syncParticipantes()">🔄 Sincronizar con web</button>
       <span style="font-size:0.7rem;color:var(--muted);margin-left:auto;">Cambios en localStorage</span>
     </div>
   </div>
@@ -591,6 +592,17 @@ function agregarParticipante() {
 function guardarPagos() {
   localStorage.setItem('pollas_participantes', JSON.stringify(participantes));
   showToast('✅ Pagos guardados');
+}
+
+function syncParticipantes() {
+  const data = {
+    costo_por_polla: COSTO,
+    participantes: participantes,
+  };
+  const json = JSON.stringify(data, null, 2);
+  document.getElementById('resOutput').value = json;
+  document.getElementById('resOutput').scrollIntoView({behavior:'smooth'});
+  showToast('🔄 Copiá este JSON → data/participantes.json → ejecutá generar_sitio.py');
 }
 
 // ── Transcripción ──
