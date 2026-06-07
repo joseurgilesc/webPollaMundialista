@@ -573,10 +573,13 @@ function guardarPagos() {
 }
 
 // ── Transcripción ──
-// Filtrado por pares: cada slot recibe de 4 índices de la ronda anterior (2 pares)
-const R16_IDS = []; // se llena: [si0,...,si15, sd0,...,sd15]
-for (let i=0;i<16;i++) R16_IDS.push('si'+i);
-for (let i=0;i<16;i++) R16_IDS.push('sd'+i);
+// Filtrado por pares: CADA slot recibe exactamente 2 opciones (su partido previo)
+// 16avos: 32 slots en 16 partidos → par[0]=(si0,si1), par[1]=(si2,si3)...
+// 8avos:  16 slots en 8 partidos → r8_0 recibe de par[0], r8_1 de par[1]...
+// Cuartos: 8 slots en 4 partidos → r4_0 recibe de (r8_0,r8_1), r4_1 de (r8_2,r8_3)...
+const R16_PAIRS = [];
+for (let i=0;i<8;i++) { R16_PAIRS.push(['si'+(i*2), 'si'+(i*2+1)]); }
+for (let i=0;i<8;i++) { R16_PAIRS.push(['sd'+(i*2), 'sd'+(i*2+1)]); }
 
 function getTeamsFromIds(ids) {
   const teams = [];
@@ -588,39 +591,34 @@ function getTeamsFromIds(ids) {
 }
 
 function filterPares(inputId, slotIdx, round) {
-  // round: 0=16avos→8avos, 1=8avos→cuartos, 2=cuartos→semis, 3=semis→finales
+  // round 0=8avos, 1=cuartos, 2=semis, 3=finales
+  // Cada slot recibe de su PAR específico en la ronda anterior
   let parentIds = [];
   
   if (round === 0) {
-    // Cada slot de 8avos recibe de 4 índices de 16avos (2 pares de partidos)
-    const base = slotIdx * 4;
-    parentIds = [R16_IDS[base], R16_IDS[base+1], R16_IDS[base+2], R16_IDS[base+3]];
-    // Actualizar label
+    // 8avos: slot i recibe del par i de 16avos (2 equipos)
+    parentIds = R16_PAIRS[slotIdx];
     const lbl = document.getElementById('r8l_'+slotIdx);
-    if (lbl) lbl.textContent = '#'+(slotIdx+1)+' ← '+R16_IDS[base]+'-'+R16_IDS[base+1]+' vs '+R16_IDS[base+2]+'-'+R16_IDS[base+3];
+    if (lbl) lbl.textContent = (slotIdx+1)+' ← '+parentIds[0]+' vs '+parentIds[1];
   } else if (round === 1) {
-    // Cuartos: grupos de 2 slots de 8avos
-    const base = slotIdx * 2;
-    parentIds = ['r8_'+base, 'r8_'+(base+1)];
+    // Cuartos: slot i recibe del par i de 8avos → (r8_i*2, r8_i*2+1)
+    parentIds = ['r8_'+(slotIdx*2), 'r8_'+(slotIdx*2+1)];
     const lbl = document.getElementById('r4l_'+slotIdx);
-    if (lbl) lbl.textContent = '#'+(slotIdx+1)+' ← r8_'+base+' vs r8_'+(base+1);
+    if (lbl) lbl.textContent = (slotIdx+1)+' ← r8_'+(slotIdx*2)+' vs r8_'+(slotIdx*2+1);
   } else if (round === 2) {
-    // Semis: grupos de 2 slots de cuartos
-    const base = slotIdx * 2;
-    parentIds = ['r4_'+base, 'r4_'+(base+1)];
+    // Semis: par i de cuartos → (r4_i*2, r4_i*2+1)
+    parentIds = ['r4_'+(slotIdx*2), 'r4_'+(slotIdx*2+1)];
     const lbl = document.getElementById('r2l_'+slotIdx);
-    if (lbl) lbl.textContent = '#'+(slotIdx+1)+' ← r4_'+base+' vs r4_'+(base+1);
+    if (lbl) lbl.textContent = (slotIdx+1)+' ← r4_'+(slotIdx*2)+' vs r4_'+(slotIdx*2+1);
   } else if (round === 3) {
-    // Finales: todos los equipos de semis
+    // Finales: todos los semis (4 opciones)
     parentIds = ['r2_0','r2_1','r2_2','r2_3'];
   }
   
   const teams = getTeamsFromIds(parentIds);
-  // Crear datalist temporal
   let dl = document.getElementById('dl-temp');
   if (!dl) {
-    dl = document.createElement('datalist');
-    dl.id = 'dl-temp';
+    dl = document.createElement('datalist'); dl.id = 'dl-temp';
     document.body.appendChild(dl);
   }
   dl.innerHTML = teams.map(t => `<option value="${t}">`).join('');
