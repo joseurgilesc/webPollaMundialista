@@ -445,19 +445,33 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
             pollas_completas[f.stem] = data
     
     pollas_json = json.dumps(pollas_completas, ensure_ascii=False)
+    # Versión normalizada para el modal
+    pollas_norm = {}
+    for k, data in pollas_completas.items():
+        d = {}
+        d["participante"] = data.get("participante", "")
+        d["grupos"] = {g: {normalizar_equipo_display(eq): p for eq, p in eqs.items()} for g, eqs in data.get("grupos", {}).items()}
+        d["ronda_16avos"] = [{"slot": e.get("slot",""), "equipo": normalizar_equipo_display(e.get("equipo",""))} for e in data.get("ronda_16avos", [])]
+        d["ronda_8avos"] = [{"equipo": normalizar_equipo_display(e.get("equipo",""))} for e in data.get("ronda_8avos", [])]
+        d["ronda_cuartos"] = [{"equipo": normalizar_equipo_display(e.get("equipo",""))} for e in data.get("ronda_cuartos", [])]
+        d["ronda_semifinales"] = [{"equipo": normalizar_equipo_display(e.get("equipo",""))} for e in data.get("ronda_semifinales", [])]
+        d["finales"] = {k: normalizar_equipo_display(v) for k, v in data.get("finales", {}).items()}
+        pollas_norm[k] = d
+    pollas_json = json.dumps(pollas_norm, ensure_ascii=False)
     
     # Construir cards de predicciones
     predicciones_html = ""
     for pred in predicciones_data:
         f = pred["finales"]
         archivo = pred["archivo"]
+        def nd(n): return normalizar_equipo_display(n)
         predicciones_html += f"""<div class="pred-card" onclick="verPolla('{archivo}')" style="cursor:pointer;">
       <div class="pred-name">{normalizar_nombre(pred["nombre"])}</div>
       <div class="pred-picks">
-        <span title="Campeón">🏆 {f.get("campeon", "?") or "—"}</span>
-        <span title="Segundo">🥈 {f.get("segundo", "?") or "—"}</span>
-        <span title="Tercero">🥉 {f.get("tercero", "?") or "—"}</span>
-        <span title="Cuarto">4° {f.get("cuarto", "?") or "—"}</span>
+        <span title="Campeón">🏆 {nd(f.get("campeon", "")) or "—"}</span>
+        <span title="Segundo">🥈 {nd(f.get("segundo", "")) or "—"}</span>
+        <span title="Tercero">🥉 {nd(f.get("tercero", "")) or "—"}</span>
+        <span title="Cuarto">4° {nd(f.get("cuarto", "")) or "—"}</span>
       </div>
       <div style="margin-top:8px;font-size:0.68rem;color:var(--teal);font-weight:600;">Ver predicción completa →</div>
     </div>"""
