@@ -1,0 +1,303 @@
+{
+  "_nota": "RESULTADOS EN CERO — El mundial aún no comienza. Llenar con resultados reales cuando avance.",
+  "grupos": {
+    "A": {
+      "🇲🇽 MÉXICO": 0,
+      "🇰🇷 COREA DEL SUR": 0,
+      "🇿🇦 SUDÁFRICA": 0,
+      "🇨🇿 REP. CHECA": 0
+    },
+    "B": {
+      "🇨🇭 SUIZA": 0,
+      "🇨🇦 CANADÁ": 0,
+      "🇧🇦 BOSNIA Y HERZEGOVINA": 0,
+      "🇶🇦 QATAR": 0
+    },
+    "C": {
+      "🇧🇷 BRASIL": 0,
+      "🇲🇦 MARRUECOS": 0,
+      "🏴󠁧󠁢󠁳󠁣󠁴󠁿 ESCOCIA": 0,
+      "🇭🇹 HAITÍ": 0
+    },
+    "D": {
+      "🇺🇸 ESTADOS UNIDOS": 0,
+      "🇵🇾 PARAGUAY": 0,
+      "🇦🇺 AUSTRALIA": 0,
+      "🇹🇷 TURQUÍA": 0
+    },
+    "E": {
+      "🇩🇪 ALEMANIA": 0,
+      "🇪🇨 ECUADOR": 0,
+      "🇨🇮 COSTA DE MARFIL": 0,
+      "🇨🇼 CURAZAO": 0
+    },
+    "F": {
+      "🇳🇱 HOLANDA": 0,
+      "🇯🇵 JAPÓN": 0,
+      "🇸🇪 SUECIA": 0,
+      "🇹🇳 TÚNEZ": 0
+    },
+    "G": {
+      "🇧🇪 BÉLGICA": 0,
+      "🇮🇷 IRÁN": 0,
+      "🇪🇬 EGIPTO": 0,
+      "🇳🇿 NUEVA ZELANDA": 0
+    },
+    "H": {
+      "🇪🇸 ESPAÑA": 0,
+      "🇺🇾 URUGUAY": 0,
+      "🇸🇦 ARABIA SAUDÍ": 0,
+      "🇨🇻 CABO VERDE": 0
+    },
+    "I": {
+      "🇫🇷 FRANCIA": 0,
+      "🇸🇳 SENEGAL": 0,
+      "🇳🇴 NORUEGA": 0,
+      "🇮🇶 IRAK": 0
+    },
+    "J": {
+      "🇦🇷 ARGENTINA": 0,
+      "🇦🇹 AUSTRIA": 0,
+      "🇩🇿 ARGELIA": 0,
+      "🇯🇴 JORDANIA": 0
+    },
+    "K": {
+      "🇵🇹 PORTUGAL": 0,
+      "🇨🇴 COLOMBIA": 0,
+      "🇨🇩 REP. CONGO": 0,
+      "🇺🇿 UZBEKISTÁN": 0
+    },
+    "L": {
+      "🇬🇧 INGLATERRA": 0,
+      "🇭🇷 CROACIA": 0,
+      "🇬🇭 GHANA": 0,
+      "🇵🇦 PANAMÁ": 0
+    }
+  },
+  "ronda_16avos": [
+    {
+      "slot": "1E",
+      "equipo": ""
+    },
+    {
+      "slot": "3 ABCDF",
+      "equipo": ""
+    },
+    {
+      "slot": "1I",
+      "equipo": ""
+    },
+    {
+      "slot": "3 CDFGH",
+      "equipo": ""
+    },
+    {
+      "slot": "2A",
+      "equipo": ""
+    },
+    {
+      "slot": "2B",
+      "equipo": ""
+    },
+    {
+      "slot": "1F",
+      "equipo": ""
+    },
+    {
+      "slot": "2C",
+      "equipo": ""
+    },
+    {
+      "slot": "2K",
+      "equipo": ""
+    },
+    {
+      "slot": "2L",
+      "equipo": ""
+    },
+    {
+      "slot": "1H",
+      "equipo": ""
+    },
+    {
+      "slot": "2J",
+      "equipo": ""
+    },
+    {
+      "slot": "1D",
+      "equipo": ""
+    },
+    {
+      "slot": "3 BEFIJ",
+      "equipo": ""
+    },
+    {
+      "slot": "1G",
+      "equipo": ""
+    },
+    {
+      "slot": "3 AEFHIJ",
+      "equipo": ""
+    },
+    {
+      "slot": "1C",
+      "equipo": ""
+    },
+    {
+      "slot": "2F",
+      "equipo": ""
+    },
+    {
+      "slot": "2E",
+      "equipo": ""
+    },
+    {
+      "slot": "2I",
+      "equipo": ""
+    },
+    {
+      "slot": "1A",
+      "equipo": ""
+    },
+    {
+      "slot": "3 CEFHI",
+      "equipo": ""
+    },
+    {
+      "slot": "1L",
+      "equipo": ""
+    },
+    {
+      "slot": "3 EHIJK",
+      "equipo": ""
+    },
+    {
+      "slot": "1J",
+      "equipo": ""
+    },
+    {
+      "slot": "2H",
+      "equipo": ""
+    },
+    {
+      "slot": "2D",
+      "equipo": ""
+    },
+    {
+      "slot": "2G",
+      "equipo": ""
+    },
+    {
+      "slot": "1B",
+      "equipo": ""
+    },
+    {
+      "slot": "3 EFGIJ",
+      "equipo": ""
+    },
+    {
+      "slot": "1K",
+      "equipo": ""
+    },
+    {
+      "slot": "3 DEIJL",
+      "equipo": ""
+    }
+  ],
+  "ronda_8avos": [
+    {
+      "equipo": ""
+    },
+    {
+      "equipo": ""
+    },
+    {
+      "equipo": ""
+    },
+    {
+      "equipo": ""
+    },
+    {
+      "equipo": ""
+    },
+    {
+      "equipo": ""
+    },
+    {
+      "equipo": ""
+    },
+    {
+      "equipo": ""
+    },
+    {
+      "equipo": ""
+    },
+    {
+      "equipo": ""
+    },
+    {
+      "equipo": ""
+    },
+    {
+      "equipo": ""
+    },
+    {
+      "equipo": ""
+    },
+    {
+      "equipo": ""
+    },
+    {
+      "equipo": ""
+    },
+    {
+      "equipo": ""
+    }
+  ],
+  "ronda_cuartos": [
+    {
+      "equipo": ""
+    },
+    {
+      "equipo": ""
+    },
+    {
+      "equipo": ""
+    },
+    {
+      "equipo": ""
+    },
+    {
+      "equipo": ""
+    },
+    {
+      "equipo": ""
+    },
+    {
+      "equipo": ""
+    },
+    {
+      "equipo": ""
+    }
+  ],
+  "ronda_semifinales": [
+    {
+      "equipo": ""
+    },
+    {
+      "equipo": ""
+    },
+    {
+      "equipo": ""
+    },
+    {
+      "equipo": ""
+    }
+  ],
+  "finales": {
+    "campeon": "",
+    "segundo": "",
+    "tercero": "",
+    "cuarto": ""
+  }
+}

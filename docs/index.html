@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Polla Mundialista 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0f1f4d;
+  --gold: #e8a817;
+  --teal: #0096c7;
+  --bg: #ffffff;
+  --card: #ffffff;
+  --card-border: #e2e8f0;
+  --text: #0f172a;
+  --muted: #64748b;
+  --green: #16a34a;
+  --red: #dc2626;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: linear-gradient(180deg, #f0f4f8 0%, #ffffff 100%);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Top bar */
+.topbar {
+  background: linear-gradient(135deg, var(--navy), #1a3a6e);
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.app { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.header h1 {
+  font-size: clamp(24px, 5vw, 36px);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--navy);
+}
+.header h1 .accent { color: var(--teal); }
+.header .badge {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  background: rgba(0, 150, 199, 0.1);
+  color: var(--teal);
+  border: 1px solid rgba(0, 150, 199, 0.3);
+}
+
+/* Card */
+.card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  margin-bottom: 20px;
+}
+
+/* Grid */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; margin-bottom: 20px; }
+.stat-card { text-align: center; }
+.stat-num { font-size: 1.8rem; font-weight: 800; color: var(--navy); }
+.stat-num.gold { color: var(--gold); }
+.stat-label { font-size: 0.75rem; color: var(--muted); margin-top: 2px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+
+/* Acumulado */
+.acumulado { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.acumulado .icon { font-size: 2.5rem; }
+.acumulado .monto { font-size: 2.5rem; font-weight: 800; color: var(--gold); }
+.acumulado .info { font-size: 0.85rem; color: var(--muted); }
+
+/* Table */
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+th {
+  padding: 12px 10px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-bottom: 2px solid var(--card-border);
+  white-space: nowrap;
+}
+th:first-child, td:first-child { text-align: left; padding-left: 16px; }
+td {
+  padding: 12px 10px;
+  text-align: center;
+  border-bottom: 1px solid #f1f5f9;
+  white-space: nowrap;
+}
+tr:hover td { background: #f8fafc; }
+.rank { font-weight: 700; width: 40px; }
+.nombre { text-align: left; font-weight: 600; }
+.polla-tag {
+  display: inline-block;
+  background: var(--navy);
+  color: white;
+  font-size: 0.6rem;
+  padding: 2px 7px;
+  border-radius: 3px;
+  margin-left: 6px;
+  font-weight: 700;
+}
+.total { font-weight: 800; font-size: 1.05rem; color: var(--gold); }
+.top1 td { background: linear-gradient(90deg, rgba(232,168,23,0.12) 0%, rgba(232,168,23,0.04) 100%); border-left: 3px solid var(--gold); }
+.top2 td { background: rgba(180,180,190,0.06); border-left: 3px solid #a0a0b0; }
+.top3 td { background: rgba(180,140,100,0.05); border-left: 3px solid #b8846e; }
+.medal { display: inline-block; width: 22px; text-align: center; font-size: 1.1rem; }
+.max-row td { color: var(--muted); font-size: 0.7rem; border-bottom: none; }
+
+/* Chart */
+.chart-row { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+.chart-label { width: 110px; font-size: 0.75rem; text-align: right; color: var(--muted); flex-shrink: 0; font-weight: 600; }
+.chart-bars { flex: 1; display: flex; gap: 2px; height: 22px; border-radius: 5px; overflow: hidden; }
+.chart-bar { height: 100%; transition: width 0.6s ease; }
+.c16 { background: var(--teal); } .c8 { background: var(--navy); } .c4 { background: #7c3aed; }
+.c2 { background: #db2777; } .cf { background: var(--gold); }
+.chart-total { width: 40px; font-size: 0.8rem; font-weight: 800; text-align: right; color: var(--navy); flex-shrink: 0; }
+
+/* Buttons */
+.btn {
+  border: none;
+  border-radius: 999px;
+  padding: 10px 22px;
+  background: var(--navy);
+  color: white;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+.btn:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(15, 31, 77, 0.3); }
+.btn-sm { padding: 7px 16px; font-size: 0.78rem; }
+.btn-outline { background: white; color: var(--navy); border: 2px solid var(--navy); }
+.btn-outline:hover { background: var(--navy); color: white; }
+.btn-green { background: var(--green); }
+.btn-red { background: var(--red); }
+
+/* Status */
+.status {
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.status.pagado { background: rgba(22, 163, 74, 0.1); color: var(--green); }
+.status.pendiente { background: rgba(220, 38, 38, 0.1); color: var(--red); }
+
+/* Toggle */
+.toggle { position: relative; display: inline-block; width: 46px; height: 26px; }
+.toggle input { opacity: 0; width: 0; height: 0; }
+.toggle .slider {
+  position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0;
+  background: #cbd5e1; border-radius: 26px; transition: 0.3s;
+}
+.toggle .slider:before {
+  position: absolute; content: ""; height: 20px; width: 20px;
+  left: 3px; bottom: 3px; background: white; border-radius: 50%; transition: 0.3s;
+}
+.toggle input:checked + .slider { background: var(--green); }
+.toggle input:checked + .slider:before { transform: translateX(20px); }
+
+/* Forms */
+input, textarea, select {
+  background: white;
+  border: 2px solid var(--card-border);
+  border-radius: 10px;
+  padding: 10px 14px;
+  color: var(--text);
+  font-size: 0.88rem;
+  font-family: inherit;
+  width: 100%;
+  transition: border-color 0.2s;
+}
+input:focus, textarea:focus { outline: none; border-color: var(--teal); }
+label { display: block; font-size: 0.8rem; color: var(--muted); margin-bottom: 4px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+
+/* Form layout mejorado */
+.slot-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+.slot-input .slot-code {
+  width: 90px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--navy);
+  flex-shrink: 0;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+}
+.slot-input input {
+  flex: 1;
+  max-width: 280px;
+  font-size: 0.82rem;
+  padding: 8px 12px;
+}
+
+/* Pending files list */
+.file-list { display: flex; flex-direction: column; gap: 6px; }
+.file-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: #f8fafc;
+  border-radius: 8px;
+  font-size: 0.82rem;
+}
+.file-item .file-name { font-weight: 600; color: var(--navy); }
+.file-item .file-badge {
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.file-badge.pdf { background: rgba(220, 38, 38, 0.1); color: var(--red); }
+.file-badge.jpg { background: rgba(0, 150, 199, 0.1); color: var(--teal); }
+.file-badge.xlsx { background: rgba(22, 163, 74, 0.1); color: var(--green); }
+
+/* Toast */
+.toast {
+  position: fixed; bottom: 24px; right: 24px;
+  background: var(--navy); color: white; padding: 14px 24px;
+  border-radius: 12px; font-weight: 600; font-size: 0.85rem;
+  opacity: 0; transition: opacity 0.3s; z-index: 100;
+}
+.toast.show { opacity: 1; }
+
+/* Lock */
+.admin-locked { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 80vh; gap: 16px; }
+.admin-locked input { max-width: 280px; text-align: center; font-size: 1.1rem; }
+.admin-locked h1 { color: var(--navy); }
+
+.hidden { display: none !important; }
+.form-group { margin-bottom: 16px; }
+
+/* Bracket sides */
+.bracket-side {
+  margin-bottom: 12px;
+}
+.bracket-side h4 {
+  color: var(--navy);
+  font-size: 0.78rem;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--card-border);
+}
+
+/* Footer */
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7rem; }
+
+@media (max-width: 600px) {
+  .app { padding: 12px 8px; }
+  .card { padding: 16px; border-radius: 12px; }
+  .header { flex-direction: column; align-items: flex-start; }
+  .header h1 { font-size: 22px; }
+  .chart-label { width: 70px; font-size: 0.65rem; }
+  table { font-size: 0.72rem; }
+  th, td { padding: 8px 4px; }
+  .slot-input .slot-code { width: 65px; font-size: 0.65rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">🇲🇽 MÉXICO · 🇨🇦 CANADÁ · 🇺🇸 ESTADOS UNIDOS — FIFA World Cup 2026™</div>
+
+<div class="app">
+
+  <header class="header">
+    <div>
+      <h1>⚽ Polla <span class="accent">Mundialista</span> 2026</h1>
+      <div style="color:var(--muted);font-size:0.8rem;">Leaderboard en tiempo real</div>
+    </div>
+    <div class="badge">🔥 EN VIVO</div>
+  </header>
+
+  <div class="card acumulado">
+    <div class="icon">💰</div>
+    <div>
+      <div class="stat-label" style="margin-bottom:2px;">ACUMULADO</div>
+      <div class="monto">$30</div>
+    </div>
+    <div class="info" style="margin-left:auto;">
+      4 pollas registradas<br>
+      $10 c/u
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card stat-card">
+      <div class="stat-num">3</div>
+      <div class="stat-label">Participantes</div>
+    </div>
+    <div class="card stat-card">
+      <div class="stat-num">4</div>
+      <div class="stat-label">Pollas</div>
+    </div>
+    <div class="card stat-card">
+      <div class="stat-num gold">180</div>
+      <div class="stat-label">Pts máximos</div>
+    </div>
+    <div class="card stat-card">
+      <div class="stat-num gold">0</div>
+      <div class="stat-label">Líder</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 style="color:var(--navy);margin-bottom:16px;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.06em;">🏆 Leaderboard</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>#</th><th>Participante</th><th>16avos</th><th>8avos</th><th>Cuartos</th><th>Semis</th><th>Final</th><th>Total</th></tr></thead>
+      <tbody><tr class="top1">
+          <td class="rank">🥇 1</td>
+          <td class="nombre">SANTIAGO CORDOVA C.<span class="polla-tag">A</span></td>
+          <td>0</td><td>0</td><td>0</td>
+          <td>0</td><td>0</td>
+          <td class="total">0</td></tr><tr class="top2">
+          <td class="rank">🥈 2</td>
+          <td class="nombre">MARIA EUGENIA GUILLEN</td>
+          <td>0</td><td>0</td><td>0</td>
+          <td>0</td><td>0</td>
+          <td class="total">0</td></tr><tr class="top3">
+          <td class="rank">🥉 3</td>
+          <td class="nombre">SANTIAGO CORDOVA C.<span class="polla-tag">B</span></td>
+          <td>0</td><td>0</td><td>0</td>
+          <td>0</td><td>0</td>
+          <td class="total">0</td></tr><tr class="">
+          <td class="rank"> 4</td>
+          <td class="nombre">VERONICA CORDOVA</td>
+          <td>0</td><td>0</td><td>0</td>
+          <td>0</td><td>0</td>
+          <td class="total">0</td></tr><tr class="max-row">
+      <td></td><td style="text-align:left;">Máximo posible</td>
+      <td>64</td><td>32</td><td>24</td><td>16</td><td>44</td><td class="total">180</td></tr></tbody>
+    </table></div>
+  </div>
+
+  <div class="card">
+    <h3 style="color:var(--navy);margin-bottom:16px;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.06em;">📊 Puntos por ronda</h3>
+    <div id="chart"></div>
+  </div>
+
+</div>
+
+<footer>Actualizado: 06/06/2026 21:41 · Puntajes recalculados automáticamente</footer>
+
+<script>
+const D=[{"nombre": "SANTIAGO COR", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "MARIA EUGENI", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "SANTIAGO COR", "letra": "B", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}, {"nombre": "VERONICA COR", "letra": "A", "r16": 0, "r8": 0, "r4": 0, "r2": 0, "rf": 0}];
+const R=['r16','r8','r4','r2','rf'];
+const C=document.getElementById('chart');
+D.forEach(d=>{
+  const r=document.createElement('div');r.className='chart-row';
+  r.innerHTML='<div class="chart-label">'+d.nombre+' '+d.letra+'</div>'+
+    '<div class="chart-bars">'+R.map((k,i)=>'<div class="chart-bar c'+['16','8','4','2','f'][i]+'" style="width:'+(d[k]/180*100)+'%" title="'+['16avos','8avos','Cuartos','Semis','Final'][i]+': '+d[k]+' pts"></div>').join('')+'</div>'+
+    '<div class="chart-total">'+R.reduce((s,k)=>s+d[k],0)+'</div>';
+  C.appendChild(r);
+});
+</script>
+</body>
+</html>
