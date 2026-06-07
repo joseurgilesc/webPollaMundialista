@@ -550,11 +550,11 @@ function renderPagos() {
       const monto = p.pago ? COSTO : 0;
       totalAcum += monto;
       h += `<tr>
-        <td style="text-align:left;font-weight:600;">${p.nombre}${letra ? ' <span class="polla-tag">'+letra+'</span>' : ''}</td>
+        <td style="text-align:left;font-weight:600;">${p.nombre}${letra ? ' <span class="polla-tag">'+letra+'</span>' : ''}${i===0 ? ' <span style="cursor:pointer;font-size:0.7rem;" onclick="editarParticipante('+pi+')">✏️</span>' : ''}</td>
         <td>${i===0 ? (p.whatsapp||'-') : ''}</td>
         <td>Polla ${letra || 'Única'}</td>
         <td>${i===0 ? '<label class="toggle"><input type="checkbox" '+(p.pago?'checked':'')+' onchange="togglePago('+pi+')"><span class="slider"></span></label>' : '<span class="status '+(p.pago?'pagado':'pendiente')+'">'+(p.pago?'✓ Pagado':'✗ Pendiente')+'</span>'}</td>
-        <td style="color:var(--gold);font-weight:700;">$${monto}</td>
+        <td style="color:var(--gold);font-weight:700;">${monto > 0 ? '$'+monto : '—'}</td>
       </tr>`;
     }
   });
@@ -564,6 +564,18 @@ function renderPagos() {
     <td style="color:var(--gold);font-size:1.1rem;">$${totalAcum}</td>
   </tr>`;
   document.getElementById('pagosTable').innerHTML = h;
+}
+
+function editarParticipante(i) {
+  const p = participantes[i];
+  const nombre = prompt('Nombre:', p.nombre);
+  if (nombre === null) return;
+  const pollas = parseInt(prompt('Cantidad de pollas:', p.pollas || 1)) || 1;
+  const whatsapp = prompt('WhatsApp:', p.whatsapp || '');
+  if (nombre) p.nombre = nombre;
+  p.pollas = pollas;
+  p.whatsapp = whatsapp || p.whatsapp;
+  renderPagos();
 }
 
 function togglePago(i) { participantes[i].pago = !participantes[i].pago; }
