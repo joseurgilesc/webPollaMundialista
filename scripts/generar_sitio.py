@@ -49,6 +49,19 @@ def normalizar_nombre(nombre: str) -> str:
         return nombre
     return nombre.title()
 
+def normalizar_equipo_display(nombre: str) -> str:
+    """Normaliza nombre de equipo para display: quita ALL CAPS pero conserva banderas."""
+    if not nombre:
+        return ""
+    # Si es todo mayúsculas (sin contar banderas/emoji), convertir a Title Case
+    import re
+    texto = re.sub(r'[^\w\sáéíóúñüÁÉÍÓÚÑÜ]', '', nombre, flags=re.UNICODE)
+    if texto.isupper():
+        # Preservar banderas (todo lo que no es texto)
+        banderas = re.sub(r'[\w\sáéíóúñüÁÉÍÓÚÑÜ]', '', nombre, flags=re.UNICODE)
+        return banderas + texto.title()
+    return nombre
+
 def css_comun() -> str:
     return f"""
 :root {{
@@ -584,15 +597,16 @@ const SHARE_DATA = {json.dumps({"acumulado": acumulado, "costo": participantes.g
 
 function shareWhatsApp() {{
   const d = SHARE_DATA;
-  let text = '🏆 *Polla Mundialista 2026*%0A%0A';
-  text += '💰 Acumulado: *$' + d.acumulado.toLocaleString() + '* (' + d.pollas + ' pollas × $' + d.costo + ')%0A%0A';
-  text += '📊 *Leaderboard:*%0A';
+  let text = '\\u{{1F3C6}} Polla Mundialista 2026\\n\\n';
+  text += '\\u{{1F4B0}} Acumulado: $' + d.acumulado.toLocaleString() + ' (' + d.pollas + ' pollas x $' + d.costo + ')\\n\\n';
+  text += '\\u{{1F4CA}} Leaderboard:\\n';
   d.leaderboard.forEach((p, i) => {{
-    const medal = i===0?'🥇':i===1?'🥈':i===2?'🥉':'';
-    text += (i+1) + '. ' + p.nombre + (p.letra!=='A'?' ('+p.letra+')':'') + ' — ' + p.total + ' pts%0A';
+    const medal = i===0?'\\u{{1F947}}':i===1?'\\u{{1F948}}':i===2?'\\u{{1F949}}':'';
+    text += (i+1) + '. ' + medal + ' ' + p.nombre + (p.letra!=='A'?' ('+p.letra+')':'') + ': ' + p.total + ' pts\\n';
   }});
-  text += '%0A🔗 Ver más: https://joseurgilesc.github.io/webPollaMundialista/';
-  window.open('https://wa.me/?text=' + text, '_blank');
+  text += '\\n\\u{{1F517}} https://joseurgilesc.github.io/webPollaMundialista/';
+  const url = 'https://api.whatsapp.com/send?text=' + encodeURIComponent(text);
+  window.location.href = url;
 }}
 
 function findPolla(ref) {{

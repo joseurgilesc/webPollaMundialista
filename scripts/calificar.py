@@ -10,6 +10,7 @@ Uso: python3 calificar.py
 
 import json
 import os
+import re
 from pathlib import Path
 from collections import defaultdict
 
@@ -18,6 +19,42 @@ from collections import defaultdict
 POLLAS_DIR = Path("data/pollas")
 RESULTADOS_FILE = Path("data/resultados_reales.json")
 SALIDA_FILE = Path("data/puntajes.json")
+
+
+# ── Normalización de nombres de equipos ──────────────────────────
+
+def normalizar_equipo(nombre: str) -> str:
+    """
+    Normaliza un nombre de equipo para comparación:
+    - Quita banderas (emojis de bandera, caracteres no-word)
+    - Convierte a mayúsculas
+    - Quita espacios extra
+    - Maneja variantes conocidas
+    """
+    if not nombre:
+        return ""
+    # Quitar emojis y caracteres especiales (banderas, etc.)
+    nombre = re.sub(r'[^\w\sáéíóúñüÁÉÍÓÚÑÜ]', '', nombre, flags=re.UNICODE)
+    # Normalizar espacios
+    nombre = " ".join(nombre.split()).upper()
+    # Variantes conocidas
+    variantes = {
+        "ESTADOS UNIDOS": "USA",
+        "EEUU": "USA",
+        "EUA": "USA",
+        "REP CHECA": "REPUBLICA CHECA",
+        "REP CONGO": "REPUBLICA DEL CONGO",
+        "HOLANDA": "PAISES BAJOS",
+        "NETHERLANDS": "PAISES BAJOS",
+        "COSTA DE MARFIL": "COSTA DE MARFIL",
+        "BOSNIA Y HERZEGOVINA": "BOSNIA",
+        "ARABIA SAUDI": "ARABIA SAUDITA",
+        "TURQUIA": "TURQUIA",
+        "COREA DEL SUR": "COREA DEL SUR",
+        "NUEVA ZELANDA": "NUEVA ZELANDA",
+        "CABO VERDE": "CABO VERDE",
+    }
+    return variantes.get(nombre, nombre)
 
 
 # ── Scoring ────────────────────────────────────────────────────────
@@ -29,13 +66,13 @@ def _valor_entrada_16avos(entry: dict, real_por_equipo: dict, real_por_slot: dic
     1 = equipo correcto, slot incorrecto
     0 = equipo no está en 16avos reales
     """
-    eq = entry.get("equipo", "")
+    eq = normalizar_equipo(entry.get("equipo", ""))
     slot = entry.get("slot", "")
     if not eq:
         return 0
     if eq not in real_por_equipo:
         return 0
-    if slot and slot in real_por_slot and real_por_slot[slot] == eq:
+    if slot and slot in real_por_slot and normalizar_equipo(real_por_slot[slot]) == eq:
         return 2
     return 1
 
@@ -95,12 +132,12 @@ def _scorear_16avos(polla_entries: list, real_entries: list) -> tuple[int, dict]
     real_por_equipo = defaultdict(list)
     real_por_slot = {}
     for e in real_entries:
-        eq = e.get("equipo", "")
+        eq = normalizar_equipo(e.get("equipo", ""))
         slot = e.get("slot", "")
         if eq:
             real_por_equipo[eq].append(slot)
         if slot:
-            real_por_slot[slot] = eq
+            real_por_slot[slot] = e.get("equipo", "")  # guardar original para mostrar
     
     # Deduplicar polla: conservar la entrada que da MÁS puntos
     polla_unicos = _deduplicar_mejor(polla_entries, _valor_entrada_16avos, real_por_equipo, real_por_slot)
@@ -142,7 +179,7 @@ def _scorear_ronda_simple(polla_entries: list, real_entries: list, puntos_por_ac
     
     real_equipos = set()
     for e in real_entries:
-        eq = e.get("equipo", "")
+        eq = normalizar_equipo(e.get("equipo", ""))
         if eq:
             real_equipos.add(eq)
     
@@ -150,7 +187,7 @@ def _scorear_ronda_simple(polla_entries: list, real_entries: list, puntos_por_ac
     detalle = {"aciertos": [], "errores": []}
     
     for entry in polla_unicos:
-        eq = entry.get("equipo", "")
+        eq = normalizar_equipo(entry.get("equipo", ""))
         if not eq:
             continue
         
@@ -177,8 +214,8 @@ def _scorear_finales(polla_finales: dict, real_finales: dict) -> tuple[int, dict
     detalle = {"aciertos": [], "errores": []}
     
     for puesto, pts in PUNTOS.items():
-        predicho = polla_finales.get(puesto, "")
-        real = real_finales.get(puesto, "")
+        predicho = normalizar_equipo(polla_finales.get(puesto, ""))
+        real = normalizar_equipo(real_finales.get(puesto, ""))
         
         if not predicho:
             detalle["errores"].append(f"{puesto}: sin predicción")
@@ -195,11 +232,34 @@ def _scorear_finales(polla_finales: dict, real_finales: dict) -> tuple[int, dict
 
 # ── Scoring principal ──────────────────────────────────────────────
 
+def _normalizar_datos_polla(data: dict) -> dict:
+    """Normaliza nombres de equipos en todos los campos de una polla."""
+    import copy
+    data = copy.deepcopy(data)
+    # Grupos
+    for g, eqs in data.get("grupos", {}).items():
+        data["grupos"][g] = {normalizar_equipo(k): v for k, v in eqs.items()}
+    # Rondas
+    for ronda in ["ronda_16avos", "ronda_8avos", "ronda_cuartos", "ronda_semifinales"]:
+        for e in data.get(ronda, []):
+            if "equipo" in e:
+                e["equipo"] = normalizar_equipo(e["equipo"])
+    # Finales
+    for k in ["campeon", "segundo", "tercero", "cuarto"]:
+        if k in data.get("finales", {}):
+            data["finales"][k] = normalizar_equipo(data["finales"][k])
+    return data
+
+
 def calificar_polla(polla: dict, real: dict) -> dict:
     """
     Calcula el puntaje completo de una polla contra los resultados reales.
     Retorna dict con puntaje por ronda y total.
     """
+    # Normalizar datos de la polla para comparación
+    polla = _normalizar_datos_polla(polla)
+    real = _normalizar_datos_polla(real)
+    
     resultado = {
         "participante": polla.get("participante", "?"),
         "archivo": polla.get("archivo_original", "?"),
