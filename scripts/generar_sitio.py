@@ -535,7 +535,7 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
   <header class="header">
     <div>
       <h1>⚽ Polla <span class="accent">Mundialista</span> 2026</h1>
-      <div style="color:var(--muted);font-size:0.8rem;">Leaderboard en tiempo real</div>
+      <div style="color:var(--muted);font-size:0.8rem;">Tablero de posición</div>
     </div>
     <div class="badge">{'🔥 EN VIVO' if hay_puntajes else '⏳ PRONTO'}</div>
   </header>
@@ -572,7 +572,7 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
   </div>
 
   <div class="card">
-    <h3 style="color:var(--navy);margin-bottom:16px;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.06em;">🏆 Leaderboard</h3>
+    <h3 style="color:var(--navy);margin-bottom:16px;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.06em;">🏆 Tablero de posición</h3>
     <div class="table-wrap"><table>
       <thead><tr><th>#</th><th>Participante</th><th>16avos</th><th>8avos</th><th>Cuartos</th><th>Semis</th><th>Final</th><th>Total</th></tr></thead>
       <tbody>{filas}</tbody>
@@ -618,7 +618,7 @@ function shareWhatsApp() {{
   const d = SHARE_DATA;
   let text = '\\u{{1F3C6}} Polla Mundialista 2026\\n\\n';
   text += '\\u{{1F4B0}} Acumulado: $' + d.acumulado.toLocaleString() + ' (' + d.pollas + ' pollas x $' + d.costo + ')\\n\\n';
-  text += '\\u{{1F4CA}} Leaderboard:\\n';
+  text += '\\u{{1F4CA}} Tablero:\\n';
   d.leaderboard.forEach((p, i) => {{
     const medal = i===0?'\\u{{1F947}}':i===1?'\\u{{1F948}}':i===2?'\\u{{1F949}}':'';
     text += (i+1) + '. ' + medal + ' ' + p.nombre + (p.letra!=='A'?' ('+p.letra+')':'') + ': ' + p.total + ' pts\\n';
