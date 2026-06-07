@@ -692,12 +692,7 @@ async function fetchAPI() {
     showToast('✅ API: ' + (out.equipos||0) + ' equipos');
   } catch(e) {
     const msg = e.message.includes('Failed to fetch') || e.message.includes('NetworkError')
-      ? '❌ Error CORS: la API no permite consultas desde local.
-
-Usá el script Python en su lugar:
-  python3 scripts/fetch_resultados.py --api
-
-(O publicá el sitio en GitHub Pages — ahí funciona sin CORS)'
+      ? `❌ Error CORS: la API no permite consultas desde local. Usá el script Python: python3 scripts/fetch_resultados.py --api (O publicá en GitHub Pages y funciona)`
       : 'Error: ' + e.message;
     document.getElementById('resOutput').value = msg;
     showToast('❌ ' + (e.message.includes('Failed') ? 'CORS bloqueado' : 'Error API'));
