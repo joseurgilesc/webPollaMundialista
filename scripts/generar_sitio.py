@@ -583,7 +583,8 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
     </div>
   </div>
 
-  <div class="card">
+  <!-- Predicciones ocultas hasta el 11 de junio -->
+  <div class="card" id="prediccionesCard" style="display:none;">
     <h3 style="color:var(--navy);margin-bottom:16px;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.06em;">🔮 Predicciones</h3>
     <div class="predicciones">
       {predicciones_html}
@@ -611,6 +612,11 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
 <footer>Actualizado: {fecha} · Puntajes recalculados automáticamente</footer>
 
 <script>
+// Mostrar predicciones a partir del 11 de junio 2026
+if (new Date() >= new Date('2026-06-11')) {{
+  document.getElementById('prediccionesCard').style.display = '';
+}}
+
 const POLLAS = {pollas_json};
 const SHARE_DATA = {json.dumps({"acumulado": acumulado, "costo": participantes.get("costo_por_polla", 10), "pollas": total_pollas, "hay_puntajes": hay_puntajes, "leaderboard": [{"nombre": normalizar_nombre(r["participante"]), "letra": r.get("polla_letra","A"), "total": r["puntajes"]["total"]} for r in puntajes]})};
 
