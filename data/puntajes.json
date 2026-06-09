@@ -732,6 +732,215 @@
     "polla_letra": "A"
   },
   {
+    "participante": "PATRICIO CORDOVA",
+    "archivo": "Polla Mundialista PCC.xlsx",
+    "puntajes": {
+      "16avos": 0,
+      "8avos": 0,
+      "cuartos": 0,
+      "semifinales": 0,
+      "finales": 0,
+      "total": 0
+    },
+    "detalle": {
+      "16avos": {
+        "aciertos_equipo": [],
+        "aciertos_posicion": [],
+        "errores": [
+          "ECUADOR no clasificó a 16avos",
+          "SUDÁFRICA no clasificó a 16avos",
+          "FRANCIA no clasificó a 16avos",
+          "ESCOCIA no clasificó a 16avos",
+          "MÉXICO no clasificó a 16avos",
+          "CANADÁ no clasificó a 16avos",
+          "PAISES BAJOS no clasificó a 16avos",
+          "MARRUECOS no clasificó a 16avos",
+          "COLOMBIA no clasificó a 16avos",
+          "CROACIA no clasificó a 16avos",
+          "ESPAÑA no clasificó a 16avos",
+          "AUSTRIA no clasificó a 16avos",
+          "USA no clasificó a 16avos",
+          "BOSNIA no clasificó a 16avos",
+          "BÉLGICA no clasificó a 16avos",
+          "COSTA DE MARFIL no clasificó a 16avos",
+          "BRASIL no clasificó a 16avos",
+          "JAPÓN no clasificó a 16avos",
+          "ALEMANIA no clasificó a 16avos",
+          "NORUEGA no clasificó a 16avos",
+          "COREA DEL SUR no clasificó a 16avos",
+          "TÚNEZ no clasificó a 16avos",
+          "INGLATERRA no clasificó a 16avos",
+          "ARABIA SAUDÍ no clasificó a 16avos",
+          "ARGENTINA no clasificó a 16avos",
+          "URUGUAY no clasificó a 16avos",
+          "TURQUÍA no clasificó a 16avos",
+          "EGIPTO no clasificó a 16avos",
+          "SUIZA no clasificó a 16avos",
+          "IRÁN no clasificó a 16avos",
+          "PORTUGAL no clasificó a 16avos",
+          "PARAGUAY no clasificó a 16avos"
+        ]
+      },
+      "8avos": {
+        "aciertos": [],
+        "errores": [
+          "ECUADOR no llegó a 8avos",
+          "FRANCIA no llegó a 8avos",
+          "CANADÁ no llegó a 8avos",
+          "MARRUECOS no llegó a 8avos",
+          "CROACIA no llegó a 8avos",
+          "ESPAÑA no llegó a 8avos",
+          "USA no llegó a 8avos",
+          "BÉLGICA no llegó a 8avos",
+          "BRASIL no llegó a 8avos",
+          "ALEMANIA no llegó a 8avos",
+          "TÚNEZ no llegó a 8avos",
+          "INGLATERRA no llegó a 8avos",
+          "ARGENTINA no llegó a 8avos",
+          "TURQUÍA no llegó a 8avos",
+          "SUIZA no llegó a 8avos",
+          "PORTUGAL no llegó a 8avos"
+        ]
+      },
+      "cuartos": {
+        "aciertos": [],
+        "errores": [
+          "FRANCIA no llegó a cuartos",
+          "MARRUECOS no llegó a cuartos",
+          "ESPAÑA no llegó a cuartos",
+          "BÉLGICA no llegó a cuartos",
+          "BRASIL no llegó a cuartos",
+          "INGLATERRA no llegó a cuartos",
+          "ARGENTINA no llegó a cuartos",
+          "PORTUGAL no llegó a cuartos"
+        ]
+      },
+      "semifinales": {
+        "aciertos": [],
+        "errores": [
+          "FRANCIA no llegó a semifinales",
+          "ESPAÑA no llegó a semifinales",
+          "INGLATERRA no llegó a semifinales",
+          "ARGENTINA no llegó a semifinales"
+        ]
+      },
+      "finales": {
+        "aciertos": [],
+        "errores": [
+          "campeon: predijo ESPAÑA, real:  (0 pts)",
+          "segundo: predijo INGLATERRA, real:  (0 pts)",
+          "tercero: predijo FRANCIA, real:  (0 pts)",
+          "cuarto: predijo ARGENTINA, real:  (0 pts)"
+        ]
+      }
+    },
+    "polla_letra": "A"
+  },
+  {
+    "participante": "SUSANA REYES J",
+    "archivo": "Polla Mundialista SUSI.xlsx",
+    "puntajes": {
+      "16avos": 0,
+      "8avos": 0,
+      "cuartos": 0,
+      "semifinales": 0,
+      "finales": 0,
+      "total": 0
+    },
+    "detalle": {
+      "16avos": {
+        "aciertos_equipo": [],
+        "aciertos_posicion": [],
+        "errores": [
+          "ALEMANIA no clasificó a 16avos",
+          "REPUBLICA CHECA no clasificó a 16avos",
+          "FRANCIA no clasificó a 16avos",
+          "ESCOCIA no clasificó a 16avos",
+          "MÉXICO no clasificó a 16avos",
+          "CANADÁ no clasificó a 16avos",
+          "PAISES BAJOS no clasificó a 16avos",
+          "MARRUECOS no clasificó a 16avos",
+          "COLOMBIA no clasificó a 16avos",
+          "CROACIA no clasificó a 16avos",
+          "ESPAÑA no clasificó a 16avos",
+          "ARGELIA no clasificó a 16avos",
+          "USA no clasificó a 16avos",
+          "BOSNIA no clasificó a 16avos",
+          "BÉLGICA no clasificó a 16avos",
+          "COSTA DE MARFIL no clasificó a 16avos",
+          "BRASIL no clasificó a 16avos",
+          "JAPÓN no clasificó a 16avos",
+          "ECUADOR no clasificó a 16avos",
+          "NORUEGA no clasificó a 16avos",
+          "COREA DEL SUR no clasificó a 16avos",
+          "INGLATERRA no clasificó a 16avos",
+          "ARABIA SAUDÍ no clasificó a 16avos",
+          "ARGENTINA no clasificó a 16avos",
+          "URUGUAY no clasificó a 16avos",
+          "TURQUÍA no clasificó a 16avos",
+          "EGIPTO no clasificó a 16avos",
+          "SUIZA no clasificó a 16avos",
+          "TÚNEZ no clasificó a 16avos",
+          "PORTUGAL no clasificó a 16avos",
+          "SENEGAL no clasificó a 16avos"
+        ]
+      },
+      "8avos": {
+        "aciertos": [],
+        "errores": [
+          "ALEMANIA no llegó a 8avos",
+          "FRANCIA no llegó a 8avos",
+          "CANADÁ no llegó a 8avos",
+          "MARRUECOS no llegó a 8avos",
+          "CROACIA no llegó a 8avos",
+          "ESPAÑA no llegó a 8avos",
+          "USA no llegó a 8avos",
+          "BÉLGICA no llegó a 8avos",
+          "BRASIL no llegó a 8avos",
+          "ECUADOR no llegó a 8avos",
+          "COREA DEL SUR no llegó a 8avos",
+          "INGLATERRA no llegó a 8avos",
+          "ARGENTINA no llegó a 8avos",
+          "EGIPTO no llegó a 8avos",
+          "TÚNEZ no llegó a 8avos",
+          "PORTUGAL no llegó a 8avos"
+        ]
+      },
+      "cuartos": {
+        "aciertos": [],
+        "errores": [
+          "FRANCIA no llegó a cuartos",
+          "MARRUECOS no llegó a cuartos",
+          "ESPAÑA no llegó a cuartos",
+          "BÉLGICA no llegó a cuartos",
+          "BRASIL no llegó a cuartos",
+          "INGLATERRA no llegó a cuartos",
+          "ARGENTINA no llegó a cuartos",
+          "PORTUGAL no llegó a cuartos"
+        ]
+      },
+      "semifinales": {
+        "aciertos": [],
+        "errores": [
+          "FRANCIA no llegó a semifinales",
+          "ESPAÑA no llegó a semifinales",
+          "INGLATERRA no llegó a semifinales",
+          "ARGENTINA no llegó a semifinales"
+        ]
+      },
+      "finales": {
+        "aciertos": [],
+        "errores": [
+          "campeon: predijo INGLATERRA, real:  (0 pts)",
+          "segundo: predijo ESPAÑA, real:  (0 pts)",
+          "tercero: predijo FRANCIA, real:  (0 pts)",
+          "cuarto: predijo ARGENTINA, real:  (0 pts)"
+        ]
+      }
+    },
+    "polla_letra": "A"
+  },
+  {
     "participante": "SANTIAGO CORDOVA C.",
     "archivo": "POLLA SCC1.xlsx",
     "puntajes": {
