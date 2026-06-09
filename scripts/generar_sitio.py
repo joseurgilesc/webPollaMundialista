@@ -43,6 +43,10 @@ def calcular_acumulado(participantes: dict) -> int:
     costo = participantes.get("costo_por_polla", 10)
     return sum(p.get("pollas", 1) for p in participantes.get("participantes", []) if p.get("pago")) * costo
 
+def calcular_proyectado(participantes: dict) -> int:
+    costo = participantes.get("costo_por_polla", 10)
+    return sum(p.get("pollas", 1) for p in participantes.get("participantes", [])) * costo
+
 def normalizar_nombre(nombre: str) -> str:
     """Convierte MAYÚSCULAS a Title Case para display."""
     if not nombre or not nombre.isupper():
@@ -428,6 +432,7 @@ footer {{ text-align: center; padding: 24px; color: var(--muted); font-size: 0.7
 
 def generar_publica(puntajes: list, participantes: dict) -> str:
     acumulado = calcular_acumulado(participantes)
+    proyectado = calcular_proyectado(participantes)
     total_participantes = len(participantes.get("participantes", []))
     total_pollas = sum(p.get("pollas", 1) for p in participantes.get("participantes", []))
     
@@ -549,6 +554,7 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
     <div class="info" style="margin-left:auto;">
       {total_pollas} pollas registradas<br>
       ${participantes.get("costo_por_polla", 10)} c/u
+      {f'<br><span style="color:var(--muted);font-size:0.75rem;">⚡ Proyectado: ${proyectado:,}</span>' if proyectado > acumulado else ''}
     </div>
   </div>
 
