@@ -715,6 +715,23 @@ D.forEach(d=>{{
 def generar_admin(participantes: dict) -> str:
     costo = participantes.get("costo_por_polla", 10)
     
+    # Cargar predicciones para mostrar en admin
+    pred_admin = ""
+    for f in sorted(POLLAS_DIR.glob("*.json")):
+        with open(f, encoding="utf-8") as fp:
+            data = json.load(fp)
+        fin = data.get("finales", {})
+        nd = normalizar_equipo_display
+        pred_admin += f"""<div class="pred-card" onclick="verPollaAdmin('{f.stem}')" style="cursor:pointer;">
+      <div class="pred-name">{normalizar_nombre(data.get('participante','?'))}</div>
+      <div class="pred-picks">
+        <span>🏆 {nd(fin.get('campeon','')) or '—'}</span>
+        <span>🥈 {nd(fin.get('segundo','')) or '—'}</span>
+        <span>🥉 {nd(fin.get('tercero','')) or '—'}</span>
+        <span>4° {nd(fin.get('cuarto','')) or '—'}</span>
+      </div>
+    </div>"""
+    
     # ── Detectar archivos pendientes ──
     pendientes = []
     
@@ -838,6 +855,14 @@ def generar_admin(participantes: dict) -> str:
     <h3 style="color:var(--navy);margin-bottom:8px;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.06em;">📂 Archivos pendientes ({len(pendientes)})</h3>
     <div class="file-list" id="pendingList"></div>
     <div style="font-size:0.7rem;color:var(--muted);margin-top:8px;">Seleccioná uno y transcribilo abajo. Después movelo a <code>pendientes/procesados/</code></div>
+  </div>
+
+  <!-- Predicciones de todos -->
+  <div class="card">
+    <h3 style="color:var(--navy);margin-bottom:12px;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.06em;">🔮 Predicciones de participantes</h3>
+    <div class="predicciones">
+      {pred_admin}
+    </div>
   </div>
 
   <!-- Transcripción -->
