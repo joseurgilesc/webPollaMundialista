@@ -1,11 +1,15 @@
 #!/usr/bin/env python3
 """
-Parser alternativo para pollas en formato horizontal (Fer, Seb, etc.)
+Parser v2 para pollas en formato horizontal (Fer, Seb, etc.)
 
-Formato:
+Estructura:
 - Grupos: 12 grupos en columnas B-Y, filas 5-8
-- Bracket: slots y equipos dispersos en columnas C-AA, filas 12-30
-- Participante: D2
+- Bracket IZQUIERDO: slots en columna C, equipos en columna D (filas pares 12-42)
+- Bracket DERECHO: slots en columna W, equipos en columna V (filas pares 12-42)
+- 8avos IZQ: columna F | 8avos DER: columna T
+- Cuartos IZQ: columna H | Cuartos DER: columna R  
+- Semifinales: columnas J, P (filas 19, 35)
+- Finales: posiciones 1-4 en K38-L41
 
 Uso: python3 importar_excel_v2.py <archivo.xlsx> [...]
 """
@@ -31,123 +35,111 @@ def parsear_excel_v2(filepath):
     wb = load_workbook(filepath, data_only=True)
     ws = wb[wb.sheetnames[0]]
     
-    # Construir grilla
+    # Construir grilla {(fila, col_letra): valor}
     grilla = {}
-    for row in ws.iter_rows(min_row=1, max_row=ws.max_row or 50):
+    for row in ws.iter_rows(min_row=1, max_row=ws.max_row or 60):
         for cell in row:
             if cell.value is not None:
                 val = str(cell.value).strip()
                 if val:
                     grilla[(cell.row, cell.column_letter)] = val
     
-    # ── Participante ──
+    # ── Participante (D2) ──
     participante = grilla.get((2, "D"), "Sin nombre")
     
-    # ── Grupos (horizontal B-Y) ──
+    # ── Grupos (horizontal B-Y, rows 5-8) ──
     grupos = {}
-    # Row 4: "GRUPO A", "GRUPO B", ... every 2 columns from B to Y
-    # Row 5-8: equipos y posiciones
-    col_inicio = col_letra_a_numero("B")
-    col_fin = col_letra_a_numero("Y")
+    # Row 4 headers: "GRUPO A" at B, "GRUPO B" at D, etc. 
+    # Teams: rows 5-8, even columns (B,D,F,...), positions: odd columns (C,E,G,...)
+    col_team_start = ord('B') - ord('A')
+    col_team_end = ord('Y') - ord('A')
     
-    for col_idx in range(col_inicio, col_fin + 1, 2):  # B, D, F, ...
-        col_equipo = chr(ord('A') + col_idx)      # columna del equipo
-        col_pos = chr(ord('A') + col_idx + 1)     # columna de la posición
+    for col_idx in range(col_team_start, col_team_end + 1, 2):
+        col_e = chr(ord('A') + col_idx)
+        col_p = chr(ord('A') + col_idx + 1)
         
-        # Buscar encabezado "GRUPO X" en fila 4
-        encabezado = grilla.get((4, col_equipo), "")
-        if not encabezado.upper().startswith("GRUPO"):
+        header = grilla.get((4, col_e), "")
+        if not header.upper().startswith("GRUPO"):
             continue
-        
-        letra = encabezado.replace("GRUPO", "").strip()
+        letra = header.replace("GRUPO", "").strip()
         if not letra or len(letra) > 2:
             continue
         
         equipos = {}
         for fila in range(5, 9):
-            equipo = limpiar(grilla.get((fila, col_equipo), ""))
-            pos_str = grilla.get((fila, col_pos), "")
-            if not equipo:
+            eq = limpiar(grilla.get((fila, col_e), ""))
+            pos_str = grilla.get((fila, col_p), "")
+            if not eq:
                 continue
             try:
                 pos = int(float(pos_str))
             except (ValueError, TypeError):
                 pos = None
-            equipos[equipo] = pos
+            equipos[eq] = pos
         
         if equipos:
             grupos[letra] = equipos
     
-    # ── Bracket ──
-    # Escanear filas 10-40 buscando códigos de slot y equipos cercanos
-    ronda_16 = []
-    ronda_8 = []
-    ronda_4 = []
-    ronda_2 = []
+    # ── 16avos: LEFT (C+D) + RIGHT (W+V), rows 12-42 (even rows) ──
+    def extraer_16avos(col_slot, col_team):
+        """Extrae slots y equipos de columnas específicas."""
+        slots = []
+        for fila in range(12, 44, 2):  # 12,14,16,...,42
+            slot = grilla.get((fila, col_slot), "")
+            if es_slot(slot):
+                eq = limpiar(grilla.get((fila, col_team), ""))
+                slots.append({"slot": slot, "equipo": eq})
+        return slots
     
-    # Mapeo de slots encontrados
-    slots_encontrados = {}  # slot_code -> (fila, col)
+    ronda_16 = extraer_16avos("C", "D") + extraer_16avos("W", "V")
     
-    for fila in range(10, 40):
-        for col_num in range(2, 27):  # B to AA
-            col = chr(ord('A') + col_num)
-            val = grilla.get((fila, col), "")
-            if es_slot(val) and val not in slots_encontrados:
-                slots_encontrados[val] = (fila, col)
+    # ── 8avos: LEFT (F) + RIGHT (T), equipos en filas específicas ──
+    def extraer_ronda(col, filas):
+        equipos = []
+        for f in filas:
+            eq = limpiar(grilla.get((f, col), ""))
+            if eq and not es_slot(eq) and not re.match(r'^M\d{2,3}', eq):
+                equipos.append({"equipo": eq})
+        return equipos
     
-    # Para cada slot, buscar el equipo más cercano (a la derecha o izquierda)
-    for slot, (fila, col_slot) in slots_encontrados.items():
-        col_idx = col_letra_a_numero(col_slot)
-        equipo = ""
-        
-        # Buscar en celdas adyacentes (derecha, izquierda, debajo)
-        for offset_col in [1, -1, 2, -2]:
-            col_vecina = chr(ord('A') + col_idx + offset_col)
-            val = grilla.get((fila, col_vecina), "")
-            if val and not es_slot(val) and not val.upper() in ("CUARTOS", "8AVOS", "16AVOS", "SEMIFINALES", "FINAL", "MEJORES TERCEROS"):
-                # Verificar que no sea un label de partido (M74, M89, etc.)
-                if not re.match(r'^M\d{2,3}', val) and not re.match(r'^\d+AVOS', val, re.I):
-                    equipo = limpiar(val)
-                    break
-        
-        if equipo:
-            ronda_16.append({"slot": slot, "equipo": equipo})
+    ronda_8 = extraer_ronda("F", [13,17,21,25,29,33,37,41]) + \
+              extraer_ronda("T", [13,17,21,25,29,33,37,41])
     
-    # ── 8avos ──
-    # Buscar en columnas F y T
-    for fila in range(12, 35):
-        for col in ("F", "T"):
-            val = grilla.get((fila, col), "")
-            if val and not es_slot(val) and not val.upper() in ("CUARTOS", "8AVOS", "16AVOS", "SEMIFINALES", "FINAL"):
-                if not re.match(r'^M\d{2,3}', val):
-                    ronda_8.append({"equipo": limpiar(val)})
+    # ── Cuartos: LEFT (H) + RIGHT (R) ──
+    ronda_4 = extraer_ronda("H", [15,23,31,39]) + \
+              extraer_ronda("R", [15,23,31,39])
     
-    # ── Cuartos ──
-    for fila in range(13, 30):
-        for col in ("H", "R"):
-            val = grilla.get((fila, col), "")
-            if val and not es_slot(val) and not val.upper() in ("CUARTOS", "8AVOS", "16AVOS", "SEMIFINALES", "FINAL"):
-                if not re.match(r'^M\d{2,3}', val):
-                    ronda_4.append({"equipo": limpiar(val)})
+    # ── Semifinales: LEFT (J) + RIGHT (P) ──
+    ronda_2 = extraer_ronda("J", [19,35]) + \
+              extraer_ronda("P", [19,35])
     
-    # ── Semifinales ──
-    # Buscar columnas típicas: K, P, etc.
-    for fila in range(15, 35):
-        for col in ("K", "P", "I", "S"):
-            val = grilla.get((fila, col), "")
-            if val and not es_slot(val) and not val.upper() in ("CUARTOS", "8AVOS", "16AVOS", "SEMIFINALES", "FINAL"):
-                if not re.match(r'^M\d{2,3}', val):
-                    eq = limpiar(val)
-                    if eq and eq not in [e["equipo"] for e in ronda_2] and eq not in [e["equipo"] for e in ronda_4]:
-                        ronda_2.append({"equipo": eq})
+    # ── Finales: posiciones 1-4 en K38-L41 ──
+    posiciones = {}
+    for fila in range(38, 42):
+        pos_str = grilla.get((fila, "K"), "")
+        equipo = limpiar(grilla.get((fila, "L"), ""))
+        try:
+            pos = int(float(pos_str))
+        except (ValueError, TypeError):
+            continue
+        nombre = {1: "campeon", 2: "segundo", 3: "tercero", 4: "cuarto"}.get(pos)
+        if nombre:
+            posiciones[nombre] = equipo
     
-    # Limitar a cantidades correctas
-    ronda_8 = ronda_8[:16]
-    ronda_4 = ronda_4[:8]
-    ronda_2 = ronda_2[:4]
+    # Si no encontramos posiciones en K-L, buscar en otras celdas
+    if not posiciones:
+        # Buscar labels FINAL, 3° LUGAR, etc.
+        for (fila, col), val in grilla.items():
+            if "CAMPEÓN" in val.upper() or "FINAL" in val.upper():
+                # Buscar equipos cercanos
+                pass
     
-    # ── Finales: no se pueden deducir automáticamente ──
-    finales = {"campeon": None, "segundo": None, "tercero": None, "cuarto": None}
+    finales = {
+        "campeon": posiciones.get("campeon"),
+        "segundo": posiciones.get("segundo"),
+        "tercero": posiciones.get("tercero"),
+        "cuarto": posiciones.get("cuarto"),
+    }
     
     # ── Validar ──
     errores = []
@@ -155,8 +147,21 @@ def parsear_excel_v2(filepath):
         errores.append(f"Se encontraron {len(grupos)} grupos, se esperaban 12")
     
     equipos_16 = [e["equipo"] for e in ronda_16 if e["equipo"]]
-    if len(equipos_16) < 10:
-        errores.append(f"16avos: solo {len(equipos_16)} equipos encontrados (puede que el formato no coincida)")
+    if len(equipos_16) != 32:
+        errores.append(f"16avos: {len(equipos_16)} equipos (se esperaban 32)")
+    
+    if len(ronda_8) != 16:
+        errores.append(f"8avos: {len(ronda_8)} equipos (se esperaban 16)")
+    
+    if len(ronda_4) != 8:
+        errores.append(f"Cuartos: {len(ronda_4)} equipos (se esperaban 8)")
+    
+    if len(ronda_2) != 4:
+        errores.append(f"Semifinales: {len(ronda_2)} equipos (se esperaban 4)")
+    
+    puestos_faltantes = [k for k, v in finales.items() if v is None]
+    if puestos_faltantes:
+        errores.append(f"Finales incompletas: faltan {', '.join(puestos_faltantes)}")
     
     return {
         "archivo_original": os.path.basename(filepath),
@@ -169,12 +174,6 @@ def parsear_excel_v2(filepath):
         "finales": finales,
         "errores": errores,
     }
-
-def col_letra_a_numero(col):
-    n = 0
-    for c in col.upper():
-        n = n * 26 + (ord(c) - ord('A') + 1)
-    return n - 1
 
 def main():
     if len(sys.argv) < 2:
@@ -199,12 +198,16 @@ def main():
             continue
         
         print(f"  Participante: {datos['participante']}")
-        print(f"  Grupos: {len(datos['grupos'])}")
-        print(f"  16avos: {len(datos['ronda_16avos'])} slots")
-        equipos = sum(1 for e in datos['ronda_16avos'] if e['equipo'])
-        print(f"  8avos: {len(datos['ronda_8avos'])} equipos")
-        print(f"  Cuartos: {len(datos['ronda_cuartos'])} equipos")
-        print(f"  Semis: {len(datos['ronda_semifinales'])} equipos")
+        print(f"  Grupos: {len(datos['grupos'])}/12")
+        eq16 = sum(1 for e in datos['ronda_16avos'] if e['equipo'])
+        print(f"  16avos: {eq16}/32")
+        print(f"  8avos: {len(datos['ronda_8avos'])}/16")
+        print(f"  Cuartos: {len(datos['ronda_cuartos'])}/8")
+        print(f"  Semis: {len(datos['ronda_semifinales'])}/4")
+        print(f"  🏆 Campeón: {datos['finales']['campeon']}")
+        print(f"  🥈 Segundo: {datos['finales']['segundo']}")
+        print(f"  🥉 Tercero: {datos['finales']['tercero']}")
+        print(f"  4to: {datos['finales']['cuarto']}")
         
         if datos["errores"]:
             print(f"\n  ⚠️  Errores:")
