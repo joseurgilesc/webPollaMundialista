@@ -54,6 +54,30 @@
       "whatsapp": "",
       "pago": true,
       "pollas": 1
+    },
+    {
+      "nombre": "Patricio Cordova",
+      "whatsapp": "",
+      "pago": true,
+      "pollas": 1
+    },
+    {
+      "nombre": "Susana Reyes J",
+      "whatsapp": "",
+      "pago": true,
+      "pollas": 1
+    },
+    {
+      "nombre": "Fernanda Cordova",
+      "whatsapp": "",
+      "pago": true,
+      "pollas": 1
+    },
+    {
+      "nombre": "Sebastien Pagé",
+      "whatsapp": "",
+      "pago": true,
+      "pollas": 1
     }
   ]
 }
