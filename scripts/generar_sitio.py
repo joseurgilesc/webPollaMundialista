@@ -715,6 +715,15 @@ D.forEach(d=>{{
 def generar_admin(participantes: dict) -> str:
     costo = participantes.get("costo_por_polla", 10)
     
+    # Cargar pollas para el modal
+    pollas_completas = {}
+    for f in sorted(POLLAS_DIR.glob("*.json")):
+        with open(f, encoding="utf-8") as fp:
+            data = json.load(fp)
+            pollas_completas[f.stem] = data
+    
+    pollas_json = json.dumps(pollas_completas, ensure_ascii=False)
+    
     # Cargar predicciones para mostrar en admin
     pred_admin = ""
     for f in sorted(POLLAS_DIR.glob("*.json")):
@@ -722,7 +731,7 @@ def generar_admin(participantes: dict) -> str:
             data = json.load(fp)
         fin = data.get("finales", {})
         nd = normalizar_equipo_display
-        pred_admin += f"""<div class="pred-card">
+        pred_admin += f"""<div class="pred-card" onclick="verPolla(\'{f.stem}\')" style="cursor:pointer;">
       <div class="pred-name">{normalizar_nombre(data.get('participante','?'))}</div>
       <div class="pred-picks">
         <span>🏆 {nd(fin.get('campeon','')) or '—'}</span>
@@ -969,6 +978,7 @@ def generar_admin(participantes: dict) -> str:
 
 <script>
 const PASSWORD = "{ADMIN_PASSWORD}";
+const POLLAS = {pollas_json};
 const COSTO = {costo};
 const GRUPOS = ['A','B','C','D','E','F','G','H','I','J','K','L'];
 const SLOTS_IZQ = {json.dumps(slots_izq)};
@@ -1417,7 +1427,50 @@ function renderAll() {{
 }}
 
 loadPagos();
+
+function verPolla(ref) {{
+  const polla = POLLAS[ref];
+  if (!polla) return;
+  let html = '<div style="max-height:70vh;overflow-y:auto;">';
+  if (polla.grupos) {{
+    html += '<h4 style="color:var(--navy);">🏟️ Grupos</h4><div class="modal-grupos">';
+    Object.entries(polla.grupos).forEach(([g, eqs]) => {{
+      html += '<div class="modal-grupo"><strong>Grupo '+g+'</strong>';
+      Object.entries(eqs).sort((a,b)=>(a[1]||99)-(b[1]||99)).forEach(([eq, pos]) => {{
+        html += '<div>'+(pos||'?')+'° '+eq+'</div>';
+      }});
+      html += '</div>';
+    }});
+    html += '</div>';
+  }}
+  [['⚽ 16avos', polla.ronda_16avos, true],['⚽ 8avos', polla.ronda_8avos, false],['⚽ Cuartos', polla.ronda_cuartos, false],['⚽ Semifinales', polla.ronda_semifinales, false]].forEach(([t, arr, s]) => {{
+    if (!arr?.length) return;
+    html += '<h4 style="color:var(--navy);">'+t+'</h4><div class="modal-slots">';
+    arr.forEach((e,i) => html += '<div class="slot-row"><span class="s-code">'+(s?(e.slot||''):('#'+(i+1)))+'</span><span class="s-team">'+(e.equipo||'—')+'</span></div>');
+    html += '</div>';
+  }});
+  const f = polla.finales||{{}};
+  html += '<h4 style="color:var(--navy);">🏆 Finales</h4>';
+  html += '<div>🏆 Campeón: '+(f.campeon||'—')+'</div><div>🥈 Segundo: '+(f.segundo||'—')+'</div><div>🥉 Tercero: '+(f.tercero||'—')+'</div><div>4°: '+(f.cuarto||'—')+'</div>';
+  html += '</div>';
+  document.getElementById('adminModalTitle').textContent = '📋 '+(polla.participante||'');
+  document.getElementById('adminModalBody').innerHTML = html;
+  document.getElementById('adminModal').classList.remove('hidden');
+}}
+function closeAdminModal() {{ document.getElementById('adminModal').classList.add('hidden'); }}
 </script>
+
+<!-- Modal admin -->
+<div id="adminModal" class="modal-overlay hidden" onclick="if(event.target===this)closeAdminModal()">
+  <div class="modal-content card">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+      <h2 id="adminModalTitle" style="color:var(--navy);font-size:1rem;"></h2>
+      <button class="btn btn-outline btn-sm" onclick="closeAdminModal()">✕ Cerrar</button>
+    </div>
+    <div id="adminModalBody"></div>
+  </div>
+</div>
+
 </body>
 </html>"""
 
