@@ -722,7 +722,7 @@ def generar_admin(participantes: dict) -> str:
             data = json.load(fp)
         fin = data.get("finales", {})
         nd = normalizar_equipo_display
-        pred_admin += f"""<div class="pred-card" onclick="verPollaAdmin('{f.stem}')" style="cursor:pointer;">
+        pred_admin += f"""<div class="pred-card">
       <div class="pred-name">{normalizar_nombre(data.get('participante','?'))}</div>
       <div class="pred-picks">
         <span>🏆 {nd(fin.get('campeon','')) or '—'}</span>
