@@ -78,6 +78,13 @@
       "whatsapp": "",
       "pago": true,
       "pollas": 1
+    },
+    {
+      "nombre": "Hernando Jose Cordero",
+      "whatsapp": "",
+      "pago": false,
+      "pollas": 2
     }
-  ]
+  ],
+  "_nota": "⚠️ Pendiente: Hernando José Cordero (2 pollas)"
 }
