@@ -420,17 +420,18 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
 }
 .mc-row {
   display: grid;
-  grid-template-columns: 1fr 75px 75px 30px;
-  gap: 6px;
+  grid-template-columns: 1fr 65px 1fr 65px 30px;
+  gap: 4px;
   align-items: center;
   padding: 2px 0;
   border-bottom: 1px solid #f1f5f9;
+  font-size: 0.66rem;
 }
 .mc-header {
   display: grid;
-  grid-template-columns: 1fr 75px 75px 30px;
-  gap: 6px;
-  font-size: 0.55rem;
+  grid-template-columns: 1fr 65px 1fr 65px 30px;
+  gap: 4px;
+  font-size: 0.5rem;
   color: var(--muted);
   text-transform: uppercase;
   font-weight: 700;
@@ -1329,7 +1330,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
   </div>
 </div>
 
-<footer>Actualizado: 11/06/2026 17:17 · Puntajes recalculados automáticamente</footer>
+<footer>Actualizado: 11/06/2026 17:25 · Puntajes recalculados automáticamente</footer>
 
 <script>
 // Mostrar predicciones
@@ -1406,28 +1407,30 @@ function verPolla(ref) {
     });
     html += '</div>';
     
-    // Comparación 16avos: Equipo | Slot predicho | Slot real | Pts
+    // Comparación 16avos
     html += '<div class="modal-compare"><h5>⚽ 16avos: Predicción vs Real</h5>';
-    html += '<div class="mc-header"><span>Equipo</span><span>Slot predicho</span><span>Slot real</span><span>Pts</span></div>';
+    html += '<div class="mc-header"><span>Tu predicción</span><span>Slot</span><span>Equipo real</span><span>Slot real</span><span>Pts</span></div>';
     
-    // Construir mapa inverso: equipo → slot real
-    const realTeamSlot = {};
-    (REALES.ronda_16avos||[]).forEach(e => { if(e.equipo) realTeamSlot[e.equipo] = e.slot; });
+    const realBySlot = {};
+    (REALES.ronda_16avos||[]).forEach(e => { if(e.equipo) realBySlot[e.slot] = e.equipo; });
+    const realSlotByTeam = {};
+    (REALES.ronda_16avos||[]).forEach(e => { if(e.equipo) realSlotByTeam[e.equipo] = e.slot; });
     
     (polla.ronda_16avos||[]).forEach(e => {
       const eq = e.equipo || '';
-      const slotPred = e.slot || '';
-      const slotReal = realTeamSlot[eq] || '';
+      const sp = e.slot || '';
+      const sr = realSlotByTeam[eq] || '';
+      const er = realBySlot[sp] || '';
       
-      if (!eq && !slotReal) return;
+      if (!eq && !er) return;
       
       let pts = 0, cls = 'mc-pend';
-      if (eq && slotReal) {
-        if (slotReal === slotPred) { pts = 2; cls = 'mc-hit'; }
-        else { pts = 1; cls = 'mc-miss'; }
+      if (eq && sr) {
+        pts = (sr === sp) ? 2 : 1;
+        cls = (sr === sp) ? 'mc-hit' : 'mc-miss';
       }
       
-      html += '<div class="mc-row '+cls+'"><span class="mc-team">'+(eq||'—')+'</span><span class="mc-pred">'+slotPred+'</span><span class="mc-real">'+(slotReal||'—')+'</span><span class="mc-pts">'+(pts?'+'+pts:'')+'</span></div>';
+      html += '<div class="mc-row '+cls+'"><span class="mc-team">'+(eq||'—')+'</span><span class="mc-pred">'+sp+'</span><span class="mc-real">'+(er||'—')+'</span><span class="mc-slot">'+(sr||'—')+'</span><span class="mc-pts">'+(pts?'+'+pts:'')+'</span></div>';
     });
     html += '</div>';
     
