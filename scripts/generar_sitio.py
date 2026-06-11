@@ -202,6 +202,7 @@ tr:hover td {{ background: #f8fafc; }}
 .top1 td {{ background: linear-gradient(90deg, rgba(192,57,43,0.12) 0%, rgba(192,57,43,0.04) 100%); border-left: 3px solid var(--gold); }}
 .top2 td {{ background: rgba(26,111,181,0.06); border-left: 3px solid var(--teal); }}
 .top3 td {{ background: rgba(100,100,120,0.05); border-left: 3px solid #888; }}
+.rank-sep td {{ border-bottom: 2px solid var(--card-border); }}
 .medal {{ display: inline-block; width: 22px; text-align: center; font-size: 1.1rem; }}
 .max-row td {{ color: var(--muted); font-size: 0.7rem; border-bottom: none; }}
 
@@ -648,22 +649,46 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
         pollas_por_nombre[n] = pollas_por_nombre.get(n, 0) + 1
     
     filas = ""
+    last_total = None
+    rank_display = 0
     for i, r in enumerate(puntajes):
         p = r["puntajes"]
+        total_pts = p["total"]
+        
+        # Calcular posición real (competition ranking: 1,1,1,4,5...)
+        if total_pts != last_total:
+            rank_display = i + 1
+            last_total = total_pts
+        
         nombre = normalizar_nombre(r["participante"])
         letra = r.get("polla_letra", "A")
-        # Usar nombre original para verificar si tiene múltiples pollas
         mostrar_letra = pollas_por_nombre.get(r["participante"], 1) > 1
-        medalla = {0: "🥇", 1: "🥈", 2: "🥉"}.get(i, "") if hay_puntajes else ""
-        clase = {0: "top1", 1: "top2", 2: "top3"}.get(i, "") if hay_puntajes else ""
+        
+        # Medallas solo si hay puntajes reales y es posición real distinta
+        medalla = ""
+        if hay_puntajes:
+            if rank_display == 1: medalla = "🥇"
+            elif rank_display == 2: medalla = "🥈"
+            elif rank_display == 3: medalla = "🥉"
+        
+        clase = ""
+        if hay_puntajes:
+            if rank_display == 1: clase = "top1"
+            elif rank_display == 2: clase = "top2"
+            elif rank_display == 3: clase = "top3"
+        
         tag_html = f'<span class="polla-tag">{letra}</span>' if mostrar_letra else ""
         
         filas += f"""<tr class="{clase}">
-          <td class="rank">{medalla} {i+1}</td>
+          <td class="rank">{medalla} {rank_display}</td>
           <td class="nombre">{nombre}{tag_html}</td>
           <td>{p["16avos"]}</td><td>{p["8avos"]}</td><td>{p["cuartos"]}</td>
           <td>{p["semifinales"]}</td><td>{p["finales"]}</td>
           <td class="total">{p["total"]}</td></tr>"""
+        
+        # Separador entre grupos de posición distinta
+        if i + 1 < len(puntajes) and puntajes[i+1]["puntajes"]["total"] != total_pts:
+            filas += '<tr class="rank-sep"><td colspan="8"></td></tr>'
     
     # Fila de máximos (solo cuando hay puntajes)
     if hay_puntajes:
