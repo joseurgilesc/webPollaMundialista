@@ -2511,52 +2511,6 @@
     "polla_letra": "A"
   },
   {
-    "participante": "Sin nombre",
-    "archivo": "Polla Mundialista J.C.xlsx",
-    "puntajes": {
-      "16avos": 0,
-      "8avos": 0,
-      "cuartos": 0,
-      "semifinales": 0,
-      "finales": 0,
-      "total": 0
-    },
-    "detalle": {
-      "16avos": {
-        "aciertos_equipo": [],
-        "aciertos_posicion": [],
-        "errores": []
-      },
-      "8avos": {
-        "aciertos": [],
-        "errores": [
-          "TÚNEZ no llegó a 8avos",
-          "COREA DEL SUR no llegó a 8avos"
-        ]
-      },
-      "cuartos": {
-        "aciertos": [],
-        "errores": []
-      },
-      "semifinales": {
-        "aciertos": [],
-        "errores": [
-          "ARABIA SAUDÍ no llegó a semifinales"
-        ]
-      },
-      "finales": {
-        "aciertos": [],
-        "errores": [
-          "campeon: sin predicción",
-          "segundo: sin predicción",
-          "tercero: sin predicción",
-          "cuarto: sin predicción"
-        ]
-      }
-    },
-    "polla_letra": "A"
-  },
-  {
     "participante": "Leandro José Urgilés Fernández de Córdova",
     "archivo": "Polla Mundialista Leandro Urgilés.xlsx",
     "puntajes": {
