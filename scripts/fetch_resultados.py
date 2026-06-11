@@ -87,15 +87,29 @@ def build_results_from_api():
     
     # ── Grupos: standings con rank real ──
     grupos_result = {}
+    grupos_completos = set()  # solo grupos con todos los partidos jugados
+    
+    # Detectar qué grupos están completos
+    for g in gl:
+        letra = g.get("name","")
+        matches = [m for m in gm if m.get("group") == letra and m.get("type") == "group"]
+        finished = [m for m in matches if m.get("finished") == "TRUE"]
+        if len(matches) == 6 and len(finished) == 6:  # 4 equipos = 6 partidos
+            grupos_completos.add(letra)
+    
     for g in gl:
         letra = g.get("name","")
         entries = g.get("teams",[])
-        # Ordenar por pts, luego GD
-        ranked = sorted(entries, key=lambda e: (-int(e.get("pts",0)), -(int(e.get("gf",0))-int(e.get("ga",0)))))
-        equipos = {}
-        for rank, e in enumerate(ranked, 1):
-            name = id_name.get(str(e.get("team_id","")), "?")
-            equipos[name] = rank
+        # Solo ordenar si el grupo está completo
+        if letra in grupos_completos:
+            ranked = sorted(entries, key=lambda e: (-int(e.get("pts",0)), -(int(e.get("gf",0))-int(e.get("ga",0)))))
+            equipos = {}
+            for rank, e in enumerate(ranked, 1):
+                name = id_name.get(str(e.get("team_id","")), "?")
+                equipos[name] = rank
+        else:
+            # Grupo no terminado: posiciones pendientes
+            equipos = {id_name.get(str(e.get("team_id","")), "?"): 0 for e in entries}
         if equipos:
             grupos_result[letra] = equipos
     
@@ -112,27 +126,26 @@ def build_results_from_api():
     terceros.sort(key=lambda x: (-x[1], -x[2]))
     terceros_clasificados = {t[0] for t in terceros[:8]}
     
-    # ── Llenar slots 16avos ──
+    # ── Llenar slots 16avos (solo grupos completos) ──
     ronda_16 = []
-    tercero_idx = 0
     for slot, pos, grp in SLOTS_16AVOS:
         equipo = ""
         if pos == 1:
-            # 1er lugar del grupo
-            if grp in grupos_result:
+            if isinstance(grp, str) and grp in grupos_completos and grp in grupos_result:
                 for eq, r in grupos_result[grp].items():
                     if r == 1: equipo = eq; break
         elif pos == 2:
-            if grp in grupos_result:
+            if isinstance(grp, str) and grp in grupos_completos and grp in grupos_result:
                 for eq, r in grupos_result[grp].items():
                     if r == 2: equipo = eq; break
         else:
-            # Mejor tercero de los grupos candidatos
+            # Mejor tercero: solo si TODOS los grupos candidatos están completos
             if isinstance(grp, list):
-                for t_letra, t_pts, t_gd, t_name in terceros:
-                    if t_letra in grp and t_letra in terceros_clasificados:
-                        equipo = t_name
-                        break
+                if all(g in grupos_completos for g in grp):
+                    for t_letra, t_pts, t_gd, t_name in terceros:
+                        if t_letra in grp and t_letra in terceros_clasificados:
+                            equipo = t_name
+                            break
         ronda_16.append({"slot": slot, "equipo": equipo})
     
     # ── Rellenar KO desde partidos terminados ──

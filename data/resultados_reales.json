@@ -1,5 +1,5 @@
 {
-  "_nota": "Datos desde worldcup26.ir — 32/32 equipos en 16avos",
+  "_nota": "Esperando partidos...",
   "grupos": {
     "H": {
       "🇪🇸 ESPAÑA": 1,
@@ -77,131 +77,131 @@
   "ronda_16avos": [
     {
       "slot": "1E",
-      "equipo": "🇩🇪 ALEMANIA"
+      "equipo": ""
     },
     {
       "slot": "3 ABCDF",
-      "equipo": "🇦🇺 AUSTRALIA"
+      "equipo": ""
     },
     {
       "slot": "1I",
-      "equipo": "🇫🇷 FRANCIA"
+      "equipo": ""
     },
     {
       "slot": "3 CDFGH",
-      "equipo": "🇸🇦 ARABIA SAUDÍ"
+      "equipo": ""
     },
     {
       "slot": "2A",
-      "equipo": "🇰🇷 COREA DEL SUR"
+      "equipo": ""
     },
     {
       "slot": "2B",
-      "equipo": "🇧🇦 BOSNIA Y HERZEGOVINA"
+      "equipo": ""
     },
     {
       "slot": "1F",
-      "equipo": "🇳🇱 HOLANDA"
+      "equipo": ""
     },
     {
       "slot": "2C",
-      "equipo": "🇲🇦 MARRUECOS"
+      "equipo": ""
     },
     {
       "slot": "2K",
-      "equipo": "DEMOCRATIC REPUBLIC OF THE CONGO"
+      "equipo": ""
     },
     {
       "slot": "2L",
-      "equipo": "🇭🇷 CROACIA"
+      "equipo": ""
     },
     {
       "slot": "1H",
-      "equipo": "🇪🇸 ESPAÑA"
+      "equipo": ""
     },
     {
       "slot": "2J",
-      "equipo": "🇩🇿 ARGELIA"
+      "equipo": ""
     },
     {
       "slot": "1D",
-      "equipo": "🇺🇸 ESTADOS UNIDOS"
+      "equipo": ""
     },
     {
       "slot": "3 BEFIJ",
-      "equipo": "🇮🇶 IRAK"
+      "equipo": ""
     },
     {
       "slot": "1G",
-      "equipo": "🇧🇪 BÉLGICA"
+      "equipo": ""
     },
     {
       "slot": "3 AEFHIJ",
-      "equipo": "🇸🇦 ARABIA SAUDÍ"
+      "equipo": ""
     },
     {
       "slot": "1C",
-      "equipo": "🇧🇷 BRASIL"
+      "equipo": ""
     },
     {
       "slot": "2F",
-      "equipo": "🇯🇵 JAPÓN"
+      "equipo": ""
     },
     {
       "slot": "2E",
-      "equipo": "CURAÇAO"
+      "equipo": ""
     },
     {
       "slot": "2I",
-      "equipo": "🇸🇳 SENEGAL"
+      "equipo": ""
     },
     {
       "slot": "1A",
-      "equipo": "🇿🇦 SUDÁFRICA"
+      "equipo": ""
     },
     {
       "slot": "3 CEFHI",
-      "equipo": "🇸🇦 ARABIA SAUDÍ"
+      "equipo": ""
     },
     {
       "slot": "1L",
-      "equipo": "🇬🇧 INGLATERRA"
+      "equipo": ""
     },
     {
       "slot": "3 EHIJK",
-      "equipo": "🇸🇦 ARABIA SAUDÍ"
+      "equipo": ""
     },
     {
       "slot": "1J",
-      "equipo": "🇦🇷 ARGENTINA"
+      "equipo": ""
     },
     {
       "slot": "2H",
-      "equipo": "🇨🇻 CABO VERDE"
+      "equipo": ""
     },
     {
       "slot": "2D",
-      "equipo": "🇵🇾 PARAGUAY"
+      "equipo": ""
     },
     {
       "slot": "2G",
-      "equipo": "🇪🇬 EGIPTO"
+      "equipo": ""
     },
     {
       "slot": "1B",
-      "equipo": "🇨🇦 CANADÁ"
+      "equipo": ""
     },
     {
       "slot": "3 EFGIJ",
-      "equipo": "🇮🇶 IRAK"
+      "equipo": ""
     },
     {
       "slot": "1K",
-      "equipo": "🇵🇹 PORTUGAL"
+      "equipo": ""
     },
     {
       "slot": "3 DEIJL",
-      "equipo": "🇮🇶 IRAK"
+      "equipo": ""
     }
   ],
   "ronda_8avos": [],
