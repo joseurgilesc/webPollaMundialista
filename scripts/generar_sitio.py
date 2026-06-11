@@ -509,7 +509,7 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
     
     pollas_por_nombre = {}
     for r in puntajes:
-        n = r["participante"]
+        n = r["participante"]  # usar nombre original para agrupar
         pollas_por_nombre[n] = pollas_por_nombre.get(n, 0) + 1
     
     filas = ""
@@ -517,7 +517,8 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
         p = r["puntajes"]
         nombre = normalizar_nombre(r["participante"])
         letra = r.get("polla_letra", "A")
-        mostrar_letra = pollas_por_nombre.get(nombre, 1) > 1
+        # Usar nombre original para verificar si tiene múltiples pollas
+        mostrar_letra = pollas_por_nombre.get(r["participante"], 1) > 1
         medalla = {0: "🥇", 1: "🥈", 2: "🥉"}.get(i, "") if hay_puntajes else ""
         clase = {0: "top1", 1: "top2", 2: "top3"}.get(i, "") if hay_puntajes else ""
         tag_html = f'<span class="polla-tag">{letra}</span>' if mostrar_letra else ""
