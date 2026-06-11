@@ -867,6 +867,11 @@ function findScore(nombre) {{
   return null;
 }}
 
+function normEq(name) {{
+  if (!name) return '';
+  return name.replace(/[^\\w\\sáéíóúñüÁÉÍÓÚÑÜ]/g, '').trim().toUpperCase();
+}}
+
 function verPolla(ref) {{
   const polla = findPolla(ref);
   if (!polla) {{ alert('Polla no encontrada'); return; }}
@@ -901,12 +906,12 @@ function verPolla(ref) {{
     const realBySlot = {{}};
     (REALES.ronda_16avos||[]).forEach(e => {{ if(e.equipo) realBySlot[e.slot] = e.equipo; }});
     const realSlotByTeam = {{}};
-    (REALES.ronda_16avos||[]).forEach(e => {{ if(e.equipo) realSlotByTeam[e.equipo] = e.slot; }});
+    (REALES.ronda_16avos||[]).forEach(e => {{ if(e.equipo) realSlotByTeam[normEq(e.equipo)] = e.slot; }});
     
     (polla.ronda_16avos||[]).forEach(e => {{
       const eq = e.equipo || '';
       const sp = e.slot || '';
-      const sr = realSlotByTeam[eq] || '';
+      const sr = realSlotByTeam[normEq(eq)] || '';
       const er = realBySlot[sp] || '';
       
       if (!eq && !er) return;

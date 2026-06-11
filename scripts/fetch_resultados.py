@@ -137,9 +137,8 @@ def build_results_from_api():
             for eq, r in grupos_result[grp].items():
                 if r == pos: equipo = eq; break
         elif isinstance(grp, list):
-            # Solo si hay terceros activos en estos grupos
-            activos_en_grp = [g for g in grp if g in grupos_activos]
-            if activos_en_grp:
+            # Mejores terceros: solo cuando TODOS los grupos están activos
+            if len(grupos_activos) >= 12:
                 for t_letra, t_pts, t_gd, t_name in terceros:
                     if t_letra in grp and t_letra in terceros_clasificados:
                         equipo = t_name
