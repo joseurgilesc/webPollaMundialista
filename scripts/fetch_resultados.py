@@ -85,30 +85,71 @@ def build_results_from_api():
     # Team ID → nombre polla
     id_name = {str(t["id"]): _en_to_polla(t.get("name_en","")) for t in tl}
     
-    # ── Grupos: standings ──
-    grupos_result = {}
-    grupos_activos = set()  # grupos con al menos 1 partido terminado
+    # ── Calcular standings desde partidos (más confiable que /get/groups) ──
+    from collections import defaultdict
     
-    for g in gl:
-        letra = g.get("name","")
-        matches = [m for m in gm if m.get("group") == letra and m.get("type") == "group"]
-        finished = [m for m in matches if m.get("finished") == "TRUE"]
-        if len(finished) > 0:
-            grupos_activos.add(letra)
+    # Inicializar estadísticas por grupo y equipo
+    stats = defaultdict(lambda: {"pts": 0, "gf": 0, "ga": 0, "played": 0})
+    group_teams = defaultdict(set)
     
-    for g in gl:
-        letra = g.get("name","")
-        entries = g.get("teams",[])
-        if letra in grupos_activos:
-            ranked = sorted(entries, key=lambda e: (-int(e.get("pts",0)), -(int(e.get("gf",0))-int(e.get("ga",0)))))
-            equipos = {}
-            for rank, e in enumerate(ranked, 1):
-                name = id_name.get(str(e.get("team_id","")), "?")
-                equipos[name] = rank
+    for m in gm:
+        if m.get("type") != "group":
+            continue
+        grp = m.get("group", "")
+        if not grp:
+            continue
+        hid = str(m.get("home_team_id", ""))
+        aid = str(m.get("away_team_id", ""))
+        group_teams[grp].add(hid)
+        group_teams[grp].add(aid)
+        
+        if m.get("finished") != "TRUE":
+            continue
+        
+        hs = int(m.get("home_score", 0) or 0)
+        aw = int(m.get("away_score", 0) or 0)
+        
+        stats[(grp, hid)]["gf"] += hs
+        stats[(grp, hid)]["ga"] += aw
+        stats[(grp, hid)]["played"] += 1
+        stats[(grp, aid)]["gf"] += aw
+        stats[(grp, aid)]["ga"] += hs
+        stats[(grp, aid)]["played"] += 1
+        
+        if hs > aw:
+            stats[(grp, hid)]["pts"] += 3
+        elif aw > hs:
+            stats[(grp, aid)]["pts"] += 3
         else:
-            equipos = {id_name.get(str(e.get("team_id","")), "?"): 0 for e in entries}
-        if equipos:
-            grupos_result[letra] = equipos
+            stats[(grp, hid)]["pts"] += 1
+            stats[(grp, aid)]["pts"] += 1
+    
+    # Construir grupos_result desde partidos
+    grupos_result = {}
+    grupos_activos = set()
+    
+    for grp, tids in group_teams.items():
+        # Ver si hay partidos terminados en este grupo
+        has_finished = any(stats[(grp, tid)]["played"] > 0 for tid in tids)
+        if has_finished:
+            grupos_activos.add(grp)
+        
+        # Ordenar equipos
+        team_list = []
+        for tid in tids:
+            s = stats[(grp, tid)]
+            team_list.append((tid, s["pts"], s["gf"] - s["ga"], s["gf"]))
+        
+        team_list.sort(key=lambda x: (-x[1], -x[2], -x[3]))
+        
+        equipos = {}
+        for rank, (tid, pts, gd, gf) in enumerate(team_list, 1):
+            name = id_name.get(tid, f"Team {tid}")
+            if has_finished:
+                equipos[name] = rank
+            else:
+                equipos[name] = 0
+        grupos_result[grp] = equipos
     
     # Contar partidos terminados
     total_finished = sum(1 for m in gm if m.get("finished") == "TRUE" and m.get("type") == "group")
