@@ -40,6 +40,10 @@ COLORS = {
 }
 
 def calcular_acumulado(participantes: dict) -> int:
+    # Permitir override manual
+    override = participantes.get("_acumulado_override")
+    if override:
+        return override
     costo = participantes.get("costo_por_polla", 10)
     return sum(p.get("pollas", 1) for p in participantes.get("participantes", []) if p.get("pago")) * costo
 
@@ -554,7 +558,7 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
     <div class="info" style="margin-left:auto;">
       {total_pollas} pollas registradas<br>
       ${participantes.get("costo_por_polla", 10)} c/u
-      {f'<br><span style="color:var(--muted);font-size:0.75rem;">⚡ Proyectado: ${proyectado:,}</span>' if proyectado > acumulado else ''}
+      {f'<br><span style="color:var(--muted);font-size:0.75rem;">{participantes.get("_nota", "")}</span>' if participantes.get("_nota") else ''}
     </div>
   </div>
 

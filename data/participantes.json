@@ -87,5 +87,6 @@
       "_pendiente_envio": true
     }
   ],
-  "_nota": "⚠️ Pendiente de envío: Hernando José Cordero (2 pollas pagadas, sin entregar)"
+  "_nota": "⚠️ Pendiente: Hernando José Cordero (2 pollas sin entregar)",
+  "_acumulado_override": 190
 }
