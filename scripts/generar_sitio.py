@@ -436,8 +436,10 @@ footer {{ text-align: center; padding: 24px; color: var(--muted); font-size: 0.7
 
 def generar_publica(puntajes: list, participantes: dict) -> str:
     acumulado = calcular_acumulado(participantes)
-    total_participantes = len(participantes.get("participantes", []))
-    total_pollas = len(puntajes)  # contar de las pollas reales procesadas
+    # Contar participantes únicos reales desde las pollas
+    nombres_unicos = set(r["participante"] for r in puntajes)
+    total_participantes = len(nombres_unicos)
+    total_pollas = len(puntajes)
     
     # Cargar predicciones de cada polla
     predicciones_data = []
