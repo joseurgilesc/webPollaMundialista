@@ -2,222 +2,236 @@
 """
 Obtiene resultados reales del Mundial 2026 desde worldcup26.ir.
 
-Campos reales de la API:
-- games: home_team_name_en, away_team_name_en, home_team_id, away_team_id, home_score, away_score, type, group, matchday, finished, time_elapsed
-- teams: id, name_en, fifa_code, groups
-- groups: name, teams[{team_id, pts, gf, ga}]
+Flujo:
+1. Obtiene standings de grupos → equipos clasificados a 16avos
+2. Mapea equipos a slots del bracket FIFA
+3. Sigue resultados de partidos KO → llena 8avos, cuartos, semis, finales
+4. Guarda en data/resultados_reales.json
 
 Uso:
-  python3 fetch_resultados.py           # intenta API, fallback a manual
+  python3 fetch_resultados.py           # API → actualiza JSON
   python3 fetch_resultados.py --api     # solo API
-  python3 fetch_resultados.py --manual  # solo validar JSON manual
+  python3 fetch_resultados.py --manual  # validar JSON manual
 """
 
-import json
-import os
-import re
-import sys
-import urllib.request
-import urllib.error
+import json, os, re, sys, urllib.request, urllib.error
 from pathlib import Path
 
 API_BASE = "https://worldcup26.ir"
 RESULTADOS_FILE = Path("data/resultados_reales.json")
 
-# ── Mapeo nombres inglés → español (como aparecen en las pollas) ──
-ENGLISH_TO_POLLA = {
-    "Mexico": "🇲🇽 MÉXICO",
-    "South Africa": "🇿🇦 SUDÁFRICA",
-    "South Korea": "🇰🇷 COREA DEL SUR",
-    "Czech Republic": "🇨🇿 REP. CHECA",
-    "Canada": "🇨🇦 CANADÁ",
-    "Bosnia and Herzegovina": "🇧🇦 BOSNIA Y HERZEGOVINA",
-    "Qatar": "🇶🇦 QATAR",
-    "Switzerland": "🇨🇭 SUIZA",
-    "Brazil": "🇧🇷 BRASIL",
-    "Morocco": "🇲🇦 MARRUECOS",
-    "Haiti": "🇭🇹 HAITÍ",
-    "Scotland": "🏴󠁧󠁢󠁳󠁣󠁴󠁿 ESCOCIA",
-    "United States": "🇺🇸 ESTADOS UNIDOS",
-    "Paraguay": "🇵🇾 PARAGUAY",
-    "Australia": "🇦🇺 AUSTRALIA",
-    "Turkey": "🇹🇷 TURQUÍA",
-    "Germany": "🇩🇪 ALEMANIA",
-    "Curacao": "🇨🇼 CURAZAO",
-    "Côte d'Ivoire": "🇨🇮 COSTA DE MARFIL",
-    "Ivory Coast": "🇨🇮 COSTA DE MARFIL",
-    "Ecuador": "🇪🇨 ECUADOR",
-    "Netherlands": "🇳🇱 HOLANDA",
-    "Japan": "🇯🇵 JAPÓN",
-    "Sweden": "🇸🇪 SUECIA",
-    "Tunisia": "🇹🇳 TÚNEZ",
-    "Belgium": "🇧🇪 BÉLGICA",
-    "Egypt": "🇪🇬 EGIPTO",
-    "Iran": "🇮🇷 IRÁN",
-    "New Zealand": "🇳🇿 NUEVA ZELANDA",
-    "Spain": "🇪🇸 ESPAÑA",
-    "Cape Verde": "🇨🇻 CABO VERDE",
-    "Saudi Arabia": "🇸🇦 ARABIA SAUDÍ",
-    "Uruguay": "🇺🇾 URUGUAY",
-    "France": "🇫🇷 FRANCIA",
-    "Senegal": "🇸🇳 SENEGAL",
-    "Iraq": "🇮🇶 IRAK",
-    "Norway": "🇳🇴 NORUEGA",
-    "Argentina": "🇦🇷 ARGENTINA",
-    "Algeria": "🇩🇿 ARGELIA",
-    "Austria": "🇦🇹 AUSTRIA",
-    "Jordan": "🇯🇴 JORDANIA",
-    "Portugal": "🇵🇹 PORTUGAL",
-    "DR Congo": "🇨🇩 REP. CONGO",
-    "Congo DR": "🇨🇩 REP. CONGO",
-    "Uzbekistan": "🇺🇿 UZBEKISTÁN",
-    "Colombia": "🇨🇴 COLOMBIA",
-    "England": "🇬🇧 INGLATERRA",
-    "Croatia": "🇭🇷 CROACIA",
-    "Ghana": "🇬🇭 GHANA",
-    "Panama": "🇵🇦 PANAMÁ",
+# ── Mapeo nombres API → polla ──
+EN_TO_POLLA = {
+    "Mexico": "🇲🇽 MÉXICO", "South Africa": "🇿🇦 SUDÁFRICA", "South Korea": "🇰🇷 COREA DEL SUR",
+    "Czech Republic": "🇨🇿 REP. CHECA", "Canada": "🇨🇦 CANADÁ", "Bosnia and Herzegovina": "🇧🇦 BOSNIA Y HERZEGOVINA",
+    "Qatar": "🇶🇦 QATAR", "Switzerland": "🇨🇭 SUIZA", "Brazil": "🇧🇷 BRASIL", "Morocco": "🇲🇦 MARRUECOS",
+    "Haiti": "🇭🇹 HAITÍ", "Scotland": "🏴󠁧󠁢󠁳󠁣󠁴󠁿 ESCOCIA", "United States": "🇺🇸 ESTADOS UNIDOS",
+    "Paraguay": "🇵🇾 PARAGUAY", "Australia": "🇦🇺 AUSTRALIA", "Turkey": "🇹🇷 TURQUÍA",
+    "Germany": "🇩🇪 ALEMANIA", "Curacao": "🇨🇼 CURAZAO", "Côte d'Ivoire": "🇨🇮 COSTA DE MARFIL",
+    "Ivory Coast": "🇨🇮 COSTA DE MARFIL", "Ecuador": "🇪🇨 ECUADOR", "Netherlands": "🇳🇱 HOLANDA",
+    "Japan": "🇯🇵 JAPÓN", "Sweden": "🇸🇪 SUECIA", "Tunisia": "🇹🇳 TÚNEZ", "Belgium": "🇧🇪 BÉLGICA",
+    "Egypt": "🇪🇬 EGIPTO", "Iran": "🇮🇷 IRÁN", "New Zealand": "🇳🇿 NUEVA ZELANDA",
+    "Spain": "🇪🇸 ESPAÑA", "Cape Verde": "🇨🇻 CABO VERDE", "Saudi Arabia": "🇸🇦 ARABIA SAUDÍ",
+    "Uruguay": "🇺🇾 URUGUAY", "France": "🇫🇷 FRANCIA", "Senegal": "🇸🇳 SENEGAL", "Iraq": "🇮🇶 IRAK",
+    "Norway": "🇳🇴 NORUEGA", "Argentina": "🇦🇷 ARGENTINA", "Algeria": "🇩🇿 ARGELIA",
+    "Austria": "🇦🇹 AUSTRIA", "Jordan": "🇯🇴 JORDANIA", "Portugal": "🇵🇹 PORTUGAL",
+    "DR Congo": "🇨🇩 REP. CONGO", "Congo DR": "🇨🇩 REP. CONGO", "Uzbekistan": "🇺🇿 UZBEKISTÁN",
+    "Colombia": "🇨🇴 COLOMBIA", "England": "🇬🇧 INGLATERRA", "Croatia": "🇭🇷 CROACIA",
+    "Ghana": "🇬🇭 GHANA", "Panama": "🇵🇦 PANAMÁ",
 }
 
-def _api_get(endpoint: str) -> dict | list:
+# ── Slots del bracket FIFA 2026 (mapeados de los Excels) ──
+# Cada entrada: (slot_code, group_position, group_letter)
+# Para "mejores terceros": lista de grupos posibles
+SLOTS_16AVOS = [
+    # Lado izquierdo
+    ("1E", 1, "E"), ("3 ABCDF", 3, ["A","B","C","D","F"]), ("1I", 1, "I"), ("3 CDFGH", 3, ["C","D","F","G","H"]),
+    ("2A", 2, "A"), ("2B", 2, "B"), ("1F", 1, "F"), ("2C", 2, "C"),
+    ("2K", 2, "K"), ("2L", 2, "L"), ("1H", 1, "H"), ("2J", 2, "J"),
+    ("1D", 1, "D"), ("3 BEFIJ", 3, ["B","E","F","I","J"]), ("1G", 1, "G"), ("3 AEFHIJ", 3, ["A","E","F","H","I","J"]),
+    # Lado derecho
+    ("1C", 1, "C"), ("2F", 2, "F"), ("2E", 2, "E"), ("2I", 2, "I"),
+    ("1A", 1, "A"), ("3 CEFHI", 3, ["C","E","F","H","I"]), ("1L", 1, "L"), ("3 EHIJK", 3, ["E","H","I","J","K"]),
+    ("1J", 1, "J"), ("2H", 2, "H"), ("2D", 2, "D"), ("2G", 2, "G"),
+    ("1B", 1, "B"), ("3 EFGIJ", 3, ["E","F","G","I","J"]), ("1K", 1, "K"), ("3 DEIJL", 3, ["D","E","I","J","L"]),
+]
+
+def _api_get(endpoint):
     url = f"{API_BASE}/{endpoint}"
-    req = urllib.request.Request(url)
     try:
-        with urllib.request.urlopen(req, timeout=15) as resp:
-            return json.loads(resp.read().decode())
+        with urllib.request.urlopen(urllib.request.Request(url), timeout=15) as r:
+            return json.loads(r.read().decode())
     except Exception as e:
         print(f"  ⚠️  Error API: {e}")
         return None
 
-def _en_to_polla(name_en: str) -> str:
-    """Convierte nombre inglés de la API al formato de las pollas."""
-    return ENGLISH_TO_POLLA.get(name_en, name_en.upper())
+def _en_to_polla(n):
+    return EN_TO_POLLA.get(n, n.upper())
 
-def label_a_slot(label: str) -> str | None:
-    """Winner Group E → 1E, Runner-up Group A → 2A, 3rd Group A/B/C/D/F → 3 ABCDF"""
-    label = label.strip()
-    m = re.match(r'^Winner Group ([A-L])$', label, re.I)
-    if m: return f"1{m.group(1)}"
-    m = re.match(r'^Runner-up Group ([A-L])$', label, re.I)
-    if m: return f"2{m.group(1)}"
-    m = re.match(r'^3rd Group (.+)$', label, re.I)
-    if m: return f"3 {m.group(1).replace('/', '').strip()}"
-    return None
-
-def build_results_from_api() -> dict | None:
+def build_results_from_api():
     print("🌐 Consultando worldcup26.ir...")
-    
     teams = _api_get("get/teams")
     groups = _api_get("get/groups")
     games = _api_get("get/games")
+    if not all([teams, groups, games]):
+        print("  ❌ Datos incompletos"); return None
     
-    if not teams or not groups or not games:
-        print("  ❌ No se pudieron obtener datos")
-        return None
+    tl = teams.get("teams", teams) if isinstance(teams, dict) else teams
+    gl = groups.get("groups", groups) if isinstance(groups, dict) else groups
+    gm = games.get("games", games) if isinstance(games, dict) else games
     
-    teams_list = teams.get("teams", teams) if isinstance(teams, dict) else teams
-    groups_list = groups.get("groups", groups) if isinstance(groups, dict) else groups
-    games_list = games.get("games", games) if isinstance(games, dict) else games
+    print(f"  ✅ {len(tl)} equipos, {len(gl)} grupos, {len(gm)} partidos")
     
-    print(f"  ✅ {len(teams_list)} equipos, {len(groups_list)} grupos, {len(games_list)} partidos")
+    # Team ID → nombre polla
+    id_name = {str(t["id"]): _en_to_polla(t.get("name_en","")) for t in tl}
     
-    # ── Mapeo team_id → nombre polla ──
-    id_to_name = {}
-    for t in teams_list:
-        tid = str(t.get("id", ""))
-        name_en = t.get("name_en", "")
-        id_to_name[tid] = _en_to_polla(name_en)
-    
-    # ── Grupos: standings ──
+    # ── Grupos: standings con rank real ──
     grupos_result = {}
-    for g in groups_list:
-        letra = g.get("name", "")
+    for g in gl:
+        letra = g.get("name","")
+        entries = g.get("teams",[])
+        # Ordenar por pts, luego GD
+        ranked = sorted(entries, key=lambda e: (-int(e.get("pts",0)), -(int(e.get("gf",0))-int(e.get("ga",0)))))
         equipos = {}
-        for entry in sorted(g.get("teams", []), key=lambda e: -int(e.get("pts", 0))):
-            tid = str(entry.get("team_id", ""))
-            pts = int(entry.get("pts", 0))
-            name = id_to_name.get(tid, f"Team {tid}")
-            # Rank será asignado después de ordenar
-            equipos[name] = 0  # placeholder, se asigna rank después
-        # Asignar ranks 1-4 por orden de pts, luego GD
-        ranked = sorted(equipos.items(), key=lambda x: 0)
+        for rank, e in enumerate(ranked, 1):
+            name = id_name.get(str(e.get("team_id","")), "?")
+            equipos[name] = rank
         if equipos:
-            grupos_result[letra] = {name: i+1 for i, (name, _) in enumerate(ranked)}
+            grupos_result[letra] = equipos
     
-    # ── Bracket R32 ──
-    r32_matches = [g for g in games_list if g.get("type") == "r32"]
-    ronda_16avos = []
+    # ── Determinar mejores terceros ──
+    terceros = []
+    for g in gl:
+        letra = g.get("name","")
+        entries = sorted(g.get("teams",[]), key=lambda e: (-int(e.get("pts",0)), -(int(e.get("gf",0))-int(e.get("ga",0)))))
+        if len(entries) >= 3:
+            e3 = entries[2]
+            terceros.append((letra, int(e3.get("pts",0)), int(e3.get("gf",0))-int(e3.get("ga",0)), id_name.get(str(e3.get("team_id","")), "?")))
     
-    for m in sorted(r32_matches, key=lambda x: int(x.get("id", 0))):
-        # Buscar los labels de los equipos en estos partidos (Winner Group X, etc.)
-        # La API no devuelve labels directamente, los deducimos del bracket FIFA
-        # Usamos el slot mapping conocido del bracket
-        pass
+    # Top 8 terceros
+    terceros.sort(key=lambda x: (-x[1], -x[2]))
+    terceros_clasificados = {t[0] for t in terceros[:8]}
     
-    # ── Obtener partidos jugados para llenar bracket ──
-    group_matches = [g for g in games_list if g.get("type") == "group" and g.get("finished") == "TRUE"]
-    knockout_matches = [g for g in games_list if g.get("type") != "group" and g.get("finished") == "TRUE"]
+    # ── Llenar slots 16avos ──
+    ronda_16 = []
+    tercero_idx = 0
+    for slot, pos, grp in SLOTS_16AVOS:
+        equipo = ""
+        if pos == 1:
+            # 1er lugar del grupo
+            if grp in grupos_result:
+                for eq, r in grupos_result[grp].items():
+                    if r == 1: equipo = eq; break
+        elif pos == 2:
+            if grp in grupos_result:
+                for eq, r in grupos_result[grp].items():
+                    if r == 2: equipo = eq; break
+        else:
+            # Mejor tercero de los grupos candidatos
+            if isinstance(grp, list):
+                for t_letra, t_pts, t_gd, t_name in terceros:
+                    if t_letra in grp and t_letra in terceros_clasificados:
+                        equipo = t_name
+                        break
+        ronda_16.append({"slot": slot, "equipo": equipo})
     
-    print(f"  ⚽ Partidos grupos jugados: {len(group_matches)}")
-    print(f"  ⚽ Partidos KO jugados: {len(knockout_matches)}")
-    
-    # Por ahora, si no hay partidos de grupo terminados, no podemos llenar el bracket
-    if len(group_matches) == 0:
-        print("  ⚠️  Aún no hay partidos terminados. Usá el JSON manual.")
+    # ── Rellenar KO desde partidos terminados ──
+    def _find_match(mid, games_list):
+        for g in games_list:
+            if str(g.get("id")) == str(mid): return g
         return None
     
-    # ── Construir bracket desde partidos jugados ──
-    # ... (lógica de llenado de bracket según resultados)
+    def _winner(match):
+        if not match or match.get("finished") != "TRUE": return ""
+        hs = int(match.get("home_score",0) or 0)
+        aw = int(match.get("away_score",0) or 0)
+        if hs > aw: return id_name.get(str(match.get("home_team_id","")), "")
+        if aw > hs: return id_name.get(str(match.get("away_team_id","")), "")
+        return ""
     
-    # Placeholder
-    resultados = {
-        "_nota": "Datos desde worldcup26.ir (API)",
-        "grupos": grupos_result,
-        "ronda_16avos": [],
-        "ronda_8avos": [],
-        "ronda_cuartos": [],
-        "ronda_semifinales": [],
-        "finales": {"campeon": "", "segundo": "", "tercero": "", "cuarto": ""},
+    def _loser(match):
+        if not match or match.get("finished") != "TRUE": return ""
+        hs = int(match.get("home_score",0) or 0)
+        aw = int(match.get("away_score",0) or 0)
+        if hs < aw: return id_name.get(str(match.get("home_team_id","")), "")
+        if aw < hs: return id_name.get(str(match.get("away_team_id","")), "")
+        return ""
+    
+    # R16 (8avos): matches 89-96
+    r8_winners = [_winner(_find_match(mid, gm)) for mid in range(89, 97)]
+    ronda_8 = [{"equipo": w} for w in r8_winners if w]
+    
+    # QF: 97-100
+    qf_winners = [_winner(_find_match(mid, gm)) for mid in range(97, 101)]
+    ronda_4 = [{"equipo": w} for w in qf_winners if w]
+    
+    # SF: 101-102
+    sf_winners = [_winner(_find_match(mid, gm)) for mid in (101, 102)]
+    sf_losers = [_loser(_find_match(mid, gm)) for mid in (101, 102)]
+    ronda_2 = [{"equipo": w} for w in sf_winners if w]
+    
+    # 3rd: 103
+    m103 = _find_match(103, gm)
+    tercero_e = _winner(m103)
+    cuarto_e = _loser(m103)
+    
+    # Final: 104
+    m104 = _find_match(104, gm)
+    campeon_e = _winner(m104)
+    segundo_e = _loser(m104)
+    
+    finales = {
+        "campeon": campeon_e, "segundo": segundo_e,
+        "tercero": tercero_e, "cuarto": cuarto_e,
     }
     
-    return resultados
+    # Validar si hay datos
+    eq16 = sum(1 for e in ronda_16 if e["equipo"])
+    if eq16 == 0:
+        print("  ⚠️  Sin equipos en 16avos. ¿Grupos sin terminar?")
+        return None
+    
+    print(f"  ⚽ 16avos: {eq16}/32 equipos asignados")
+    print(f"  ⚽ 8avos: {len(ronda_8)}/16 | Cuartos: {len(ronda_4)}/8 | Semis: {len(ronda_2)}/4")
+    print(f"  🏆 Campeón: {campeon_e or '—'}")
+    
+    return {
+        "_nota": f"Datos desde worldcup26.ir — {eq16}/32 equipos en 16avos",
+        "grupos": grupos_result,
+        "ronda_16avos": ronda_16,
+        "ronda_8avos": ronda_8,
+        "ronda_cuartos": ronda_4,
+        "ronda_semifinales": ronda_2,
+        "finales": finales,
+    }
 
 def validar_manual():
     if not RESULTADOS_FILE.exists():
-        print(f"  ❌ No existe {RESULTADOS_FILE}")
-        return None
+        print(f"  ❌ No existe {RESULTADOS_FILE}"); return None
     with open(RESULTADOS_FILE, encoding="utf-8") as f:
-        data = json.load(f)
-    llenos = sum(1 for e in data.get("ronda_16avos", []) if e.get("equipo"))
-    print(f"  ✅ Datos manuales: {llenos}/32 equipos en 16avos")
-    return data
+        d = json.load(f)
+    eq = sum(1 for e in d.get("ronda_16avos",[]) if e.get("equipo"))
+    print(f"  ✅ Manual: {eq}/32 equipos en 16avos")
+    return d
 
 def main():
     modo = "auto"
     if "--api" in sys.argv: modo = "api"
     elif "--manual" in sys.argv: modo = "manual"
-    
     print("📡 Obteniendo resultados del Mundial 2026...\n")
-    datos = None
-    
-    if modo in ("auto", "api"):
-        datos = build_results_from_api()
-    
-    if datos is None and modo in ("auto", "manual"):
+    datos = build_results_from_api() if modo in ("auto","api") else None
+    if datos is None and modo in ("auto","manual"):
         print("📋 Usando datos manuales...")
         datos = validar_manual()
-    
     if datos is None:
-        print("\n❌ No se pudieron obtener resultados.")
-        print("   Opciones:")
-        print("   1. Editar data/resultados_reales.json manualmente")
-        print("   2. Esperar a que se jueguen partidos")
+        print("\n❌ Sin resultados. Opciones:")
+        print("   1. Editar data/resultados_reales.json")
+        print("   2. Esperar partidos terminados")
         sys.exit(1)
-    
     if modo != "manual":
         with open(RESULTADOS_FILE, "w", encoding="utf-8") as f:
             json.dump(datos, f, indent=2, ensure_ascii=False)
         print(f"  💾 Guardado en {RESULTADOS_FILE}")
-    
     print("\n✅ Listo para calificar.py")
 
 if __name__ == "__main__":
