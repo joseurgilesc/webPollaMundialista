@@ -436,6 +436,42 @@ footer {{ text-align: center; padding: 24px; color: var(--muted); font-size: 0.7
   letter-spacing: 0.04em; margin-bottom: 8px;
   padding-bottom: 4px; border-bottom: 1px solid var(--card-border);
 }}
+/* Score in modal */
+.modal-score {{
+  background: linear-gradient(135deg, #f0f4ff, #f8fafc);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 14px;
+}}
+.modal-score > span {{
+  font-size: 1rem;
+  color: var(--navy);
+  display: block;
+  margin-bottom: 8px;
+}}
+.ms-bars {{ display: flex; flex-direction: column; gap: 3px; }}
+.ms-bar {{
+  display: flex; align-items: center; gap: 6px;
+  font-size: 0.65rem;
+}}
+.ms-bar > span:first-child {{
+  width: 50px; text-align: right; color: var(--muted);
+  font-weight: 600; text-transform: uppercase; font-size: 0.6rem;
+}}
+.ms-bar > span:last-child {{
+  width: 22px; text-align: right; font-weight: 700;
+  color: var(--navy); font-size: 0.7rem;
+}}
+.ms-fill {{
+  flex: 1; height: 10px; background: #e2e8f0;
+  border-radius: 5px; overflow: hidden;
+}}
+.ms-fill div {{
+  height: 100%; border-radius: 5px;
+  background: linear-gradient(90deg, var(--teal), var(--navy));
+  transition: width 0.5s;
+}}
 @media (max-width: 600px) {{
   .modal-finals {{ grid-template-columns: repeat(2, 1fr); }}
   .modal-bracket {{ grid-template-columns: 1fr; }}
@@ -711,6 +747,7 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
 document.getElementById('prediccionesCard').style.display = '';
 
 const POLLAS = {pollas_json};
+const PUNTAJES = {json.dumps([{"participante": r["participante"], "archivo": r["archivo"], "puntajes": r["puntajes"]} for r in puntajes])};
 const SHARE_DATA = {json.dumps({"acumulado": acumulado, "costo": participantes.get("costo_por_polla", 10), "pollas": total_pollas, "hay_puntajes": hay_puntajes, "nota": participantes.get("_nota", ""), "leaderboard": [{"nombre": normalizar_nombre(r["participante"]), "letra": r.get("polla_letra","A"), "total": r["puntajes"]["total"]} for r in puntajes]})};
 
 function shareWhatsApp() {{
@@ -744,6 +781,14 @@ function findPolla(ref) {{
   return null;
 }}
 
+function findScore(nombre) {{
+  const n = nombre.toLowerCase().trim();
+  for (const p of PUNTAJES) {{
+    if ((p.participante||'').toLowerCase().trim() === n) return p.puntajes;
+  }}
+  return null;
+}}
+
 function verPolla(ref) {{
   const polla = findPolla(ref);
   if (!polla) {{ alert('Polla no encontrada'); return; }}
@@ -758,6 +803,19 @@ function verPolla(ref) {{
   html += '<div class="mf-item mf-third"><span>🥉</span><strong>'+(f.tercero||'—')+'</strong><small>Tercero</small></div>';
   html += '<div class="mf-item mf-fourth"><span>4°</span><strong>'+(f.cuarto||'—')+'</strong><small>Cuarto</small></div>';
   html += '</div>';
+  
+  // ── Puntaje ──
+  const score = findScore(polla.participante);
+  if (score) {{
+    html += '<div class="modal-score">';
+    html += '<span>📊 <strong>'+score.total+' pts</strong></span>';
+    html += '<div class="ms-bars">';
+    [['16avos',64],['8avos',32],['Cuartos',24],['Semis',16],['Final',44]].forEach(([rnd,max]) => {{
+      const pct = score[rnd]/max*100;
+      html += '<div class="ms-bar"><span>'+rnd+'</span><div class="ms-fill"><div style="width:'+pct+'%"></div></div><span>'+score[rnd]+'</span></div>';
+    }});
+    html += '</div></div>';
+  }}
   
   // ── Grupos ──
   if (polla.grupos) {{

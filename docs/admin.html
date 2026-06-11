@@ -372,6 +372,42 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
   letter-spacing: 0.04em; margin-bottom: 8px;
   padding-bottom: 4px; border-bottom: 1px solid var(--card-border);
 }
+/* Score in modal */
+.modal-score {
+  background: linear-gradient(135deg, #f0f4ff, #f8fafc);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 14px;
+}
+.modal-score > span {
+  font-size: 1rem;
+  color: var(--navy);
+  display: block;
+  margin-bottom: 8px;
+}
+.ms-bars { display: flex; flex-direction: column; gap: 3px; }
+.ms-bar {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 0.65rem;
+}
+.ms-bar > span:first-child {
+  width: 50px; text-align: right; color: var(--muted);
+  font-weight: 600; text-transform: uppercase; font-size: 0.6rem;
+}
+.ms-bar > span:last-child {
+  width: 22px; text-align: right; font-weight: 700;
+  color: var(--navy); font-size: 0.7rem;
+}
+.ms-fill {
+  flex: 1; height: 10px; background: #e2e8f0;
+  border-radius: 5px; overflow: hidden;
+}
+.ms-fill div {
+  height: 100%; border-radius: 5px;
+  background: linear-gradient(90deg, var(--teal), var(--navy));
+  transition: width 0.5s;
+}
 @media (max-width: 600px) {
   .modal-finals { grid-template-columns: repeat(2, 1fr); }
   .modal-bracket { grid-template-columns: 1fr; }
