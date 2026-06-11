@@ -592,7 +592,7 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
     </div>
   </div>
 
-  <!-- Predicciones ocultas hasta el 11 de junio -->
+  <!-- Predicciones: solo en admin -->
   <div class="card" id="prediccionesCard" style="display:none;">
     <h3 style="color:var(--navy);margin-bottom:16px;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.06em;">🔮 Predicciones</h3>
     <div class="predicciones">
@@ -621,8 +621,8 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
 <footer>Actualizado: {fecha} · Puntajes recalculados automáticamente</footer>
 
 <script>
-// Mostrar predicciones a partir del 11 de junio 2026
-if (new Date() >= new Date('2026-06-11')) {{
+// Mostrar predicciones a partir del 11 junio 2026, 12:00 Guayaquil (UTC-5)
+if (new Date() >= new Date('2026-06-11T12:00:00-05:00')) {{
   document.getElementById('prediccionesCard').style.display = '';
 }}
 
