@@ -484,15 +484,33 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
       <div style="margin-top:8px;font-size:0.68rem;color:var(--teal);font-weight:600;">Ver predicción completa →</div>
     </div>"""
     
-    # Contar pollas por participante (para decidir si mostrar letra)
+    # Ordenar por fecha de creación del archivo (más antiguo primero)
+    # El puntaje ya viene ordenado alfabéticamente, lo reordenamos por fecha
+    # Si no hay puntajes, ordenar por fecha de creación
+    max_total = max((r["puntajes"]["total"] for r in puntajes), default=0)
+    hay_puntajes = max_total > 0
+    
+    if not hay_puntajes:
+        puntajes_ordenados = []
+        for r in puntajes:
+            archivo = r.get("archivo", "")
+            ts = 0
+            for jf in POLLAS_DIR.glob("*.json"):
+                with open(jf, encoding="utf-8") as fp:
+                    d = json.load(fp)
+                if d.get("archivo_original", "").lower() == archivo.lower():
+                    ts = jf.stat().st_mtime
+                    break
+            puntajes_ordenados.append((ts, r))
+        puntajes_ordenados.sort(key=lambda x: x[0])
+        puntajes = [r for _, r in puntajes_ordenados]
+    
     pollas_por_nombre = {}
     for r in puntajes:
         n = r["participante"]
         pollas_por_nombre[n] = pollas_por_nombre.get(n, 0) + 1
     
     filas = ""
-    max_total = max((r["puntajes"]["total"] for r in puntajes), default=0)
-    hay_puntajes = max_total > 0
     for i, r in enumerate(puntajes):
         p = r["puntajes"]
         nombre = normalizar_nombre(r["participante"])
