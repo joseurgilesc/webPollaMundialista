@@ -114,10 +114,12 @@ def build_results_from_api():
     total_finished = sum(1 for m in gm if m.get("finished") == "TRUE" and m.get("type") == "group")
     print(f"  ⚽ Partidos de grupo terminados: {total_finished}/72")
     
-    # ── Determinar mejores terceros ──
+    # ── Mejores terceros (solo grupos activos) ──
     terceros = []
     for g in gl:
         letra = g.get("name","")
+        if letra not in grupos_activos:
+            continue
         entries = sorted(g.get("teams",[]), key=lambda e: (-int(e.get("pts",0)), -(int(e.get("gf",0))-int(e.get("ga",0)))))
         if len(entries) >= 3:
             e3 = entries[2]
@@ -135,7 +137,9 @@ def build_results_from_api():
             for eq, r in grupos_result[grp].items():
                 if r == pos: equipo = eq; break
         elif isinstance(grp, list):
-            if any(g in grupos_activos for g in grp):
+            # Solo si hay terceros activos en estos grupos
+            activos_en_grp = [g for g in grp if g in grupos_activos]
+            if activos_en_grp:
                 for t_letra, t_pts, t_gd, t_name in terceros:
                     if t_letra in grp and t_letra in terceros_clasificados:
                         equipo = t_name
