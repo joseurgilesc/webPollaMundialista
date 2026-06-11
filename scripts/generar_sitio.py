@@ -941,6 +941,14 @@ function verPolla(ref) {{
         const color = pos==1?'#c0392b':pos==2?'#1a6fb5':pos==3?'#888':pos==4?'#aaa':'#aaa';
         html += '<div style="color:'+color+'">'+(pos||'?')+'° '+eq+'</div>';
       }});
+      // Mostrar real al lado si existe
+      if (REALES && REALES.grupos && REALES.grupos[g]) {{
+        html += '<div style="margin-top:6px;padding-top:4px;border-top:1px dashed #ddd;font-size:0.62rem;color:var(--muted);">Real:</div>';
+        Object.entries(REALES.grupos[g]).sort((a,b)=>(a[1]||99)-(b[1]||99)).forEach(([eq, pos]) => {{
+          const color2 = pos==1?'#c0392b':pos==2?'#1a6fb5':pos==3?'#888':pos==4?'#aaa':'#aaa';
+          html += '<div style="color:'+color2+';font-size:0.65rem;">'+(pos||'?')+'° '+eq+'</div>';
+        }});
+      }}
       html += '</div>';
     }});
     html += '</div></div>';
