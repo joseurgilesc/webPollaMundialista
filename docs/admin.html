@@ -408,6 +408,34 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
   background: linear-gradient(90deg, var(--teal), var(--navy));
   transition: width 0.5s;
 }
+/* Compare table */
+.modal-compare {
+  margin-top: 10px;
+  font-size: 0.68rem;
+}
+.modal-compare h5 {
+  color: var(--navy);
+  margin-bottom: 6px;
+  font-size: 0.7rem;
+}
+.mc-row {
+  display: grid;
+  grid-template-columns: 60px 1fr 25px 1fr 25px;
+  gap: 4px;
+  align-items: center;
+  padding: 2px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+.mc-slot { font-weight: 700; color: var(--navy); font-size: 0.6rem; }
+.mc-pred { font-size: 0.68rem; }
+.mc-real { font-size: 0.68rem; }
+.mc-vs { text-align: center; color: var(--muted); font-size: 0.55rem; }
+.mc-pts { text-align: right; font-weight: 700; font-size: 0.65rem; }
+.mc-hit { background: rgba(22,163,74,0.06); }
+.mc-hit .mc-pts { color: var(--green); }
+.mc-miss { background: rgba(220,38,38,0.04); }
+.mc-miss .mc-pts { color: var(--red); }
+.mc-pend { color: var(--muted); }
 @media (max-width: 600px) {
   .modal-finals { grid-template-columns: repeat(2, 1fr); }
   .modal-bracket { grid-template-columns: 1fr; }

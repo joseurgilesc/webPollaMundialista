@@ -16,6 +16,7 @@ from datetime import datetime
 PUNTAJES_FILE = Path("data/puntajes.json")
 PARTICIPANTES_FILE = Path("data/participantes.json")
 POLLAS_DIR = Path("data/pollas")
+RESULTADOS_FILE = Path("data/resultados_reales.json")
 SALIDA_PUBLIC = Path("docs/index.html")
 SALIDA_ADMIN = Path("docs/admin.html")
 
@@ -472,6 +473,34 @@ footer {{ text-align: center; padding: 24px; color: var(--muted); font-size: 0.7
   background: linear-gradient(90deg, var(--teal), var(--navy));
   transition: width 0.5s;
 }}
+/* Compare table */
+.modal-compare {{
+  margin-top: 10px;
+  font-size: 0.68rem;
+}}
+.modal-compare h5 {{
+  color: var(--navy);
+  margin-bottom: 6px;
+  font-size: 0.7rem;
+}}
+.mc-row {{
+  display: grid;
+  grid-template-columns: 60px 1fr 25px 1fr 25px;
+  gap: 4px;
+  align-items: center;
+  padding: 2px 0;
+  border-bottom: 1px solid #f1f5f9;
+}}
+.mc-slot {{ font-weight: 700; color: var(--navy); font-size: 0.6rem; }}
+.mc-pred {{ font-size: 0.68rem; }}
+.mc-real {{ font-size: 0.68rem; }}
+.mc-vs {{ text-align: center; color: var(--muted); font-size: 0.55rem; }}
+.mc-pts {{ text-align: right; font-weight: 700; font-size: 0.65rem; }}
+.mc-hit {{ background: rgba(22,163,74,0.06); }}
+.mc-hit .mc-pts {{ color: var(--green); }}
+.mc-miss {{ background: rgba(220,38,38,0.04); }}
+.mc-miss .mc-pts {{ color: var(--red); }}
+.mc-pend {{ color: var(--muted); }}
 @media (max-width: 600px) {{
   .modal-finals {{ grid-template-columns: repeat(2, 1fr); }}
   .modal-bracket {{ grid-template-columns: 1fr; }}
@@ -568,6 +597,12 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
         d["finales"] = {k: normalizar_equipo_display(v) for k, v in data.get("finales", {}).items()}
         pollas_norm[k] = d
     pollas_json = json.dumps(pollas_norm, ensure_ascii=False)
+    # Cargar resultados reales
+    resultados_reales = {}
+    if RESULTADOS_FILE.exists():
+        with open(RESULTADOS_FILE, encoding="utf-8") as f:
+            resultados_reales = json.load(f)
+    reales_json = json.dumps(resultados_reales, ensure_ascii=False)
     
     # Construir cards de predicciones
     predicciones_html = ""
@@ -747,6 +782,7 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
 document.getElementById('prediccionesCard').style.display = '';
 
 const POLLAS = {pollas_json};
+const REALES = {reales_json};
 const PUNTAJES = {json.dumps([{"participante": r["participante"], "archivo": r["archivo"], "puntajes": r["puntajes"]} for r in puntajes])};
 const SHARE_DATA = {json.dumps({"acumulado": acumulado, "costo": participantes.get("costo_por_polla", 10), "pollas": total_pollas, "hay_puntajes": hay_puntajes, "nota": participantes.get("_nota", ""), "leaderboard": [{"nombre": normalizar_nombre(r["participante"]), "letra": r.get("polla_letra","A"), "total": r["puntajes"]["total"]} for r in puntajes]})};
 
@@ -804,17 +840,34 @@ function verPolla(ref) {{
   html += '<div class="mf-item mf-fourth"><span>4°</span><strong>'+(f.cuarto||'—')+'</strong><small>Cuarto</small></div>';
   html += '</div>';
   
-  // ── Puntaje ──
+  // ── Puntaje con detalle vs resultados reales ──
   const score = findScore(polla.participante);
-  if (score) {{
-    html += '<div class="modal-score">';
-    html += '<span>📊 <strong>'+score.total+' pts</strong></span>';
+  if (score && REALES && REALES.ronda_16avos) {{
+    html += '<div class="modal-score"><span>📊 <strong>'+score.total+' pts</strong></span>';
+    // Barras resumen
     html += '<div class="ms-bars">';
     [['16avos',64],['8avos',32],['Cuartos',24],['Semis',16],['Final',44]].forEach(([rnd,max]) => {{
       const pct = score[rnd]/max*100;
       html += '<div class="ms-bar"><span>'+rnd+'</span><div class="ms-fill"><div style="width:'+pct+'%"></div></div><span>'+score[rnd]+'</span></div>';
     }});
-    html += '</div></div>';
+    html += '</div>';
+    
+    // Comparación 16avos
+    html += '<div class="modal-compare"><h5>⚽ 16avos: Predicción vs Real</h5>';
+    const realSlots = {{}};
+    (REALES.ronda_16avos||[]).forEach(e => {{ if(e.equipo) realSlots[e.slot] = e.equipo; }});
+    (polla.ronda_16avos||[]).forEach(e => {{
+      if (!e.equipo && !realSlots[e.slot]) return;
+      const real = realSlots[e.slot] || '';
+      const match = e.equipo && real && e.equipo === real;
+      const cls = match ? 'mc-hit' : (e.equipo && real ? 'mc-miss' : 'mc-pend');
+      html += '<div class="mc-row '+cls+'"><span class="mc-slot">'+e.slot+'</span><span class="mc-pred">'+(e.equipo||'—')+'</span><span class="mc-vs">vs</span><span class="mc-real">'+(real||'—')+'</span><span class="mc-pts">'+(match?'+2':'')+(e.equipo && real && e.equipo!==real?'+1':'')+(e.equipo && !real?'':(!e.equipo && real?'0':''))+'</span></div>';
+    }});
+    html += '</div>';
+    
+    html += '</div>';
+  }} else if (score) {{
+    html += '<div class="modal-score">📊 <strong>'+score.total+' pts</strong> (aún sin resultados reales)</div>';
   }}
   
   // ── Grupos ──
