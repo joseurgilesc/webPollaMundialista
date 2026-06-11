@@ -308,32 +308,72 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
   padding: 20px; overflow-y: auto;
 }
 .modal-content {
-  max-width: 700px; width: 100%;
+  max-width: 750px; width: 100%;
   max-height: 85vh; overflow-y: auto;
   margin-top: 20px;
 }
+/* Finals display */
+.modal-finals {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.mf-item {
+  text-align: center;
+  padding: 12px 8px;
+  border-radius: 10px;
+  background: #f8fafc;
+  border: 1px solid var(--card-border);
+}
+.mf-item span { font-size: 1.5rem; display: block; margin-bottom: 2px; }
+.mf-item strong { display: block; font-size: 0.78rem; color: var(--navy); }
+.mf-item small { display: block; font-size: 0.6rem; color: var(--muted); margin-top: 2px; }
+.mf-champ { border-color: #c0392b; background: rgba(192,57,43,0.06); }
+.mf-second { border-color: #1a6fb5; background: rgba(26,111,181,0.06); }
+/* Grupos */
 .modal-grupos {
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   gap: 8px; margin-bottom: 16px;
 }
 .modal-grupo {
   background: #f8fafc; border-radius: 8px; padding: 10px;
   border: 1px solid var(--card-border);
 }
-.modal-grupo strong { font-size: 0.75rem; color: var(--navy); }
-.modal-grupo div { font-size: 0.7rem; color: var(--muted); margin-top: 2px; }
-.modal-slots { font-size: 0.72rem; }
+.modal-grupo strong { font-size: 0.72rem; color: var(--navy); }
+.modal-grupo div { font-size: 0.68rem; margin-top: 2px; }
+/* Bracket */
+.modal-bracket {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 10px;
+}
+.mb-round h5 {
+  color: var(--navy);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--card-border);
+}
+.modal-slots { font-size: 0.7rem; }
 .modal-slots .slot-row {
-  display: flex; align-items: center; padding: 3px 0;
+  display: flex; align-items: center; padding: 2px 0;
   border-bottom: 1px solid #f1f5f9;
 }
-.slot-row .s-code { width: 80px; font-weight: 700; color: var(--navy); font-size: 0.65rem; flex-shrink: 0; }
-.slot-row .s-team { flex: 1; }
+.slot-row .s-code { width: 60px; font-weight: 700; color: var(--navy); font-size: 0.62rem; flex-shrink: 0; }
+.slot-row .s-team { flex: 1; font-size: 0.7rem; }
 .modal-section { margin-bottom: 14px; }
 .modal-section h4 {
   color: var(--navy); font-size: 0.75rem; text-transform: uppercase;
-  letter-spacing: 0.04em; margin-bottom: 6px;
+  letter-spacing: 0.04em; margin-bottom: 8px;
   padding-bottom: 4px; border-bottom: 1px solid var(--card-border);
+}
+@media (max-width: 600px) {
+  .modal-finals { grid-template-columns: repeat(2, 1fr); }
+  .modal-bracket { grid-template-columns: 1fr; }
 }
 
 /* Predicciones */
@@ -1206,7 +1246,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
   </div>
 </div>
 
-<footer>Actualizado: 11/06/2026 15:37 · Puntajes recalculados automáticamente</footer>
+<footer>Actualizado: 11/06/2026 15:39 · Puntajes recalculados automáticamente</footer>
 
 <script>
 // Mostrar predicciones
@@ -1250,40 +1290,51 @@ function verPolla(ref) {
   const polla = findPolla(ref);
   if (!polla) { alert('Polla no encontrada'); return; }
   document.getElementById('modalTitle').textContent = '📋 ' + (polla.participante || 'Sin nombre');
-  let html = '';
+  let html = '<div style="max-height:65vh;overflow-y:auto;">';
+  
+  // ── Finales primero (lo más importante) ──
+  const f = polla.finales || {};
+  html += '<div class="modal-finals">';
+  html += '<div class="mf-item mf-champ"><span>🏆</span><strong>'+(f.campeon||'—')+'</strong><small>Campeón</small></div>';
+  html += '<div class="mf-item mf-second"><span>🥈</span><strong>'+(f.segundo||'—')+'</strong><small>Segundo</small></div>';
+  html += '<div class="mf-item mf-third"><span>🥉</span><strong>'+(f.tercero||'—')+'</strong><small>Tercero</small></div>';
+  html += '<div class="mf-item mf-fourth"><span>4°</span><strong>'+(f.cuarto||'—')+'</strong><small>Cuarto</small></div>';
+  html += '</div>';
+  
+  // ── Grupos ──
   if (polla.grupos) {
-    html += '<div class="modal-section"><h4>🏟️ Grupos</h4><div class="modal-grupos">';
-    Object.entries(polla.grupos).forEach(([g, eqs]) => {
+    html += '<div class="modal-section"><h4>🏟️ Fase de Grupos</h4><div class="modal-grupos">';
+    const sorted = Object.entries(polla.grupos).sort((a,b) => a[0].localeCompare(b[0]));
+    sorted.forEach(([g, eqs]) => {
       html += '<div class="modal-grupo"><strong>Grupo '+g+'</strong>';
       Object.entries(eqs).sort((a,b)=>(a[1]||99)-(b[1]||99)).forEach(([eq, pos]) => {
-        html += '<div>'+(pos||'?')+'° '+eq+'</div>';
+        const color = pos==1?'#c0392b':pos==2?'#1a6fb5':pos==3?'#888':pos==4?'#aaa':'#aaa';
+        html += '<div style="color:'+color+'">'+(pos||'?')+'° '+eq+'</div>';
       });
       html += '</div>';
     });
     html += '</div></div>';
   }
+  
+  // ── Bracket en 2 columnas ──
   const rondas = [
-    ['⚽ 16avos', polla.ronda_16avos, true],
-    ['⚽ 8avos', polla.ronda_8avos, false],
-    ['⚽ Cuartos', polla.ronda_cuartos, false],
-    ['⚽ Semifinales', polla.ronda_semifinales, false],
+    ['16avos', polla.ronda_16avos, true],
+    ['8avos', polla.ronda_8avos, false],
+    ['Cuartos', polla.ronda_cuartos, false],
+    ['Semifinales', polla.ronda_semifinales, false],
   ];
+  html += '<div class="modal-section"><h4>⚽ Bracket</h4><div class="modal-bracket">';
   rondas.forEach(([title, entries, showSlot]) => {
     if (!entries?.length) return;
-    html += '<div class="modal-section"><h4>'+title+'</h4><div class="modal-slots">';
+    html += '<div class="mb-round"><h5>'+title+'</h5>';
     entries.forEach((e, i) => {
       html += '<div class="slot-row"><span class="s-code">'+(showSlot?(e.slot||''):('#'+(i+1)))+'</span><span class="s-team">'+(e.equipo||'—')+'</span></div>';
     });
-    html += '</div></div>';
+    html += '</div>';
   });
-  const f = polla.finales || {};
-  html += '<div class="modal-section"><h4>🏆 Finales</h4>';
-  html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:0.8rem;">';
-  html += '<div>🏆 <strong>Campeón:</strong> '+(f.campeon||'—')+'</div>';
-  html += '<div>🥈 <strong>Segundo:</strong> '+(f.segundo||'—')+'</div>';
-  html += '<div>🥉 <strong>Tercero:</strong> '+(f.tercero||'—')+'</div>';
-  html += '<div>4° <strong>Cuarto:</strong> '+(f.cuarto||'—')+'</div>';
   html += '</div></div>';
+  
+  html += '</div>';
   document.getElementById('modalBody').innerHTML = html;
   document.getElementById('modal').classList.remove('hidden');
 }

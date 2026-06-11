@@ -309,32 +309,72 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
   padding: 20px; overflow-y: auto;
 }
 .modal-content {
-  max-width: 700px; width: 100%;
+  max-width: 750px; width: 100%;
   max-height: 85vh; overflow-y: auto;
   margin-top: 20px;
 }
+/* Finals display */
+.modal-finals {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.mf-item {
+  text-align: center;
+  padding: 12px 8px;
+  border-radius: 10px;
+  background: #f8fafc;
+  border: 1px solid var(--card-border);
+}
+.mf-item span { font-size: 1.5rem; display: block; margin-bottom: 2px; }
+.mf-item strong { display: block; font-size: 0.78rem; color: var(--navy); }
+.mf-item small { display: block; font-size: 0.6rem; color: var(--muted); margin-top: 2px; }
+.mf-champ { border-color: #c0392b; background: rgba(192,57,43,0.06); }
+.mf-second { border-color: #1a6fb5; background: rgba(26,111,181,0.06); }
+/* Grupos */
 .modal-grupos {
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   gap: 8px; margin-bottom: 16px;
 }
 .modal-grupo {
   background: #f8fafc; border-radius: 8px; padding: 10px;
   border: 1px solid var(--card-border);
 }
-.modal-grupo strong { font-size: 0.75rem; color: var(--navy); }
-.modal-grupo div { font-size: 0.7rem; color: var(--muted); margin-top: 2px; }
-.modal-slots { font-size: 0.72rem; }
+.modal-grupo strong { font-size: 0.72rem; color: var(--navy); }
+.modal-grupo div { font-size: 0.68rem; margin-top: 2px; }
+/* Bracket */
+.modal-bracket {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 10px;
+}
+.mb-round h5 {
+  color: var(--navy);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--card-border);
+}
+.modal-slots { font-size: 0.7rem; }
 .modal-slots .slot-row {
-  display: flex; align-items: center; padding: 3px 0;
+  display: flex; align-items: center; padding: 2px 0;
   border-bottom: 1px solid #f1f5f9;
 }
-.slot-row .s-code { width: 80px; font-weight: 700; color: var(--navy); font-size: 0.65rem; flex-shrink: 0; }
-.slot-row .s-team { flex: 1; }
+.slot-row .s-code { width: 60px; font-weight: 700; color: var(--navy); font-size: 0.62rem; flex-shrink: 0; }
+.slot-row .s-team { flex: 1; font-size: 0.7rem; }
 .modal-section { margin-bottom: 14px; }
 .modal-section h4 {
   color: var(--navy); font-size: 0.75rem; text-transform: uppercase;
-  letter-spacing: 0.04em; margin-bottom: 6px;
+  letter-spacing: 0.04em; margin-bottom: 8px;
   padding-bottom: 4px; border-bottom: 1px solid var(--card-border);
+}
+@media (max-width: 600px) {
+  .modal-finals { grid-template-columns: repeat(2, 1fr); }
+  .modal-bracket { grid-template-columns: 1fr; }
 }
 
 /* Predicciones */
