@@ -405,25 +405,33 @@ footer {{ text-align: center; padding: 24px; color: var(--muted); font-size: 0.7
 .predicciones {{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 12px;
+  gap: 10px;
 }}
 .pred-card {{
-  background: #f8fafc;
+  background: linear-gradient(135deg, #f8fafc, #fff);
   border: 1px solid var(--card-border);
   border-radius: 12px;
   padding: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}}
+.pred-card:hover {{
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  border-color: var(--teal);
 }}
 .pred-name {{
   font-weight: 700;
   font-size: 0.8rem;
   color: var(--navy);
   margin-bottom: 8px;
+  line-height: 1.2;
 }}
 .pred-picks {{
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  font-size: 0.72rem;
+  gap: 5px;
+  font-size: 0.7rem;
 }}
 .pred-picks span {{
   background: white;
@@ -431,6 +439,22 @@ footer {{ text-align: center; padding: 24px; color: var(--muted); font-size: 0.7
   border-radius: 6px;
   padding: 3px 8px;
   white-space: nowrap;
+  transition: background 0.15s;
+}}
+.pred-picks span:hover {{
+  background: var(--teal);
+  color: white;
+  border-color: var(--teal);
+}}
+.pred-see {{
+  margin-top: 8px;
+  font-size: 0.68rem;
+  color: var(--teal);
+  font-weight: 600;
+  opacity: 0.7;
+}}
+.pred-card:hover .pred-see {{
+  opacity: 1;
 }}
 """
 
@@ -483,7 +507,7 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
         <span title="Tercero">🥉 {nd(f.get("tercero", "")) or "—"}</span>
         <span title="Cuarto">4° {nd(f.get("cuarto", "")) or "—"}</span>
       </div>
-      <div style="margin-top:8px;font-size:0.68rem;color:var(--teal);font-weight:600;">Ver predicción completa →</div>
+      <div class="pred-see">Ver predicción completa →</div>
     </div>"""
     
     # Ordenar por fecha de creación del archivo (más antiguo primero)
@@ -665,10 +689,14 @@ function shareWhatsApp() {{
 }}
 
 function findPolla(ref) {{
+  // Buscar directo por clave
+  if (POLLAS[ref]) return POLLAS[ref];
+  // Buscar por nombre normalizado
   const key = ref.toLowerCase().replace(/[^a-z0-9]/g, '_');
   for (const [k, v] of Object.entries(POLLAS)) {{
-    if (k.includes(key) || key.includes(k)) return v;
+    if (k === key || k.includes(key) || key.includes(k)) return v;
   }}
+  // Buscar por nombre de participante
   const normRef = ref.toLowerCase();
   for (const v of Object.values(POLLAS)) {{
     if ((v.participante||'').toLowerCase().includes(normRef)) return v;

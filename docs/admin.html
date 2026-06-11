@@ -341,25 +341,33 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
 .predicciones {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 12px;
+  gap: 10px;
 }
 .pred-card {
-  background: #f8fafc;
+  background: linear-gradient(135deg, #f8fafc, #fff);
   border: 1px solid var(--card-border);
   border-radius: 12px;
   padding: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.pred-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  border-color: var(--teal);
 }
 .pred-name {
   font-weight: 700;
   font-size: 0.8rem;
   color: var(--navy);
   margin-bottom: 8px;
+  line-height: 1.2;
 }
 .pred-picks {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  font-size: 0.72rem;
+  gap: 5px;
+  font-size: 0.7rem;
 }
 .pred-picks span {
   background: white;
@@ -367,6 +375,22 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
   border-radius: 6px;
   padding: 3px 8px;
   white-space: nowrap;
+  transition: background 0.15s;
+}
+.pred-picks span:hover {
+  background: var(--teal);
+  color: white;
+  border-color: var(--teal);
+}
+.pred-see {
+  margin-top: 8px;
+  font-size: 0.68rem;
+  color: var(--teal);
+  font-weight: 600;
+  opacity: 0.7;
+}
+.pred-card:hover .pred-see {
+  opacity: 1;
 }
 
 .section-title {
