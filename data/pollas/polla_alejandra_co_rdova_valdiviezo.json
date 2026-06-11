@@ -1,0 +1,305 @@
+{
+  "archivo_original": "Alejandra Córdova Valdiviezo.jpeg",
+  "participante": "Alejandra Córdova Valdiviezo",
+  "formato_original": "pdf",
+  "grupos": {
+    "A": {
+      "🇲🇽 México": 1,
+      "🇰🇷 Corea del Sur": 2,
+      "🇨🇿 Rep. Checa": 3,
+      "🇿🇦 Sudáfrica": 4
+    },
+    "B": {
+      "🇨🇭 Suiza": 1,
+      "🇨🇦 Canadá": 2,
+      "🇧🇦 Bosnia y Herzegovina": 3,
+      "🇶🇦 Qatar": 4
+    },
+    "C": {
+      "🇧🇷 Brasil": 1,
+      "🇲🇦 Marruecos": 2,
+      "🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia": 3,
+      "🇭🇹 Haití": 4
+    },
+    "D": {
+      "🇺🇸 Estados Unidos": 1,
+      "🇵🇾 Paraguay": 2,
+      "🇹🇷 Turquía": 3,
+      "🇦🇺 Australia": 4
+    },
+    "E": {
+      "🇩🇪 Alemania": 1,
+      "🇪🇨 Ecuador": 2,
+      "🇨🇮 Costa de Marfil": 3,
+      "🇨🇼 Curazao": 4
+    },
+    "F": {
+      "🇳🇱 Holanda": 1,
+      "🇸🇪 Suecia": 2,
+      "🇯🇵 Japón": 3,
+      "🇹🇳 Túnez": 4
+    },
+    "G": {
+      "🇧🇪 Bélgica": 1,
+      "🇪🇬 Egipto": 2,
+      "🇮🇷 Irán": 3,
+      "🇳🇿 Nueva Zelanda": 4
+    },
+    "H": {
+      "🇪🇸 España": 1,
+      "🇺🇾 Uruguay": 2,
+      "🇸🇦 Arabia Saudí": 3,
+      "🇨🇻 Cabo Verde": 4
+    },
+    "I": {
+      "🇫🇷 Francia": 1,
+      "🇳🇴 Noruega": 2,
+      "🇸🇳 Senegal": 3,
+      "🇮🇶 Irak": 4
+    },
+    "J": {
+      "🇦🇷 Argentina": 1,
+      "🇦🇹 Austria": 2,
+      "🇩🇿 Argelia": 3,
+      "🇯🇴 Jordania": 4
+    },
+    "K": {
+      "🇵🇹 Portugal": 1,
+      "🇨🇴 Colombia": 2,
+      "🇨🇩 Rep. Congo": 3,
+      "🇺🇿 Uzbekistán": 4
+    },
+    "L": {
+      "🇬🇧 Inglaterra": 1,
+      "🇭🇷 Croacia": 2,
+      "🇬🇭 Ghana": 3,
+      "🇵🇦 Panamá": 4
+    }
+  },
+  "ronda_16avos": [
+    {
+      "slot": "1E",
+      "equipo": "🇩🇪 Alemania"
+    },
+    {
+      "slot": "3 ABCDF",
+      "equipo": "🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia"
+    },
+    {
+      "slot": "1I",
+      "equipo": "🇫🇷 Francia"
+    },
+    {
+      "slot": "3 CDFGH",
+      "equipo": "🇸🇦 Arabia Saudí"
+    },
+    {
+      "slot": "2A",
+      "equipo": "🇰🇷 Corea del Sur"
+    },
+    {
+      "slot": "2B",
+      "equipo": "🇨🇦 Canadá"
+    },
+    {
+      "slot": "1F",
+      "equipo": "🇳🇱 Holanda"
+    },
+    {
+      "slot": "2C",
+      "equipo": "🇲🇦 Marruecos"
+    },
+    {
+      "slot": "2K",
+      "equipo": "🇨🇴 Colombia"
+    },
+    {
+      "slot": "2L",
+      "equipo": "🇭🇷 Croacia"
+    },
+    {
+      "slot": "1H",
+      "equipo": "🇪🇸 España"
+    },
+    {
+      "slot": "2J",
+      "equipo": "🇦🇹 Austria"
+    },
+    {
+      "slot": "1D",
+      "equipo": "🇺🇸 Estados Unidos"
+    },
+    {
+      "slot": "3 BEFIJ",
+      "equipo": "🇸🇳 Senegal"
+    },
+    {
+      "slot": "1G",
+      "equipo": "🇧🇪 Bélgica"
+    },
+    {
+      "slot": "3 AEFHIJ",
+      "equipo": "🇯🇵 Japón"
+    },
+    {
+      "slot": "1C",
+      "equipo": "🇧🇷 Brasil"
+    },
+    {
+      "slot": "2F",
+      "equipo": "🇸🇪 Suecia"
+    },
+    {
+      "slot": "2E",
+      "equipo": "🇪🇨 Ecuador"
+    },
+    {
+      "slot": "2I",
+      "equipo": "🇳🇴 Noruega"
+    },
+    {
+      "slot": "1A",
+      "equipo": "🇲🇽 México"
+    },
+    {
+      "slot": "3 CEFHI",
+      "equipo": "🇨🇮 Costa de Marfil"
+    },
+    {
+      "slot": "1L",
+      "equipo": "🇬🇧 Inglaterra"
+    },
+    {
+      "slot": "3 EHIJK",
+      "equipo": "🇩🇿 Argelia"
+    },
+    {
+      "slot": "1J",
+      "equipo": "🇦🇷 Argentina"
+    },
+    {
+      "slot": "2H",
+      "equipo": "🇺🇾 Uruguay"
+    },
+    {
+      "slot": "2D",
+      "equipo": "🇵🇾 Paraguay"
+    },
+    {
+      "slot": "2G",
+      "equipo": "🇪🇬 Egipto"
+    },
+    {
+      "slot": "1B",
+      "equipo": "🇨🇭 Suiza"
+    },
+    {
+      "slot": "3 EFGIJ",
+      "equipo": "🇮🇷 Irán"
+    },
+    {
+      "slot": "1K",
+      "equipo": "🇵🇹 Portugal"
+    },
+    {
+      "slot": "3 DEIJL",
+      "equipo": "🇹🇷 Turquía"
+    }
+  ],
+  "ronda_8avos": [
+    {
+      "equipo": "🇩🇪 Alemania"
+    },
+    {
+      "equipo": "🇫🇷 Francia"
+    },
+    {
+      "equipo": "🇨🇦 Canadá"
+    },
+    {
+      "equipo": "🇳🇱 Holanda"
+    },
+    {
+      "equipo": "🇨🇴 Colombia"
+    },
+    {
+      "equipo": "🇪🇸 España"
+    },
+    {
+      "equipo": "🇸🇳 Senegal"
+    },
+    {
+      "equipo": "🇯🇵 Japón"
+    },
+    {
+      "equipo": "🇧🇷 Brasil"
+    },
+    {
+      "equipo": "🇪🇨 Ecuador"
+    },
+    {
+      "equipo": "🇲🇽 México"
+    },
+    {
+      "equipo": "🇬🇧 Inglaterra"
+    },
+    {
+      "equipo": "🇦🇷 Argentina"
+    },
+    {
+      "equipo": "🇵🇾 Paraguay"
+    },
+    {
+      "equipo": "🇨🇭 Suiza"
+    },
+    {
+      "equipo": "🇵🇹 Portugal"
+    }
+  ],
+  "ronda_cuartos": [
+    {
+      "equipo": "🇫🇷 Francia"
+    },
+    {
+      "equipo": "🇳🇱 Holanda"
+    },
+    {
+      "equipo": "🇪🇸 España"
+    },
+    {
+      "equipo": "🇯🇵 Japón"
+    },
+    {
+      "equipo": "🇪🇨 Ecuador"
+    },
+    {
+      "equipo": "🇬🇧 Inglaterra"
+    },
+    {
+      "equipo": "🇦🇷 Argentina"
+    },
+    {
+      "equipo": "🇵🇹 Portugal"
+    }
+  ],
+  "ronda_semifinales": [
+    {
+      "equipo": "🇫🇷 Francia"
+    },
+    {
+      "equipo": "🇪🇸 España"
+    },
+    {
+      "equipo": "🇬🇧 Inglaterra"
+    },
+    {
+      "equipo": "🇦🇷 Argentina"
+    }
+  ],
+  "finales": {
+    "campeon": "🇪🇸 España",
+    "segundo": "🇦🇷 Argentina",
+    "tercero": "🇫🇷 Francia",
+    "cuarto": "🇬🇧 Inglaterra"
+  }
+}

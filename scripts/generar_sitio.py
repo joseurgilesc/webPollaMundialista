@@ -639,10 +639,8 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
 <footer>Actualizado: {fecha} · Puntajes recalculados automáticamente</footer>
 
 <script>
-// Mostrar predicciones a partir del 11 junio 2026, 12:00 Guayaquil (UTC-5)
-if (new Date() >= new Date('2026-06-11T12:00:00-05:00')) {{
-  document.getElementById('prediccionesCard').style.display = '';
-}}
+// Mostrar predicciones
+document.getElementById('prediccionesCard').style.display = '';
 
 const POLLAS = {pollas_json};
 const SHARE_DATA = {json.dumps({"acumulado": acumulado, "costo": participantes.get("costo_por_polla", 10), "pollas": total_pollas, "hay_puntajes": hay_puntajes, "nota": participantes.get("_nota", ""), "leaderboard": [{"nombre": normalizar_nombre(r["participante"]), "letra": r.get("polla_letra","A"), "total": r["puntajes"]["total"]} for r in puntajes]})};
