@@ -85,33 +85,34 @@ def build_results_from_api():
     # Team ID → nombre polla
     id_name = {str(t["id"]): _en_to_polla(t.get("name_en","")) for t in tl}
     
-    # ── Grupos: standings con rank real ──
+    # ── Grupos: standings ──
     grupos_result = {}
-    grupos_completos = set()  # solo grupos con todos los partidos jugados
+    grupos_activos = set()  # grupos con al menos 1 partido terminado
     
-    # Detectar qué grupos están completos
     for g in gl:
         letra = g.get("name","")
         matches = [m for m in gm if m.get("group") == letra and m.get("type") == "group"]
         finished = [m for m in matches if m.get("finished") == "TRUE"]
-        if len(matches) == 6 and len(finished) == 6:  # 4 equipos = 6 partidos
-            grupos_completos.add(letra)
+        if len(finished) > 0:
+            grupos_activos.add(letra)
     
     for g in gl:
         letra = g.get("name","")
         entries = g.get("teams",[])
-        # Solo ordenar si el grupo está completo
-        if letra in grupos_completos:
+        if letra in grupos_activos:
             ranked = sorted(entries, key=lambda e: (-int(e.get("pts",0)), -(int(e.get("gf",0))-int(e.get("ga",0)))))
             equipos = {}
             for rank, e in enumerate(ranked, 1):
                 name = id_name.get(str(e.get("team_id","")), "?")
                 equipos[name] = rank
         else:
-            # Grupo no terminado: posiciones pendientes
             equipos = {id_name.get(str(e.get("team_id","")), "?"): 0 for e in entries}
         if equipos:
             grupos_result[letra] = equipos
+    
+    # Contar partidos terminados
+    total_finished = sum(1 for m in gm if m.get("finished") == "TRUE" and m.get("type") == "group")
+    print(f"  ⚽ Partidos de grupo terminados: {total_finished}/72")
     
     # ── Determinar mejores terceros ──
     terceros = []
@@ -126,26 +127,19 @@ def build_results_from_api():
     terceros.sort(key=lambda x: (-x[1], -x[2]))
     terceros_clasificados = {t[0] for t in terceros[:8]}
     
-    # ── Llenar slots 16avos (solo grupos completos) ──
+    # ── Llenar slots 16avos (solo grupos con ≥1 partido) ──
     ronda_16 = []
     for slot, pos, grp in SLOTS_16AVOS:
         equipo = ""
-        if pos == 1:
-            if isinstance(grp, str) and grp in grupos_completos and grp in grupos_result:
-                for eq, r in grupos_result[grp].items():
-                    if r == 1: equipo = eq; break
-        elif pos == 2:
-            if isinstance(grp, str) and grp in grupos_completos and grp in grupos_result:
-                for eq, r in grupos_result[grp].items():
-                    if r == 2: equipo = eq; break
-        else:
-            # Mejor tercero: solo si TODOS los grupos candidatos están completos
-            if isinstance(grp, list):
-                if all(g in grupos_completos for g in grp):
-                    for t_letra, t_pts, t_gd, t_name in terceros:
-                        if t_letra in grp and t_letra in terceros_clasificados:
-                            equipo = t_name
-                            break
+        if pos in (1, 2) and isinstance(grp, str) and grp in grupos_activos and grp in grupos_result:
+            for eq, r in grupos_result[grp].items():
+                if r == pos: equipo = eq; break
+        elif isinstance(grp, list):
+            if any(g in grupos_activos for g in grp):
+                for t_letra, t_pts, t_gd, t_name in terceros:
+                    if t_letra in grp and t_letra in terceros_clasificados:
+                        equipo = t_name
+                        break
         ronda_16.append({"slot": slot, "equipo": equipo})
     
     # ── Rellenar KO desde partidos terminados ──

@@ -1,41 +1,41 @@
 {
-  "_nota": "Esperando partidos...",
+  "_nota": "Datos desde worldcup26.ir — 4/32 equipos en 16avos",
   "grupos": {
     "H": {
-      "🇪🇸 ESPAÑA": 1,
-      "🇨🇻 CABO VERDE": 2,
-      "🇸🇦 ARABIA SAUDÍ": 3,
-      "🇺🇾 URUGUAY": 4
+      "🇪🇸 ESPAÑA": 0,
+      "🇨🇻 CABO VERDE": 0,
+      "🇸🇦 ARABIA SAUDÍ": 0,
+      "🇺🇾 URUGUAY": 0
     },
     "I": {
-      "🇫🇷 FRANCIA": 1,
-      "🇸🇳 SENEGAL": 2,
-      "🇮🇶 IRAK": 3,
-      "🇳🇴 NORUEGA": 4
+      "🇫🇷 FRANCIA": 0,
+      "🇸🇳 SENEGAL": 0,
+      "🇮🇶 IRAK": 0,
+      "🇳🇴 NORUEGA": 0
     },
     "D": {
-      "🇺🇸 ESTADOS UNIDOS": 1,
-      "🇵🇾 PARAGUAY": 2,
-      "🇦🇺 AUSTRALIA": 3,
-      "🇹🇷 TURQUÍA": 4
+      "🇺🇸 ESTADOS UNIDOS": 0,
+      "🇵🇾 PARAGUAY": 0,
+      "🇦🇺 AUSTRALIA": 0,
+      "🇹🇷 TURQUÍA": 0
     },
     "E": {
-      "🇩🇪 ALEMANIA": 1,
-      "CURAÇAO": 2,
-      "🇨🇮 COSTA DE MARFIL": 3,
-      "🇪🇨 ECUADOR": 4
+      "🇩🇪 ALEMANIA": 0,
+      "CURAÇAO": 0,
+      "🇨🇮 COSTA DE MARFIL": 0,
+      "🇪🇨 ECUADOR": 0
     },
     "F": {
-      "🇳🇱 HOLANDA": 1,
-      "🇯🇵 JAPÓN": 2,
-      "🇸🇪 SUECIA": 3,
-      "🇹🇳 TÚNEZ": 4
+      "🇳🇱 HOLANDA": 0,
+      "🇯🇵 JAPÓN": 0,
+      "🇸🇪 SUECIA": 0,
+      "🇹🇳 TÚNEZ": 0
     },
     "G": {
-      "🇧🇪 BÉLGICA": 1,
-      "🇪🇬 EGIPTO": 2,
-      "🇮🇷 IRÁN": 3,
-      "🇳🇿 NUEVA ZELANDA": 4
+      "🇧🇪 BÉLGICA": 0,
+      "🇪🇬 EGIPTO": 0,
+      "🇮🇷 IRÁN": 0,
+      "🇳🇿 NUEVA ZELANDA": 0
     },
     "A": {
       "🇿🇦 SUDÁFRICA": 1,
@@ -44,34 +44,34 @@
       "🇲🇽 MÉXICO": 4
     },
     "B": {
-      "🇨🇦 CANADÁ": 1,
-      "🇧🇦 BOSNIA Y HERZEGOVINA": 2,
-      "🇶🇦 QATAR": 3,
-      "🇨🇭 SUIZA": 4
+      "🇨🇦 CANADÁ": 0,
+      "🇧🇦 BOSNIA Y HERZEGOVINA": 0,
+      "🇶🇦 QATAR": 0,
+      "🇨🇭 SUIZA": 0
     },
     "L": {
-      "🇬🇧 INGLATERRA": 1,
-      "🇭🇷 CROACIA": 2,
-      "🇬🇭 GHANA": 3,
-      "🇵🇦 PANAMÁ": 4
+      "🇬🇧 INGLATERRA": 0,
+      "🇭🇷 CROACIA": 0,
+      "🇬🇭 GHANA": 0,
+      "🇵🇦 PANAMÁ": 0
     },
     "K": {
-      "🇵🇹 PORTUGAL": 1,
-      "DEMOCRATIC REPUBLIC OF THE CONGO": 2,
-      "🇺🇿 UZBEKISTÁN": 3,
-      "🇨🇴 COLOMBIA": 4
+      "🇵🇹 PORTUGAL": 0,
+      "DEMOCRATIC REPUBLIC OF THE CONGO": 0,
+      "🇺🇿 UZBEKISTÁN": 0,
+      "🇨🇴 COLOMBIA": 0
     },
     "C": {
-      "🇧🇷 BRASIL": 1,
-      "🇲🇦 MARRUECOS": 2,
-      "🇭🇹 HAITÍ": 3,
-      "🏴󠁧󠁢󠁳󠁣󠁴󠁿 ESCOCIA": 4
+      "🇧🇷 BRASIL": 0,
+      "🇲🇦 MARRUECOS": 0,
+      "🇭🇹 HAITÍ": 0,
+      "🏴󠁧󠁢󠁳󠁣󠁴󠁿 ESCOCIA": 0
     },
     "J": {
-      "🇦🇷 ARGENTINA": 1,
-      "🇩🇿 ARGELIA": 2,
-      "🇦🇹 AUSTRIA": 3,
-      "🇯🇴 JORDANIA": 4
+      "🇦🇷 ARGENTINA": 0,
+      "🇩🇿 ARGELIA": 0,
+      "🇦🇹 AUSTRIA": 0,
+      "🇯🇴 JORDANIA": 0
     }
   },
   "ronda_16avos": [
@@ -81,7 +81,7 @@
     },
     {
       "slot": "3 ABCDF",
-      "equipo": ""
+      "equipo": "🇦🇺 AUSTRALIA"
     },
     {
       "slot": "1I",
@@ -93,7 +93,7 @@
     },
     {
       "slot": "2A",
-      "equipo": ""
+      "equipo": "🇰🇷 COREA DEL SUR"
     },
     {
       "slot": "2B",
@@ -137,7 +137,7 @@
     },
     {
       "slot": "3 AEFHIJ",
-      "equipo": ""
+      "equipo": "🇸🇦 ARABIA SAUDÍ"
     },
     {
       "slot": "1C",
@@ -157,7 +157,7 @@
     },
     {
       "slot": "1A",
-      "equipo": ""
+      "equipo": "🇿🇦 SUDÁFRICA"
     },
     {
       "slot": "3 CEFHI",
