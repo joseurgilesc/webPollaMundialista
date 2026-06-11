@@ -410,6 +410,23 @@ footer {{ text-align: center; padding: 24px; color: var(--muted); font-size: 0.7
 }}
 .modal-grupo strong {{ font-size: 0.72rem; color: var(--navy); }}
 .modal-grupo div {{ font-size: 0.68rem; margin-top: 2px; }}
+.mg-pred, .mg-real {{ margin-top: 4px; }}
+.mg-pred small, .mg-real small {{
+  display: block;
+  font-size: 0.5rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+}}
+.mg-real {{
+  margin-top: 6px;
+  padding-top: 4px;
+  border-top: 1px dashed var(--card-border);
+  background: rgba(26,111,181,0.04);
+  border-radius: 4px;
+  padding: 4px 6px;
+}}
 /* Bracket */
 .modal-bracket {{
   display: grid;
@@ -937,17 +954,24 @@ function verPolla(ref) {{
     const sorted = Object.entries(polla.grupos).sort((a,b) => a[0].localeCompare(b[0]));
     sorted.forEach(([g, eqs]) => {{
       html += '<div class="modal-grupo"><strong>Grupo '+g+'</strong>';
+      html += '<div class="mg-pred"><small>Predicción</small>';
       Object.entries(eqs).sort((a,b)=>(a[1]||99)-(b[1]||99)).forEach(([eq, pos]) => {{
-        const color = pos==1?'#c0392b':pos==2?'#1a6fb5':pos==3?'#888':pos==4?'#aaa':'#aaa';
+        const color = pos==1?'#c0392b':pos==2?'#1a6fb5':pos==3?'#888':'#aaa';
         html += '<div style="color:'+color+'">'+(pos||'?')+'° '+eq+'</div>';
       }});
-      // Mostrar real al lado si existe
+      html += '</div>';
       if (REALES && REALES.grupos && REALES.grupos[g]) {{
-        html += '<div style="margin-top:6px;padding-top:4px;border-top:1px dashed #ddd;font-size:0.62rem;color:var(--muted);">Real:</div>';
-        Object.entries(REALES.grupos[g]).sort((a,b)=>(a[1]||99)-(b[1]||99)).forEach(([eq, pos]) => {{
-          const color2 = pos==1?'#c0392b':pos==2?'#1a6fb5':pos==3?'#888':pos==4?'#aaa':'#aaa';
-          html += '<div style="color:'+color2+';font-size:0.65rem;">'+(pos||'?')+'° '+eq+'</div>';
+        html += '<div class="mg-real"><small>Real</small>';
+        const realEqs = REALES.grupos[g];
+        Object.entries(realEqs).sort((a,b)=>(a[1]||99)-(b[1]||99)).forEach(([eq, pos]) => {{
+          const color2 = pos==1?'#c0392b':pos==2?'#1a6fb5':pos==3?'#888':'#aaa';
+          // Buscar estadísticas desde REALES stats si existen
+          const st = (REALES._stats && REALES._stats[g] && REALES._stats[g][eq]) || null;
+          const pts = st ? st.pts : '';
+          const gd = st ? (st.gf-st.ga) : '';
+          html += '<div style="color:'+color2+';display:flex;justify-content:space-between;"><span>'+(pos||'?')+'° '+eq+'</span><span style="font-size:0.55rem;opacity:0.7;">'+(pts!==''?pts+'pts':'')+' '+(gd!==''?(gd>0?'+':'')+gd:'')+'</span></div>';
         }});
+        html += '</div>';
       }}
       html += '</div>';
     }});

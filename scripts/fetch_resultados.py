@@ -246,8 +246,17 @@ def build_results_from_api():
     print(f"  ⚽ 8avos: {len(ronda_8)}/16 | Cuartos: {len(ronda_4)}/8 | Semis: {len(ronda_2)}/4")
     print(f"  🏆 Campeón: {campeon_e or '—'}")
     
+    # Construir stats para el frontend
+    api_stats = {}
+    for (grp, tid), s in stats.items():
+        name = id_name.get(tid, f"Team {tid}")
+        if grp not in api_stats:
+            api_stats[grp] = {}
+        api_stats[grp][name] = {"pts": s["pts"], "gf": s["gf"], "ga": s["ga"]}
+    
     return {
         "_nota": f"Datos desde worldcup26.ir — {eq16}/32 equipos en 16avos",
+        "_stats": api_stats,
         "grupos": grupos_result,
         "ronda_16avos": ronda_16,
         "ronda_8avos": ronda_8,
