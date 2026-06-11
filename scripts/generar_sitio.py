@@ -486,11 +486,23 @@ footer {{ text-align: center; padding: 24px; color: var(--muted); font-size: 0.7
 }}
 .mc-row {{
   display: grid;
-  grid-template-columns: 60px 1fr 25px 1fr 25px;
+  grid-template-columns: 1fr 25px 1fr 70px 25px;
   gap: 4px;
   align-items: center;
   padding: 2px 0;
   border-bottom: 1px solid #f1f5f9;
+}}
+.mc-header {{
+  display: grid;
+  grid-template-columns: 1fr 25px 1fr 70px 25px;
+  gap: 4px;
+  font-size: 0.55rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  font-weight: 700;
+  padding-bottom: 4px;
+  border-bottom: 2px solid var(--card-border);
+  margin-bottom: 4px;
 }}
 .mc-slot {{ font-weight: 700; color: var(--navy); font-size: 0.6rem; }}
 .mc-pred {{ font-size: 0.68rem; }}
@@ -879,6 +891,7 @@ function verPolla(ref) {{
     
     // Comparación 16avos
     html += '<div class="modal-compare"><h5>⚽ 16avos: Predicción vs Real</h5>';
+    html += '<div class="mc-header"><span>Predicción</span><span></span><span>Real</span><span>Slot</span><span></span></div>';
     const realSlots = {{}};
     (REALES.ronda_16avos||[]).forEach(e => {{ if(e.equipo) realSlots[e.slot] = e.equipo; }});
     (polla.ronda_16avos||[]).forEach(e => {{
@@ -886,7 +899,7 @@ function verPolla(ref) {{
       const real = realSlots[e.slot] || '';
       const match = e.equipo && real && e.equipo === real;
       const cls = match ? 'mc-hit' : (e.equipo && real ? 'mc-miss' : 'mc-pend');
-      html += '<div class="mc-row '+cls+'"><span class="mc-slot">'+e.slot+'</span><span class="mc-pred">'+(e.equipo||'—')+'</span><span class="mc-vs">vs</span><span class="mc-real">'+(real||'—')+'</span><span class="mc-pts">'+(match?'+2':'')+(e.equipo && real && e.equipo!==real?'+1':'')+(e.equipo && !real?'':(!e.equipo && real?'0':''))+'</span></div>';
+      html += '<div class="mc-row '+cls+'"><span class="mc-pred">'+(e.equipo||'—')+'</span><span class="mc-vs">vs</span><span class="mc-real">'+(real||'—')+'</span><span class="mc-slot">'+e.slot+'</span><span class="mc-pts">'+(match?'+2':'')+(e.equipo && real && e.equipo!==real?'+1':'')+'</span></div>';
     }});
     html += '</div>';
     

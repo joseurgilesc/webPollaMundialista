@@ -421,11 +421,23 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
 }
 .mc-row {
   display: grid;
-  grid-template-columns: 60px 1fr 25px 1fr 25px;
+  grid-template-columns: 1fr 25px 1fr 70px 25px;
   gap: 4px;
   align-items: center;
   padding: 2px 0;
   border-bottom: 1px solid #f1f5f9;
+}
+.mc-header {
+  display: grid;
+  grid-template-columns: 1fr 25px 1fr 70px 25px;
+  gap: 4px;
+  font-size: 0.55rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  font-weight: 700;
+  padding-bottom: 4px;
+  border-bottom: 2px solid var(--card-border);
+  margin-bottom: 4px;
 }
 .mc-slot { font-weight: 700; color: var(--navy); font-size: 0.6rem; }
 .mc-pred { font-size: 0.68rem; }
