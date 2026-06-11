@@ -1,0 +1,305 @@
+{
+  "archivo_original": "Polla Mundialista Final RAyala.xlsx",
+  "participante": "Rodrigo Ayala E.",
+  "grupos": {
+    "A": {
+      "🇲🇽 MÉXICO": 1,
+      "🇿🇦 SUDÁFRICA": 4,
+      "🇰🇷 COREA DEL SUR": 3,
+      "🇨🇿 REP. CHECA": 2
+    },
+    "B": {
+      "🇨🇦 CANADÁ": 2,
+      "🇧🇦 BOSNIA Y HERZEGOVINA": 3,
+      "🇶🇦 QATAR": 1,
+      "🇨🇭 SUIZA": 4
+    },
+    "C": {
+      "🇧🇷 BRASIL": 1,
+      "🇲🇦 MARRUECOS": 2,
+      "🇭🇹 HAITÍ": 4,
+      "🏴󠁧󠁢󠁳󠁣󠁴󠁿 ESCOCIA": 3
+    },
+    "D": {
+      "🇺🇸 ESTADOS UNIDOS": 3,
+      "🇵🇾 PARAGUAY": 2,
+      "🇦🇺 AUSTRALIA": 1,
+      "🇹🇷 TURQUÍA": 4
+    },
+    "E": {
+      "🇩🇪 ALEMANIA": 2,
+      "🇨🇼 CURAZAO": 3,
+      "🇨🇮 COSTA DE MARFIL": 4,
+      "🇪🇨 ECUADOR": 1
+    },
+    "F": {
+      "🇳🇱 HOLANDA": 1,
+      "🇯🇵 JAPÓN": 2,
+      "🇸🇪 SUECIA": 3,
+      "🇹🇳 TÚNEZ": 4
+    },
+    "G": {
+      "🇧🇪 BÉLGICA": 4,
+      "🇪🇬 EGIPTO": 2,
+      "🇮🇷 IRÁN": 3,
+      "🇳🇿 NUEVA ZELANDA": 1
+    },
+    "H": {
+      "🇪🇸 ESPAÑA": 1,
+      "🇨🇻 CABO VERDE": 4,
+      "🇸🇦 ARABIA SAUDÍ": 3,
+      "🇺🇾 URUGUAY": 2
+    },
+    "I": {
+      "🇫🇷 FRANCIA": 1,
+      "🇸🇳 SENEGAL": 3,
+      "🇮🇶 IRAK": 4,
+      "🇳🇴 NORUEGA": 2
+    },
+    "J": {
+      "🇦🇷 ARGENTINA": 1,
+      "🇩🇿 ARGELIA": 3,
+      "🇦🇹 AUSTRIA": 2,
+      "🇯🇴 JORDANIA": 4
+    },
+    "K": {
+      "🇵🇹 PORTUGAL": 1,
+      "🇨🇩 REP. CONGO": 3,
+      "🇺🇿 UZBEKISTÁN": 4,
+      "🇨🇴 COLOMBIA": 2
+    },
+    "L": {
+      "🇬🇧 INGLATERRA": 1,
+      "🇭🇷 CROACIA": 2,
+      "🇬🇭 GHANA": 3,
+      "🇵🇦 PANAMÁ": 4
+    }
+  },
+  "ronda_16avos": [
+    {
+      "slot": "1E",
+      "equipo": "🇪🇨 ECUADOR"
+    },
+    {
+      "slot": "3C",
+      "equipo": "🏴󠁧󠁢󠁳󠁣󠁴󠁿 ESCOCIA"
+    },
+    {
+      "slot": "1I",
+      "equipo": "🇫🇷 FRANCIA"
+    },
+    {
+      "slot": "3D",
+      "equipo": "🇺🇸 ESTADOS UNIDOS"
+    },
+    {
+      "slot": "2A",
+      "equipo": "🇨🇿 REP. CHECA"
+    },
+    {
+      "slot": "2B",
+      "equipo": "🇨🇦 CANADÁ"
+    },
+    {
+      "slot": "1F",
+      "equipo": "🇳🇱 HOLANDA"
+    },
+    {
+      "slot": "2C",
+      "equipo": "🇲🇦 MARRUECOS"
+    },
+    {
+      "slot": "2K",
+      "equipo": "🇨🇴 COLOMBIA"
+    },
+    {
+      "slot": "2L",
+      "equipo": "🇭🇷 CROACIA"
+    },
+    {
+      "slot": "1H",
+      "equipo": "🇪🇸 ESPAÑA"
+    },
+    {
+      "slot": "2J",
+      "equipo": "🇦🇹 AUSTRIA"
+    },
+    {
+      "slot": "1D",
+      "equipo": "🇦🇺 AUSTRALIA"
+    },
+    {
+      "slot": "3B",
+      "equipo": "🇧🇦 BOSNIA Y HERZEGOVINA"
+    },
+    {
+      "slot": "1G",
+      "equipo": "🇳🇿 NUEVA ZELANDA"
+    },
+    {
+      "slot": "3A",
+      "equipo": "🇰🇷 COREA DEL SUR"
+    },
+    {
+      "slot": "1C",
+      "equipo": "🇧🇷 BRASIL"
+    },
+    {
+      "slot": "2F",
+      "equipo": "🇯🇵 JAPÓN"
+    },
+    {
+      "slot": "2E",
+      "equipo": "🇩🇪 ALEMANIA"
+    },
+    {
+      "slot": "2I",
+      "equipo": "🇳🇴 NORUEGA"
+    },
+    {
+      "slot": "1A",
+      "equipo": "🇲🇽 MÉXICO"
+    },
+    {
+      "slot": "3E",
+      "equipo": "🇨🇼 CURAZAO"
+    },
+    {
+      "slot": "1L",
+      "equipo": "🇬🇧 INGLATERRA"
+    },
+    {
+      "slot": "3I",
+      "equipo": "🇸🇳 SENEGAL"
+    },
+    {
+      "slot": "1J",
+      "equipo": "🇦🇷 ARGENTINA"
+    },
+    {
+      "slot": "2H",
+      "equipo": "🇺🇾 URUGUAY"
+    },
+    {
+      "slot": "2D",
+      "equipo": "🇵🇾 PARAGUAY"
+    },
+    {
+      "slot": "2G",
+      "equipo": "🇪🇬 EGIPTO"
+    },
+    {
+      "slot": "1B",
+      "equipo": "🇶🇦 QATAR"
+    },
+    {
+      "slot": "3F",
+      "equipo": "🇸🇪 SUECIA"
+    },
+    {
+      "slot": "1K",
+      "equipo": "🇵🇹 PORTUGAL"
+    },
+    {
+      "slot": "3L",
+      "equipo": "🇬🇭 GHANA"
+    }
+  ],
+  "ronda_8avos": [
+    {
+      "equipo": "🇪🇨 ECUADOR"
+    },
+    {
+      "equipo": "🇫🇷 FRANCIA"
+    },
+    {
+      "equipo": "🇨🇿 REP. CHECA"
+    },
+    {
+      "equipo": "🇳🇱 HOLANDA"
+    },
+    {
+      "equipo": "🇨🇴 COLOMBIA"
+    },
+    {
+      "equipo": "🇪🇸 ESPAÑA"
+    },
+    {
+      "equipo": "🇦🇺 AUSTRALIA"
+    },
+    {
+      "equipo": "🇳🇿 NUEVA ZELANDA"
+    },
+    {
+      "equipo": "🇧🇷 BRASIL"
+    },
+    {
+      "equipo": "🇩🇪 ALEMANIA"
+    },
+    {
+      "equipo": "🇲🇽 MÉXICO"
+    },
+    {
+      "equipo": "🇬🇧 INGLATERRA"
+    },
+    {
+      "equipo": "🇦🇷 ARGENTINA"
+    },
+    {
+      "equipo": "🇵🇾 PARAGUAY"
+    },
+    {
+      "equipo": "🇸🇪 SUECIA"
+    },
+    {
+      "equipo": "🇬🇭 GHANA"
+    }
+  ],
+  "ronda_cuartos": [
+    {
+      "equipo": "🇪🇨 ECUADOR"
+    },
+    {
+      "equipo": "🇳🇱 HOLANDA"
+    },
+    {
+      "equipo": "🇪🇸 ESPAÑA"
+    },
+    {
+      "equipo": "🇦🇺 AUSTRALIA"
+    },
+    {
+      "equipo": "🇧🇷 BRASIL"
+    },
+    {
+      "equipo": "🇬🇧 INGLATERRA"
+    },
+    {
+      "equipo": "🇦🇷 ARGENTINA"
+    },
+    {
+      "equipo": "🇸🇪 SUECIA"
+    }
+  ],
+  "ronda_semifinales": [
+    {
+      "equipo": "🇳🇱 HOLANDA"
+    },
+    {
+      "equipo": "🇪🇸 ESPAÑA"
+    },
+    {
+      "equipo": "🇬🇧 INGLATERRA"
+    },
+    {
+      "equipo": "🇦🇷 ARGENTINA"
+    }
+  ],
+  "finales": {
+    "campeon": "🇪🇸 ESPAÑA",
+    "segundo": "🇦🇷 ARGENTINA",
+    "tercero": "🇬🇧 INGLATERRA",
+    "cuarto": "🇳🇱 HOLANDA"
+  },
+  "errores": []
+}
