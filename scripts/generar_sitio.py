@@ -575,7 +575,8 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
       <div class="monto">${acumulado:,}</div>
     </div>
     <div class="info" style="margin-left:auto;">
-      {total_pollas} pollas registradas<br>
+      {total_pollas} pollas<br>
+      {total_participantes} participantes
       ${participantes.get("costo_por_polla", 10)} c/u
       {f'<br><span style="color:var(--muted);font-size:0.75rem;">{participantes.get("_nota", "")}</span>' if participantes.get("_nota") else ''}
     </div>
