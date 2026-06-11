@@ -297,11 +297,9 @@
   ],
   "finales": {
     "campeon": "🇧🇷 BRASIL",
-    "segundo": null,
-    "tercero": null,
-    "cuarto": null
+    "segundo": "🇨🇴 COLOMBIA",
+    "tercero": "🇦🇷 ARGENTINA",
+    "cuarto": "🇩🇪 ALEMANIA"
   },
-  "errores": [
-    "Finales incompletas: segundo, tercero, cuarto"
-  ]
+  "errores": []
 }

@@ -94,9 +94,9 @@
         "aciertos": [],
         "errores": [
           "campeon: predijo BRASIL, real:  (0 pts)",
-          "segundo: sin predicción",
-          "tercero: sin predicción",
-          "cuarto: sin predicción"
+          "segundo: predijo COLOMBIA, real:  (0 pts)",
+          "tercero: predijo ARGENTINA, real:  (0 pts)",
+          "cuarto: predijo ALEMANIA, real:  (0 pts)"
         ]
       }
     },
@@ -408,9 +408,9 @@
         "aciertos": [],
         "errores": [
           "campeon: predijo PAISES BAJOS, real:  (0 pts)",
-          "segundo: sin predicción",
-          "tercero: sin predicción",
-          "cuarto: sin predicción"
+          "segundo: predijo BRASIL, real:  (0 pts)",
+          "tercero: predijo ARGENTINA, real:  (0 pts)",
+          "cuarto: predijo ESPAÑA, real:  (0 pts)"
         ]
       }
     },

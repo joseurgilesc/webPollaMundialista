@@ -297,11 +297,9 @@
   ],
   "finales": {
     "campeon": "🇳🇱 HOLANDA",
-    "segundo": null,
-    "tercero": null,
-    "cuarto": null
+    "segundo": "🇧🇷 BRASIL",
+    "tercero": "🇦🇷 ARGENTINA",
+    "cuarto": "🇪🇸 ESPAÑA"
   },
-  "errores": [
-    "Finales incompletas: segundo, tercero, cuarto"
-  ]
+  "errores": []
 }
