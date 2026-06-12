@@ -362,42 +362,24 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
   padding: 4px 6px;
 }
 /* Bracket matchups */
-.modal-bracket-matches {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 8px;
-}
 .mbm-round h5 {
   color: var(--navy); font-size: 0.7rem; text-transform: uppercase;
-  letter-spacing: 0.04em; margin-bottom: 4px;
+  letter-spacing: 0.04em; margin: 8px 0 4px;
   padding-bottom: 2px; border-bottom: 1px solid var(--card-border);
-}
-.mbm-match {
-  padding: 4px 0;
-  border-bottom: 1px solid #f1f5f9;
-  font-size: 0.68rem;
 }
 .mbm-teams {
   display: grid;
   grid-template-columns: 1fr 25px 1fr;
   gap: 4px;
   align-items: center;
+  padding: 2px 0;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.66rem;
 }
 .mbm-pred { font-weight: 500; }
-.mbm-vs { text-align: center; font-size: 0.55rem; color: var(--muted); }
-.mbm-real-row {
-  display: grid;
-  grid-template-columns: 1fr 25px 1fr;
-  gap: 4px;
-  margin-top: 2px;
-  padding-top: 2px;
-  border-top: 1px dashed #e2e8f0;
-}
-.mbm-real {
-  font-size: 0.6rem;
-  color: var(--teal);
-  font-weight: 600;
-}
+.mbm-real { color: var(--teal); font-weight: 600; }
+.mbm-pend { color: var(--muted); font-size: 0.6rem; font-style: italic; }
+.mbm-vs { text-align: center; font-size: 0.5rem; color: var(--muted); }
 .modal-bracket {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
@@ -1411,7 +1393,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
   </div>
 </div>
 
-<footer>Actualizado: 12/06/2026 07:47 · Puntajes recalculados automáticamente</footer>
+<footer>Actualizado: 12/06/2026 07:50 · Puntajes recalculados automáticamente</footer>
 
 <script>
 // Mostrar predicciones
@@ -1589,38 +1571,48 @@ function verPolla(ref) {
     html += '</div></div>';
   }
   
-  // ── Bracket con emparejamientos ──
-  const rondas = [
-    ['16avos', polla.ronda_16avos, true, 32],
-    ['8avos', polla.ronda_8avos, false, 16],
-    ['Cuartos', polla.ronda_cuartos, false, 8],
-    ['Semifinales', polla.ronda_semifinales, false, 4],
+  // ── Bracket: 2 columnas predicción vs real ──
+  html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">';
+  
+  // Columna predicción
+  html += '<div class="modal-section"><h4>🔮 Predicción</h4>';
+  const rondasPred = [
+    ['⚽ 16avos', polla.ronda_16avos, true, 32],
+    ['⚽ 8avos', polla.ronda_8avos, false, 16],
+    ['⚽ Cuartos', polla.ronda_cuartos, false, 8],
+    ['⚽ Semifinales', polla.ronda_semifinales, false, 4],
   ];
-  html += '<div class="modal-section"><h4>⚽ Bracket</h4><div class="modal-bracket-matches">';
-  rondas.forEach(([title, entries, showSlot, total]) => {
+  rondasPred.forEach(([title, entries, showSlot, total]) => {
     if (!entries?.length) return;
     html += '<div class="mbm-round"><h5>'+title+'</h5>';
     for (let i = 0; i < total; i += 2) {
       const e1 = entries[i] || {};
       const e2 = entries[i+1] || {};
-      const eq1 = e1.equipo || '—';
-      const eq2 = e2.equipo || '—';
-      const s1 = showSlot ? (e1.slot || '') : '';
-      const s2 = showSlot ? (e2.slot || '') : '';
-      
-      // Buscar equipos reales para estos slots
-      let r1 = '', r2 = '';
-      if (showSlot && REALES?.ronda_16avos) {
-        const rs = REALES.ronda_16avos.find(e => e.slot === s1);
-        if (rs) r1 = rs.equipo || '';
-        const rs2 = REALES.ronda_16avos.find(e => e.slot === s2);
-        if (rs2) r2 = rs2.equipo || '';
-      }
-      
-      html += '<div class="mbm-match">';
-      html += '<div class="mbm-teams"><span class="mbm-pred">'+eq1+'</span><span class="mbm-vs">vs</span><span class="mbm-pred">'+eq2+'</span></div>';
-      html += '<div class="mbm-real-row"><span class="mbm-real">'+(r1||'Pendiente')+'</span><span></span><span class="mbm-real">'+(r2||'Pendiente')+'</span></div>';
-      html += '</div>';
+      html += '<div class="mbm-teams"><span class="mbm-pred">'+(e1.equipo||'—')+'</span><span class="mbm-vs">vs</span><span class="mbm-pred">'+(e2.equipo||'—')+'</span></div>';
+    }
+    html += '</div>';
+  });
+  html += '</div>';
+  
+  // Columna real
+  html += '<div class="modal-section"><h4>📊 Real</h4>';
+  const real16 = REALES?.ronda_16avos || [];
+  // Mostrar 16avos real
+  html += '<div class="mbm-round"><h5>⚽ 16avos</h5>';
+  for (let i = 0; i < 32; i += 2) {
+    const r1 = real16[i]?.equipo || 'Pendiente';
+    const r2 = real16[i+1]?.equipo || 'Pendiente';
+    const cls1 = r1 !== 'Pendiente' ? 'mbm-real' : 'mbm-pend';
+    const cls2 = r2 !== 'Pendiente' ? 'mbm-real' : 'mbm-pend';
+    html += '<div class="mbm-teams"><span class="'+cls1+'">'+r1+'</span><span class="mbm-vs">vs</span><span class="'+cls2+'">'+r2+'</span></div>';
+  }
+  html += '</div>';
+  // Otras rondas: pendiente
+  ['⚽ 8avos', '⚽ Cuartos', '⚽ Semifinales'].forEach(title => {
+    const n = title.includes('8avos') ? 16 : title.includes('Cuartos') ? 8 : 4;
+    html += '<div class="mbm-round"><h5>'+title+'</h5>';
+    for (let i = 0; i < n; i += 2) {
+      html += '<div class="mbm-teams"><span class="mbm-pend">Pendiente</span><span class="mbm-vs">vs</span><span class="mbm-pend">Pendiente</span></div>';
     }
     html += '</div>';
   });
