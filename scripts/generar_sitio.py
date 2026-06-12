@@ -946,17 +946,23 @@ function normEq(name) {{
 }}
 
 function verPollaCard(archivo) {{
+  if (!archivo) return;
   // Buscar polla por archivo original
-  const ref = archivo.toLowerCase().replace(/[^a-z0-9]/g, '_');
+  const ref = (archivo||'').toLowerCase().replace(/[^a-z0-9]/g, '_');
   for (const [k, v] of Object.entries(POLLAS)) {{
     const ak = (v.archivo_original||'').toLowerCase().replace(/[^a-z0-9]/g, '_');
-    if (k.includes(ref) || ref.includes(k) || ak.includes(ref) || ref.includes(ak)) {{
+    if (ref.includes(k) || k.includes(ref) || ref.includes(ak) || ak.includes(ref)) {{
       verPolla(k);
       return;
     }}
   }}
-  // Fallback: buscar por nombre
-  verPolla(archivo);
+  // Fallback: buscar por nombre de participante
+  for (const [k, v] of Object.entries(POLLAS)) {{
+    if ((v.participante||'').toLowerCase().includes(ref)) {{
+      verPolla(k);
+      return;
+    }}
+  }}
 }}
 
 function verPolla(ref) {{
