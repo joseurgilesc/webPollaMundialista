@@ -505,6 +505,19 @@ footer {{ text-align: center; padding: 24px; color: var(--muted); font-size: 0.7
   display: block;
   margin-bottom: 8px;
 }}
+.provisional-badge {{
+  display: inline-block;
+  background: #fff3cd;
+  color: #856404;
+  font-size: 0.55rem;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-left: 6px;
+  vertical-align: middle;
+}}
 .ms-bars {{ display: flex; flex-direction: column; gap: 3px; }}
 .ms-bar {{
   display: flex; align-items: center; gap: 6px;
@@ -978,7 +991,7 @@ function verPolla(ref) {{
   // ── Puntaje con detalle vs resultados reales ──
   const score = findScore(polla.participante);
   if (score && REALES && REALES.ronda_16avos) {{
-    html += '<div class="modal-score"><span>📊 <strong>'+score.total+' pts</strong></span>';
+    html += '<div class="modal-score"><span>📊 <strong>'+score.total+' pts</strong> <span class="provisional-badge">PROVISIONAL</span></span>';
     // Barras resumen
     html += '<div class="ms-bars">';
     [['16avos',64],['8avos',32],['Cuartos',24],['Semis',16],['Final',44]].forEach(([rnd,max]) => {{
