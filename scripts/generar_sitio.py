@@ -768,6 +768,7 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
     <div>
       <div class="stat-label" style="margin-bottom:2px;">ACUMULADO</div>
       <div class="monto">${acumulado:,}</div>
+      <div style="font-size:0.65rem;color:#c0392b;margin-top:2px;">⚠️ Puntajes provisionales — solo Grupo A jugado</div>
     </div>
     <div class="info" style="margin-left:auto;">
       {total_pollas} pollas<br>
