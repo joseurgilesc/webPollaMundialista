@@ -758,7 +758,7 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
         
         filas += f"""<tr class="{clase}">
           <td class="rank">{medalla} {rank_display}</td>
-          <td class="nombre" style="cursor:pointer;" onclick="verPollaCard('{r.get("archivo", "")}','{r["participante"]}')">{nombre}{tag_html}</td>
+          <td class="nombre" style="cursor:pointer;" onclick="verPollaCard('{r.get("archivo", "").replace("'", "&#39;")}','{r["participante"].replace("'", "&#39;")}')">{nombre}{tag_html}</td>
           <td>{p["16avos"]}</td><td>{p["8avos"]}</td><td>{p["cuartos"]}</td>
           <td>{p["semifinales"]}</td><td>{p["finales"]}</td>
           <td class="total">{p["total"]}</td></tr>"""
