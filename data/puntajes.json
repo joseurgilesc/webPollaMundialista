@@ -5611,5 +5611,46 @@
       }
     },
     "polla_letra": "A"
+  },
+  {
+    "participante": "Pablo Durán",
+    "archivo": "Pablo Durán.jpeg",
+    "puntajes": {
+      "16avos": 0,
+      "8avos": 0,
+      "cuartos": 0,
+      "semifinales": 0,
+      "finales": 0,
+      "total": 0
+    },
+    "detalle": {
+      "16avos": {
+        "aciertos_equipo": [],
+        "aciertos_posicion": [],
+        "errores": []
+      },
+      "8avos": {
+        "aciertos": [],
+        "errores": []
+      },
+      "cuartos": {
+        "aciertos": [],
+        "errores": []
+      },
+      "semifinales": {
+        "aciertos": [],
+        "errores": []
+      },
+      "finales": {
+        "aciertos": [],
+        "errores": [
+          "campeon: predijo ESPAÑA, real:  (0 pts)",
+          "segundo: predijo BRASIL, real:  (0 pts)",
+          "tercero: predijo FRANCIA, real:  (0 pts)",
+          "cuarto: predijo ARGENTINA, real:  (0 pts)"
+        ]
+      }
+    },
+    "polla_letra": "A"
   }
 ]

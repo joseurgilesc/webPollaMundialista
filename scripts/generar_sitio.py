@@ -715,7 +715,7 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
         
         filas += f"""<tr class="{clase}">
           <td class="rank">{medalla} {rank_display}</td>
-          <td class="nombre">{nombre}{tag_html}</td>
+          <td class="nombre" style="cursor:pointer;" onclick="verPollaCard('{r.get("archivo", "")}')">{nombre}{tag_html}</td>
           <td>{p["16avos"]}</td><td>{p["8avos"]}</td><td>{p["cuartos"]}</td>
           <td>{p["semifinales"]}</td><td>{p["finales"]}</td>
           <td class="total">{p["total"]}</td></tr>"""
@@ -841,6 +841,18 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
 // Mostrar predicciones
 document.getElementById('prediccionesCard').style.display = '';
 
+function togglePreds() {{
+  const grid = document.getElementById('predGrid') || document.querySelector('.predicciones');
+  const toggle = document.getElementById('predToggle');
+  if (grid.style.display === 'none') {{
+    grid.style.display = '';
+    if (toggle) toggle.textContent = '▼';
+  }} else {{
+    grid.style.display = 'none';
+    if (toggle) toggle.textContent = '▶';
+  }}
+}}
+
 const POLLAS = {pollas_json};
 const REALES = {reales_json};
 const PUNTAJES = {json.dumps([{"participante": r["participante"], "archivo": r["archivo"], "puntajes": r["puntajes"]} for r in puntajes])};
@@ -888,6 +900,20 @@ function findScore(nombre) {{
 function normEq(name) {{
   if (!name) return '';
   return name.replace(/[^\\w\\sáéíóúñüÁÉÍÓÚÑÜ]/g, '').trim().toUpperCase();
+}}
+
+function verPollaCard(archivo) {{
+  // Buscar polla por archivo original
+  const ref = archivo.toLowerCase().replace(/[^a-z0-9]/g, '_');
+  for (const [k, v] of Object.entries(POLLAS)) {{
+    const ak = (v.archivo_original||'').toLowerCase().replace(/[^a-z0-9]/g, '_');
+    if (k.includes(ref) || ref.includes(k) || ak.includes(ref) || ref.includes(ak)) {{
+      verPolla(k);
+      return;
+    }}
+  }}
+  // Fallback: buscar por nombre
+  verPolla(archivo);
 }}
 
 function verPolla(ref) {{
