@@ -433,7 +433,7 @@ footer {{ text-align: center; padding: 24px; color: var(--muted); font-size: 0.7
 }}
 .bt-header, .bt-row {{
   display: grid;
-  grid-template-columns: 50px 1fr 20px 1fr 25px;
+  grid-template-columns: 50px 1fr 20px 1fr 30px 30px 30px;
   gap: 4px;
   align-items: center;
   padding: 2px 0;
@@ -1012,25 +1012,36 @@ function verPolla(ref) {{
   rondas.forEach(([label, entries, showSlot, realEntries]) => {{
     if (!entries.length) return;
     html += '<h5 style=\"color:var(--navy);font-size:0.7rem;margin:8px 0 4px;\">⚽ '+label+'</h5>';
-    html += '<div class=\"bracket-table\"><div class=\"bt-header\"><span>'+(showSlot?'Slot':'#')+'</span><span>Predicción</span><span></span><span>Real</span><span>Pts</span></div>';
+    html += '<div class=\"bracket-table\"><div class=\"bt-header\"><span>'+(showSlot?'Slot':'#')+'</span><span>Predicción</span><span></span><span>Real</span><span>Clasif</span><span>Pos</span><span>Tot</span></div>';
     
     entries.forEach((e, i) => {{
       const eq = e.equipo || '—';
       const slot = showSlot ? (e.slot||'') : ('#'+(i+1));
-      // Para la columna Real: buscar en la misma posición (mismo índice)
+      
       let req = 'Pendiente';
       if (showSlot) {{
         const real = realEntries.find(r => r.slot === e.slot);
         if (real?.equipo) req = real.equipo;
       }}
       
-      let pts = '', cls = '';
+      let ptsClasif = '', ptsPos = '', ptsTot = '', cls = '';
       if (eq !== '—' && req !== 'Pendiente') {{
-        pts = (req === eq) ? '+2' : '+1';
-        cls = (req === eq) ? 'bt-hit' : 'bt-miss';
+        // ¿El equipo clasificó a 16avos? (está en los reales)
+        const allRealTeams = realEntries.map(r => r.equipo).filter(Boolean);
+        const classified = allRealTeams.includes(eq);
+        if (classified) {{
+          ptsClasif = '+1';
+          if (req === eq) {{
+            ptsPos = '+1'; ptsTot = '+2'; cls = 'bt-hit';
+          }} else {{
+            ptsPos = '0'; ptsTot = '+1'; cls = 'bt-miss';
+          }}
+        }} else {{
+          ptsClasif = '0'; ptsPos = '0'; ptsTot = '0';
+        }}
       }}
       
-      html += '<div class=\"bt-row '+cls+'\"><span class=\"bt-slot\">'+slot+'</span><span class=\"bt-pred\">'+eq+'</span><span class=\"bt-vs\">vs</span><span class=\"bt-real '+(req==='Pendiente'?'bt-pend':'')+'\">'+req+'</span><span class=\"bt-pts\">'+pts+'</span></div>';
+      html += '<div class=\"bt-row '+cls+'\"><span class=\"bt-slot\">'+slot+'</span><span class=\"bt-pred\">'+eq+'</span><span class=\"bt-vs\">vs</span><span class=\"bt-real '+(req==='Pendiente'?'bt-pend':'')+'\">'+req+'</span><span class=\"bt-pts\">'+ptsClasif+'</span><span class=\"bt-pts\">'+ptsPos+'</span><span class=\"bt-pts\" style=\"font-weight:700\">'+ptsTot+'</span></div>';
     }});
     html += '</div>';
   }});
