@@ -958,14 +958,22 @@ function verPolla(ref) {{
   document.getElementById('modalTitle').textContent = '📋 ' + (polla.participante || 'Sin nombre');
   let html = '<div style="max-height:65vh;overflow-y:auto;">';
   
-  // ── Finales primero (lo más importante) ──
+  // ── Finales: 4 columnas (predicción vs real) ──
   const f = polla.finales || {{}};
-  html += '<div class="modal-finals">';
+  html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;">';
+  html += '<div class="modal-section"><h4>🔮 Predicción</h4>';
   html += '<div class="mf-item mf-champ"><span>🏆</span><strong>'+(f.campeon||'—')+'</strong><small>Campeón</small></div>';
   html += '<div class="mf-item mf-second"><span>🥈</span><strong>'+(f.segundo||'—')+'</strong><small>Segundo</small></div>';
   html += '<div class="mf-item mf-third"><span>🥉</span><strong>'+(f.tercero||'—')+'</strong><small>Tercero</small></div>';
   html += '<div class="mf-item mf-fourth"><span>4°</span><strong>'+(f.cuarto||'—')+'</strong><small>Cuarto</small></div>';
   html += '</div>';
+  html += '<div class="modal-section"><h4>📊 Real</h4>';
+  const rf = (REALES && REALES.finales) ? REALES.finales : {{}};
+  html += '<div class="mf-item mf-champ"><span>🏆</span><strong>'+(rf.campeon||'Pendiente')+'</strong><small>Campeón</small></div>';
+  html += '<div class="mf-item mf-second"><span>🥈</span><strong>'+(rf.segundo||'Pendiente')+'</strong><small>Segundo</small></div>';
+  html += '<div class="mf-item mf-third"><span>🥉</span><strong>'+(rf.tercero||'Pendiente')+'</strong><small>Tercero</small></div>';
+  html += '<div class="mf-item mf-fourth"><span>4°</span><strong>'+(rf.cuarto||'Pendiente')+'</strong><small>Cuarto</small></div>';
+  html += '</div></div>';
   
   // ── Puntaje con detalle vs resultados reales ──
   const score = findScore(polla.participante);
@@ -1071,7 +1079,7 @@ function verPolla(ref) {{
       
       html += '<div class="mbm-match">';
       html += '<div class="mbm-teams"><span class="mbm-pred">'+eq1+'</span><span class="mbm-vs">vs</span><span class="mbm-pred">'+eq2+'</span></div>';
-      html += '<div class="mbm-real-row"><span class="mbm-real">'+(r1||'—')+'</span><span></span><span class="mbm-real">'+(r2||'—')+'</span></div>';
+      html += '<div class="mbm-real-row"><span class="mbm-real">'+(r1||'Pendiente')+'</span><span></span><span class="mbm-real">'+(r2||'Pendiente')+'</span></div>';
       html += '</div>';
     }}
     html += '</div>';
