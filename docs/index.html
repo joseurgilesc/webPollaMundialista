@@ -1393,7 +1393,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
   </div>
 </div>
 
-<footer>Actualizado: 12/06/2026 07:50 · Puntajes recalculados automáticamente</footer>
+<footer>Actualizado: 12/06/2026 07:56 · Puntajes recalculados automáticamente</footer>
 
 <script>
 // Mostrar predicciones
@@ -1509,66 +1509,9 @@ function verPolla(ref) {
     });
     html += '</div>';
     
-    // Comparación 16avos
-    html += '<div class="modal-compare"><h5>⚽ 16avos: Predicción vs Real</h5>';
-    html += '<div class="mc-header"><span>Tu predicción</span><span>Slot</span><span>Equipo real</span><span>Slot real</span><span>Pts</span></div>';
-    
-    const realBySlot = {};
-    (REALES.ronda_16avos||[]).forEach(e => { if(e.equipo) realBySlot[e.slot] = e.equipo; });
-    const realSlotByTeam = {};
-    (REALES.ronda_16avos||[]).forEach(e => { if(e.equipo) realSlotByTeam[normEq(e.equipo)] = e.slot; });
-    
-    (polla.ronda_16avos||[]).forEach(e => {
-      const eq = e.equipo || '';
-      const sp = e.slot || '';
-      const sr = realSlotByTeam[normEq(eq)] || '';
-      const er = realBySlot[sp] || '';
-      
-      if (!eq && !er) return;
-      
-      let pts = 0, cls = 'mc-pend';
-      if (eq && sr) {
-        pts = (sr === sp) ? 2 : 1;
-        cls = (sr === sp) ? 'mc-hit' : 'mc-miss';
-      }
-      
-      html += '<div class="mc-row '+cls+'"><span class="mc-team">'+(eq||'—')+'</span><span class="mc-pred">'+sp+'</span><span class="mc-real">'+(er||'—')+'</span><span class="mc-slot">'+(sr||'—')+'</span><span class="mc-pts">'+(pts?'+'+pts:'')+'</span></div>';
-    });
-    html += '</div>';
-    
     html += '</div>';
   } else if (score) {
     html += '<div class="modal-score">📊 <strong>'+score.total+' pts</strong> (aún sin resultados reales)</div>';
-  }
-  
-  // ── Grupos ──
-  if (polla.grupos) {
-    html += '<div class="modal-section"><h4>🏟️ Fase de Grupos</h4><div class="modal-grupos">';
-    const sorted = Object.entries(polla.grupos).sort((a,b) => a[0].localeCompare(b[0]));
-    sorted.forEach(([g, eqs]) => {
-      html += '<div class="modal-grupo"><strong>Grupo '+g+'</strong>';
-      html += '<div class="mg-pred"><small>Predicción</small>';
-      Object.entries(eqs).sort((a,b)=>(a[1]||99)-(b[1]||99)).forEach(([eq, pos]) => {
-        const color = pos==1?'#c0392b':pos==2?'#1a6fb5':pos==3?'#888':'#aaa';
-        html += '<div style="color:'+color+'">'+(pos||'?')+'° '+eq+'</div>';
-      });
-      html += '</div>';
-      if (REALES && REALES.grupos && REALES.grupos[g]) {
-        html += '<div class="mg-real"><small>Real</small>';
-        const realEqs = REALES.grupos[g];
-        Object.entries(realEqs).sort((a,b)=>(a[1]||99)-(b[1]||99)).forEach(([eq, pos]) => {
-          const color2 = pos==1?'#c0392b':pos==2?'#1a6fb5':pos==3?'#888':'#aaa';
-          // Buscar estadísticas desde REALES stats si existen
-          const st = (REALES._stats && REALES._stats[g] && REALES._stats[g][eq]) || null;
-          const pts = st ? st.pts : '';
-          const gd = st ? (st.gf-st.ga) : '';
-          html += '<div style="color:'+color2+';display:flex;justify-content:space-between;"><span>'+(pos||'?')+'° '+eq+'</span><span style="font-size:0.55rem;opacity:0.7;">'+(pts!==''?pts+'pts':'')+' '+(gd!==''?(gd>0?'+':'')+gd:'')+'</span></div>';
-        });
-        html += '</div>';
-      }
-      html += '</div>';
-    });
-    html += '</div></div>';
   }
   
   // ── Bracket: 2 columnas predicción vs real ──
@@ -1588,7 +1531,16 @@ function verPolla(ref) {
     for (let i = 0; i < total; i += 2) {
       const e1 = entries[i] || {};
       const e2 = entries[i+1] || {};
-      html += '<div class="mbm-teams"><span class="mbm-pred">'+(e1.equipo||'—')+'</span><span class="mbm-vs">vs</span><span class="mbm-pred">'+(e2.equipo||'—')+'</span></div>';
+      // Calcular puntaje por match
+      let pts1='', pts2='';
+      if (showSlot && score && REALES?.ronda_16avos) {
+        const r1 = REALES.ronda_16avos.find(e => e.slot === e1.slot);
+        const r2 = REALES.ronda_16avos.find(e => e.slot === e2.slot);
+        const eq1 = e1.equipo||'', eq2 = e2.equipo||'';
+        if (eq1!=='—' && r1?.equipo) pts1 = (r1.equipo===eq1?'+2':'+1');
+        if (eq2!=='—' && r2?.equipo) pts2 = (r2.equipo===eq2?'+2':'+1');
+      }
+      html += '<div class="mbm-teams"><span class="mbm-pred">'+(e1.equipo||'—')+(pts1?' <small style=color:#16a34a>'+pts1+'</small>':'')+'</span><span class="mbm-vs">vs</span><span class="mbm-pred">'+(e2.equipo||'—')+(pts2?' <small style=color:#16a34a>'+pts2+'</small>':'')+'</span></div>';
     }
     html += '</div>';
   });
@@ -1617,6 +1569,31 @@ function verPolla(ref) {
     html += '</div>';
   });
   html += '</div></div>';
+  
+  // ── Grupos al final ──
+  if (polla.grupos) {
+    html += '<div class="modal-section"><h4>🏟️ Fase de Grupos</h4><div class="modal-grupos">';
+    const sorted = Object.entries(polla.grupos).sort((a,b) => a[0].localeCompare(b[0]));
+    sorted.forEach(([g, eqs]) => {
+      html += '<div class="modal-grupo"><strong>Grupo '+g+'</strong>';
+      html += '<div class="mg-pred"><small>Predicción</small>';
+      Object.entries(eqs).sort((a,b)=>(a[1]||99)-(b[1]||99)).forEach(([eq, pos]) => {
+        const color = pos==1?'#c0392b':pos==2?'#1a6fb5':pos==3?'#888':'#aaa';
+        html += '<div style="color:'+color+'">'+(pos||'?')+'° '+eq+'</div>';
+      });
+      html += '</div>';
+      if (REALES && REALES.grupos && REALES.grupos[g]) {
+        html += '<div class="mg-real"><small>Real</small>';
+        Object.entries(REALES.grupos[g]).sort((a,b)=>(a[1]||99)-(b[1]||99)).forEach(([eq, pos]) => {
+          const color2 = pos==1?'#c0392b':pos==2?'#1a6fb5':pos==3?'#888':'#aaa';
+          html += '<div style="color:'+color2+'">'+(pos||'?')+'° '+eq+'</div>';
+        });
+        html += '</div>';
+      }
+      html += '</div>';
+    });
+    html += '</div></div>';
+  }
   
   html += '</div>';
   document.getElementById('modalBody').innerHTML = html;
