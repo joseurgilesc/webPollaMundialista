@@ -999,26 +999,42 @@ function verPolla(ref) {{
     html += '<div class="modal-score">📊 <strong>'+score.total+' pts</strong> (aún sin resultados reales)</div>';
   }}
   
-  // ── Bracket: tabla unificada con slots ──
+  // ── Bracket: tabla unificada con todas las rondas ──
   html += '<div class="modal-section"><h4>⚽ Bracket</h4>';
-  html += '<div class="bracket-table"><div class="bt-header"><span>Slot</span><span>Predicción</span><span></span><span>Real</span><span>Pts</span></div>';
   
-  const real16 = REALES?.ronda_16avos || [];
-  (polla.ronda_16avos||[]).forEach((e, i) => {{
-    const eq = e.equipo || '—';
-    const slot = e.slot || '';
-    const real = real16.find(r => r.slot === slot);
-    const req = real?.equipo || 'Pendiente';
+  const rondas = [
+    ['16avos', polla.ronda_16avos||[], true, REALES?.ronda_16avos||[]],
+    ['8avos', polla.ronda_8avos||[], false, []],
+    ['Cuartos', polla.ronda_cuartos||[], false, []],
+    ['Semifinales', polla.ronda_semifinales||[], false, []],
+  ];
+  
+  rondas.forEach(([label, entries, showSlot, realEntries]) => {{
+    if (!entries.length) return;
+    html += '<h5 style=\"color:var(--navy);font-size:0.7rem;margin:8px 0 4px;\">⚽ '+label+'</h5>';
+    html += '<div class=\"bracket-table\"><div class=\"bt-header\"><span>'+(showSlot?'Slot':'#')+'</span><span>Predicción</span><span></span><span>Real</span><span>Pts</span></div>';
     
-    let pts = '', cls = '';
-    if (eq !== '—' && real?.equipo) {{
-      pts = (real.equipo === eq) ? '+2' : '+1';
-      cls = (real.equipo === eq) ? 'bt-hit' : 'bt-miss';
-    }}
-    
-    html += '<div class="bt-row '+cls+'"><span class="bt-slot">'+slot+'</span><span class="bt-pred">'+eq+'</span><span class="bt-vs">vs</span><span class="bt-real '+ (req==='Pendiente'?'bt-pend':'') +'">'+req+'</span><span class="bt-pts">'+pts+'</span></div>';
+    entries.forEach((e, i) => {{
+      const eq = e.equipo || '—';
+      const slot = showSlot ? (e.slot||'') : ('#'+(i+1));
+      // Para la columna Real: buscar en la misma posición (mismo índice)
+      let req = 'Pendiente';
+      if (showSlot) {{
+        const real = realEntries.find(r => r.slot === e.slot);
+        if (real?.equipo) req = real.equipo;
+      }}
+      
+      let pts = '', cls = '';
+      if (eq !== '—' && req !== 'Pendiente') {{
+        pts = (req === eq) ? '+2' : '+1';
+        cls = (req === eq) ? 'bt-hit' : 'bt-miss';
+      }}
+      
+      html += '<div class=\"bt-row '+cls+'\"><span class=\"bt-slot\">'+slot+'</span><span class=\"bt-pred\">'+eq+'</span><span class=\"bt-vs\">vs</span><span class=\"bt-real '+(req==='Pendiente'?'bt-pend':'')+'\">'+req+'</span><span class=\"bt-pts\">'+pts+'</span></div>';
+    }});
+    html += '</div>';
   }});
-  html += '</div></div>';
+  html += '</div>';
   
   // ── Grupos al final ──
   if (polla.grupos) {{
