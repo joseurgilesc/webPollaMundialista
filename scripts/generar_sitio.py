@@ -758,7 +758,7 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
         
         filas += f"""<tr class="{clase}">
           <td class="rank">{medalla} {rank_display}</td>
-          <td class="nombre" style="cursor:pointer;" onclick="verPollaCard('{r.get("archivo", "")}')">{nombre}{tag_html}</td>
+          <td class="nombre" style="cursor:pointer;" onclick="verPollaCard('{r.get("archivo", "")}','{r["participante"]}')">{nombre}{tag_html}</td>
           <td>{p["16avos"]}</td><td>{p["8avos"]}</td><td>{p["cuartos"]}</td>
           <td>{p["semifinales"]}</td><td>{p["finales"]}</td>
           <td class="total">{p["total"]}</td></tr>"""
@@ -945,22 +945,26 @@ function normEq(name) {{
   return name.replace(/[^\\w\\sáéíóúñüÁÉÍÓÚÑÜ]/g, '').trim().toUpperCase();
 }}
 
-function verPollaCard(archivo) {{
+function verPollaCard(archivo, nombre) {{
   if (!archivo) return;
-  // Buscar polla por archivo original
-  const ref = (archivo||'').toLowerCase().replace(/[^a-z0-9]/g, '_');
+  // 1. Buscar por coincidencia exacta del archivo original
+  const ref = (archivo||'').toLowerCase().trim();
   for (const [k, v] of Object.entries(POLLAS)) {{
-    const ak = (v.archivo_original||'').toLowerCase().replace(/[^a-z0-9]/g, '_');
-    if (ref.includes(k) || k.includes(ref) || ref.includes(ak) || ak.includes(ref)) {{
-      verPolla(k);
-      return;
+    if ((v.archivo_original||'').toLowerCase().trim() === ref) {{
+      verPolla(k); return;
     }}
   }}
-  // Fallback: buscar por nombre de participante
+  // 2. Buscar fuzzy
+  const refKey = ref.replace(/[^a-z0-9]/g, '_');
   for (const [k, v] of Object.entries(POLLAS)) {{
-    if ((v.participante||'').toLowerCase().includes(ref)) {{
-      verPolla(k);
-      return;
+    const ak = (v.archivo_original||'').toLowerCase().replace(/[^a-z0-9]/g, '_');
+    if (ak === refKey || k === refKey) {{ verPolla(k); return; }}
+  }}
+  // 3. Buscar por nombre de participante
+  if (nombre) {{
+    const n = (nombre||'').toLowerCase().trim();
+    for (const [k, v] of Object.entries(POLLAS)) {{
+      if ((v.participante||'').toLowerCase().trim() === n) {{ verPolla(k); return; }}
     }}
   }}
 }}
