@@ -1043,7 +1043,7 @@ function verPolla(ref) {{
   
   // ── Bracket con emparejamientos ──
   const rondas = [
-    ['16avos', polla.ronda_16avos, true, 16],
+    ['16avos', polla.ronda_16avos, true, 32],
     ['8avos', polla.ronda_8avos, false, 16],
     ['Cuartos', polla.ronda_cuartos, false, 8],
     ['Semifinales', polla.ronda_semifinales, false, 4],
@@ -1071,9 +1071,7 @@ function verPolla(ref) {{
       
       html += '<div class="mbm-match">';
       html += '<div class="mbm-teams"><span class="mbm-pred">'+eq1+'</span><span class="mbm-vs">vs</span><span class="mbm-pred">'+eq2+'</span></div>';
-      if (r1 || r2) {{
-        html += '<div class="mbm-real-row"><span class="mbm-real">'+(r1||'—')+'</span><span></span><span class="mbm-real">'+(r2||'—')+'</span></div>';
-      }}
+      html += '<div class="mbm-real-row"><span class="mbm-real">'+(r1||'—')+'</span><span></span><span class="mbm-real">'+(r2||'—')+'</span></div>';
       html += '</div>';
     }}
     html += '</div>';
