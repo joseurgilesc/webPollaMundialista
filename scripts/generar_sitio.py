@@ -427,25 +427,37 @@ footer {{ text-align: center; padding: 24px; color: var(--muted); font-size: 0.7
   border-radius: 4px;
   padding: 4px 6px;
 }}
-/* Bracket matchups */
-.mbm-round h5 {{
-  color: var(--navy); font-size: 0.7rem; text-transform: uppercase;
-  letter-spacing: 0.04em; margin: 8px 0 4px;
-  padding-bottom: 2px; border-bottom: 1px solid var(--card-border);
+/* Bracket table */
+.bracket-table {{
+  font-size: 0.62rem;
 }}
-.mbm-teams {{
+.bt-header, .bt-row {{
   display: grid;
-  grid-template-columns: 1fr 25px 1fr;
+  grid-template-columns: 50px 1fr 20px 1fr 25px;
   gap: 4px;
   align-items: center;
   padding: 2px 0;
   border-bottom: 1px solid #f1f5f9;
-  font-size: 0.66rem;
 }}
-.mbm-pred {{ font-weight: 500; }}
-.mbm-real {{ color: var(--teal); font-weight: 600; }}
-.mbm-pend {{ color: var(--muted); font-size: 0.6rem; font-style: italic; }}
-.mbm-vs {{ text-align: center; font-size: 0.5rem; color: var(--muted); }}
+.bt-header {{
+  font-size: 0.5rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  font-weight: 700;
+  border-bottom: 2px solid var(--card-border);
+  padding-bottom: 4px;
+  margin-bottom: 4px;
+}}
+.bt-slot {{ font-weight: 700; color: var(--navy); font-size: 0.55rem; }}
+.bt-pred {{ font-weight: 500; }}
+.bt-real {{ font-weight: 500; }}
+.bt-vs {{ text-align: center; font-size: 0.5rem; color: var(--muted); }}
+.bt-pts {{ text-align: right; font-weight: 700; font-size: 0.6rem; }}
+.bt-pend {{ color: var(--muted); font-style: italic; font-size: 0.55rem; }}
+.bt-hit {{ background: rgba(22,163,74,0.05); }}
+.bt-hit .bt-pts {{ color: var(--green); }}
+.bt-miss {{ background: rgba(220,38,38,0.03); }}
+.bt-miss .bt-pts {{ color: var(--red); }}
 .modal-bracket {{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
@@ -987,59 +999,24 @@ function verPolla(ref) {{
     html += '<div class="modal-score">📊 <strong>'+score.total+' pts</strong> (aún sin resultados reales)</div>';
   }}
   
-  // ── Bracket: 2 columnas predicción vs real ──
-  html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">';
+  // ── Bracket: tabla unificada con slots ──
+  html += '<div class="modal-section"><h4>⚽ Bracket</h4>';
+  html += '<div class="bracket-table"><div class="bt-header"><span>Slot</span><span>Predicción</span><span></span><span>Real</span><span>Pts</span></div>';
   
-  // Columna predicción
-  html += '<div class="modal-section"><h4>🔮 Predicción</h4>';
-  const rondasPred = [
-    ['⚽ 16avos', polla.ronda_16avos, true, 32],
-    ['⚽ 8avos', polla.ronda_8avos, false, 16],
-    ['⚽ Cuartos', polla.ronda_cuartos, false, 8],
-    ['⚽ Semifinales', polla.ronda_semifinales, false, 4],
-  ];
-  rondasPred.forEach(([title, entries, showSlot, total]) => {{
-    if (!entries?.length) return;
-    html += '<div class="mbm-round"><h5>'+title+'</h5>';
-    for (let i = 0; i < total; i += 2) {{
-      const e1 = entries[i] || {{}};
-      const e2 = entries[i+1] || {{}};
-      // Calcular puntaje por match
-      let pts1='', pts2='';
-      if (showSlot && score && REALES?.ronda_16avos) {{
-        const r1 = REALES.ronda_16avos.find(e => e.slot === e1.slot);
-        const r2 = REALES.ronda_16avos.find(e => e.slot === e2.slot);
-        const eq1 = e1.equipo||'', eq2 = e2.equipo||'';
-        if (eq1!=='—' && r1?.equipo) pts1 = (r1.equipo===eq1?'+2':'+1');
-        if (eq2!=='—' && r2?.equipo) pts2 = (r2.equipo===eq2?'+2':'+1');
-      }}
-      html += '<div class="mbm-teams"><span class="mbm-pred">'+(e1.equipo||'—')+(pts1?' <small style=color:#16a34a>'+pts1+'</small>':'')+'</span><span class="mbm-vs">vs</span><span class="mbm-pred">'+(e2.equipo||'—')+(pts2?' <small style=color:#16a34a>'+pts2+'</small>':'')+'</span></div>';
-    }}
-    html += '</div>';
-  }});
-  html += '</div>';
-  
-  // Columna real
-  html += '<div class="modal-section"><h4>📊 Real</h4>';
   const real16 = REALES?.ronda_16avos || [];
-  // Mostrar 16avos real
-  html += '<div class="mbm-round"><h5>⚽ 16avos</h5>';
-  for (let i = 0; i < 32; i += 2) {{
-    const r1 = real16[i]?.equipo || 'Pendiente';
-    const r2 = real16[i+1]?.equipo || 'Pendiente';
-    const cls1 = r1 !== 'Pendiente' ? 'mbm-real' : 'mbm-pend';
-    const cls2 = r2 !== 'Pendiente' ? 'mbm-real' : 'mbm-pend';
-    html += '<div class="mbm-teams"><span class="'+cls1+'">'+r1+'</span><span class="mbm-vs">vs</span><span class="'+cls2+'">'+r2+'</span></div>';
-  }}
-  html += '</div>';
-  // Otras rondas: pendiente
-  ['⚽ 8avos', '⚽ Cuartos', '⚽ Semifinales'].forEach(title => {{
-    const n = title.includes('8avos') ? 16 : title.includes('Cuartos') ? 8 : 4;
-    html += '<div class="mbm-round"><h5>'+title+'</h5>';
-    for (let i = 0; i < n; i += 2) {{
-      html += '<div class="mbm-teams"><span class="mbm-pend">Pendiente</span><span class="mbm-vs">vs</span><span class="mbm-pend">Pendiente</span></div>';
+  (polla.ronda_16avos||[]).forEach((e, i) => {{
+    const eq = e.equipo || '—';
+    const slot = e.slot || '';
+    const real = real16.find(r => r.slot === slot);
+    const req = real?.equipo || 'Pendiente';
+    
+    let pts = '', cls = '';
+    if (eq !== '—' && real?.equipo) {{
+      pts = (real.equipo === eq) ? '+2' : '+1';
+      cls = (real.equipo === eq) ? 'bt-hit' : 'bt-miss';
     }}
-    html += '</div>';
+    
+    html += '<div class="bt-row '+cls+'"><span class="bt-slot">'+slot+'</span><span class="bt-pred">'+eq+'</span><span class="bt-vs">vs</span><span class="bt-real '+ (req==='Pendiente'?'bt-pend':'') +'">'+req+'</span><span class="bt-pts">'+pts+'</span></div>';
   }});
   html += '</div></div>';
   

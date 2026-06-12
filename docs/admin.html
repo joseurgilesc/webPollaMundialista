@@ -362,25 +362,37 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
   border-radius: 4px;
   padding: 4px 6px;
 }
-/* Bracket matchups */
-.mbm-round h5 {
-  color: var(--navy); font-size: 0.7rem; text-transform: uppercase;
-  letter-spacing: 0.04em; margin: 8px 0 4px;
-  padding-bottom: 2px; border-bottom: 1px solid var(--card-border);
+/* Bracket table */
+.bracket-table {
+  font-size: 0.62rem;
 }
-.mbm-teams {
+.bt-header, .bt-row {
   display: grid;
-  grid-template-columns: 1fr 25px 1fr;
+  grid-template-columns: 50px 1fr 20px 1fr 25px;
   gap: 4px;
   align-items: center;
   padding: 2px 0;
   border-bottom: 1px solid #f1f5f9;
-  font-size: 0.66rem;
 }
-.mbm-pred { font-weight: 500; }
-.mbm-real { color: var(--teal); font-weight: 600; }
-.mbm-pend { color: var(--muted); font-size: 0.6rem; font-style: italic; }
-.mbm-vs { text-align: center; font-size: 0.5rem; color: var(--muted); }
+.bt-header {
+  font-size: 0.5rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  font-weight: 700;
+  border-bottom: 2px solid var(--card-border);
+  padding-bottom: 4px;
+  margin-bottom: 4px;
+}
+.bt-slot { font-weight: 700; color: var(--navy); font-size: 0.55rem; }
+.bt-pred { font-weight: 500; }
+.bt-real { font-weight: 500; }
+.bt-vs { text-align: center; font-size: 0.5rem; color: var(--muted); }
+.bt-pts { text-align: right; font-weight: 700; font-size: 0.6rem; }
+.bt-pend { color: var(--muted); font-style: italic; font-size: 0.55rem; }
+.bt-hit { background: rgba(22,163,74,0.05); }
+.bt-hit .bt-pts { color: var(--green); }
+.bt-miss { background: rgba(220,38,38,0.03); }
+.bt-miss .bt-pts { color: var(--red); }
 .modal-bracket {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
