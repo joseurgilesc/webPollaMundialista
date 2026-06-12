@@ -427,7 +427,43 @@ footer {{ text-align: center; padding: 24px; color: var(--muted); font-size: 0.7
   border-radius: 4px;
   padding: 4px 6px;
 }}
-/* Bracket */
+/* Bracket matchups */
+.modal-bracket-matches {{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 8px;
+}}
+.mbm-round h5 {{
+  color: var(--navy); font-size: 0.7rem; text-transform: uppercase;
+  letter-spacing: 0.04em; margin-bottom: 4px;
+  padding-bottom: 2px; border-bottom: 1px solid var(--card-border);
+}}
+.mbm-match {{
+  padding: 4px 0;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.68rem;
+}}
+.mbm-teams {{
+  display: grid;
+  grid-template-columns: 1fr 25px 1fr;
+  gap: 4px;
+  align-items: center;
+}}
+.mbm-pred {{ font-weight: 500; }}
+.mbm-vs {{ text-align: center; font-size: 0.55rem; color: var(--muted); }}
+.mbm-real-row {{
+  display: grid;
+  grid-template-columns: 1fr 25px 1fr;
+  gap: 4px;
+  margin-top: 2px;
+  padding-top: 2px;
+  border-top: 1px dashed #e2e8f0;
+}}
+.mbm-real {{
+  font-size: 0.6rem;
+  color: var(--teal);
+  font-weight: 600;
+}}
 .modal-bracket {{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
@@ -1005,20 +1041,41 @@ function verPolla(ref) {{
     html += '</div></div>';
   }}
   
-  // ── Bracket en 2 columnas ──
+  // ── Bracket con emparejamientos ──
   const rondas = [
-    ['16avos', polla.ronda_16avos, true],
-    ['8avos', polla.ronda_8avos, false],
-    ['Cuartos', polla.ronda_cuartos, false],
-    ['Semifinales', polla.ronda_semifinales, false],
+    ['16avos', polla.ronda_16avos, true, 16],
+    ['8avos', polla.ronda_8avos, false, 16],
+    ['Cuartos', polla.ronda_cuartos, false, 8],
+    ['Semifinales', polla.ronda_semifinales, false, 4],
   ];
-  html += '<div class="modal-section"><h4>⚽ Bracket</h4><div class="modal-bracket">';
-  rondas.forEach(([title, entries, showSlot]) => {{
+  html += '<div class="modal-section"><h4>⚽ Bracket</h4><div class="modal-bracket-matches">';
+  rondas.forEach(([title, entries, showSlot, total]) => {{
     if (!entries?.length) return;
-    html += '<div class="mb-round"><h5>'+title+'</h5>';
-    entries.forEach((e, i) => {{
-      html += '<div class="slot-row"><span class="s-code">'+(showSlot?(e.slot||''):('#'+(i+1)))+'</span><span class="s-team">'+(e.equipo||'—')+'</span></div>';
-    }});
+    html += '<div class="mbm-round"><h5>'+title+'</h5>';
+    for (let i = 0; i < total; i += 2) {{
+      const e1 = entries[i] || {{}};
+      const e2 = entries[i+1] || {{}};
+      const eq1 = e1.equipo || '—';
+      const eq2 = e2.equipo || '—';
+      const s1 = showSlot ? (e1.slot || '') : '';
+      const s2 = showSlot ? (e2.slot || '') : '';
+      
+      // Buscar equipos reales para estos slots
+      let r1 = '', r2 = '';
+      if (showSlot && REALES?.ronda_16avos) {{
+        const rs = REALES.ronda_16avos.find(e => e.slot === s1);
+        if (rs) r1 = rs.equipo || '';
+        const rs2 = REALES.ronda_16avos.find(e => e.slot === s2);
+        if (rs2) r2 = rs2.equipo || '';
+      }}
+      
+      html += '<div class="mbm-match">';
+      html += '<div class="mbm-teams"><span class="mbm-pred">'+eq1+'</span><span class="mbm-vs">vs</span><span class="mbm-pred">'+eq2+'</span></div>';
+      if (r1 || r2) {{
+        html += '<div class="mbm-real-row"><span class="mbm-real">'+(r1||'—')+'</span><span></span><span class="mbm-real">'+(r2||'—')+'</span></div>';
+      }}
+      html += '</div>';
+    }}
     html += '</div>';
   }});
   html += '</div></div>';

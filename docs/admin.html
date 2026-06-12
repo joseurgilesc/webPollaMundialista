@@ -362,7 +362,43 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
   border-radius: 4px;
   padding: 4px 6px;
 }
-/* Bracket */
+/* Bracket matchups */
+.modal-bracket-matches {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 8px;
+}
+.mbm-round h5 {
+  color: var(--navy); font-size: 0.7rem; text-transform: uppercase;
+  letter-spacing: 0.04em; margin-bottom: 4px;
+  padding-bottom: 2px; border-bottom: 1px solid var(--card-border);
+}
+.mbm-match {
+  padding: 4px 0;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.68rem;
+}
+.mbm-teams {
+  display: grid;
+  grid-template-columns: 1fr 25px 1fr;
+  gap: 4px;
+  align-items: center;
+}
+.mbm-pred { font-weight: 500; }
+.mbm-vs { text-align: center; font-size: 0.55rem; color: var(--muted); }
+.mbm-real-row {
+  display: grid;
+  grid-template-columns: 1fr 25px 1fr;
+  gap: 4px;
+  margin-top: 2px;
+  padding-top: 2px;
+  border-top: 1px dashed #e2e8f0;
+}
+.mbm-real {
+  font-size: 0.6rem;
+  color: var(--teal);
+  font-weight: 600;
+}
 .modal-bracket {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
