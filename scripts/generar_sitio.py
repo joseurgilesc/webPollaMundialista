@@ -1026,12 +1026,13 @@ function verPolla(ref) {{
       
       let ptsClasif = '', ptsPos = '', ptsTot = '', cls = '';
       if (eq !== '—' && req !== 'Pendiente') {{
+        // Normalizar para comparar
+        const neq = normEq(eq), nreq = normEq(req);
         // ¿El equipo clasificó a 16avos? (está en los reales)
-        const allRealTeams = realEntries.map(r => r.equipo).filter(Boolean);
-        const classified = allRealTeams.includes(eq);
+        const classified = realEntries.some(r => normEq(r.equipo||'') === neq);
         if (classified) {{
           ptsClasif = '+1';
-          if (req === eq) {{
+          if (nreq === neq) {{
             ptsPos = '+1'; ptsTot = '+2'; cls = 'bt-hit';
           }} else {{
             ptsPos = '0'; ptsTot = '+1'; cls = 'bt-miss';

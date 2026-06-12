@@ -1405,7 +1405,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
   </div>
 </div>
 
-<footer>Actualizado: 12/06/2026 08:58 · Puntajes recalculados automáticamente</footer>
+<footer>Actualizado: 12/06/2026 09:08 · Puntajes recalculados automáticamente</footer>
 
 <script>
 // Mostrar predicciones
@@ -1553,12 +1553,13 @@ function verPolla(ref) {
       
       let ptsClasif = '', ptsPos = '', ptsTot = '', cls = '';
       if (eq !== '—' && req !== 'Pendiente') {
+        // Normalizar para comparar
+        const neq = normEq(eq), nreq = normEq(req);
         // ¿El equipo clasificó a 16avos? (está en los reales)
-        const allRealTeams = realEntries.map(r => r.equipo).filter(Boolean);
-        const classified = allRealTeams.includes(eq);
+        const classified = realEntries.some(r => normEq(r.equipo||'') === neq);
         if (classified) {
           ptsClasif = '+1';
-          if (req === eq) {
+          if (nreq === neq) {
             ptsPos = '+1'; ptsTot = '+2'; cls = 'bt-hit';
           } else {
             ptsPos = '0'; ptsTot = '+1'; cls = 'bt-miss';
