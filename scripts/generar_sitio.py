@@ -458,6 +458,12 @@ footer {{ text-align: center; padding: 24px; color: var(--muted); font-size: 0.7
 .bt-hit .bt-pts {{ color: var(--green); }}
 .bt-miss {{ background: rgba(220,38,38,0.03); }}
 .bt-miss .bt-pts {{ color: var(--red); }}
+/* 16avos tiene columnas propias: Slot Predicción Real Eq Pos Puesto Tot */
+.bt-r16 {{ grid-template-columns: 44px 1fr 1fr 24px 24px 1fr 24px !important; }}
+.bt-r16 .bt-pts {{ font-size: 0.55rem; }}
+.bt-r16 .bt-pred {{ font-size: 0.58rem; }}
+.bt-r16 .bt-real {{ font-size: 0.58rem; }}
+.bt-r16 .bt-puesto {{ text-align: center; font-size: 0.55rem; color: var(--muted); font-weight: 400; }}
 .modal-bracket {{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
@@ -533,6 +539,48 @@ footer {{ text-align: center; padding: 24px; color: var(--muted); font-size: 0.7
   height: 100%; border-radius: 5px;
   background: linear-gradient(90deg, var(--teal), var(--navy));
   transition: width 0.5s;
+}}
+/* Desglose de puntos */
+.modal-desglose {{
+  background: #fff;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+}}
+.dg-round {{
+  margin-bottom: 10px;
+}}
+.dg-header {{
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: #1a3a5c;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 2px;
+}}
+.dg-item {{
+  font-size: 0.7rem;
+  padding: 2px 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}}
+.dg-icon {{
+  width: 14px;
+  text-align: center;
+  flex-shrink: 0;
+}}
+.dg-label {{
+  font-weight: 500;
+}}
+.dg-team {{
+  font-style: italic;
+}}
+.dg-pts {{
+  font-weight: 700;
+}}
+.dg-count {{
+  font-weight: 700;
 }}
 /* Compare table */
 .modal-compare {{
@@ -898,7 +946,7 @@ function togglePreds() {{
 
 const POLLAS = {pollas_json};
 const REALES = {reales_json};
-const PUNTAJES = {json.dumps([{"participante": r["participante"], "archivo": r["archivo"], "puntajes": r["puntajes"]} for r in puntajes])};
+const PUNTAJES = {json.dumps([{"participante": r["participante"], "archivo": r["archivo"], "puntajes": r["puntajes"], "desglose": r.get("desglose", {})} for r in puntajes])};
 const SHARE_DATA = {json.dumps({"acumulado": acumulado, "costo": participantes.get("costo_por_polla", 10), "pollas": total_pollas, "hay_puntajes": hay_puntajes, "nota": participantes.get("_nota", ""), "leaderboard": [{"nombre": normalizar_nombre(r["participante"]), "letra": r.get("polla_letra","A"), "total": r["puntajes"]["total"]} for r in puntajes]})};
 
 function shareWhatsApp() {{
@@ -935,7 +983,10 @@ function findPolla(ref) {{
 function findScore(nombre) {{
   const n = nombre.toLowerCase().trim();
   for (const p of PUNTAJES) {{
-    if ((p.participante||'').toLowerCase().trim() === n) return p.puntajes;
+    if ((p.participante||'').toLowerCase().trim() === n) {{
+      p.puntajes.desglose = p.desglose;
+      return p.puntajes;
+    }}
   }}
   return null;
 }}
@@ -1009,20 +1060,53 @@ function verPolla(ref) {{
     html += '<div class="modal-score">📊 <strong>'+score.total+' pts</strong> (aún sin resultados reales)</div>';
   }}
   
+  // ── Desglose de puntos ──
+  if (score && score.desglose) {{
+    html += '<div class="modal-desglose">';
+    for (const [ronda, dg] of Object.entries(score.desglose)) {{
+      if (!dg || !dg.items || !dg.items.length) continue;
+      html += '<div class="dg-round">';
+      html += '<div class="dg-header">' + ronda + ' · ' + dg.subtotal + ' pts</div>';
+      dg.items.forEach(item => {{
+        const isHit = item.puntos > 0;
+        const icon = isHit ? '✓' : '✗';
+        const color = isHit ? '#1a6fb5' : '#dc2626';
+        html += '<div class="dg-item" style="color:' + color + '">';
+        html += '<span class="dg-icon">' + icon + '</span> ';
+        if (item.equipo) {{
+          html += '<span class="dg-label">' + item.label + ':</span> ';
+          html += '<span class="dg-team">' + item.equipo + '</span> ';
+          html += '<span class="dg-pts">(' + (isHit ? '+' + item.puntos : '0') + ' pts)</span>';
+        }} else {{
+          html += '<span class="dg-label">' + item.label + ':</span> ';
+          html += '<span class="dg-count">' + item.count + '</span> ';
+          html += '<span class="dg-pts">= ' + item.puntos + ' pts</span>';
+        }}
+        html += '</div>';
+      }});
+      html += '</div>';
+    }}
+    html += '</div>';
+  }}
+  
   // ── Bracket: tabla unificada con todas las rondas ──
   html += '<div class="modal-section"><h4>⚽ Bracket</h4>';
   
   const rondas = [
-    ['16avos', polla.ronda_16avos||[], true, REALES?.ronda_16avos||[]],
-    ['8avos', polla.ronda_8avos||[], false, []],
-    ['Cuartos', polla.ronda_cuartos||[], false, []],
+    ['16avos', polla.ronda_16avos||[], true, REALES?.ronda_16avos||[], true],
+    ['8avos', polla.ronda_8avos||[], false, [], false],
+    ['Cuartos', polla.ronda_cuartos||[], false, [], false],
     ['Semifinales', polla.ronda_semifinales||[], false, []],
   ];
   
-  rondas.forEach(([label, entries, showSlot, realEntries]) => {{
+  rondas.forEach(([label, entries, showSlot, realEntries, is16avos]) => {{
     if (!entries.length) return;
     html += '<h5 style=\"color:var(--navy);font-size:0.7rem;margin:8px 0 4px;\">⚽ '+label+'</h5>';
-    html += '<div class=\"bracket-table\"><div class=\"bt-header\"><span>'+(showSlot?'Slot':'#')+'</span><span>Predicción</span><span></span><span>Real</span><span>Clasif</span><span>Pos</span><span>Tot</span></div>';
+    if (is16avos) {{
+      html += '<div class=\"bracket-table\"><div class=\"bt-header bt-r16\"><span>Slot</span><span>Predicción</span><span>Real</span><span>Eq</span><span>Pos</span><span>Puesto</span><span>Tot</span></div>';
+    }} else {{
+      html += '<div class=\"bracket-table\"><div class=\"bt-header\"><span>'+(showSlot?'Slot':'#')+'</span><span>Predicción</span><span></span><span>Real</span><span>Clasif</span><span>Pos</span><span>Tot</span></div>';
+    }}
     
     entries.forEach((e, i) => {{
       const eq = e.equipo || '—';
@@ -1034,25 +1118,74 @@ function verPolla(ref) {{
         if (real?.equipo) req = real.equipo;
       }}
       
-      let ptsClasif = '', ptsPos = '', ptsTot = '', cls = '';
-      if (eq !== '—' && req !== 'Pendiente') {{
-        // Normalizar para comparar
-        const neq = normEq(eq), nreq = normEq(req);
-        // ¿El equipo clasificó a 16avos? (está en los reales)
-        const classified = realEntries.some(r => normEq(r.equipo||'') === neq);
+      if (is16avos && eq !== '—') {{
+        // ── Vista 16avos con equipo + posición ──
+        const neq = normEq(eq);
+
+        // Clasificó? Se compara con TODOS los equipos reales en 16avos,
+        // no solo con el slot exacto (para coincidir con la lógica de puntuación real)
+        const allReal16 = REALES?.ronda_16avos?.filter(r => r.equipo) || [];
+        const classified = allReal16.some(r => normEq(r.equipo||'') === neq);
+
+        // Encontrar el slot real donde está este equipo
+        const realSlotEntry = allReal16.find(r => normEq(r.equipo||'') === neq);
+        const nreq = realSlotEntry ? normEq(realSlotEntry.equipo) : '';
+
+        // Extraer posición del slot (ej: "1A" → grupo "A", pos "1°")
+        const posMatch = slot.match(/^(\d)([A-Z])$/);
+        let predPuesto = '';
+        let realPuesto = '';
+        let eqPts = 0, posPts = 0, totPts = 0;
+        let clsClass = '';
+        
+        // Obtener puesto real del equipo en su grupo
         if (classified) {{
-          ptsClasif = '+1';
-          if (nreq === neq) {{
-            ptsPos = '+1'; ptsTot = '+2'; cls = 'bt-hit';
+          eqPts = 1;
+          // Buscar en qué slot real está y qué grupo
+          if (realSlotEntry) {{
+            const realSlot = realSlotEntry.slot || '';
+            const rsMatch = realSlot.match(/^(\d)([A-Z])$/);
+            if (rsMatch) {{
+              realPuesto = rsMatch[1] + '°';
+            }}
+          }}
+          // Comparar slot del participante vs slot real
+          const predSlot = e.slot || '';
+          const realSlot = realSlotEntry?.slot || '';
+          if (predSlot === realSlot) {{
+            posPts = 1; totPts = 2; clsClass = 'bt-hit';
           }} else {{
-            ptsPos = '0'; ptsTot = '+1'; cls = 'bt-miss';
+            posPts = 0; totPts = 1; clsClass = 'bt-miss';
           }}
         }} else {{
-          ptsClasif = '0'; ptsPos = '0'; ptsTot = '0';
+          eqPts = 0; posPts = 0; totPts = 0;
         }}
+        
+        // Puesto predicho del slot del participante
+        if (posMatch) {{
+          predPuesto = posMatch[1] + '°';
+        }}
+        
+        html += '<div class=\"bt-row bt-r16 '+clsClass+'\"><span class=\"bt-slot\">'+slot+'</span><span class=\"bt-pred\">'+eq+'</span><span class=\"bt-real\">'+(realSlotEntry?realSlotEntry.equipo:'—')+'</span><span class=\"bt-pts\">'+(eqPts?'+'+eqPts:'0')+'</span><span class=\"bt-pts\">'+(posPts?'+'+posPts:'0')+'</span><span class=\"bt-puesto\">'+predPuesto+(realPuesto?'→'+realPuesto:'')+'</span><span class=\"bt-pts\" style=\"font-weight:700\">'+(totPts?'+'+totPts:'0')+'</span></div>';
+      }} else {{
+        // ── Vista por defecto (8avos, cuartos, etc) ──
+        let ptsClasif = '', ptsPos = '', ptsTot = '', cls = '';
+        if (eq !== '—' && req !== 'Pendiente') {{
+          const neq = normEq(eq), nreq = normEq(req);
+          const classified = realEntries.some(r => normEq(r.equipo||'') === neq);
+          if (classified) {{
+            ptsClasif = '+1';
+            if (nreq === neq) {{
+              ptsPos = '+1'; ptsTot = '+2'; cls = 'bt-hit';
+            }} else {{
+              ptsPos = '0'; ptsTot = '+1'; cls = 'bt-miss';
+            }}
+          }} else {{
+            ptsClasif = '0'; ptsPos = '0'; ptsTot = '0';
+          }}
+        }}
+        html += '<div class=\"bt-row '+cls+'\"><span class=\"bt-slot\">'+slot+'</span><span class=\"bt-pred\">'+eq+'</span><span class=\"bt-vs\">vs</span><span class=\"bt-real '+(req==='Pendiente'?'bt-pend':'')+'\">'+req+'</span><span class=\"bt-pts\">'+ptsClasif+'</span><span class=\"bt-pts\">'+ptsPos+'</span><span class=\"bt-pts\" style=\"font-weight:700\">'+ptsTot+'</span></div>';
       }}
-      
-      html += '<div class=\"bt-row '+cls+'\"><span class=\"bt-slot\">'+slot+'</span><span class=\"bt-pred\">'+eq+'</span><span class=\"bt-vs\">vs</span><span class=\"bt-real '+(req==='Pendiente'?'bt-pend':'')+'\">'+req+'</span><span class=\"bt-pts\">'+ptsClasif+'</span><span class=\"bt-pts\">'+ptsPos+'</span><span class=\"bt-pts\" style=\"font-weight:700\">'+ptsTot+'</span></div>';
     }});
     html += '</div>';
   }});

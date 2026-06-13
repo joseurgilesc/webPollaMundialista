@@ -109,6 +109,87 @@
         ]
       }
     },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 6,
+            "count": 6,
+            "detalle": "6 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 5,
+            "count": 5,
+            "detalle": "5 (+1 c/u)"
+          }
+        ],
+        "subtotal": 11
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "ARGENTINA",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "ECUADOR",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "BRASIL",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "COSTA DE MARFIL",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
+      }
+    },
     "polla_letra": "A"
   },
   {
@@ -219,6 +300,87 @@
           "tercero: predijo FRANCIA, real:  (0 pts)",
           "cuarto: predijo PORTUGAL, real:  (0 pts)"
         ]
+      }
+    },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 5,
+            "count": 5,
+            "detalle": "5 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 5,
+            "count": 5,
+            "detalle": "5 (+1 c/u)"
+          }
+        ],
+        "subtotal": 10
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "ESPAÑA",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "INGLATERRA",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "FRANCIA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "PORTUGAL",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
       }
     },
     "polla_letra": "A"
@@ -333,6 +495,87 @@
         ]
       }
     },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 5,
+            "count": 5,
+            "detalle": "5 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 5,
+            "count": 5,
+            "detalle": "5 (+1 c/u)"
+          }
+        ],
+        "subtotal": 10
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "ARGENTINA",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "ESPAÑA",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "FRANCIA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "BRASIL",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
+      }
+    },
     "polla_letra": "A"
   },
   {
@@ -443,6 +686,87 @@
           "tercero: predijo BRASIL, real:  (0 pts)",
           "cuarto: predijo ESPAÑA, real:  (0 pts)"
         ]
+      }
+    },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 5,
+            "count": 5,
+            "detalle": "5 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 5,
+            "count": 5,
+            "detalle": "5 (+1 c/u)"
+          }
+        ],
+        "subtotal": 10
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "ARGENTINA",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "FRANCIA",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "BRASIL",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "ESPAÑA",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
       }
     },
     "polla_letra": "A"
@@ -558,6 +882,87 @@
         ]
       }
     },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 6,
+            "count": 6,
+            "detalle": "6 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 4,
+            "count": 4,
+            "detalle": "4 (+1 c/u)"
+          }
+        ],
+        "subtotal": 10
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "BRASIL",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "FRANCIA",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "ESPAÑA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "PORTUGAL",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
+      }
+    },
     "polla_letra": "A"
   },
   {
@@ -670,6 +1075,87 @@
         ]
       }
     },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 5,
+            "count": 5,
+            "detalle": "5 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 4,
+            "count": 4,
+            "detalle": "4 (+1 c/u)"
+          }
+        ],
+        "subtotal": 9
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "ESPAÑA",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "ARGENTINA",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "FRANCIA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "INGLATERRA",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
+      }
+    },
     "polla_letra": "A"
   },
   {
@@ -780,6 +1266,87 @@
           "tercero: predijo ESPAÑA, real:  (0 pts)",
           "cuarto: predijo INGLATERRA, real:  (0 pts)"
         ]
+      }
+    },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 5,
+            "count": 5,
+            "detalle": "5 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 4,
+            "count": 4,
+            "detalle": "4 (+1 c/u)"
+          }
+        ],
+        "subtotal": 9
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "PORTUGAL",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "FRANCIA",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "ESPAÑA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "INGLATERRA",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
       }
     },
     "polla_letra": "A"
@@ -895,6 +1462,87 @@
         ]
       }
     },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 6,
+            "count": 6,
+            "detalle": "6 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 3,
+            "count": 3,
+            "detalle": "3 (+1 c/u)"
+          }
+        ],
+        "subtotal": 9
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "ESPAÑA",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "ARGENTINA",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "INGLATERRA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "ALEMANIA",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
+      }
+    },
     "polla_letra": "B"
   },
   {
@@ -1005,6 +1653,87 @@
           "tercero: predijo FRANCIA, real:  (0 pts)",
           "cuarto: predijo ARGENTINA, real:  (0 pts)"
         ]
+      }
+    },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 5,
+            "count": 5,
+            "detalle": "5 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 4,
+            "count": 4,
+            "detalle": "4 (+1 c/u)"
+          }
+        ],
+        "subtotal": 9
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "ESPAÑA",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "INGLATERRA",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "FRANCIA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "ARGENTINA",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
       }
     },
     "polla_letra": "A"
@@ -1120,6 +1849,87 @@
         ]
       }
     },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 6,
+            "count": 6,
+            "detalle": "6 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 3,
+            "count": 3,
+            "detalle": "3 (+1 c/u)"
+          }
+        ],
+        "subtotal": 9
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "ESPAÑA",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "INGLATERRA",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "FRANCIA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "ARGENTINA",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
+      }
+    },
     "polla_letra": "A"
   },
   {
@@ -1231,6 +2041,87 @@
           "tercero: predijo FRANCIA, real:  (0 pts)",
           "cuarto: predijo ARGENTINA, real:  (0 pts)"
         ]
+      }
+    },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 6,
+            "count": 6,
+            "detalle": "6 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 3,
+            "count": 3,
+            "detalle": "3 (+1 c/u)"
+          }
+        ],
+        "subtotal": 9
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "ESPAÑA",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "INGLATERRA",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "FRANCIA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "ARGENTINA",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
       }
     },
     "polla_letra": "A"
@@ -1345,6 +2236,87 @@
         ]
       }
     },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 6,
+            "count": 6,
+            "detalle": "6 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 3,
+            "count": 3,
+            "detalle": "3 (+1 c/u)"
+          }
+        ],
+        "subtotal": 9
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "INGLATERRA",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "ESPAÑA",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "FRANCIA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "ARGENTINA",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
+      }
+    },
     "polla_letra": "A"
   },
   {
@@ -1454,6 +2426,87 @@
           "tercero: predijo ARGENTINA, real:  (0 pts)",
           "cuarto: predijo ESPAÑA, real:  (0 pts)"
         ]
+      }
+    },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 4,
+            "count": 4,
+            "detalle": "4 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 4,
+            "count": 4,
+            "detalle": "4 (+1 c/u)"
+          }
+        ],
+        "subtotal": 8
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "PAISES BAJOS",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "BRASIL",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "ARGENTINA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "ESPAÑA",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
       }
     },
     "polla_letra": "A"
@@ -1566,6 +2619,87 @@
           "tercero: predijo ESPAÑA, real:  (0 pts)",
           "cuarto: predijo PORTUGAL, real:  (0 pts)"
         ]
+      }
+    },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 5,
+            "count": 5,
+            "detalle": "5 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 3,
+            "count": 3,
+            "detalle": "3 (+1 c/u)"
+          }
+        ],
+        "subtotal": 8
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "BRASIL",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "FRANCIA",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "ESPAÑA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "PORTUGAL",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
       }
     },
     "polla_letra": "A"
@@ -1681,6 +2815,87 @@
         ]
       }
     },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 6,
+            "count": 6,
+            "detalle": "6 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 2,
+            "count": 2,
+            "detalle": "2 (+1 c/u)"
+          }
+        ],
+        "subtotal": 8
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "FRANCIA",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "INGLATERRA",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "ESPAÑA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "ARGENTINA",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
+      }
+    },
     "polla_letra": "A"
   },
   {
@@ -1793,6 +3008,87 @@
         ]
       }
     },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 5,
+            "count": 5,
+            "detalle": "5 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 3,
+            "count": 3,
+            "detalle": "3 (+1 c/u)"
+          }
+        ],
+        "subtotal": 8
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "PORTUGAL",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "FRANCIA",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "ESPAÑA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "INGLATERRA",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
+      }
+    },
     "polla_letra": "A"
   },
   {
@@ -1901,6 +3197,87 @@
           "tercero: predijo ESPAÑA, real:  (0 pts)",
           "cuarto: predijo PORTUGAL, real:  (0 pts)"
         ]
+      }
+    },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 4,
+            "count": 4,
+            "detalle": "4 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 4,
+            "count": 4,
+            "detalle": "4 (+1 c/u)"
+          }
+        ],
+        "subtotal": 8
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "FRANCIA",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "INGLATERRA",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "ESPAÑA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "PORTUGAL",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
       }
     },
     "polla_letra": "A"
@@ -2014,6 +3391,87 @@
         ]
       }
     },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 4,
+            "count": 4,
+            "detalle": "4 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 4,
+            "count": 4,
+            "detalle": "4 (+1 c/u)"
+          }
+        ],
+        "subtotal": 8
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "ARGENTINA",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "FRANCIA",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "PORTUGAL",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "BRASIL",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
+      }
+    },
     "polla_letra": "A"
   },
   {
@@ -2122,6 +3580,87 @@
           "tercero: predijo FRANCIA, real:  (0 pts)",
           "cuarto: predijo BRASIL, real:  (0 pts)"
         ]
+      }
+    },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 4,
+            "count": 4,
+            "detalle": "4 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 4,
+            "count": 4,
+            "detalle": "4 (+1 c/u)"
+          }
+        ],
+        "subtotal": 8
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "ESPAÑA",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "PORTUGAL",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "FRANCIA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "BRASIL",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
       }
     },
     "polla_letra": "A"
@@ -2234,6 +3773,87 @@
         ]
       }
     },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 4,
+            "count": 4,
+            "detalle": "4 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 4,
+            "count": 4,
+            "detalle": "4 (+1 c/u)"
+          }
+        ],
+        "subtotal": 8
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "ARGENTINA",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "ECUADOR",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "ESPAÑA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "BRASIL",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
+      }
+    },
     "polla_letra": "A"
   },
   {
@@ -2342,6 +3962,87 @@
           "tercero: predijo ESPAÑA, real:  (0 pts)",
           "cuarto: predijo BRASIL, real:  (0 pts)"
         ]
+      }
+    },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 4,
+            "count": 4,
+            "detalle": "4 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 4,
+            "count": 4,
+            "detalle": "4 (+1 c/u)"
+          }
+        ],
+        "subtotal": 8
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "ARGENTINA",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "ECUADOR",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "ESPAÑA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "BRASIL",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
       }
     },
     "polla_letra": "B"
@@ -2456,6 +4157,87 @@
         ]
       }
     },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 5,
+            "count": 5,
+            "detalle": "5 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 3,
+            "count": 3,
+            "detalle": "3 (+1 c/u)"
+          }
+        ],
+        "subtotal": 8
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "PAISES BAJOS",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "ESPAÑA",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "JAPÓN",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "PORTUGAL",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
+      }
+    },
     "polla_letra": "A"
   },
   {
@@ -2562,6 +4344,87 @@
           "tercero: predijo ESPAÑA, real:  (0 pts)",
           "cuarto: predijo INGLATERRA, real:  (0 pts)"
         ]
+      }
+    },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 4,
+            "count": 4,
+            "detalle": "4 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 4,
+            "count": 4,
+            "detalle": "4 (+1 c/u)"
+          }
+        ],
+        "subtotal": 8
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "MARRUECOS",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "FRANCIA",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "ESPAÑA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "INGLATERRA",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
       }
     },
     "polla_letra": "A"
@@ -2674,6 +4537,87 @@
         ]
       }
     },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 4,
+            "count": 4,
+            "detalle": "4 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 3,
+            "count": 3,
+            "detalle": "3 (+1 c/u)"
+          }
+        ],
+        "subtotal": 7
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "BRASIL",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "PAISES BAJOS",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "ARGENTINA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "COLOMBIA",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
+      }
+    },
     "polla_letra": "A"
   },
   {
@@ -2782,6 +4726,87 @@
           "tercero: predijo INGLATERRA, real:  (0 pts)",
           "cuarto: predijo COSTA DE MARFIL, real:  (0 pts)"
         ]
+      }
+    },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 5,
+            "count": 5,
+            "detalle": "5 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 2,
+            "count": 2,
+            "detalle": "2 (+1 c/u)"
+          }
+        ],
+        "subtotal": 7
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "ALEMANIA",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "ARGENTINA",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "INGLATERRA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "COSTA DE MARFIL",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
       }
     },
     "polla_letra": "A"
@@ -2893,6 +4918,87 @@
           "tercero: predijo FRANCIA, real:  (0 pts)",
           "cuarto: predijo INGLATERRA, real:  (0 pts)"
         ]
+      }
+    },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 4,
+            "count": 4,
+            "detalle": "4 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 3,
+            "count": 3,
+            "detalle": "3 (+1 c/u)"
+          }
+        ],
+        "subtotal": 7
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "ESPAÑA",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "PORTUGAL",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "FRANCIA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "INGLATERRA",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
       }
     },
     "polla_letra": "A"
@@ -3007,6 +5113,87 @@
         ]
       }
     },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 5,
+            "count": 5,
+            "detalle": "5 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 2,
+            "count": 2,
+            "detalle": "2 (+1 c/u)"
+          }
+        ],
+        "subtotal": 7
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "ECUADOR",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "CROACIA",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "BÉLGICA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "URUGUAY",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
+      }
+    },
     "polla_letra": "A"
   },
   {
@@ -3116,6 +5303,87 @@
           "tercero: predijo ESPAÑA, real:  (0 pts)",
           "cuarto: predijo ECUADOR, real:  (0 pts)"
         ]
+      }
+    },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 4,
+            "count": 4,
+            "detalle": "4 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 3,
+            "count": 3,
+            "detalle": "3 (+1 c/u)"
+          }
+        ],
+        "subtotal": 7
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "PAISES BAJOS",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "PORTUGAL",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "ESPAÑA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "ECUADOR",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
       }
     },
     "polla_letra": "A"
@@ -3231,6 +5499,87 @@
         ]
       }
     },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 6,
+            "count": 6,
+            "detalle": "6 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 1,
+            "count": 1,
+            "detalle": "1 (+1 c/u)"
+          }
+        ],
+        "subtotal": 7
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "ESPAÑA",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "INGLATERRA",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "FRANCIA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "ARGENTINA",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
+      }
+    },
     "polla_letra": "A"
   },
   {
@@ -3338,6 +5687,87 @@
           "tercero: predijo INGLATERRA, real:  (0 pts)",
           "cuarto: predijo PAISES BAJOS, real:  (0 pts)"
         ]
+      }
+    },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 5,
+            "count": 5,
+            "detalle": "5 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 2,
+            "count": 2,
+            "detalle": "2 (+1 c/u)"
+          }
+        ],
+        "subtotal": 7
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "ESPAÑA",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "ARGENTINA",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "INGLATERRA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "PAISES BAJOS",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
       }
     },
     "polla_letra": "A"
@@ -3448,6 +5878,87 @@
           "tercero: predijo PORTUGAL, real:  (0 pts)",
           "cuarto: predijo COLOMBIA, real:  (0 pts)"
         ]
+      }
+    },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 5,
+            "count": 5,
+            "detalle": "5 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 2,
+            "count": 2,
+            "detalle": "2 (+1 c/u)"
+          }
+        ],
+        "subtotal": 7
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "INGLATERRA",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "FRANCIA",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "PORTUGAL",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "COLOMBIA",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
       }
     },
     "polla_letra": "A"
@@ -3562,6 +6073,87 @@
         ]
       }
     },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 5,
+            "count": 5,
+            "detalle": "5 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 2,
+            "count": 2,
+            "detalle": "2 (+1 c/u)"
+          }
+        ],
+        "subtotal": 7
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "PAISES BAJOS",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "ARGENTINA",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "ESPAÑA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "ECUADOR",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
+      }
+    },
     "polla_letra": "A"
   },
   {
@@ -3671,6 +6263,87 @@
           "tercero: predijo ESPAÑA, real:  (0 pts)",
           "cuarto: predijo ARGENTINA, real:  (0 pts)"
         ]
+      }
+    },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 4,
+            "count": 4,
+            "detalle": "4 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 3,
+            "count": 3,
+            "detalle": "3 (+1 c/u)"
+          }
+        ],
+        "subtotal": 7
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "FRANCIA",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "INGLATERRA",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "ESPAÑA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "ARGENTINA",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
       }
     },
     "polla_letra": "A"
@@ -3784,6 +6457,87 @@
         ]
       }
     },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 4,
+            "count": 4,
+            "detalle": "4 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 2,
+            "count": 2,
+            "detalle": "2 (+1 c/u)"
+          }
+        ],
+        "subtotal": 6
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "BRASIL",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "FRANCIA",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "ESPAÑA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "ARGENTINA",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
+      }
+    },
     "polla_letra": "B"
   },
   {
@@ -3893,6 +6647,87 @@
           "tercero: predijo BRASIL, real:  (0 pts)",
           "cuarto: predijo ESPAÑA, real:  (0 pts)"
         ]
+      }
+    },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 4,
+            "count": 4,
+            "detalle": "4 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 2,
+            "count": 2,
+            "detalle": "2 (+1 c/u)"
+          }
+        ],
+        "subtotal": 6
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "PAISES BAJOS",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "ARGENTINA",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "BRASIL",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "ESPAÑA",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
       }
     },
     "polla_letra": "A"
@@ -4007,6 +6842,87 @@
         ]
       }
     },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 5,
+            "count": 5,
+            "detalle": "5 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 1,
+            "count": 1,
+            "detalle": "1 (+1 c/u)"
+          }
+        ],
+        "subtotal": 6
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "FRANCIA",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "INGLATERRA",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "ESPAÑA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "PORTUGAL",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
+      }
+    },
     "polla_letra": "A"
   },
   {
@@ -4115,6 +7031,87 @@
           "tercero: predijo ECUADOR, real:  (0 pts)",
           "cuarto: predijo ARGENTINA, real:  (0 pts)"
         ]
+      }
+    },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 4,
+            "count": 4,
+            "detalle": "4 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 2,
+            "count": 2,
+            "detalle": "2 (+1 c/u)"
+          }
+        ],
+        "subtotal": 6
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "BRASIL",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "ESPAÑA",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "ECUADOR",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "ARGENTINA",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
       }
     },
     "polla_letra": "A"
@@ -4228,6 +7225,87 @@
         ]
       }
     },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 4,
+            "count": 4,
+            "detalle": "4 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 2,
+            "count": 2,
+            "detalle": "2 (+1 c/u)"
+          }
+        ],
+        "subtotal": 6
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "BRASIL",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "ESPAÑA",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "ECUADOR",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "PORTUGAL",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
+      }
+    },
     "polla_letra": "A"
   },
   {
@@ -4336,6 +7414,87 @@
           "tercero: predijo ESPAÑA, real:  (0 pts)",
           "cuarto: predijo ECUADOR, real:  (0 pts)"
         ]
+      }
+    },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 4,
+            "count": 4,
+            "detalle": "4 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 2,
+            "count": 2,
+            "detalle": "2 (+1 c/u)"
+          }
+        ],
+        "subtotal": 6
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "ALEMANIA",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "ARGENTINA",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "ESPAÑA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "ECUADOR",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
       }
     },
     "polla_letra": "A"
@@ -4450,6 +7609,87 @@
         ]
       }
     },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 5,
+            "count": 5,
+            "detalle": "5 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 1,
+            "count": 1,
+            "detalle": "1 (+1 c/u)"
+          }
+        ],
+        "subtotal": 6
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "PORTUGAL",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "FRANCIA",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "ECUADOR",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "ESPAÑA",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
+      }
+    },
     "polla_letra": "A"
   },
   {
@@ -4561,6 +7801,87 @@
         ]
       }
     },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 4,
+            "count": 4,
+            "detalle": "4 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 2,
+            "count": 2,
+            "detalle": "2 (+1 c/u)"
+          }
+        ],
+        "subtotal": 6
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "BRASIL",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "ESPAÑA",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "ARGENTINA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "PAISES BAJOS",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
+      }
+    },
     "polla_letra": "A"
   },
   {
@@ -4667,6 +7988,87 @@
           "tercero: predijo ARGENTINA, real:  (0 pts)",
           "cuarto: predijo ALEMANIA, real:  (0 pts)"
         ]
+      }
+    },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 3,
+            "count": 3,
+            "detalle": "3 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 2,
+            "count": 2,
+            "detalle": "2 (+1 c/u)"
+          }
+        ],
+        "subtotal": 5
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "BRASIL",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "COLOMBIA",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "ARGENTINA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "ALEMANIA",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
       }
     },
     "polla_letra": "A"
@@ -4777,6 +8179,87 @@
           "tercero: predijo ESPAÑA, real:  (0 pts)",
           "cuarto: predijo INGLATERRA, real:  (0 pts)"
         ]
+      }
+    },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 3,
+            "count": 3,
+            "detalle": "3 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 2,
+            "count": 2,
+            "detalle": "2 (+1 c/u)"
+          }
+        ],
+        "subtotal": 5
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "FRANCIA",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "ARGENTINA",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "ESPAÑA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "INGLATERRA",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
       }
     },
     "polla_letra": "A"
@@ -4890,6 +8373,87 @@
         ]
       }
     },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 4,
+            "count": 4,
+            "detalle": "4 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 1,
+            "count": 1,
+            "detalle": "1 (+1 c/u)"
+          }
+        ],
+        "subtotal": 5
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "ARGENTINA",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "FRANCIA",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "BRASIL",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "NORUEGA",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
+      }
+    },
     "polla_letra": "A"
   },
   {
@@ -4999,6 +8563,87 @@
           "tercero: predijo FRANCIA, real:  (0 pts)",
           "cuarto: predijo INGLATERRA, real:  (0 pts)"
         ]
+      }
+    },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 5,
+            "count": 5,
+            "detalle": "5 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "Sin aciertos"
+          }
+        ],
+        "subtotal": 5
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "ESPAÑA",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "ARGENTINA",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "FRANCIA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "INGLATERRA",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
       }
     },
     "polla_letra": "A"
@@ -5112,6 +8757,87 @@
         ]
       }
     },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 4,
+            "count": 4,
+            "detalle": "4 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 1,
+            "count": 1,
+            "detalle": "1 (+1 c/u)"
+          }
+        ],
+        "subtotal": 5
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "PORTUGAL",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "FRANCIA",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "ECUADOR",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "COSTA DE MARFIL",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
+      }
+    },
     "polla_letra": "A"
   },
   {
@@ -5216,6 +8942,87 @@
           "tercero: predijo ECUADOR, real:  (0 pts)",
           "cuarto: predijo ARGENTINA, real:  (0 pts)"
         ]
+      }
+    },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 5,
+            "count": 5,
+            "detalle": "5 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "Sin aciertos"
+          }
+        ],
+        "subtotal": 5
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "INGLATERRA",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "ESPAÑA",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "ECUADOR",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "ARGENTINA",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
       }
     },
     "polla_letra": "B"
@@ -5329,6 +9136,87 @@
         ]
       }
     },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 4,
+            "count": 4,
+            "detalle": "4 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 1,
+            "count": 1,
+            "detalle": "1 (+1 c/u)"
+          }
+        ],
+        "subtotal": 5
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "ESPAÑA",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "ECUADOR",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "ARGENTINA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "ALEMANIA",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
+      }
+    },
     "polla_letra": "A"
   },
   {
@@ -5437,6 +9325,87 @@
           "tercero: predijo FRANCIA, real:  (0 pts)",
           "cuarto: predijo INGLATERRA, real:  (0 pts)"
         ]
+      }
+    },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 3,
+            "count": 3,
+            "detalle": "3 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 1,
+            "count": 1,
+            "detalle": "1 (+1 c/u)"
+          }
+        ],
+        "subtotal": 4
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "ESPAÑA",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "ARGENTINA",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "FRANCIA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "INGLATERRA",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
       }
     },
     "polla_letra": "A"
@@ -5548,6 +9517,87 @@
         ]
       }
     },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 3,
+            "count": 3,
+            "detalle": "3 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 1,
+            "count": 1,
+            "detalle": "1 (+1 c/u)"
+          }
+        ],
+        "subtotal": 4
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "BRASIL",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "COLOMBIA",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "ECUADOR",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "ARGENTINA",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
+      }
+    },
     "polla_letra": "B"
   },
   {
@@ -5654,6 +9704,87 @@
           "tercero: predijo SENEGAL, real:  (0 pts)",
           "cuarto: predijo CROACIA, real:  (0 pts)"
         ]
+      }
+    },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 3,
+            "count": 3,
+            "detalle": "3 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 1,
+            "count": 1,
+            "detalle": "1 (+1 c/u)"
+          }
+        ],
+        "subtotal": 4
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "BÉLGICA",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "COREA DEL SUR",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "SENEGAL",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "CROACIA",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
       }
     },
     "polla_letra": "A"
@@ -5764,6 +9895,87 @@
         ]
       }
     },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 3,
+            "count": 3,
+            "detalle": "3 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 1,
+            "count": 1,
+            "detalle": "1 (+1 c/u)"
+          }
+        ],
+        "subtotal": 4
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "BRASIL",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "FRANCIA",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "BÉLGICA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "USA",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
+      }
+    },
     "polla_letra": "A"
   },
   {
@@ -5803,6 +10015,87 @@
           "tercero: predijo FRANCIA, real:  (0 pts)",
           "cuarto: predijo ARGENTINA, real:  (0 pts)"
         ]
+      }
+    },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "Sin aciertos"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "Sin aciertos"
+          }
+        ],
+        "subtotal": 0
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×2 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×3 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 0,
+            "count": 0,
+            "detalle": "0 (×4 pts)"
+          }
+        ],
+        "subtotal": 0
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "ESPAÑA",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "BRASIL",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "FRANCIA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "ARGENTINA",
+            "hit": false
+          }
+        ],
+        "subtotal": 0
       }
     },
     "polla_letra": "A"

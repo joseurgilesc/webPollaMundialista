@@ -230,6 +230,108 @@ def _scorear_finales(polla_finales: dict, real_finales: dict) -> tuple[int, dict
     return puntaje, detalle
 
 
+# ── Desglose de puntos ─────────────────────────────────────────────
+
+def _computar_desglose(puntajes: dict, detalle: dict) -> dict:
+    """
+    A partir del detalle ya calculado, produce un dict con el desglose
+    de puntos por ronda: items individuales + subtotal.
+    
+    Returns dict vacío si no hay detalle.
+    """
+    PTS_POR_ACIERTO = {"8avos": 2, "cuartos": 3, "semifinales": 4}
+    POSICIONES = {
+        "campeon": "Campeón",
+        "segundo": "Segundo",
+        "tercero": "Tercero",
+        "cuarto": "Cuarto",
+    }
+    PTS_FINALES = {"campeon": 20, "segundo": 11, "tercero": 8, "cuarto": 5}
+    
+    desglose = {}
+    
+    if not detalle:
+        return desglose
+    
+    # ---- 16avos ----
+    d16 = detalle.get("16avos")
+    if d16 is not None:
+        eq_count = len(d16.get("aciertos_equipo", []))
+        pos_count = len(d16.get("aciertos_posicion", []))
+        items = []
+        if eq_count > 0:
+            items.append({"label": "Aciertos de equipo", "puntos": eq_count, "count": eq_count, "detalle": f"{eq_count} (+1 c/u)"})
+        else:
+            items.append({"label": "Aciertos de equipo", "puntos": 0, "count": 0, "detalle": "Sin aciertos"})
+        if pos_count > 0:
+            items.append({"label": "Aciertos de posición", "puntos": pos_count, "count": pos_count, "detalle": f"{pos_count} (+1 c/u)"})
+        else:
+            items.append({"label": "Aciertos de posición", "puntos": 0, "count": 0, "detalle": "Sin aciertos"})
+        desglose["16avos"] = {"items": items, "subtotal": puntajes.get("16avos", 0)}
+    
+    # ---- 8avos, cuartos, semifinales ----
+    for ronda, pts_por_hit in PTS_POR_ACIERTO.items():
+        d = detalle.get(ronda)
+        if d is not None:
+            aciertos = d.get("aciertos", [])
+            count = len(aciertos)
+            puntos = count * pts_por_hit
+            items = [{"label": "Aciertos", "puntos": puntos, "count": count, "detalle": f"{count} (×{pts_por_hit} pts)"}]
+            desglose[ronda] = {"items": items, "subtotal": puntajes.get(ronda, 0)}
+    
+    # ---- Finales ----
+    df = detalle.get("finales")
+    if df is not None:
+        items = []
+        # Parsear aciertos y errores
+        aciertos_strs = df.get("aciertos", []) or []
+        errores_strs = df.get("errores", []) or []
+        
+        # Construir lookup: puesto -> (puntos, equipo, hit)
+        found = {}
+        for s in aciertos_strs:
+            # Formato: "campeon: ARGENTINA (+20)"
+            m = re.match(r'^(\w+):\s*(.+?)\s*\(+\s*(\d+)\s*\)', s)
+            if m:
+                puesto = m.group(1)
+                equipo = m.group(2).strip()
+                pts = int(m.group(3))
+                found[puesto] = (pts, equipo, True)
+        for s in errores_strs:
+            # Formato: "segundo: predijo BRASIL, real: ALEMANIA (0 pts)"
+            m = re.match(r'^(\w+):\s*predijo\s+(.+?),\s*real:\s+(.+?)\s*\((\d+)\s*pts\)', s)
+            if m:
+                puesto = m.group(1)
+                equipo = m.group(2).strip()
+                pts = 0
+                found[puesto] = (pts, equipo, False)
+            else:
+                # Fallback: formato sin "real:" - error simple
+                m2 = re.match(r'^(\w+):\s*(.+?)\s*\((\d+)\s*pts\)', s)
+                if m2:
+                    puesto = m2.group(1)
+                    equipo = m2.group(2).strip()
+                    pts = int(m2.group(3))
+                    found[puesto] = (pts, equipo, False)
+        
+        for puesto_canonico, label in POSICIONES.items():
+            if puesto_canonico in found:
+                pts, equipo, hit = found[puesto_canonico]
+            else:
+                pts = 0
+                equipo = "?"
+                hit = False
+            items.append({
+                "label": label,
+                "puntos": pts,
+                "equipo": equipo,
+                "hit": hit,
+            })
+        desglose["finales"] = {"items": items, "subtotal": puntajes.get("finales", 0)}
+    
+    return desglose
+
+
 # ── Scoring principal ──────────────────────────────────────────────
 
 def _normalizar_datos_polla(data: dict) -> dict:
@@ -318,6 +420,9 @@ def calificar_polla(polla: dict, real: dict) -> dict:
     total += pts
     
     resultado["puntajes"]["total"] = total
+    
+    # Desglose
+    resultado["desglose"] = _computar_desglose(resultado["puntajes"], resultado["detalle"])
     
     return resultado
 

@@ -393,6 +393,12 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
 .bt-hit .bt-pts { color: var(--green); }
 .bt-miss { background: rgba(220,38,38,0.03); }
 .bt-miss .bt-pts { color: var(--red); }
+/* 16avos tiene columnas propias: Slot Predicción Real Eq Pos Puesto Tot */
+.bt-r16 { grid-template-columns: 44px 1fr 1fr 24px 24px 1fr 24px !important; }
+.bt-r16 .bt-pts { font-size: 0.55rem; }
+.bt-r16 .bt-pred { font-size: 0.58rem; }
+.bt-r16 .bt-real { font-size: 0.58rem; }
+.bt-r16 .bt-puesto { text-align: center; font-size: 0.55rem; color: var(--muted); font-weight: 400; }
 .modal-bracket {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
@@ -468,6 +474,48 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
   height: 100%; border-radius: 5px;
   background: linear-gradient(90deg, var(--teal), var(--navy));
   transition: width 0.5s;
+}
+/* Desglose de puntos */
+.modal-desglose {
+  background: #fff;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+}
+.dg-round {
+  margin-bottom: 10px;
+}
+.dg-header {
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: #1a3a5c;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 2px;
+}
+.dg-item {
+  font-size: 0.7rem;
+  padding: 2px 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.dg-icon {
+  width: 14px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.dg-label {
+  font-weight: 500;
+}
+.dg-team {
+  font-style: italic;
+}
+.dg-pts {
+  font-weight: 700;
+}
+.dg-count {
+  font-weight: 700;
 }
 /* Compare table */
 .modal-compare {
