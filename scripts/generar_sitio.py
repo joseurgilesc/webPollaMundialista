@@ -1207,7 +1207,13 @@ function verPolla(ref) {{
         html += '<div class="mg-real"><small>Real</small>';
         Object.entries(REALES.grupos[g]).sort((a,b)=>(a[1]||99)-(b[1]||99)).forEach(([eq, pos]) => {{
           const color2 = pos==1?'#c0392b':pos==2?'#1a6fb5':pos==3?'#888':'#aaa';
-          html += '<div style="color:'+color2+'">'+(pos||'?')+'° '+eq+'</div>';
+          let statsStr = '';
+          const s = REALES._stats && REALES._stats[g] && REALES._stats[g][eq];
+          if (s) {{
+            const gd = s.gf - s.ga;
+            statsStr = ' <span style="font-weight:400;color:#555">' + s.pts + 'pts / ' + s.gf + '-' + s.ga + ' (' + (gd>0?'+':'') + gd + ')</span>';
+          }}
+          html += '<div style="color:'+color2+'">'+(pos||'?')+'° '+eq + statsStr +'</div>';
         }});
         html += '</div>';
       }}

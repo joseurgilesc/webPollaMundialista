@@ -1,5 +1,5 @@
 {
-  "_nota": "Datos desde worldcup26.ir — 6/32 equipos en 16avos",
+  "_nota": "Datos desde worldcup26.ir — 8/32 equipos en 16avos",
   "_stats": {
     "A": {
       "🇲🇽 MÉXICO": {
@@ -35,14 +35,14 @@
         "ga": 1
       },
       "🇶🇦 QATAR": {
-        "pts": 0,
-        "gf": 0,
-        "ga": 0
+        "pts": 1,
+        "gf": 1,
+        "ga": 1
       },
       "🇨🇭 SUIZA": {
-        "pts": 0,
-        "gf": 0,
-        "ga": 0
+        "pts": 1,
+        "gf": 1,
+        "ga": 1
       }
     },
     "D": {
@@ -56,46 +56,41 @@
         "gf": 1,
         "ga": 4
       },
+      "🇦🇺 AUSTRALIA": {
+        "pts": 3,
+        "gf": 2,
+        "ga": 0
+      },
       "🇹🇷 TURQUÍA": {
         "pts": 0,
         "gf": 0,
-        "ga": 0
-      },
-      "🇦🇺 AUSTRALIA": {
-        "pts": 0,
-        "gf": 0,
-        "ga": 0
+        "ga": 2
       }
     },
     "C": {
-      "🇲🇦 MARRUECOS": {
-        "pts": 0,
-        "gf": 0,
-        "ga": 0
-      },
       "🇭🇹 HAITÍ": {
         "pts": 0,
         "gf": 0,
-        "ga": 0
+        "ga": 1
       },
       "🏴󠁧󠁢󠁳󠁣󠁴󠁿 ESCOCIA": {
-        "pts": 0,
-        "gf": 0,
+        "pts": 3,
+        "gf": 1,
         "ga": 0
       },
       "🇧🇷 BRASIL": {
-        "pts": 0,
-        "gf": 0,
-        "ga": 0
+        "pts": 1,
+        "gf": 1,
+        "ga": 1
+      },
+      "🇲🇦 MARRUECOS": {
+        "pts": 1,
+        "gf": 1,
+        "ga": 1
       }
     },
     "E": {
       "🇪🇨 ECUADOR": {
-        "pts": 0,
-        "gf": 0,
-        "ga": 0
-      },
-      "CURAÇAO": {
         "pts": 0,
         "gf": 0,
         "ga": 0
@@ -106,6 +101,11 @@
         "ga": 0
       },
       "🇨🇮 COSTA DE MARFIL": {
+        "pts": 0,
+        "gf": 0,
+        "ga": 0
+      },
+      "CURAÇAO": {
         "pts": 0,
         "gf": 0,
         "ga": 0
@@ -122,23 +122,18 @@
         "gf": 0,
         "ga": 0
       },
-      "🇸🇪 SUECIA": {
+      "🇹🇳 TÚNEZ": {
         "pts": 0,
         "gf": 0,
         "ga": 0
       },
-      "🇹🇳 TÚNEZ": {
+      "🇸🇪 SUECIA": {
         "pts": 0,
         "gf": 0,
         "ga": 0
       }
     },
     "G": {
-      "🇮🇷 IRÁN": {
-        "pts": 0,
-        "gf": 0,
-        "ga": 0
-      },
       "🇳🇿 NUEVA ZELANDA": {
         "pts": 0,
         "gf": 0,
@@ -150,6 +145,11 @@
         "ga": 0
       },
       "🇪🇬 EGIPTO": {
+        "pts": 0,
+        "gf": 0,
+        "ga": 0
+      },
+      "🇮🇷 IRÁN": {
         "pts": 0,
         "gf": 0,
         "ga": 0
@@ -166,19 +166,19 @@
         "gf": 0,
         "ga": 0
       },
-      "🇨🇻 CABO VERDE": {
+      "🇸🇦 ARABIA SAUDÍ": {
         "pts": 0,
         "gf": 0,
         "ga": 0
       },
-      "🇸🇦 ARABIA SAUDÍ": {
+      "🇨🇻 CABO VERDE": {
         "pts": 0,
         "gf": 0,
         "ga": 0
       }
     },
     "I": {
-      "🇸🇳 SENEGAL": {
+      "🇮🇶 IRAK": {
         "pts": 0,
         "gf": 0,
         "ga": 0
@@ -193,29 +193,29 @@
         "gf": 0,
         "ga": 0
       },
-      "🇮🇶 IRAK": {
+      "🇸🇳 SENEGAL": {
         "pts": 0,
         "gf": 0,
         "ga": 0
       }
     },
     "J": {
-      "🇦🇷 ARGENTINA": {
-        "pts": 0,
-        "gf": 0,
-        "ga": 0
-      },
-      "🇯🇴 JORDANIA": {
-        "pts": 0,
-        "gf": 0,
-        "ga": 0
-      },
       "🇩🇿 ARGELIA": {
         "pts": 0,
         "gf": 0,
         "ga": 0
       },
+      "🇦🇷 ARGENTINA": {
+        "pts": 0,
+        "gf": 0,
+        "ga": 0
+      },
       "🇦🇹 AUSTRIA": {
+        "pts": 0,
+        "gf": 0,
+        "ga": 0
+      },
+      "🇯🇴 JORDANIA": {
         "pts": 0,
         "gf": 0,
         "ga": 0
@@ -227,12 +227,12 @@
         "gf": 0,
         "ga": 0
       },
-      "🇨🇴 COLOMBIA": {
+      "🇺🇿 UZBEKISTÁN": {
         "pts": 0,
         "gf": 0,
         "ga": 0
       },
-      "🇺🇿 UZBEKISTÁN": {
+      "🇨🇴 COLOMBIA": {
         "pts": 0,
         "gf": 0,
         "ga": 0
@@ -244,12 +244,12 @@
       }
     },
     "L": {
-      "🇬🇭 GHANA": {
+      "🇬🇧 INGLATERRA": {
         "pts": 0,
         "gf": 0,
         "ga": 0
       },
-      "🇬🇧 INGLATERRA": {
+      "🇭🇷 CROACIA": {
         "pts": 0,
         "gf": 0,
         "ga": 0
@@ -259,7 +259,7 @@
         "gf": 0,
         "ga": 0
       },
-      "🇭🇷 CROACIA": {
+      "🇬🇭 GHANA": {
         "pts": 0,
         "gf": 0,
         "ga": 0
@@ -274,70 +274,70 @@
       "🇿🇦 SUDÁFRICA": 4
     },
     "B": {
-      "🇧🇦 BOSNIA Y HERZEGOVINA": 1,
+      "🇶🇦 QATAR": 1,
       "🇨🇦 CANADÁ": 2,
-      "🇶🇦 QATAR": 3,
-      "🇨🇭 SUIZA": 4
+      "🇨🇭 SUIZA": 3,
+      "🇧🇦 BOSNIA Y HERZEGOVINA": 4
     },
     "D": {
       "🇺🇸 ESTADOS UNIDOS": 1,
-      "🇹🇷 TURQUÍA": 2,
-      "🇦🇺 AUSTRALIA": 3,
+      "🇦🇺 AUSTRALIA": 2,
+      "🇹🇷 TURQUÍA": 3,
       "🇵🇾 PARAGUAY": 4
     },
     "C": {
-      "🇲🇦 MARRUECOS": 0,
-      "🇭🇹 HAITÍ": 0,
-      "🏴󠁧󠁢󠁳󠁣󠁴󠁿 ESCOCIA": 0,
-      "🇧🇷 BRASIL": 0
+      "🏴󠁧󠁢󠁳󠁣󠁴󠁿 ESCOCIA": 1,
+      "🇲🇦 MARRUECOS": 2,
+      "🇧🇷 BRASIL": 3,
+      "🇭🇹 HAITÍ": 4
     },
     "E": {
       "🇪🇨 ECUADOR": 0,
-      "CURAÇAO": 0,
       "🇩🇪 ALEMANIA": 0,
-      "🇨🇮 COSTA DE MARFIL": 0
+      "🇨🇮 COSTA DE MARFIL": 0,
+      "CURAÇAO": 0
     },
     "F": {
       "🇯🇵 JAPÓN": 0,
       "🇳🇱 HOLANDA": 0,
-      "🇸🇪 SUECIA": 0,
-      "🇹🇳 TÚNEZ": 0
+      "🇹🇳 TÚNEZ": 0,
+      "🇸🇪 SUECIA": 0
     },
     "G": {
-      "🇮🇷 IRÁN": 0,
       "🇳🇿 NUEVA ZELANDA": 0,
       "🇧🇪 BÉLGICA": 0,
-      "🇪🇬 EGIPTO": 0
+      "🇪🇬 EGIPTO": 0,
+      "🇮🇷 IRÁN": 0
     },
     "H": {
       "🇪🇸 ESPAÑA": 0,
       "🇺🇾 URUGUAY": 0,
-      "🇨🇻 CABO VERDE": 0,
-      "🇸🇦 ARABIA SAUDÍ": 0
+      "🇸🇦 ARABIA SAUDÍ": 0,
+      "🇨🇻 CABO VERDE": 0
     },
     "I": {
-      "🇸🇳 SENEGAL": 0,
+      "🇮🇶 IRAK": 0,
       "🇫🇷 FRANCIA": 0,
       "🇳🇴 NORUEGA": 0,
-      "🇮🇶 IRAK": 0
+      "🇸🇳 SENEGAL": 0
     },
     "J": {
-      "🇦🇷 ARGENTINA": 0,
-      "🇯🇴 JORDANIA": 0,
       "🇩🇿 ARGELIA": 0,
-      "🇦🇹 AUSTRIA": 0
+      "🇦🇷 ARGENTINA": 0,
+      "🇦🇹 AUSTRIA": 0,
+      "🇯🇴 JORDANIA": 0
     },
     "K": {
       "DEMOCRATIC REPUBLIC OF THE CONGO": 0,
-      "🇨🇴 COLOMBIA": 0,
       "🇺🇿 UZBEKISTÁN": 0,
+      "🇨🇴 COLOMBIA": 0,
       "🇵🇹 PORTUGAL": 0
     },
     "L": {
-      "🇬🇭 GHANA": 0,
       "🇬🇧 INGLATERRA": 0,
+      "🇭🇷 CROACIA": 0,
       "🇵🇦 PANAMÁ": 0,
-      "🇭🇷 CROACIA": 0
+      "🇬🇭 GHANA": 0
     }
   },
   "ronda_16avos": [
@@ -371,7 +371,7 @@
     },
     {
       "slot": "2C",
-      "equipo": ""
+      "equipo": "🇲🇦 MARRUECOS"
     },
     {
       "slot": "2K",
@@ -407,7 +407,7 @@
     },
     {
       "slot": "1C",
-      "equipo": ""
+      "equipo": "🏴󠁧󠁢󠁳󠁣󠁴󠁿 ESCOCIA"
     },
     {
       "slot": "2F",
@@ -447,7 +447,7 @@
     },
     {
       "slot": "2D",
-      "equipo": "🇹🇷 TURQUÍA"
+      "equipo": "🇦🇺 AUSTRALIA"
     },
     {
       "slot": "2G",
@@ -455,7 +455,7 @@
     },
     {
       "slot": "1B",
-      "equipo": "🇧🇦 BOSNIA Y HERZEGOVINA"
+      "equipo": "🇶🇦 QATAR"
     },
     {
       "slot": "3 EFGIJ",
