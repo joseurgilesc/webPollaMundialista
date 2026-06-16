@@ -401,8 +401,11 @@ footer {{ text-align: center; padding: 24px; color: var(--muted); font-size: 0.7
 /* Grupos */
 .modal-grupos {{
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 8px; margin-bottom: 16px;
+}}
+@media (max-width: 500px) {{
+  .modal-grupos {{ grid-template-columns: 1fr; }}
 }}
 .modal-grupo {{
   background: #f8fafc; border-radius: 8px; padding: 10px;
@@ -410,6 +413,35 @@ footer {{ text-align: center; padding: 24px; color: var(--muted); font-size: 0.7
 }}
 .modal-grupo strong {{ font-size: 0.72rem; color: var(--navy); }}
 .modal-grupo div {{ font-size: 0.68rem; margin-top: 2px; }}
+.modal-grupo .stats-table {{
+  font-size: 0.65rem;
+  width: 100%;
+  margin-top: 4px;
+  border-collapse: collapse;
+  table-layout: fixed;
+}}
+.modal-grupo .stats-table th {{
+  font-size: 0.5rem;
+  padding: 2px 1px 1px 1px;
+  text-align: center;
+  color: var(--muted);
+  font-weight: 700;
+  border-bottom: 1px solid var(--card-border);
+  letter-spacing: 0.02em;
+}}
+.modal-grupo .stats-table td {{
+  padding: 1px 0;
+  text-align: center;
+  border-bottom: none;
+  font-size: 0.6rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}}
+.modal-grupo .stats-table td:first-child {{ width: 14px; padding-left: 2px; }}
+.modal-grupo .stats-table td:nth-child(2) {{ text-align: left; font-weight: 600; }}
+.modal-grupo .stats-table th:first-child {{ width: 14px; text-align: left; padding-left: 2px; }}
 .mg-pred, .mg-real {{ margin-top: 4px; }}
 .mg-pred small, .mg-real small {{
   display: block;
@@ -859,7 +891,7 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
     <div>
       <div class="stat-label" style="margin-bottom:2px;">ACUMULADO</div>
       <div class="monto">${acumulado:,}</div>
-      <div style="font-size:0.65rem;color:#c0392b;margin-top:2px;">⚠️ Puntajes provisionales — solo Grupo A jugado</div>
+      <div style="font-size:0.65rem;color:#c0392b;margin-top:2px;">⚠️ Puntajes provisionales — grupos A-H jugados, terceros pendientes de definir</div>
     </div>
     <div class="info" style="margin-left:auto;">
       {total_pollas} pollas<br>
@@ -1103,7 +1135,7 @@ function verPolla(ref) {{
     if (!entries.length) return;
     html += '<h5 style=\"color:var(--navy);font-size:0.7rem;margin:8px 0 4px;\">⚽ '+label+'</h5>';
     if (is16avos) {{
-      html += '<div class=\"bracket-table\"><div class=\"bt-header bt-r16\"><span>Slot</span><span>Predicción</span><span>Real</span><span>Eq</span><span>Pos</span><span>Puesto</span><span>Tot</span></div>';
+      html += '<div class="bracket-table"><div class="bt-header bt-r16"><span>Slot</span><span>Predicción</span><span>Real</span><span>Eq</span><span>Pos</span><span>Puesto</span><span>Tot</span></div>';
     }} else {{
       html += '<div class=\"bracket-table\"><div class=\"bt-header\"><span>'+(showSlot?'Slot':'#')+'</span><span>Predicción</span><span></span><span>Real</span><span>Clasif</span><span>Pos</span><span>Tot</span></div>';
     }}
@@ -1132,7 +1164,7 @@ function verPolla(ref) {{
         const nreq = realSlotEntry ? normEq(realSlotEntry.equipo) : '';
 
         // Extraer posición del slot (ej: "1A" → grupo "A", pos "1°")
-        const posMatch = slot.match(/^(\d)([A-Z])$/);
+        const posMatch = slot.match(/^([0-9])([A-Z])$/);
         let predPuesto = '';
         let realPuesto = '';
         let eqPts = 0, posPts = 0, totPts = 0;
@@ -1144,7 +1176,7 @@ function verPolla(ref) {{
           // Buscar en qué slot real está y qué grupo
           if (realSlotEntry) {{
             const realSlot = realSlotEntry.slot || '';
-            const rsMatch = realSlot.match(/^(\d)([A-Z])$/);
+            const rsMatch = realSlot.match(/^([0-9])([A-Z])$/);
             if (rsMatch) {{
               realPuesto = rsMatch[1] + '°';
             }}
@@ -1166,7 +1198,10 @@ function verPolla(ref) {{
           predPuesto = posMatch[1] + '°';
         }}
         
-        html += '<div class=\"bt-row bt-r16 '+clsClass+'\"><span class=\"bt-slot\">'+slot+'</span><span class=\"bt-pred\">'+eq+'</span><span class=\"bt-real\">'+(realSlotEntry?realSlotEntry.equipo:'—')+'</span><span class=\"bt-pts\">'+(eqPts?'+'+eqPts:'0')+'</span><span class=\"bt-pts\">'+(posPts?'+'+posPts:'0')+'</span><span class=\"bt-puesto\">'+predPuesto+(realPuesto?'→'+realPuesto:'')+'</span><span class=\"bt-pts\" style=\"font-weight:700\">'+(totPts?'+'+totPts:'0')+'</span></div>';
+        // Equipo real de ESTE slot (no del equipo predicho)
+        const realForThisSlot = realEntries.find(r => r.slot === e.slot);
+        const realEquipo = realForThisSlot?.equipo || '—';
+        html += '<div class="bt-row bt-r16 '+clsClass+'"><span class="bt-slot">'+slot+'</span><span class="bt-pred">'+eq+'</span><span class="bt-real">'+realEquipo+'</span><span class="bt-pts">'+(eqPts?'+'+eqPts:'0')+'</span><span class="bt-pts">'+(posPts?'+'+posPts:'0')+'</span><span class="bt-puesto">'+predPuesto+(realPuesto?'→'+realPuesto:'')+'</span><span class="bt-pts" style="font-weight:700">'+(totPts?'+'+totPts:'0')+'</span></div>';
       }} else {{
         // ── Vista por defecto (8avos, cuartos, etc) ──
         let ptsClasif = '', ptsPos = '', ptsTot = '', cls = '';
@@ -1205,16 +1240,23 @@ function verPolla(ref) {{
       html += '</div>';
       if (REALES && REALES.grupos && REALES.grupos[g]) {{
         html += '<div class="mg-real"><small>Real</small>';
+        // Tabla de stats: PTS | GF | GA | GD
+        html += '<table class="stats-table"><thead><tr><th style="text-align:left;padding-left:2px">#</th><th style="text-align:left">Eq</th><th>PTS</th><th>GF</th><th>GA</th><th>GD</th></tr></thead><tbody>';
         Object.entries(REALES.grupos[g]).sort((a,b)=>(a[1]||99)-(b[1]||99)).forEach(([eq, pos]) => {{
           const color2 = pos==1?'#c0392b':pos==2?'#1a6fb5':pos==3?'#888':'#aaa';
-          let statsStr = '';
           const s = REALES._stats && REALES._stats[g] && REALES._stats[g][eq];
+          let ptsTd = '', gfTd = '', gaTd = '', gdTd = '';
           if (s) {{
             const gd = s.gf - s.ga;
-            statsStr = ' <span style="font-weight:400;color:#555">' + s.pts + 'pts / ' + s.gf + '-' + s.ga + ' (' + (gd>0?'+':'') + gd + ')</span>';
+            const gdStr = (gd>0?'+':'') + gd;
+            ptsTd = s.pts;
+            gfTd = s.gf;
+            gaTd = s.ga;
+            gdTd = gdStr;
           }}
-          html += '<div style="color:'+color2+'">'+(pos||'?')+'° '+eq + statsStr +'</div>';
+          html += '<tr><td style="color:'+color2+';padding-left:2px">'+(pos||'?')+'°</td><td style="color:'+color2+';text-align:left;font-weight:600">'+eq+'</td><td>'+ptsTd+'</td><td>'+gfTd+'</td><td>'+gaTd+'</td><td>'+gdTd+'</td></tr>';
         }});
+        html += '</tbody></table>';
         html += '</div>';
       }}
       html += '</div>';
@@ -1548,7 +1590,7 @@ function renderPending() {{
 }}
 
 function fillNombre(sel) {{
-  const name = sel.value.replace(/Polla Mundialista /i,'').replace(/Final \\d /i,'').replace(/\\.(pdf|jpg|jpeg)$/i,'').trim();
+  const name = sel.value.replace(/Polla Mundialista /i,'').replace(/Final [0-9] /i,'').replace(/\\.(pdf|jpg|jpeg)$/i,'').trim();
   document.getElementById('txNombre').value = name || '';
 }}
 

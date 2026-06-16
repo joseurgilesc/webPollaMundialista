@@ -124,49 +124,165 @@ def build_results_from_api():
             stats[(grp, hid)]["pts"] += 1
             stats[(grp, aid)]["pts"] += 1
     
-    # Construir grupos_result desde partidos
+    # ── Head-to-Head calculator ──
+    def _h2h_scores(grp, tids_pool, team_list_raw):
+        """Calcula H2H pts, GD, GF entre tids_pool.
+        
+        team_list_raw: lista de (tid, pts, gd, gf) para el grupo completo
+        (necesaria porque el H2H incluye SOLO partidos entre los empatados).
+        """
+        h2h = {tid: {"pts": 0, "gf": 0, "ga": 0} for tid in tids_pool}
+        for m in gm:
+            if m.get("type") != "group" or m.get("group") != grp:
+                continue
+            if m.get("finished") != "TRUE":
+                continue
+            hid = str(m.get("home_team_id", ""))
+            aid = str(m.get("away_team_id", ""))
+            if hid not in tids_pool or aid not in tids_pool:
+                continue  # No es partido entre empatados
+            hs = int(m.get("home_score", 0) or 0)
+            aw = int(m.get("away_score", 0) or 0)
+            h2h[hid]["gf"] += hs
+            h2h[hid]["ga"] += aw
+            h2h[aid]["gf"] += aw
+            h2h[aid]["ga"] += hs
+            if hs > aw:
+                h2h[hid]["pts"] += 3
+            elif aw > hs:
+                h2h[aid]["pts"] += 3
+            else:
+                h2h[hid]["pts"] += 1
+                h2h[aid]["pts"] += 1
+        return h2h
+
+    def _fifa_sort_key(item):
+        """Retorna tupla para orden FIFA: pts, gd, gf (negativo = descendente).
+        El H2H se resuelve por fuera con grouping."""
+        tid, pts, gd, gf = item
+        return (-pts, -gd, -gf)
+
+    def _sort_group(grp, tids, has_finished):
+        """Ordena equipos de un grupo usando criterios FIFA completos.
+        Devuelve lista de (tid, rank) ordenada.
+        Si hay empates no resolubles, pregunta en consola."""
+        if not has_finished:
+            return [(tid, 0) for tid in tids]
+        
+        # Lista base
+        team_list = []
+        for tid in tids:
+            s = stats[(grp, tid)]
+            team_list.append([tid, s["pts"], s["gf"] - s["ga"], s["gf"]])
+        
+        # Paso 1: orden por FIFA criteria 1-3 (PTS > GD > GF)
+        team_list.sort(key=_fifa_sort_key)
+        
+        # Paso 2: resolver empates con H2H (FIFA criteria 4-6)
+        # Agrupar por tupla (pts, gd, gf) — los que empatan en 1-3
+        from itertools import groupby
+        resolved = []
+        for _, tie_group in groupby(team_list, key=lambda x: (x[1], x[2], x[3])):
+            tie_group = list(tie_group)
+            if len(tie_group) <= 1:
+                resolved.extend(tie_group)
+                continue
+            
+            # Hay empate — calcular H2H entre estos equipos
+            tied_tids = [t[0] for t in tie_group]
+            h2h = _h2h_scores(grp, tied_tids, team_list)
+            
+            # Ordenar por H2H (pts > GD > GF)
+            def _h2h_key(t):
+                tid = t[0]
+                h = h2h[tid]
+                return (-h["pts"], -(h["gf"] - h["ga"]), -h["gf"])
+            
+            tie_group.sort(key=_h2h_key)
+            
+            # Verificar si H2H resolvió completamente
+            h2h_sorted = [h2h[t[0]] for t in tie_group]
+            h2h_unique = set(
+                (h["pts"], h["gf"] - h["ga"], h["gf"])
+                for h in h2h_sorted
+            )
+            
+            if len(h2h_unique) == len(tie_group):
+                # H2H resolvió completamente
+                resolved.extend(tie_group)
+            else:
+                # H2H no resolvió — queda fair play / sorteo
+                print(f"\n  ⚠️  Empate no resoluble en Grupo {grp}:")
+                for t in tie_group:
+                    name = id_name.get(t[0], f"Team {t[0]}")
+                    h = h2h[t[0]]
+                    print(f"      {name} — PTS={t[1]} GD={t[2]} GF={t[3]} | H2H: {h['pts']}pts ({h['gf']}-{h['ga']})")
+                print(f"\n  🔗 Revisá https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/standings")
+                print(f"     y ajustá el orden manualmente.\n")
+                print(f"  Ingresá el orden de estos {len(tie_group)} equipos (1=mejor, separados por coma):")
+                for i, t in enumerate(tie_group):
+                    print(f"    {i+1}. {id_name.get(t[0], f'Team {t[0]}')}")
+                while True:
+                    try:
+                        inp = input("    Orden (ej: 2,1,3,4): ").strip()
+                        indices = [int(x.strip()) for x in inp.split(",")]
+                        if sorted(indices) == list(range(1, len(tie_group)+1)):
+                            tie_group = [tie_group[i-1] for i in indices]
+                            break
+                        else:
+                            print(f"    ❌ Debés ingresar números del 1 al {len(tie_group)} en algún orden")
+                    except (ValueError, IndexError):
+                        print(f"    ❌ Formato inválido. Usá números del 1 al {len(tie_group)} separados por coma")
+                resolved.extend(tie_group)
+        
+        # Asignar ranks (manejar empates en PTS/GD/GF que H2H no separó del todo)
+        # Si H2H asignó ranks diferentes, usarlos
+        result = []
+        for rank, (tid, pts, gd, gf) in enumerate(resolved, 1):
+            result.append((tid, rank))
+        return result
+
+    # ── Build group results ──
     grupos_result = {}
     grupos_activos = set()
     
     for grp, tids in group_teams.items():
-        # Ver si hay partidos terminados en este grupo
         has_finished = any(stats[(grp, tid)]["played"] > 0 for tid in tids)
         if has_finished:
             grupos_activos.add(grp)
         
-        # Ordenar equipos
-        team_list = []
-        for tid in tids:
-            s = stats[(grp, tid)]
-            team_list.append((tid, s["pts"], s["gf"] - s["ga"], s["gf"]))
-        
-        team_list.sort(key=lambda x: (-x[1], -x[2], -x[3]))
+        ranked = _sort_group(grp, tids, has_finished)
         
         equipos = {}
-        for rank, (tid, pts, gd, gf) in enumerate(team_list, 1):
+        for tid, rank in ranked:
             name = id_name.get(tid, f"Team {tid}")
-            if has_finished:
-                equipos[name] = rank
-            else:
-                equipos[name] = 0
+            equipos[name] = rank
         grupos_result[grp] = equipos
     
     # Contar partidos terminados
     total_finished = sum(1 for m in gm if m.get("finished") == "TRUE" and m.get("type") == "group")
     print(f"  ⚽ Partidos de grupo terminados: {total_finished}/72")
     
-    # ── Mejores terceros (solo grupos activos) ──
+    # ── Mejores terceros (solo grupos activos) usando MISMO motor FIFA ──
     terceros = []
-    for g in gl:
-        letra = g.get("name","")
-        if letra not in grupos_activos:
-            continue
-        entries = sorted(g.get("teams",[]), key=lambda e: (-int(e.get("pts",0)), -(int(e.get("gf",0))-int(e.get("ga",0)))))
-        if len(entries) >= 3:
-            e3 = entries[2]
-            terceros.append((letra, int(e3.get("pts",0)), int(e3.get("gf",0))-int(e3.get("ga",0)), id_name.get(str(e3.get("team_id","")), "?")))
+    for grp_letra in sorted(grupos_result.keys()):
+        # grupos_result ya tiene el orden FIFA completo (con H2H y pregunta manual)
+        ranked = list(grupos_result[grp_letra].items())  # [(name, rank), ...]
+        if len(ranked) >= 3:
+            eq_name = ranked[2][0]  # 3° lugar (index 2)
+            # Obtener stats directamente
+            s = stats.get((grp_letra, None), {})
+            # Buscar tid para este equipo
+            tid = None
+            for k, v in id_name.items():
+                if v == eq_name:
+                    tid = k
+                    break
+            if tid:
+                ss = stats[(grp_letra, tid)]
+                terceros.append((grp_letra, ss["pts"], ss["gf"] - ss["ga"], eq_name))
     
-    # Top 8 terceros
+    # Top 8 terceros (usando FIFA: PTS > GD > GF, y si empata → H2H no aplica entre grupos)
     terceros.sort(key=lambda x: (-x[1], -x[2]))
     terceros_clasificados = {t[0] for t in terceros[:8]}
     
