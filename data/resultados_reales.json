@@ -328,16 +328,16 @@
       "🇩🇿 ARGELIA": 4
     },
     "K": {
-      "🇵🇹 PORTUGAL": 1,
-      "🇨🇩 REP. CONGO": 2,
-      "🇺🇿 UZBEKISTÁN": 3,
-      "🇨🇴 COLOMBIA": 4
+      "🇵🇹 PORTUGAL": 0,
+      "🇨🇩 REP. CONGO": 0,
+      "🇺🇿 UZBEKISTÁN": 0,
+      "🇨🇴 COLOMBIA": 0
     },
     "L": {
-      "🇬🇧 INGLATERRA": 1,
-      "🇭🇷 CROACIA": 2,
-      "🇬🇭 GHANA": 3,
-      "🇵🇦 PANAMÁ": 4
+      "🇬🇧 INGLATERRA": 0,
+      "🇭🇷 CROACIA": 0,
+      "🇬🇭 GHANA": 0,
+      "🇵🇦 PANAMÁ": 0
     }
   },
   "ronda_16avos": [
@@ -375,11 +375,11 @@
     },
     {
       "slot": "2K",
-      "equipo": "🇨🇩 REP. CONGO"
+      "equipo": ""
     },
     {
       "slot": "2L",
-      "equipo": "🇭🇷 CROACIA"
+      "equipo": ""
     },
     {
       "slot": "1H",
@@ -431,7 +431,7 @@
     },
     {
       "slot": "1L",
-      "equipo": "🇬🇧 INGLATERRA"
+      "equipo": ""
     },
     {
       "slot": "3 EHIJK",
@@ -463,7 +463,7 @@
     },
     {
       "slot": "1K",
-      "equipo": "🇵🇹 PORTUGAL"
+      "equipo": ""
     },
     {
       "slot": "3 DEIJL",
