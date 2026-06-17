@@ -812,9 +812,9 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
         p = r["puntajes"]
         total_pts = p["total"]
         
-        # Calcular posición real (competition ranking: 1,1,1,4,5...)
+        # Posición (densified: 1,1,1,2,3...)
         if total_pts != last_total:
-            rank_display = i + 1
+            rank_display += 1
             last_total = total_pts
         
         nombre = normalizar_nombre(r["participante"])
