@@ -821,12 +821,7 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
         letra = r.get("polla_letra", "A")
         mostrar_letra = pollas_por_nombre.get(r["participante"], 1) > 1
         
-        # Medallas solo si hay puntajes reales y es posición real distinta
         medalla = ""
-        if hay_puntajes:
-            if rank_display == 1: medalla = "🥇"
-            elif rank_display == 2: medalla = "🥈"
-            elif rank_display == 3: medalla = "🥉"
         
         clase = ""
         if hay_puntajes:
