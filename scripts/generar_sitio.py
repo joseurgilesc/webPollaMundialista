@@ -1259,6 +1259,12 @@ function verPolla(ref) {{
     html += '</div></div>';
   }}
   
+  // ── Nota sobre terceros ──
+  html += '<div style="font-size:0.6rem;color:var(--muted);padding:8px;margin:8px 0 0;border-top:1px solid var(--card-border);">';
+  html += 'ℹ️ Los 8 mejores terceros se asignan a los slots vacíos de 16avos según el ranking FIFA (PTS > GD > GF). ';
+  html += 'La posición de estos equipos es provisional hasta que se definan los cruces oficiales.';
+  html += '</div>';
+  
   html += '</div>';
   document.getElementById('modalBody').innerHTML = html;
   document.getElementById('modal').classList.remove('hidden');
