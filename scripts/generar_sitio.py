@@ -1261,8 +1261,9 @@ function verPolla(ref) {{
   
   // ── Nota sobre terceros ──
   html += '<div style="font-size:0.6rem;color:var(--muted);padding:8px;margin:8px 0 0;border-top:1px solid var(--card-border);">';
-  html += 'ℹ️ Los 8 mejores terceros se asignan a los slots vacíos de 16avos según el ranking FIFA (PTS > GD > GF). ';
-  html += 'La posición de estos equipos es provisional hasta que se definan los cruces oficiales.';
+  html += 'ℹ️ Terceros que clasifican: Países Bajos (F), Catar (B), Brasil (C), Bélgica (G), Portugal (K), España (H), Rep. Checa (A), Ecuador (E). ';
+  html += 'Eliminados: Panamá (L), Turquía (D), Senegal (I), Jordania (J). ';
+  html += 'La posición de los terceros es provisional hasta los cruces oficiales.';
   html += '</div>';
   
   html += '</div>';
