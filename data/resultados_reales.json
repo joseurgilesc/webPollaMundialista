@@ -1,5 +1,5 @@
 {
-  "_nota": "⚠️ Puntajes provisionales — grupos A-J definidos, K-L y terceros pendientes",
+  "_nota": "🏆 16avos definidos — todos los grupos jugados, terceros incluidos",
   "_stats": {
     "A": {
       "🇲🇽 MÉXICO": {
@@ -222,47 +222,47 @@
       }
     },
     "K": {
-      "🇵🇹 PORTUGAL": {
-        "pts": 0,
-        "gf": 0,
+      "🇨🇴 COLOMBIA": {
+        "pts": 3,
+        "gf": 2,
         "ga": 0
       },
       "🇨🇩 REP. CONGO": {
-        "pts": 0,
+        "pts": 1,
         "gf": 0,
         "ga": 0
+      },
+      "🇵🇹 PORTUGAL": {
+        "pts": 1,
+        "gf": 1,
+        "ga": 1
       },
       "🇺🇿 UZBEKISTÁN": {
         "pts": 0,
         "gf": 0,
-        "ga": 0
-      },
-      "🇨🇴 COLOMBIA": {
-        "pts": 0,
-        "gf": 0,
-        "ga": 0
+        "ga": 2
       }
     },
     "L": {
       "🇬🇧 INGLATERRA": {
-        "pts": 0,
-        "gf": 0,
-        "ga": 0
-      },
-      "🇭🇷 CROACIA": {
-        "pts": 0,
-        "gf": 0,
+        "pts": 3,
+        "gf": 2,
         "ga": 0
       },
       "🇬🇭 GHANA": {
-        "pts": 0,
-        "gf": 0,
+        "pts": 3,
+        "gf": 1,
         "ga": 0
       },
       "🇵🇦 PANAMÁ": {
         "pts": 0,
         "gf": 0,
-        "ga": 0
+        "ga": 1
+      },
+      "🇭🇷 CROACIA": {
+        "pts": 0,
+        "gf": 0,
+        "ga": 2
       }
     }
   },
@@ -328,16 +328,16 @@
       "🇩🇿 ARGELIA": 4
     },
     "K": {
-      "🇵🇹 PORTUGAL": 0,
-      "🇨🇩 REP. CONGO": 0,
-      "🇺🇿 UZBEKISTÁN": 0,
-      "🇨🇴 COLOMBIA": 0
+      "🇨🇴 COLOMBIA": 1,
+      "🇨🇩 REP. CONGO": 2,
+      "🇵🇹 PORTUGAL": 3,
+      "🇺🇿 UZBEKISTÁN": 4
     },
     "L": {
-      "🇬🇧 INGLATERRA": 0,
-      "🇭🇷 CROACIA": 0,
-      "🇬🇭 GHANA": 0,
-      "🇵🇦 PANAMÁ": 0
+      "🇬🇧 INGLATERRA": 1,
+      "🇬🇭 GHANA": 2,
+      "🇵🇦 PANAMÁ": 3,
+      "🇭🇷 CROACIA": 4
     }
   },
   "ronda_16avos": [
@@ -347,7 +347,7 @@
     },
     {
       "slot": "3 ABCDF",
-      "equipo": ""
+      "equipo": "🇳🇱 HOLANDA"
     },
     {
       "slot": "1I",
@@ -355,7 +355,7 @@
     },
     {
       "slot": "3 CDFGH",
-      "equipo": ""
+      "equipo": "🇧🇷 BRASIL"
     },
     {
       "slot": "2A",
@@ -375,11 +375,11 @@
     },
     {
       "slot": "2K",
-      "equipo": ""
+      "equipo": "🇨🇩 REP. CONGO"
     },
     {
       "slot": "2L",
-      "equipo": ""
+      "equipo": "🇬🇭 GHANA"
     },
     {
       "slot": "1H",
@@ -395,7 +395,7 @@
     },
     {
       "slot": "3 BEFIJ",
-      "equipo": ""
+      "equipo": "🇶🇦 QATAR"
     },
     {
       "slot": "1G",
@@ -403,7 +403,7 @@
     },
     {
       "slot": "3 AEFHIJ",
-      "equipo": ""
+      "equipo": "🇨🇿 REP. CHECA"
     },
     {
       "slot": "1C",
@@ -427,15 +427,15 @@
     },
     {
       "slot": "3 CEFHI",
-      "equipo": ""
+      "equipo": "🇪🇸 ESPAÑA"
     },
     {
       "slot": "1L",
-      "equipo": ""
+      "equipo": "🇬🇧 INGLATERRA"
     },
     {
       "slot": "3 EHIJK",
-      "equipo": ""
+      "equipo": "🇵🇹 PORTUGAL"
     },
     {
       "slot": "1J",
@@ -459,15 +459,15 @@
     },
     {
       "slot": "3 EFGIJ",
-      "equipo": ""
+      "equipo": "🇧🇪 BÉLGICA"
     },
     {
       "slot": "1K",
-      "equipo": ""
+      "equipo": "🇨🇴 COLOMBIA"
     },
     {
       "slot": "3 DEIJL",
-      "equipo": ""
+      "equipo": "🇪🇨 ECUADOR"
     }
   ],
   "ronda_8avos": [],
