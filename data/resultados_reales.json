@@ -3,87 +3,87 @@
   "_stats": {
     "A": {
       "🇲🇽 MÉXICO": {
-        "pts": 3,
-        "gf": 2,
+        "pts": 6,
+        "gf": 3,
         "ga": 0
       },
       "🇰🇷 COREA DEL SUR": {
         "pts": 3,
         "gf": 2,
-        "ga": 1
+        "ga": 2
       },
       "🇨🇿 REP. CHECA": {
-        "pts": 0,
+        "pts": 1,
         "gf": 1,
         "ga": 2
       },
       "🇿🇦 SUDÁFRICA": {
-        "pts": 0,
+        "pts": 1,
         "gf": 0,
         "ga": 2
       }
     },
     "B": {
-      "🇨🇭 SUIZA": {
-        "pts": 1,
-        "gf": 1,
-        "ga": 1
-      },
       "🇨🇦 CANADÁ": {
-        "pts": 1,
-        "gf": 1,
+        "pts": 4,
+        "gf": 7,
         "ga": 1
       },
-      "🇶🇦 QATAR": {
-        "pts": 1,
-        "gf": 1,
+      "🇨🇭 SUIZA": {
+        "pts": 4,
+        "gf": 4,
         "ga": 1
       },
       "🇧🇦 BOSNIA Y HERZEGOVINA": {
         "pts": 1,
         "gf": 1,
-        "ga": 1
+        "ga": 4
+      },
+      "🇶🇦 QATAR": {
+        "pts": 1,
+        "gf": 1,
+        "ga": 7
       }
     },
     "C": {
-      "🏴󠁧󠁢󠁳󠁣󠁴󠁿 ESCOCIA": {
-        "pts": 3,
-        "gf": 1,
-        "ga": 0
-      },
-      "🇲🇦 MARRUECOS": {
-        "pts": 1,
-        "gf": 1,
+      "🇧🇷 BRASIL": {
+        "pts": 4,
+        "gf": 4,
         "ga": 1
       },
-      "🇧🇷 BRASIL": {
-        "pts": 1,
+      "🇲🇦 MARRUECOS": {
+        "pts": 4,
+        "gf": 2,
+        "ga": 1
+      },
+      "🏴󠁧󠁢󠁳󠁣󠁴󠁿 ESCOCIA": {
+        "pts": 3,
         "gf": 1,
         "ga": 1
       },
       "🇭🇹 HAITÍ": {
         "pts": 0,
         "gf": 0,
-        "ga": 1
+        "ga": 4
       }
     },
     "D": {
       "🇺🇸 ESTADOS UNIDOS": {
-        "pts": 3,
-        "gf": 4,
+        "pts": 6,
+        "gf": 6,
         "ga": 1
       },
       "🇦🇺 AUSTRALIA": {
         "pts": 3,
         "gf": 2,
-        "ga": 0
-      },
-      "🇹🇷 TURQUÍA": {
-        "pts": 0,
-        "gf": 0,
         "ga": 2
       },
       "🇵🇾 PARAGUAY": {
+        "pts": 3,
+        "gf": 2,
+        "ga": 4
+      },
+      "🇹🇷 TURQUÍA": {
         "pts": 0,
         "gf": 1,
         "ga": 4
@@ -91,38 +91,38 @@
     },
     "E": {
       "🇩🇪 ALEMANIA": {
-        "pts": 3,
-        "gf": 7,
+        "pts": 6,
+        "gf": 8,
         "ga": 1
       },
       "🇨🇮 COSTA DE MARFIL": {
         "pts": 3,
         "gf": 1,
-        "ga": 0
-      },
-      "🇪🇨 ECUADOR": {
-        "pts": 0,
-        "gf": 0,
         "ga": 1
       },
+      "🇪🇨 ECUADOR": {
+        "pts": 1,
+        "gf": 1,
+        "ga": 2
+      },
       "CURAÇAO": {
-        "pts": 0,
+        "pts": 1,
         "gf": 1,
         "ga": 7
       }
     },
     "F": {
-      "🇸🇪 SUECIA": {
-        "pts": 3,
+      "🇳🇱 HOLANDA": {
+        "pts": 4,
         "gf": 5,
         "ga": 1
       },
-      "🇯🇵 JAPÓN": {
-        "pts": 1,
-        "gf": 2,
-        "ga": 2
+      "🇸🇪 SUECIA": {
+        "pts": 3,
+        "gf": 3,
+        "ga": 3
       },
-      "🇳🇱 HOLANDA": {
+      "🇯🇵 JAPÓN": {
         "pts": 1,
         "gf": 2,
         "ga": 2
@@ -274,22 +274,22 @@
       "🇿🇦 SUDÁFRICA": 4
     },
     "B": {
-      "🇨🇭 SUIZA": 1,
-      "🇨🇦 CANADÁ": 2,
-      "🇶🇦 QATAR": 3,
-      "🇧🇦 BOSNIA Y HERZEGOVINA": 4
+      "🇨🇦 CANADÁ": 1,
+      "🇨🇭 SUIZA": 2,
+      "🇧🇦 BOSNIA Y HERZEGOVINA": 3,
+      "🇶🇦 QATAR": 4
     },
     "C": {
-      "🏴󠁧󠁢󠁳󠁣󠁴󠁿 ESCOCIA": 1,
+      "🇧🇷 BRASIL": 1,
       "🇲🇦 MARRUECOS": 2,
-      "🇧🇷 BRASIL": 3,
+      "🏴󠁧󠁢󠁳󠁣󠁴󠁿 ESCOCIA": 3,
       "🇭🇹 HAITÍ": 4
     },
     "D": {
       "🇺🇸 ESTADOS UNIDOS": 1,
       "🇦🇺 AUSTRALIA": 2,
-      "🇹🇷 TURQUÍA": 3,
-      "🇵🇾 PARAGUAY": 4
+      "🇵🇾 PARAGUAY": 3,
+      "🇹🇷 TURQUÍA": 4
     },
     "E": {
       "🇩🇪 ALEMANIA": 1,
@@ -298,9 +298,9 @@
       "CURAÇAO": 4
     },
     "F": {
-      "🇸🇪 SUECIA": 1,
-      "🇯🇵 JAPÓN": 2,
-      "🇳🇱 HOLANDA": 3,
+      "🇳🇱 HOLANDA": 1,
+      "🇸🇪 SUECIA": 2,
+      "🇯🇵 JAPÓN": 3,
       "🇹🇳 TÚNEZ": 4
     },
     "G": {
@@ -347,7 +347,7 @@
     },
     {
       "slot": "3 ABCDF",
-      "equipo": "🇳🇱 HOLANDA"
+      "equipo": "🏴󠁧󠁢󠁳󠁣󠁴󠁿 ESCOCIA"
     },
     {
       "slot": "1I",
@@ -355,7 +355,7 @@
     },
     {
       "slot": "3 CDFGH",
-      "equipo": "🇧🇷 BRASIL"
+      "equipo": "🇵🇾 PARAGUAY"
     },
     {
       "slot": "2A",
@@ -363,11 +363,11 @@
     },
     {
       "slot": "2B",
-      "equipo": "🇨🇦 CANADÁ"
+      "equipo": "🇨🇭 SUIZA"
     },
     {
       "slot": "1F",
-      "equipo": "🇸🇪 SUECIA"
+      "equipo": "🇳🇱 HOLANDA"
     },
     {
       "slot": "2C",
@@ -395,7 +395,7 @@
     },
     {
       "slot": "3 BEFIJ",
-      "equipo": "🇶🇦 QATAR"
+      "equipo": "🇯🇵 JAPÓN"
     },
     {
       "slot": "1G",
@@ -407,11 +407,11 @@
     },
     {
       "slot": "1C",
-      "equipo": "🏴󠁧󠁢󠁳󠁣󠁴󠁿 ESCOCIA"
+      "equipo": "🇧🇷 BRASIL"
     },
     {
       "slot": "2F",
-      "equipo": "🇯🇵 JAPÓN"
+      "equipo": "🇸🇪 SUECIA"
     },
     {
       "slot": "2E",
@@ -455,7 +455,7 @@
     },
     {
       "slot": "1B",
-      "equipo": "🇨🇭 SUIZA"
+      "equipo": "🇨🇦 CANADÁ"
     },
     {
       "slot": "3 EFGIJ",
