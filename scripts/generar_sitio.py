@@ -1261,9 +1261,9 @@ function verPolla(ref) {{
   
   // ── Nota sobre terceros ──
   html += '<div style="font-size:0.6rem;color:var(--muted);padding:8px;margin:8px 0 0;border-top:1px solid var(--card-border);">';
-  html += 'ℹ️ Terceros que clasifican: Suecia (F), Escocia (C), Argelia (J), Paraguay (D), Cabo Verde (H), Bélgica (G), Portugal (K), Rep. Checa (A). ';
-  html += 'Eliminados: Bosnia (B), Panamá (L), Senegal (I), Jordania (J). ';
-  html += 'Los terceros se asignan a los slots de 16avos según combinaciones predefinidas FIFA. ';
+  html += 'ℹ️ Terceros que clasifican: Suecia (F), Escocia (C), Croacia (L), Argelia (J), Paraguay (D), Cabo Verde (H), Bélgica (G), Rep. Checa (A). ';
+  html += 'Eliminados: Bosnia (B), Catar (B), Congo (K), Ecuador (E). ';
+  html += 'Bracket provisional de 16avos definido. ';
   html += 'Posición provisional hasta cruces oficiales.';
   html += '</div>';
   
