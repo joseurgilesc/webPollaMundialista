@@ -1,70 +1,70 @@
 {
-  "_nota": "Dieciseisavos definidos con bracket provisional",
+  "_nota": "Resultados finales grupos — 16avos definidos con bracket provisional",
   "_stats": {
     "A": {
       "🇲🇽 MÉXICO": {
-        "pts": 6,
-        "gf": 3,
+        "pts": 9,
+        "gf": 6,
         "ga": 0
+      },
+      "🇿🇦 SUDÁFRICA": {
+        "pts": 4,
+        "gf": 2,
+        "ga": 3
       },
       "🇰🇷 COREA DEL SUR": {
         "pts": 3,
         "gf": 2,
-        "ga": 2
+        "ga": 3
       },
       "🇨🇿 REP. CHECA": {
         "pts": 1,
         "gf": 2,
-        "ga": 3
-      },
-      "🇿🇦 SUDÁFRICA": {
-        "pts": 1,
-        "gf": 1,
-        "ga": 3
+        "ga": 6
       }
     },
     "B": {
+      "🇨🇭 SUIZA": {
+        "pts": 7,
+        "gf": 7,
+        "ga": 3
+      },
       "🇨🇦 CANADÁ": {
         "pts": 4,
-        "gf": 7,
-        "ga": 1
-      },
-      "🇨🇭 SUIZA": {
-        "pts": 4,
-        "gf": 5,
-        "ga": 2
+        "gf": 8,
+        "ga": 3
       },
       "🇧🇦 BOSNIA Y HERZEGOVINA": {
-        "pts": 1,
-        "gf": 2,
-        "ga": 5
+        "pts": 4,
+        "gf": 5,
+        "ga": 6
       },
       "🇶🇦 QATAR": {
         "pts": 1,
-        "gf": 1,
-        "ga": 7
+        "gf": 2,
+        "ga": 10
       }
     },
     "C": {
       "🇧🇷 BRASIL": {
-        "pts": 4,
-        "gf": 4,
+        "pts": 7,
+        "gf": 7,
         "ga": 1
       },
       "🇲🇦 MARRUECOS": {
-        "pts": 4,
-        "gf": 2,
-        "ga": 1
+        "pts": 7,
+        "gf": 6,
+        "ga": 3
       },
       "🏴󠁧󠁢󠁳󠁣󠁴󠁿 ESCOCIA": {
         "pts": 3,
         "gf": 1,
-        "ga": 1
+        "ga": 4
       },
       "🇭🇹 HAITÍ": {
         "pts": 0,
-        "gf": 0,
-        "ga": 4
+        "gf": 2,
+        "ga": 8
       }
     },
     "D": {
@@ -269,13 +269,13 @@
   "grupos": {
     "A": {
       "🇲🇽 MÉXICO": 1,
-      "🇰🇷 COREA DEL SUR": 2,
-      "🇨🇿 REP. CHECA": 3,
-      "🇿🇦 SUDÁFRICA": 4
+      "🇿🇦 SUDÁFRICA": 2,
+      "🇰🇷 COREA DEL SUR": 3,
+      "🇨🇿 REP. CHECA": 4
     },
     "B": {
-      "🇨🇦 CANADÁ": 1,
-      "🇨🇭 SUIZA": 2,
+      "🇨🇭 SUIZA": 1,
+      "🇨🇦 CANADÁ": 2,
       "🇧🇦 BOSNIA Y HERZEGOVINA": 3,
       "🇶🇦 QATAR": 4
     },
@@ -359,11 +359,11 @@
     },
     {
       "slot": "2A",
-      "equipo": "🇰🇷 COREA DEL SUR"
+      "equipo": "🇿🇦 SUDÁFRICA"
     },
     {
       "slot": "2B",
-      "equipo": "🇨🇭 SUIZA"
+      "equipo": "🇨🇦 CANADÁ"
     },
     {
       "slot": "1F",
@@ -395,7 +395,7 @@
     },
     {
       "slot": "3 BEFIJ",
-      "equipo": "🇩🇿 ARGELIA"
+      "equipo": "🇧🇦 BOSNIA Y HERZEGOVINA"
     },
     {
       "slot": "1G",
@@ -403,7 +403,7 @@
     },
     {
       "slot": "3 AEFHIJ",
-      "equipo": "🇨🇿 REP. CHECA"
+      "equipo": "🇰🇷 COREA DEL SUR"
     },
     {
       "slot": "1C",
@@ -455,11 +455,11 @@
     },
     {
       "slot": "1B",
-      "equipo": "🇨🇦 CANADÁ"
+      "equipo": "🇨🇭 SUIZA"
     },
     {
       "slot": "3 EFGIJ",
-      "equipo": "🇧🇪 BÉLGICA"
+      "equipo": "🇩🇿 ARGELIA"
     },
     {
       "slot": "1K",
