@@ -1,5 +1,5 @@
 {
-  "_nota": "Resultados finales grupos — 16avos definidos con bracket provisional",
+  "_nota": "Resultados finales — todos los grupos completos, 16avos definidos",
   "_stats": {
     "A": {
       "🇲🇽 MÉXICO": {
@@ -70,67 +70,67 @@
     "D": {
       "🇺🇸 ESTADOS UNIDOS": {
         "pts": 6,
-        "gf": 6,
-        "ga": 1
+        "gf": 8,
+        "ga": 4
       },
       "🇦🇺 AUSTRALIA": {
-        "pts": 3,
+        "pts": 4,
         "gf": 2,
         "ga": 2
       },
       "🇵🇾 PARAGUAY": {
-        "pts": 3,
+        "pts": 4,
         "gf": 2,
         "ga": 4
       },
       "🇹🇷 TURQUÍA": {
-        "pts": 0,
-        "gf": 0,
-        "ga": 3
+        "pts": 3,
+        "gf": 3,
+        "ga": 5
       }
     },
     "E": {
       "🇩🇪 ALEMANIA": {
         "pts": 6,
-        "gf": 9,
-        "ga": 2
+        "gf": 10,
+        "ga": 4
       },
       "🇨🇮 COSTA DE MARFIL": {
-        "pts": 3,
-        "gf": 2,
+        "pts": 6,
+        "gf": 4,
         "ga": 2
       },
       "🇪🇨 ECUADOR": {
-        "pts": 1,
-        "gf": 0,
-        "ga": 1
+        "pts": 4,
+        "gf": 2,
+        "ga": 2
       },
       "CURAÇAO": {
         "pts": 1,
         "gf": 1,
-        "ga": 7
+        "ga": 9
       }
     },
     "F": {
       "🇳🇱 HOLANDA": {
-        "pts": 4,
+        "pts": 7,
+        "gf": 10,
+        "ga": 4
+      },
+      "🇯🇵 JAPÓN": {
+        "pts": 5,
         "gf": 7,
         "ga": 3
       },
-      "🇯🇵 JAPÓN": {
-        "pts": 4,
-        "gf": 6,
-        "ga": 2
-      },
       "🇸🇪 SUECIA": {
-        "pts": 3,
-        "gf": 6,
-        "ga": 6
+        "pts": 4,
+        "gf": 7,
+        "ga": 7
       },
       "🇹🇳 TÚNEZ": {
         "pts": 0,
-        "gf": 1,
-        "ga": 9
+        "gf": 2,
+        "ga": 12
       }
     },
     "G": {
@@ -435,7 +435,7 @@
     },
     {
       "slot": "3 EHIJK",
-      "equipo": "🇨🇻 CABO VERDE"
+      "equipo": "🇪🇨 ECUADOR"
     },
     {
       "slot": "1J",
