@@ -1,5 +1,5 @@
 {
-  "_nota": "Resultados finales — todos los grupos completos, 16avos definidos",
+  "_nota": "Resultados finales grupos G-L completados, 16avos definitivos",
   "_stats": {
     "A": {
       "🇲🇽 MÉXICO": {
@@ -134,69 +134,69 @@
       }
     },
     "G": {
-      "🇪🇬 EGIPTO": {
-        "pts": 4,
-        "gf": 4,
+      "🇧🇪 BÉLGICA": {
+        "pts": 5,
+        "gf": 6,
         "ga": 2
+      },
+      "🇪🇬 EGIPTO": {
+        "pts": 5,
+        "gf": 5,
+        "ga": 3
       },
       "🇮🇷 IRÁN": {
-        "pts": 2,
-        "gf": 2,
-        "ga": 2
-      },
-      "🇧🇪 BÉLGICA": {
-        "pts": 2,
-        "gf": 1,
-        "ga": 1
+        "pts": 3,
+        "gf": 3,
+        "ga": 3
       },
       "🇳🇿 NUEVA ZELANDA": {
         "pts": 1,
-        "gf": 3,
-        "ga": 5
+        "gf": 4,
+        "ga": 10
       }
     },
     "H": {
       "🇪🇸 ESPAÑA": {
-        "pts": 4,
-        "gf": 4,
+        "pts": 7,
+        "gf": 5,
         "ga": 0
+      },
+      "🇨🇻 CABO VERDE": {
+        "pts": 3,
+        "gf": 2,
+        "ga": 2
       },
       "🇺🇾 URUGUAY": {
         "pts": 2,
         "gf": 3,
-        "ga": 3
-      },
-      "🇨🇻 CABO VERDE": {
-        "pts": 2,
-        "gf": 2,
-        "ga": 2
+        "ga": 4
       },
       "🇸🇦 ARABIA SAUDÍ": {
-        "pts": 1,
+        "pts": 2,
         "gf": 1,
         "ga": 5
       }
     },
     "I": {
       "🇫🇷 FRANCIA": {
-        "pts": 6,
-        "gf": 6,
-        "ga": 1
+        "pts": 9,
+        "gf": 10,
+        "ga": 2
       },
       "🇳🇴 NORUEGA": {
         "pts": 6,
-        "gf": 7,
-        "ga": 3
+        "gf": 8,
+        "ga": 7
       },
       "🇸🇳 SENEGAL": {
-        "pts": 0,
-        "gf": 3,
+        "pts": 3,
+        "gf": 8,
         "ga": 6
       },
       "🇮🇶 IRAK": {
         "pts": 0,
         "gf": 1,
-        "ga": 7
+        "ga": 12
       }
     },
     "J": {
@@ -304,15 +304,15 @@
       "🇹🇳 TÚNEZ": 4
     },
     "G": {
-      "🇪🇬 EGIPTO": 1,
-      "🇮🇷 IRÁN": 2,
-      "🇧🇪 BÉLGICA": 3,
+      "🇧🇪 BÉLGICA": 1,
+      "🇪🇬 EGIPTO": 2,
+      "🇮🇷 IRÁN": 3,
       "🇳🇿 NUEVA ZELANDA": 4
     },
     "H": {
       "🇪🇸 ESPAÑA": 1,
-      "🇺🇾 URUGUAY": 2,
-      "🇨🇻 CABO VERDE": 3,
+      "🇨🇻 CABO VERDE": 2,
+      "🇺🇾 URUGUAY": 3,
       "🇸🇦 ARABIA SAUDÍ": 4
     },
     "I": {
@@ -399,7 +399,7 @@
     },
     {
       "slot": "1G",
-      "equipo": "🇪🇬 EGIPTO"
+      "equipo": "🇧🇪 BÉLGICA"
     },
     {
       "slot": "3 AEFHIJ",
@@ -427,7 +427,7 @@
     },
     {
       "slot": "3 CEFHI",
-      "equipo": "🏴󠁧󠁢󠁳󠁣󠁴󠁿 ESCOCIA"
+      "equipo": "🇪🇨 ECUADOR"
     },
     {
       "slot": "1L",
@@ -435,7 +435,7 @@
     },
     {
       "slot": "3 EHIJK",
-      "equipo": "🇪🇨 ECUADOR"
+      "equipo": "🇸🇳 SENEGAL"
     },
     {
       "slot": "1J",
@@ -443,7 +443,7 @@
     },
     {
       "slot": "2H",
-      "equipo": "🇺🇾 URUGUAY"
+      "equipo": "🇨🇻 CABO VERDE"
     },
     {
       "slot": "2D",
@@ -451,7 +451,7 @@
     },
     {
       "slot": "2G",
-      "equipo": "🇮🇷 IRÁN"
+      "equipo": "🇪🇬 EGIPTO"
     },
     {
       "slot": "1B",
@@ -459,7 +459,7 @@
     },
     {
       "slot": "3 EFGIJ",
-      "equipo": "🇩🇿 ARGELIA"
+      "equipo": "🇮🇷 IRÁN"
     },
     {
       "slot": "1K",
