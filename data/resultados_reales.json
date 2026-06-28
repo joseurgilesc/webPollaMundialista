@@ -470,7 +470,12 @@
       "equipo": "🇬🇭 GHANA"
     }
   ],
-  "ronda_8avos": [],
+  "ronda_8avos": [
+    {
+      "match": 73,
+      "equipo": "🇨🇦 CANADÁ"
+    }
+  ],
   "ronda_cuartos": [],
   "ronda_semifinales": [],
   "finales": {
