@@ -1485,7 +1485,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
   </div>
 </div>
 
-<footer>Actualizado: 28/06/2026 16:18 · Puntajes recalculados automáticamente</footer>
+<footer>Actualizado: 28/06/2026 16:19 · Puntajes recalculados automáticamente</footer>
 
 <script>
 // Mostrar predicciones
@@ -1731,17 +1731,14 @@ function verPolla(ref) {
         html += '<div class="bt-row bt-r16 '+clsClass+'"><span class="bt-slot">'+slot+'</span><span class="bt-pred">'+eq+'</span><span class="bt-real">'+realEquipo+'</span><span class="bt-pts">'+(eqPts?'+'+eqPts:'0')+'</span><span class="bt-pts">'+(posPts?'+'+posPts:'0')+'</span><span class="bt-puesto">'+predPuesto+(realPuesto?'→'+realPuesto:'')+'</span><span class="bt-pts" style="font-weight:700">'+(totPts?'+'+totPts:'0')+'</span></div>';
       } else {
         // ── Vista por defecto (8avos, cuartos, etc) ──
-        let ptsClasif = '', ptsPos = '', ptsTot = '', cls = '';
-        if (eq !== '—' && req !== 'Pendiente') {
-          const neq = normEq(eq), nreq = normEq(req);
-          const classified = realEntries.some(r => normEq(r.equipo||'') === neq);
-          if (classified) {
-            // 8avos: 2 pts, cuartos: 3 pts, semis: 4 pts (sin posicion)
-            const ptsPorRonda = label === '8avos' ? 2 : label === 'Cuartos' ? 3 : 4;
-            ptsClasif = '+'+ptsPorRonda; ptsPos = ''; ptsTot = '+'+ptsPorRonda; cls = 'bt-hit';
-          } else {
-            ptsClasif = '0'; ptsPos = ''; ptsTot = '0';
-          }
+        let ptsClasif = '', cls = '';
+        const neq = normEq(eq);
+        const classified = realEntries.some(r => normEq(r.equipo||'') === neq);
+        if (eq !== '—' && classified) {
+          const ptsPorRonda = label === '8avos' ? 2 : label === 'Cuartos' ? 3 : 4;
+          ptsClasif = '+'+ptsPorRonda; cls = 'bt-hit';
+        } else if (eq !== '—') {
+          ptsClasif = '0';
         }
         html += '<div class="bt-row '+cls+'"><span class="bt-slot">'+slot+'</span><span class="bt-pred">'+eq+'</span><span class="bt-pts" style="font-weight:700">'+ptsClasif+'</span></div>';
       }
