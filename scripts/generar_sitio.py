@@ -1143,10 +1143,6 @@ function verPolla(ref) {{
       if (showSlot) {{
         const real = realEntries.find(r => r.slot === e.slot);
         if (real?.equipo) req = real.equipo;
-      }} else if (realEntries.length > 0) {{
-        // Para 8avos, cuartos, semis: mostrar equipo real por índice
-        const real = realEntries[i];
-        if (real?.equipo) req = real.equipo;
       }}
       
       if (is16avos && eq !== '—') {{

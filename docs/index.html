@@ -1485,7 +1485,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
   </div>
 </div>
 
-<footer>Actualizado: 28/06/2026 16:12 · Puntajes recalculados automáticamente</footer>
+<footer>Actualizado: 28/06/2026 16:15 · Puntajes recalculados automáticamente</footer>
 
 <script>
 // Mostrar predicciones
@@ -1674,10 +1674,6 @@ function verPolla(ref) {
       let req = 'Pendiente';
       if (showSlot) {
         const real = realEntries.find(r => r.slot === e.slot);
-        if (real?.equipo) req = real.equipo;
-      } else if (realEntries.length > 0) {
-        // Para 8avos, cuartos, semis: mostrar equipo real por índice
-        const real = realEntries[i];
         if (real?.equipo) req = real.equipo;
       }
       
