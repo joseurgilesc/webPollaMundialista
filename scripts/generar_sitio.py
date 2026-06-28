@@ -1132,7 +1132,7 @@ function verPolla(ref) {{
     if (is16avos) {{
       html += '<div class="bracket-table"><div class="bt-header bt-r16"><span>Slot</span><span>Predicción</span><span>Real</span><span>Eq</span><span>Pos</span><span>Puesto</span><span>Tot</span></div>';
     }} else {{
-      html += '<div class=\"bracket-table\"><div class=\"bt-header\"><span>'+(showSlot?'Slot':'#')+'</span><span>Predicción</span><span></span><span>Real</span><span>Pts</span><span>Tot</span></div>';
+      html += '<div class=\"bracket-table\"><div class=\"bt-header\"><span>'+(showSlot?'Slot':'#')+'</span><span>Predicción</span><span>Pts</span></div>';
     }}
     
     entries.forEach((e, i) => {{
@@ -1211,7 +1211,7 @@ function verPolla(ref) {{
             ptsClasif = '0'; ptsPos = ''; ptsTot = '0';
           }}
         }}
-        html += '<div class=\"bt-row '+cls+'\"><span class=\"bt-slot\">'+slot+'</span><span class=\"bt-pred\">'+eq+'</span><span class=\"bt-vs\">vs</span><span class=\"bt-real '+(req==='Pendiente'?'bt-pend':'')+'\">'+req+'</span><span class=\"bt-pts\">'+ptsClasif+'</span><span class=\"bt-pts\" style=\"font-weight:700\">'+ptsTot+'</span></div>';
+        html += '<div class=\"bt-row '+cls+'\"><span class=\"bt-slot\">'+slot+'</span><span class=\"bt-pred\">'+eq+'</span><span class=\"bt-pts\" style=\"font-weight:700\">'+ptsClasif+'</span></div>';
       }}
     }});
     html += '</div>';
