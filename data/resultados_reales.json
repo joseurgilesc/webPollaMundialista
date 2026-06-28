@@ -1,5 +1,5 @@
 {
-  "_nota": "Resultados finales grupos G-L completados, 16avos definitivos",
+  "_nota": "Resultados finales — todos los 12 grupos completados, 16avos definitivos",
   "_stats": {
     "A": {
       "🇲🇽 MÉXICO": {
@@ -201,68 +201,68 @@
     },
     "J": {
       "🇦🇷 ARGENTINA": {
-        "pts": 6,
-        "gf": 5,
-        "ga": 0
+        "pts": 9,
+        "gf": 8,
+        "ga": 1
       },
       "🇦🇹 AUSTRIA": {
-        "pts": 3,
-        "gf": 3,
-        "ga": 3
+        "pts": 4,
+        "gf": 6,
+        "ga": 6
       },
       "🇩🇿 ARGELIA": {
-        "pts": 3,
-        "gf": 2,
-        "ga": 4
+        "pts": 4,
+        "gf": 5,
+        "ga": 7
       },
       "🇯🇴 JORDANIA": {
         "pts": 0,
-        "gf": 2,
-        "ga": 5
+        "gf": 3,
+        "ga": 8
       }
     },
     "K": {
       "🇨🇴 COLOMBIA": {
-        "pts": 6,
+        "pts": 7,
         "gf": 4,
         "ga": 1
       },
       "🇵🇹 PORTUGAL": {
-        "pts": 4,
+        "pts": 5,
         "gf": 6,
         "ga": 1
       },
       "🇨🇩 REP. CONGO": {
-        "pts": 1,
-        "gf": 1,
-        "ga": 2
+        "pts": 4,
+        "gf": 4,
+        "ga": 3
       },
       "🇺🇿 UZBEKISTÁN": {
         "pts": 0,
-        "gf": 1,
-        "ga": 8
+        "gf": 2,
+        "ga": 11
       }
     },
     "L": {
       "🇬🇧 INGLATERRA": {
-        "pts": 4,
-        "gf": 4,
+        "pts": 7,
+        "gf": 6,
         "ga": 2
+      },
+      "🇭🇷 CROACIA": {
+        "pts": 6,
+        "gf": 5,
+        "ga": 5
       },
       "🇬🇭 GHANA": {
         "pts": 4,
-        "gf": 1,
-        "ga": 0
-      },
-      "🇭🇷 CROACIA": {
-        "pts": 3,
-        "gf": 3,
-        "ga": 4
+        "gf": 2,
+        "ga": 2
       },
       "🇵🇦 PANAMÁ": {
         "pts": 0,
         "gf": 0,
-        "ga": 2
+        "ga": 4
       }
     }
   },
@@ -335,8 +335,8 @@
     },
     "L": {
       "🇬🇧 INGLATERRA": 1,
-      "🇬🇭 GHANA": 2,
-      "🇭🇷 CROACIA": 3,
+      "🇭🇷 CROACIA": 2,
+      "🇬🇭 GHANA": 3,
       "🇵🇦 PANAMÁ": 4
     }
   },
@@ -379,7 +379,7 @@
     },
     {
       "slot": "2L",
-      "equipo": "🇬🇭 GHANA"
+      "equipo": "🇭🇷 CROACIA"
     },
     {
       "slot": "1H",
@@ -403,7 +403,7 @@
     },
     {
       "slot": "3 AEFHIJ",
-      "equipo": "🇰🇷 COREA DEL SUR"
+      "equipo": "🇸🇳 SENEGAL"
     },
     {
       "slot": "1C",
@@ -435,7 +435,7 @@
     },
     {
       "slot": "3 EHIJK",
-      "equipo": "🇸🇳 SENEGAL"
+      "equipo": "🇨🇩 REP. CONGO"
     },
     {
       "slot": "1J",
@@ -459,7 +459,7 @@
     },
     {
       "slot": "3 EFGIJ",
-      "equipo": "🇮🇷 IRÁN"
+      "equipo": "🇩🇿 ARGELIA"
     },
     {
       "slot": "1K",
@@ -467,7 +467,7 @@
     },
     {
       "slot": "3 DEIJL",
-      "equipo": "🇭🇷 CROACIA"
+      "equipo": "🇬🇭 GHANA"
     }
   ],
   "ronda_8avos": [],
