@@ -1121,9 +1121,9 @@ function verPolla(ref) {{
   
   const rondas = [
     ['16avos', polla.ronda_16avos||[], true, REALES?.ronda_16avos||[], true],
-    ['8avos', polla.ronda_8avos||[], false, [], false],
-    ['Cuartos', polla.ronda_cuartos||[], false, [], false],
-    ['Semifinales', polla.ronda_semifinales||[], false, []],
+    ['8avos', polla.ronda_8avos||[], false, REALES?.ronda_8avos||[], false],
+    ['Cuartos', polla.ronda_cuartos||[], false, REALES?.ronda_cuartos||[], false],
+    ['Semifinales', polla.ronda_semifinales||[], false, REALES?.ronda_semifinales||[], false],
   ];
   
   rondas.forEach(([label, entries, showSlot, realEntries, is16avos]) => {{
@@ -1132,7 +1132,7 @@ function verPolla(ref) {{
     if (is16avos) {{
       html += '<div class="bracket-table"><div class="bt-header bt-r16"><span>Slot</span><span>Predicción</span><span>Real</span><span>Eq</span><span>Pos</span><span>Puesto</span><span>Tot</span></div>';
     }} else {{
-      html += '<div class=\"bracket-table\"><div class=\"bt-header\"><span>'+(showSlot?'Slot':'#')+'</span><span>Predicción</span><span></span><span>Real</span><span>Clasif</span><span>Pos</span><span>Tot</span></div>';
+      html += '<div class=\"bracket-table\"><div class=\"bt-header\"><span>'+(showSlot?'Slot':'#')+'</span><span>Predicción</span><span></span><span>Real</span><span>Pts</span><span>Tot</span></div>';
     }}
     
     entries.forEach((e, i) => {{
@@ -1142,6 +1142,10 @@ function verPolla(ref) {{
       let req = 'Pendiente';
       if (showSlot) {{
         const real = realEntries.find(r => r.slot === e.slot);
+        if (real?.equipo) req = real.equipo;
+      }} else if (realEntries.length > 0) {{
+        // Para 8avos, cuartos, semis: mostrar equipo real por índice
+        const real = realEntries[i];
         if (real?.equipo) req = real.equipo;
       }}
       
@@ -1204,17 +1208,14 @@ function verPolla(ref) {{
           const neq = normEq(eq), nreq = normEq(req);
           const classified = realEntries.some(r => normEq(r.equipo||'') === neq);
           if (classified) {{
-            ptsClasif = '+1';
-            if (nreq === neq) {{
-              ptsPos = '+1'; ptsTot = '+2'; cls = 'bt-hit';
-            }} else {{
-              ptsPos = '0'; ptsTot = '+1'; cls = 'bt-miss';
-            }}
+            // 8avos: 2 pts, cuartos: 3 pts, semis: 4 pts (sin posicion)
+            const ptsPorRonda = label === '8avos' ? 2 : label === 'Cuartos' ? 3 : 4;
+            ptsClasif = '+'+ptsPorRonda; ptsPos = ''; ptsTot = '+'+ptsPorRonda; cls = 'bt-hit';
           }} else {{
-            ptsClasif = '0'; ptsPos = '0'; ptsTot = '0';
+            ptsClasif = '0'; ptsPos = ''; ptsTot = '0';
           }}
         }}
-        html += '<div class=\"bt-row '+cls+'\"><span class=\"bt-slot\">'+slot+'</span><span class=\"bt-pred\">'+eq+'</span><span class=\"bt-vs\">vs</span><span class=\"bt-real '+(req==='Pendiente'?'bt-pend':'')+'\">'+req+'</span><span class=\"bt-pts\">'+ptsClasif+'</span><span class=\"bt-pts\">'+ptsPos+'</span><span class=\"bt-pts\" style=\"font-weight:700\">'+ptsTot+'</span></div>';
+        html += '<div class=\"bt-row '+cls+'\"><span class=\"bt-slot\">'+slot+'</span><span class=\"bt-pred\">'+eq+'</span><span class=\"bt-vs\">vs</span><span class=\"bt-real '+(req==='Pendiente'?'bt-pend':'')+'\">'+req+'</span><span class=\"bt-pts\">'+ptsClasif+'</span><span class=\"bt-pts\" style=\"font-weight:700\">'+ptsTot+'</span></div>';
       }}
     }});
     html += '</div>';
