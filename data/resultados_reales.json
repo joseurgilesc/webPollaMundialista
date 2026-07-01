@@ -474,6 +474,38 @@
     {
       "match": 73,
       "equipo": "🇨🇦 CANADÁ"
+    },
+    {
+      "match": 74,
+      "equipo": "🇵🇾 PARAGUAY"
+    },
+    {
+      "match": 75,
+      "equipo": "🇲🇦 MARRUECOS"
+    },
+    {
+      "match": 76,
+      "equipo": "🇧🇷 BRASIL"
+    },
+    {
+      "match": 77,
+      "equipo": "🇫🇷 FRANCIA"
+    },
+    {
+      "match": 78,
+      "equipo": "🇳🇴 NORUEGA"
+    },
+    {
+      "match": 79,
+      "equipo": "🇲🇽 MÉXICO"
+    },
+    {
+      "match": 80,
+      "equipo": "🇬🇧 INGLATERRA"
+    },
+    {
+      "match": 82,
+      "equipo": "🇧🇪 BÉLGICA"
     }
   ],
   "ronda_cuartos": [],
