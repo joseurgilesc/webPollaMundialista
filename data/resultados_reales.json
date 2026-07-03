@@ -504,8 +504,24 @@
       "equipo": "🇬🇧 INGLATERRA"
     },
     {
+      "match": 81,
+      "equipo": "🇺🇸 ESTADOS UNIDOS"
+    },
+    {
       "match": 82,
       "equipo": "🇧🇪 BÉLGICA"
+    },
+    {
+      "match": 83,
+      "equipo": "🇵🇹 PORTUGAL"
+    },
+    {
+      "match": 84,
+      "equipo": "🇪🇸 ESPAÑA"
+    },
+    {
+      "match": 85,
+      "equipo": "🇨🇭 SUIZA"
     }
   ],
   "ronda_cuartos": [],
