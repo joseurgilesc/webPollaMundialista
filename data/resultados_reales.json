@@ -538,6 +538,10 @@
   ],
   "ronda_cuartos": [
     {
+      "match": 89,
+      "equipo": "🇫🇷 FRANCIA"
+    },
+    {
       "match": 90,
       "equipo": "🇲🇦 MARRUECOS"
     }
