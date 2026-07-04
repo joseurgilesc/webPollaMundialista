@@ -1081,10 +1081,6 @@ function verPolla(ref) {{
       html += '<div class="ms-bar"><span>'+rnd+'</span><div class="ms-fill"><div style="width:'+pct+'%"></div></div><span>'+score[rnd]+'</span></div>';
     }});
     html += '</div>';
-    // Nota de puntajes
-    html += '<div style="font-size:0.6rem;color:var(--muted);padding:4px 0;border-bottom:1px solid var(--card-border);margin-bottom:6px;">';
-    html += '🏆 16avos: 1pt eq + 1pt pos. 8avos: 2pt. Cuartos: 3pt. Semis: 4pt. Final: 20+11+8+5.';
-    html += '</div>';
     html += '</div>';
   }} else if (score) {{
     html += '<div class="modal-score">📊 <strong>'+score.total+' pts</strong> (aún sin resultados reales)</div>';
@@ -1131,7 +1127,10 @@ function verPolla(ref) {{
   
   rondas.forEach(([label, entries, showSlot, realEntries, is16avos]) => {{
     if (!entries.length) return;
-    html += '<h5 style=\"color:var(--navy);font-size:0.7rem;margin:8px 0 4px;\">⚽ '+label+'</h5>';
+    // Reglas de puntaje por ronda
+    const reglas = {{'16avos': '1pt eq + 1pt pos', '8avos': '2pt c/u', 'Cuartos': '3pt c/u', 'Semifinales': '4pt c/u'}};
+    const regla = reglas[label] || '';
+    html += '<h5 style=\"color:var(--navy);font-size:0.7rem;margin:8px 0 4px;\">⚽ '+label+' <span style=\"font-weight:400;color:var(--muted);font-size:0.6rem;\">('+regla+')</span></h5>';
     if (is16avos) {{
       html += '<div class="bracket-table"><div class="bt-header bt-r16"><span>Slot</span><span>Predicción</span><span>Real</span><span>Eq</span><span>Pos</span><span>Puesto</span><span>Tot</span></div>';
     }} else {{
