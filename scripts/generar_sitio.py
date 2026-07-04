@@ -1118,14 +1118,33 @@ function verPolla(ref) {{
   // ── Bracket: tabla unificada con todas las rondas ──
   html += '<div class="modal-section"><h4>⚽ Bracket</h4>';
   
+  var _realFin = REALES && REALES.finales ? REALES.finales : null;
   const rondas = [
-    ['16avos', polla.ronda_16avos||[], true, REALES?.ronda_16avos||[], true],
-    ['8avos', polla.ronda_8avos||[], false, REALES?.ronda_8avos||[], false],
-    ['Cuartos', polla.ronda_cuartos||[], false, REALES?.ronda_cuartos||[], false],
-    ['Semifinales', polla.ronda_semifinales||[], false, REALES?.ronda_semifinales||[], false],
+    ['16avos', polla.ronda_16avos||[], true, REALES ? REALES.ronda_16avos||[] : [], true],
+    ['8avos', polla.ronda_8avos||[], false, REALES ? REALES.ronda_8avos||[] : [], false],
+    ['Cuartos', polla.ronda_cuartos||[], false, REALES ? REALES.ronda_cuartos||[] : [], false],
+    ['Semifinales', polla.ronda_semifinales||[], false, REALES ? REALES.ronda_semifinales||[] : [], false],
+    ['Finales', null, false, _realFin, false],
   ];
   
   rondas.forEach(([label, entries, showSlot, realEntries, is16avos]) => {{
+    if (label === 'Finales') {{
+      const fin = polla.finales || {{}};
+      const realFin = REALES?.finales || {{}};
+      const pts = {{'campeon':20,'segundo':11,'tercero':8,'cuarto':5}};
+      html += '<h5 style=\"color:var(--navy);font-size:0.7rem;margin:8px 0 4px;\">🏆 Finales <span style=\"font-weight:400;color:var(--muted);font-size:0.6rem;\">(20+11+8+5)</span></h5>';
+      html += '<div class=\"bracket-table\"><div class=\"bt-header\" style=\"grid-template-columns:1fr 1fr 50px\"><span>Posición</span><span>Predicción</span><span>Pts</span></div>';
+      ['campeon','segundo','tercero','cuarto'].forEach(p => {{
+        const eq = fin[p] || '—';
+        const real = realFin[p] || '';
+        const acierto = eq && real && eq === real;
+        const ppts = acierto ? pts[p] : 0;
+        const cls = acierto ? 'bt-hit' : '';
+        html += '<div class=\"bt-row '+cls+'\" style=\"grid-template-columns:1fr 1fr 50px\"><span class=\"bt-slot\">'+p+'</span><span class=\"bt-pred\">'+eq+'</span><span class=\"bt-pts\" style=\"font-weight:700\">'+(ppts?'+'+ppts:'0')+'</span></div>';
+      }});
+      html += '</div>';
+      return;
+    }}
     if (!entries.length) return;
     // Reglas de puntaje por ronda
     const reglas = {{'16avos': '1pt eq + 1pt pos', '8avos': '2pt c/u', 'Cuartos': '3pt c/u', 'Semifinales': '4pt c/u'}};
