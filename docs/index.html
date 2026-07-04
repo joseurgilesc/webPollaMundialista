@@ -1485,7 +1485,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.7r
   </div>
 </div>
 
-<footer>Actualizado: 04/07/2026 14:12 · Puntajes recalculados automáticamente</footer>
+<footer>Actualizado: 04/07/2026 14:20 · Puntajes recalculados automáticamente</footer>
 
 <script>
 // Mostrar predicciones
@@ -1613,7 +1613,10 @@ function verPolla(ref) {
       html += '<div class="ms-bar"><span>'+rnd+'</span><div class="ms-fill"><div style="width:'+pct+'%"></div></div><span>'+score[rnd]+'</span></div>';
     });
     html += '</div>';
-    
+    // Nota de puntajes
+    html += '<div style="font-size:0.6rem;color:var(--muted);padding:4px 0;border-bottom:1px solid var(--card-border);margin-bottom:6px;">';
+    html += '🏆 16avos: 1pt eq + 1pt pos. 8avos: 2pt. Cuartos: 3pt. Semis: 4pt. Final: 20+11+8+5.';
+    html += '</div>';
     html += '</div>';
   } else if (score) {
     html += '<div class="modal-score">📊 <strong>'+score.total+' pts</strong> (aún sin resultados reales)</div>';
