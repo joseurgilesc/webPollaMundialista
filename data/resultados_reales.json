@@ -522,9 +522,26 @@
     {
       "match": 85,
       "equipo": "🇨🇭 SUIZA"
+    },
+    {
+      "match": 86,
+      "equipo": "🇦🇷 ARGENTINA"
+    },
+    {
+      "match": 87,
+      "equipo": "🇨🇴 COLOMBIA"
+    },
+    {
+      "match": 88,
+      "equipo": "🇪🇬 EGIPTO"
     }
   ],
-  "ronda_cuartos": [],
+  "ronda_cuartos": [
+    {
+      "match": 90,
+      "equipo": "🇲🇦 MARRUECOS"
+    }
+  ],
   "ronda_semifinales": [],
   "finales": {
     "campeon": "",
