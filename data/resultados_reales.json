@@ -544,6 +544,14 @@
     {
       "match": 90,
       "equipo": "🇲🇦 MARRUECOS"
+    },
+    {
+      "match": 91,
+      "equipo": "🇳🇴 NORUEGA"
+    },
+    {
+      "match": 92,
+      "equipo": "🇬🇧 INGLATERRA"
     }
   ],
   "ronda_semifinales": [],
