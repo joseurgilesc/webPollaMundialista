@@ -560,6 +560,14 @@
     {
       "match": 94,
       "equipo": "🇧🇪 BÉLGICA"
+    },
+    {
+      "match": 95,
+      "equipo": "🇦🇷 ARGENTINA"
+    },
+    {
+      "match": 96,
+      "equipo": "🇨🇭 SUIZA"
     }
   ],
   "ronda_semifinales": [],
