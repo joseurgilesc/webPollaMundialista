@@ -552,6 +552,14 @@
     {
       "match": 92,
       "equipo": "🇬🇧 INGLATERRA"
+    },
+    {
+      "match": 93,
+      "equipo": "🇪🇸 ESPAÑA"
+    },
+    {
+      "match": 94,
+      "equipo": "🇧🇪 BÉLGICA"
     }
   ],
   "ronda_semifinales": [],
