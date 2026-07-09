@@ -570,7 +570,12 @@
       "equipo": "🇨🇭 SUIZA"
     }
   ],
-  "ronda_semifinales": [],
+  "ronda_semifinales": [
+    {
+      "match": 97,
+      "equipo": "🇫🇷 FRANCIA"
+    }
+  ],
   "finales": {
     "campeon": "",
     "segundo": "",
