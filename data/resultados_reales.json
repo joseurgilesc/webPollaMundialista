@@ -578,6 +578,10 @@
     {
       "match": 98,
       "equipo": "🇪🇸 ESPAÑA"
+    },
+    {
+      "match": 99,
+      "equipo": "🇬🇧 INGLATERRA"
     }
   ],
   "finales": {
