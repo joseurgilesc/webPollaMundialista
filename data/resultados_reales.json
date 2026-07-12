@@ -582,6 +582,10 @@
     {
       "match": 99,
       "equipo": "🇬🇧 INGLATERRA"
+    },
+    {
+      "match": 100,
+      "equipo": "🇦🇷 ARGENTINA"
     }
   ],
   "finales": {
