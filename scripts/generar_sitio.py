@@ -747,6 +747,8 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
     for k, data in pollas_completas.items():
         d = {}
         d["participante"] = data.get("participante", "")
+        # Guardar archivo_original para que verPollaCard pueda buscar por él
+        d["archivo_original"] = data.get("archivo_original", "")
         d["grupos"] = {g: {normalizar_equipo_display(eq): p for eq, p in eqs.items()} for g, eqs in data.get("grupos", {}).items()}
         d["ronda_16avos"] = [{"slot": e.get("slot",""), "equipo": normalizar_equipo_display(e.get("equipo",""))} for e in data.get("ronda_16avos", [])]
         d["ronda_8avos"] = [{"equipo": normalizar_equipo_display(e.get("equipo",""))} for e in data.get("ronda_8avos", [])]
