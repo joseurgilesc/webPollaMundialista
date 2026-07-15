@@ -768,7 +768,7 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
         f = pred["finales"]
         archivo = pred["archivo"]
         def nd(n): return normalizar_equipo_display(n)
-        predicciones_html += f"""<div class="pred-card" onclick="verPolla('{archivo}')" style="cursor:pointer;">
+        predicciones_html += f"""<div class="pred-card" onclick="verPolla('{archivo}', '{archivo}')" style="cursor:pointer;">
       <div class="pred-name">{normalizar_nombre(pred["nombre"])}</div>
       <div class="pred-picks">
         <span title="Campeón">🏆 {nd(f.get("campeon", "")) or "—"}</span>
@@ -1007,10 +1007,13 @@ function findPolla(ref) {{
   return null;
 }}
 
-function findScore(nombre) {{
+function findScore(nombre, archivo) {{
   const n = nombre.toLowerCase().trim();
+  const a = archivo ? archivo.toLowerCase().trim() : '';
   for (const p of PUNTAJES) {{
     if ((p.participante||'').toLowerCase().trim() === n) {{
+      // Si hay archivo, verificar coincidencia
+      if (a && (p.archivo||'').toLowerCase().trim() !== a) continue;
       p.puntajes.desglose = p.desglose;
       return p.puntajes;
     }}
@@ -1025,29 +1028,29 @@ function normEq(name) {{
 
 function verPollaCard(archivo, nombre) {{
   if (!archivo) return;
-  // 1. Buscar por coincidencia exacta del archivo original
   const ref = (archivo||'').toLowerCase().trim();
+  // 1. Buscar por archivo_original exacto
   for (const [k, v] of Object.entries(POLLAS)) {{
     if ((v.archivo_original||'').toLowerCase().trim() === ref) {{
-      verPolla(k); return;
+      verPolla(k, ref); return;
     }}
   }}
   // 2. Buscar fuzzy
   const refKey = ref.replace(/[^a-z0-9]/g, '_');
   for (const [k, v] of Object.entries(POLLAS)) {{
     const ak = (v.archivo_original||'').toLowerCase().replace(/[^a-z0-9]/g, '_');
-    if (ak === refKey || k === refKey) {{ verPolla(k); return; }}
+    if (ak === refKey || k === refKey) {{ verPolla(k, ref); return; }}
   }}
-  // 3. Buscar por nombre de participante
+  // 3. Fallback por nombre
   if (nombre) {{
     const n = (nombre||'').toLowerCase().trim();
     for (const [k, v] of Object.entries(POLLAS)) {{
-      if ((v.participante||'').toLowerCase().trim() === n) {{ verPolla(k); return; }}
+      if ((v.participante||'').toLowerCase().trim() === n) {{ verPolla(k, ref); return; }}
     }}
   }}
 }}
 
-function verPolla(ref) {{
+function verPolla(ref, archivo) {{
   const polla = findPolla(ref);
   if (!polla) {{ alert('Polla no encontrada'); return; }}
   document.getElementById('modalTitle').textContent = '📋 ' + (polla.participante || 'Sin nombre');
@@ -1071,7 +1074,7 @@ function verPolla(ref) {{
   html += '</div></div>';
   
   // ── Puntaje con detalle vs resultados reales ──
-  const score = findScore(polla.participante);
+  const score = findScore(polla.participante, archivo);
   if (score && REALES && REALES.ronda_16avos) {{
     html += '<div class="modal-score"><span>📊 <strong>'+score.total+' pts</strong> <span class="provisional-badge">PROVISIONAL</span></span>';
     // Barras resumen

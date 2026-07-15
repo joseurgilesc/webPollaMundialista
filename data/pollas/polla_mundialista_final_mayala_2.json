@@ -1,72 +1,72 @@
 {
-  "archivo_original": "Polla Mundialista Final MAYALA 2.xlsx",
+  "archivo_original": "Polla Mundialista Final MAYALA 2.xlsx [CORREGIDA]",
   "participante": "MARIA ELENA AYALA",
   "grupos": {
     "A": {
       "🇲🇽 MÉXICO": 1,
+      "🇨🇿 REP. CHECA": 2,
       "🇿🇦 SUDÁFRICA": 3,
-      "🇰🇷 COREA DEL SUR": 4,
-      "🇨🇿 REP. CHECA": 2
+      "🇰🇷 COREA DEL SUR": 4
     },
     "B": {
+      "🇨🇭 SUIZA": 1,
       "🇨🇦 CANADÁ": 2,
-      "🇧🇦 BOSNIA Y HERZEGOVINA": 4,
       "🇶🇦 QATAR": 3,
-      "🇨🇭 SUIZA": 1
+      "🇧🇦 BOSNIA Y HERZEGOVINA": 4
     },
     "C": {
       "🇧🇷 BRASIL": 1,
       "🇲🇦 MARRUECOS": 2,
-      "🇭🇹 HAITÍ": 4,
-      "🏴󠁧󠁢󠁳󠁣󠁴󠁿 ESCOCIA": 3
+      "🏴󠁧󠁢󠁳󠁣󠁴󠁿 ESCOCIA": 3,
+      "🇭🇹 HAITÍ": 4
     },
     "D": {
       "🇺🇸 ESTADOS UNIDOS": 1,
+      "🇹🇷 TURQUÍA": 2,
       "🇵🇾 PARAGUAY": 3,
-      "🇦🇺 AUSTRALIA": 4,
-      "🇹🇷 TURQUÍA": 2
+      "🇦🇺 AUSTRALIA": 4
     },
     "E": {
+      "🇪🇨 ECUADOR": 1,
       "🇩🇪 ALEMANIA": 2,
-      "🇨🇼 CURAZAO": 4,
       "🇨🇮 COSTA DE MARFIL": 3,
-      "🇪🇨 ECUADOR": 1
+      "🇨🇼 CURAZAO": 4
     },
     "F": {
       "🇳🇱 HOLANDA": 1,
-      "🇯🇵 JAPÓN": 3,
       "🇸🇪 SUECIA": 2,
+      "🇯🇵 JAPÓN": 3,
       "🇹🇳 TÚNEZ": 4
     },
     "G": {
       "🇧🇪 BÉLGICA": 1,
+      "🇳🇿 NUEVA ZELANDA": 2,
       "🇪🇬 EGIPTO": 3,
-      "🇮🇷 IRÁN": 4,
-      "🇳🇿 NUEVA ZELANDA": 2
+      "🇮🇷 IRÁN": 4
     },
     "H": {
       "🇪🇸 ESPAÑA": 1,
-      "🇨🇻 CABO VERDE": 4,
+      "🇺🇾 URUGUAY": 2,
       "🇸🇦 ARABIA SAUDÍ": 3,
-      "🇺🇾 URUGUAY": 2
+      "🇨🇻 CABO VERDE": 4
     },
     "I": {
       "🇫🇷 FRANCIA": 1,
+      "🇳🇴 NORUEGA": 2,
       "🇸🇳 SENEGAL": 3,
-      "🇮🇶 IRAK": 4,
-      "🇳🇴 NORUEGA": 2
+      "🇮🇶 IRAK": 4
     },
     "J": {
       "🇦🇷 ARGENTINA": 1,
-      "🇩🇿 ARGELIA": 3,
       "🇦🇹 AUSTRIA": 2,
+      "🇩🇿 ARGELIA": 3,
       "🇯🇴 JORDANIA": 4
     },
     "K": {
       "🇵🇹 PORTUGAL": 1,
-      "🇨🇩 REP. CONGO": 4,
+      "🇨🇴 COLOMBIA": 2,
       "🇺🇿 UZBEKISTÁN": 3,
-      "🇨🇴 COLOMBIA": 2
+      "🇨🇩 REP. CONGO": 4
     },
     "L": {
       "🇬🇧 INGLATERRA": 1,
@@ -81,7 +81,7 @@
       "equipo": "🇪🇨 ECUADOR"
     },
     {
-      "slot": "3F",
+      "slot": "3 ABCDF",
       "equipo": "🇬🇭 GHANA"
     },
     {
@@ -89,7 +89,7 @@
       "equipo": "🇫🇷 FRANCIA"
     },
     {
-      "slot": "3H",
+      "slot": "3 CDFGH",
       "equipo": "🇸🇦 ARABIA SAUDÍ"
     },
     {
@@ -129,7 +129,7 @@
       "equipo": "🇺🇸 ESTADOS UNIDOS"
     },
     {
-      "slot": "3J",
+      "slot": "3 BEFIJ",
       "equipo": "🇩🇿 ARGELIA"
     },
     {
@@ -137,7 +137,7 @@
       "equipo": "🇧🇪 BÉLGICA"
     },
     {
-      "slot": "3E",
+      "slot": "3 AEFHIJ",
       "equipo": "🇨🇮 COSTA DE MARFIL"
     },
     {
@@ -161,7 +161,7 @@
       "equipo": "🇲🇽 MÉXICO"
     },
     {
-      "slot": "3C",
+      "slot": "3 CEFHI",
       "equipo": "🏴󠁧󠁢󠁳󠁣󠁴󠁿 ESCOCIA"
     },
     {
@@ -169,7 +169,7 @@
       "equipo": "🇬🇧 INGLATERRA"
     },
     {
-      "slot": "3I",
+      "slot": "3 EHIJK",
       "equipo": "🇸🇳 SENEGAL"
     },
     {
@@ -193,7 +193,7 @@
       "equipo": "🇨🇭 SUIZA"
     },
     {
-      "slot": "3I",
+      "slot": "3 EFGIJ",
       "equipo": "🇨🇮 COSTA DE MARFIL"
     },
     {
@@ -201,7 +201,7 @@
       "equipo": "🇵🇹 PORTUGAL"
     },
     {
-      "slot": "3D",
+      "slot": "3 DEIJL",
       "equipo": "🇵🇾 PARAGUAY"
     }
   ],
@@ -283,7 +283,7 @@
   ],
   "ronda_semifinales": [
     {
-      "equipo": "🇪🇨 ECUADOR"
+      "equipo": "🇳🇱 HOLANDA"
     },
     {
       "equipo": "🇪🇸 ESPAÑA"
@@ -296,10 +296,9 @@
     }
   ],
   "finales": {
-    "campeon": "🇦🇷 ARGENTINA",
-    "segundo": "🇪🇨 ECUADOR",
-    "tercero": "🇪🇸 ESPAÑA",
+    "campeon": "🇪🇸 ESPAÑA",
+    "segundo": "🇦🇷 ARGENTINA",
+    "tercero": "🇳🇱 HOLANDA",
     "cuarto": "🇧🇷 BRASIL"
-  },
-  "errores": []
+  }
 }

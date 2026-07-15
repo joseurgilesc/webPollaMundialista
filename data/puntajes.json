@@ -7367,7 +7367,7 @@
   },
   {
     "participante": "MARIA ELENA AYALA",
-    "archivo": "Polla Mundialista Final MAYALA 2.xlsx",
+    "archivo": "Polla Mundialista Final MAYALA 2.xlsx [CORREGIDA]",
     "puntajes": {
       "16avos": 40,
       "8avos": 22,
@@ -7424,16 +7424,21 @@
         ],
         "errores": [
           "ECUADOR en 1E (real: ALEMANIA)",
+          "GHANA en 3 ABCDF (real: PARAGUAY)",
           "ARABIA SAUDÍ no clasificó a 16avos",
           "REPUBLICA CHECA no clasificó a 16avos",
           "COLOMBIA en 2K (real: PORTUGAL)",
+          "ARGELIA en 3 BEFIJ (real: BOSNIA)",
+          "COSTA DE MARFIL en 3 AEFHIJ (real: SENEGAL)",
           "SUECIA en 2F (real: JAPÓN)",
           "ALEMANIA en 2E (real: COSTA DE MARFIL)",
           "ESCOCIA no clasificó a 16avos",
+          "SENEGAL en 3 EHIJK (real: REPUBLICA DEL CONGO)",
           "URUGUAY no clasificó a 16avos",
           "TURQUÍA no clasificó a 16avos",
           "NUEVA ZELANDA no clasificó a 16avos",
-          "PORTUGAL en 1K (real: COLOMBIA)"
+          "PORTUGAL en 1K (real: COLOMBIA)",
+          "PARAGUAY en 3 DEIJL (real: GHANA)"
         ]
       },
       "8avos": {
@@ -7478,16 +7483,16 @@
           "ARGENTINA"
         ],
         "errores": [
-          "ECUADOR no llegó a semifinales",
+          "PAISES BAJOS no llegó a semifinales",
           "BRASIL no llegó a semifinales"
         ]
       },
       "finales": {
         "aciertos": [],
         "errores": [
-          "campeon: predijo ARGENTINA, real:  (0 pts)",
-          "segundo: predijo ECUADOR, real:  (0 pts)",
-          "tercero: predijo ESPAÑA, real:  (0 pts)",
+          "campeon: predijo ESPAÑA, real:  (0 pts)",
+          "segundo: predijo ARGENTINA, real:  (0 pts)",
+          "tercero: predijo PAISES BAJOS, real:  (0 pts)",
           "cuarto: predijo BRASIL, real:  (0 pts)"
         ]
       }
@@ -7548,19 +7553,19 @@
           {
             "label": "Campeón",
             "puntos": 0,
-            "equipo": "ARGENTINA",
+            "equipo": "ESPAÑA",
             "hit": false
           },
           {
             "label": "Segundo",
             "puntos": 0,
-            "equipo": "ECUADOR",
+            "equipo": "ARGENTINA",
             "hit": false
           },
           {
             "label": "Tercero",
             "puntos": 0,
-            "equipo": "ESPAÑA",
+            "equipo": "PAISES BAJOS",
             "hit": false
           },
           {
