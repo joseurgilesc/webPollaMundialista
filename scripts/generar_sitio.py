@@ -807,6 +807,15 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
         n = r["participante"]  # usar nombre original para agrupar
         pollas_por_nombre[n] = pollas_por_nombre.get(n, 0) + 1
     
+    # Nombres para podio (top 3)
+    filas_podio = []
+    for i, r in enumerate(puntajes[:3]):
+        n = normalizar_nombre(r["participante"])
+        letra = r.get("polla_letra", "A")
+        pollas_por_nombre = pollas_por_nombre or {}
+        mostrar = pollas_por_nombre.get(r["participante"], 1) > 1
+        filas_podio.append(f"{n}{' ('+letra+')' if mostrar else ''}")
+    
     filas = ""
     last_total = None
     rank_display = 0
@@ -888,7 +897,7 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
     <div>
       <div class="stat-label" style="margin-bottom:2px;">ACUMULADO</div>
       <div class="monto">${acumulado:,}</div>
-      <div style="font-size:0.65rem;color:#c0392b;margin-top:2px;">🏆 Semifinales completas — 3° y 4° definidos. Final pendiente</div>
+      <div style="font-size:0.65rem;color:#c0392b;margin-top:2px;">🏆 ESPAÑA 1-0 ARGENTINA · 🥉 INGLATERRA 6-4 FRANCIA — Mundial definido 🎉</div>
     </div>
     <div class="info" style="margin-left:auto;">
       {total_pollas} pollas<br>
@@ -917,8 +926,42 @@ def generar_publica(puntajes: list, participantes: dict) -> str:
     </div>
   </div>
 
+  <!-- Podium -->
+  <div class="card" style="text-align:center;">
+    <h3 style="color:var(--navy);margin-bottom:20px;font-size:1rem;text-transform:uppercase;letter-spacing:0.06em;">🏆 PODIO FINAL</h3>
+    <div style="display:flex;justify-content:center;align-items:flex-end;gap:20px;flex-wrap:wrap;">
+      <!-- 2do -->
+      <div style="text-align:center;order:1;">
+        <div style="font-size:2rem;margin-bottom:4px;">🥈</div>
+        <div style="background:linear-gradient(180deg,#e8e8e8,#d0d0d0);border-radius:12px;padding:16px 20px;min-width:140px;">
+          <div style="font-size:0.9rem;font-weight:700;color:#333;">{filas_podio[1] if len(filas_podio)>1 else ''}</div>
+          <div style="font-size:1.3rem;font-weight:800;color:var(--navy);">{puntajes[1]['puntajes']['total'] if len(puntajes)>1 else 0} pts</div>
+        </div>
+        <div style="margin-top:6px;font-size:0.65rem;color:var(--muted);font-weight:700;">2° LUGAR</div>
+      </div>
+      <!-- 1ro -->
+      <div style="text-align:center;order:0;">
+        <div style="font-size:2.5rem;margin-bottom:4px;">🏆</div>
+        <div style="background:linear-gradient(180deg,#fff7e6,#ffd700);border:2px solid #c9a800;border-radius:16px;padding:20px 24px;min-width:160px;box-shadow:0 8px 30px rgba(201,168,0,0.3);">
+          <div style="font-size:1rem;font-weight:700;color:#8a6d00;">👑 CAMPEÓN</div>
+          <div style="font-size:1.1rem;font-weight:800;color:var(--navy);margin-top:4px;">{filas_podio[0]}</div>
+          <div style="font-size:1.6rem;font-weight:800;color:#c9a800;">{puntajes[0]['puntajes']['total']} pts</div>
+        </div>
+      </div>
+      <!-- 3ro -->
+      <div style="text-align:center;order:2;">
+        <div style="font-size:2rem;margin-bottom:4px;">🥉</div>
+        <div style="background:linear-gradient(180deg,#f5e6d0,#d4a574);border-radius:12px;padding:16px 20px;min-width:140px;">
+          <div style="font-size:0.9rem;font-weight:700;color:#5a3a1a;">{filas_podio[2] if len(filas_podio)>2 else ''}</div>
+          <div style="font-size:1.3rem;font-weight:800;color:var(--navy);">{puntajes[2]['puntajes']['total'] if len(puntajes)>2 else 0} pts</div>
+        </div>
+        <div style="margin-top:6px;font-size:0.65rem;color:var(--muted);font-weight:700;">3° LUGAR</div>
+      </div>
+    </div>
+  </div>
+
   <div class="card">
-    <h3 style="color:var(--navy);margin-bottom:16px;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.06em;">🏆 Tablero de posición</h3>
+    <h3 style="color:var(--navy);margin-bottom:16px;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.06em;">📋 Tabla de posiciones</h3>
     <div class="table-wrap"><table>
       <thead><tr><th>#</th><th>Participante</th><th>16avos</th><th>8avos</th><th>Cuartos</th><th>Semis</th><th>Final</th><th>Total</th></tr></thead>
       <tbody>{filas}</tbody>
@@ -980,15 +1023,25 @@ const SHARE_DATA = {json.dumps({"acumulado": acumulado, "costo": participantes.g
 
 function shareWhatsApp() {{
   const d = SHARE_DATA;
-  let text = '\\u{{1F3C6}} Polla Mundialista 2026\\n\\n';
-  text += '\\u{{1F4B0}} Acumulado: $' + d.acumulado.toLocaleString() + ' (' + d.pollas + ' pollas x $' + d.costo + ')';
+  const rf = (REALES && REALES.finales) ? REALES.finales : {{}};
+  const finalesStr = rf.campeon
+    ? '🏆 ' + rf.campeon + ' 1-0 ' + rf.segundo + '\\n🥉 ' + rf.tercero + ' 6-4 ' + rf.cuarto
+    : 'Resultados pendientes';
+  let text = '🏆 POLLA MUNDIALISTA 2026 — FINAL\\n';
+  text += '━'.repeat(20) + '\\n';
+  text += finalesStr + '\\n';
+  text += '━'.repeat(20) + '\\n\\n';
+  text += '💰 Acumulado: $' + d.acumulado.toLocaleString() + ' (' + d.pollas + ' pollas x $' + d.costo + ')\\n';
   if (d.nota) text += '\\n' + d.nota;
-  text += '\\n\\n\\u{{1F4CA}} Tablero:\\n';
+  text += '\\n\\n📋 TABLA FINAL\\n';
   d.leaderboard.forEach((p, i) => {{
-    const medal = d.hay_puntajes ? (i===0?'\\u{{1F947}}':i===1?'\\u{{1F948}}':i===2?'\\u{{1F949}}':'') : '';
-    text += (i+1) + '. ' + (medal ? medal + ' ' : '') + p.nombre + (p.letra!=='A'?' ('+p.letra+')':'') + ': ' + p.total + ' pts\\n';
+    const medal = d.hay_puntajes ? (i===0?'🥇':i===1?'🥈':i===2?'🥉':'') : '';
+    text += (i+1) + '. ' + (medal ? medal + ' ' : '');
+    text += p.nombre;
+    text += (p.letra!=='A' ? ' (' + p.letra + ')' : '');
+    text += ': ' + p.total + ' pts\\n';
   }});
-  text += '\\n\\n\\u{{1F517}} https://joseurgilesc.github.io/webPollaMundialista/';
+  text += '\\n\\n🔗 ' + window.location.href;
   const url = 'https://api.whatsapp.com/send?text=' + encodeURIComponent(text);
   window.location.href = url;
 }}

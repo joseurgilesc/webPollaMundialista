@@ -7,8 +7,8 @@
       "8avos": 22,
       "cuartos": 15,
       "semifinales": 12,
-      "finales": 8,
-      "total": 100
+      "finales": 39,
+      "total": 131
     },
     "detalle": {
       "16avos": {
@@ -125,11 +125,11 @@
       },
       "finales": {
         "aciertos": [
+          "campeon: ESPAÑA (+20)",
+          "segundo: ARGENTINA (+11)",
           "tercero: INGLATERRA (+8)"
         ],
         "errores": [
-          "campeon: predijo ESPAÑA, real:  (0 pts)",
-          "segundo: predijo ARGENTINA, real:  (0 pts)",
           "cuarto: predijo ALEMANIA, real: FRANCIA (0 pts)"
         ]
       }
@@ -190,13 +190,13 @@
           {
             "label": "Campeón",
             "puntos": 0,
-            "equipo": "ESPAÑA",
+            "equipo": "?",
             "hit": false
           },
           {
             "label": "Segundo",
             "puntos": 0,
-            "equipo": "ARGENTINA",
+            "equipo": "?",
             "hit": false
           },
           {
@@ -212,7 +212,444 @@
             "hit": false
           }
         ],
-        "subtotal": 8
+        "subtotal": 39
+      }
+    },
+    "polla_letra": "A"
+  },
+  {
+    "participante": "Alejandra Córdova Valdiviezo",
+    "archivo": "Alejandra Córdova Valdiviezo.jpeg",
+    "puntajes": {
+      "16avos": 43,
+      "8avos": 22,
+      "cuartos": 12,
+      "semifinales": 16,
+      "finales": 31,
+      "total": 124
+    },
+    "detalle": {
+      "16avos": {
+        "aciertos_equipo": [
+          "ALEMANIA",
+          "FRANCIA",
+          "CANADÁ",
+          "PAISES BAJOS",
+          "MARRUECOS",
+          "COLOMBIA",
+          "CROACIA",
+          "ESPAÑA",
+          "AUSTRIA",
+          "USA",
+          "SENEGAL",
+          "BÉLGICA",
+          "JAPÓN",
+          "BRASIL",
+          "SUECIA",
+          "ECUADOR",
+          "NORUEGA",
+          "MÉXICO",
+          "COSTA DE MARFIL",
+          "INGLATERRA",
+          "ARGELIA",
+          "ARGENTINA",
+          "PARAGUAY",
+          "EGIPTO",
+          "SUIZA",
+          "PORTUGAL"
+        ],
+        "aciertos_posicion": [
+          "ALEMANIA @ 1E",
+          "FRANCIA @ 1I",
+          "CANADÁ @ 2B",
+          "PAISES BAJOS @ 1F",
+          "MARRUECOS @ 2C",
+          "CROACIA @ 2L",
+          "ESPAÑA @ 1H",
+          "AUSTRIA @ 2J",
+          "USA @ 1D",
+          "BÉLGICA @ 1G",
+          "BRASIL @ 1C",
+          "NORUEGA @ 2I",
+          "MÉXICO @ 1A",
+          "INGLATERRA @ 1L",
+          "ARGENTINA @ 1J",
+          "EGIPTO @ 2G",
+          "SUIZA @ 1B"
+        ],
+        "errores": [
+          "ESCOCIA no clasificó a 16avos",
+          "ARABIA SAUDÍ no clasificó a 16avos",
+          "COREA DEL SUR no clasificó a 16avos",
+          "COLOMBIA en 2K (real: PORTUGAL)",
+          "SENEGAL en 3 BEFIJ (real: BOSNIA)",
+          "JAPÓN en 3 AEFHIJ (real: SENEGAL)",
+          "SUECIA en 2F (real: JAPÓN)",
+          "ECUADOR en 2E (real: COSTA DE MARFIL)",
+          "COSTA DE MARFIL en 3 CEFHI (real: ECUADOR)",
+          "ARGELIA en 3 EHIJK (real: REPUBLICA DEL CONGO)",
+          "URUGUAY no clasificó a 16avos",
+          "PARAGUAY en 2D (real: AUSTRALIA)",
+          "IRÁN no clasificó a 16avos",
+          "PORTUGAL en 1K (real: COLOMBIA)",
+          "TURQUÍA no clasificó a 16avos"
+        ]
+      },
+      "8avos": {
+        "aciertos": [
+          "FRANCIA",
+          "CANADÁ",
+          "COLOMBIA",
+          "ESPAÑA",
+          "BRASIL",
+          "MÉXICO",
+          "INGLATERRA",
+          "ARGENTINA",
+          "PARAGUAY",
+          "SUIZA",
+          "PORTUGAL"
+        ],
+        "errores": [
+          "ALEMANIA no llegó a 8avos",
+          "PAISES BAJOS no llegó a 8avos",
+          "SENEGAL no llegó a 8avos",
+          "JAPÓN no llegó a 8avos",
+          "ECUADOR no llegó a 8avos"
+        ]
+      },
+      "cuartos": {
+        "aciertos": [
+          "FRANCIA",
+          "ESPAÑA",
+          "INGLATERRA",
+          "ARGENTINA"
+        ],
+        "errores": [
+          "PAISES BAJOS no llegó a cuartos",
+          "JAPÓN no llegó a cuartos",
+          "ECUADOR no llegó a cuartos",
+          "PORTUGAL no llegó a cuartos"
+        ]
+      },
+      "semifinales": {
+        "aciertos": [
+          "FRANCIA",
+          "ESPAÑA",
+          "INGLATERRA",
+          "ARGENTINA"
+        ],
+        "errores": []
+      },
+      "finales": {
+        "aciertos": [
+          "campeon: ESPAÑA (+20)",
+          "segundo: ARGENTINA (+11)"
+        ],
+        "errores": [
+          "tercero: predijo FRANCIA, real: INGLATERRA (0 pts)",
+          "cuarto: predijo INGLATERRA, real: FRANCIA (0 pts)"
+        ]
+      }
+    },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 26,
+            "count": 26,
+            "detalle": "26 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 17,
+            "count": 17,
+            "detalle": "17 (+1 c/u)"
+          }
+        ],
+        "subtotal": 43
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 22,
+            "count": 11,
+            "detalle": "11 (×2 pts)"
+          }
+        ],
+        "subtotal": 22
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 12,
+            "count": 4,
+            "detalle": "4 (×3 pts)"
+          }
+        ],
+        "subtotal": 12
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 16,
+            "count": 4,
+            "detalle": "4 (×4 pts)"
+          }
+        ],
+        "subtotal": 16
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "?",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "?",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "FRANCIA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "INGLATERRA",
+            "hit": false
+          }
+        ],
+        "subtotal": 31
+      }
+    },
+    "polla_letra": "A"
+  },
+  {
+    "participante": "Ana Lucía Pesántez",
+    "archivo": "Polla Mundialista Final-Anita Pesántez.xlsx",
+    "puntajes": {
+      "16avos": 47,
+      "8avos": 18,
+      "cuartos": 12,
+      "semifinales": 16,
+      "finales": 31,
+      "total": 124
+    },
+    "detalle": {
+      "16avos": {
+        "aciertos_equipo": [
+          "ALEMANIA",
+          "SUECIA",
+          "FRANCIA",
+          "MÉXICO",
+          "SUIZA",
+          "PAISES BAJOS",
+          "MARRUECOS",
+          "COLOMBIA",
+          "CROACIA",
+          "ESPAÑA",
+          "AUSTRIA",
+          "USA",
+          "COSTA DE MARFIL",
+          "BÉLGICA",
+          "SENEGAL",
+          "BRASIL",
+          "JAPÓN",
+          "ECUADOR",
+          "NORUEGA",
+          "SUDÁFRICA",
+          "CABO VERDE",
+          "INGLATERRA",
+          "REPUBLICA DEL CONGO",
+          "ARGENTINA",
+          "AUSTRALIA",
+          "EGIPTO",
+          "CANADÁ",
+          "PORTUGAL",
+          "PARAGUAY"
+        ],
+        "aciertos_posicion": [
+          "ALEMANIA @ 1E",
+          "FRANCIA @ 1I",
+          "PAISES BAJOS @ 1F",
+          "MARRUECOS @ 2C",
+          "CROACIA @ 2L",
+          "ESPAÑA @ 1H",
+          "AUSTRIA @ 2J",
+          "USA @ 1D",
+          "BÉLGICA @ 1G",
+          "SENEGAL @ 3 AEFHIJ",
+          "BRASIL @ 1C",
+          "JAPÓN @ 2F",
+          "NORUEGA @ 2I",
+          "INGLATERRA @ 1L",
+          "REPUBLICA DEL CONGO @ 3 EHIJK",
+          "ARGENTINA @ 1J",
+          "AUSTRALIA @ 2D",
+          "EGIPTO @ 2G"
+        ],
+        "errores": [
+          "SUECIA en 3 ABCDF (real: PARAGUAY)",
+          "IRÁN no clasificó a 16avos",
+          "MÉXICO en 2A (real: SUDÁFRICA)",
+          "SUIZA en 2B (real: CANADÁ)",
+          "COLOMBIA en 2K (real: PORTUGAL)",
+          "COSTA DE MARFIL en 3 BEFIJ (real: BOSNIA)",
+          "ECUADOR en 2E (real: COSTA DE MARFIL)",
+          "SUDÁFRICA en 1A (real: MÉXICO)",
+          "CABO VERDE en 3 CEFHI (real: ECUADOR)",
+          "URUGUAY no clasificó a 16avos",
+          "CANADÁ en 1B (real: SUIZA)",
+          "JORDANIA no clasificó a 16avos",
+          "PORTUGAL en 1K (real: COLOMBIA)",
+          "PARAGUAY en 3 DEIJL (real: GHANA)"
+        ]
+      },
+      "8avos": {
+        "aciertos": [
+          "FRANCIA",
+          "MÉXICO",
+          "ESPAÑA",
+          "BRASIL",
+          "INGLATERRA",
+          "ARGENTINA",
+          "EGIPTO",
+          "CANADÁ",
+          "PORTUGAL"
+        ],
+        "errores": [
+          "ALEMANIA no llegó a 8avos",
+          "PAISES BAJOS no llegó a 8avos",
+          "CROACIA no llegó a 8avos",
+          "COSTA DE MARFIL no llegó a 8avos",
+          "SENEGAL no llegó a 8avos",
+          "ECUADOR no llegó a 8avos",
+          "SUDÁFRICA no llegó a 8avos"
+        ]
+      },
+      "cuartos": {
+        "aciertos": [
+          "FRANCIA",
+          "ESPAÑA",
+          "INGLATERRA",
+          "ARGENTINA"
+        ],
+        "errores": [
+          "PAISES BAJOS no llegó a cuartos",
+          "SENEGAL no llegó a cuartos",
+          "ECUADOR no llegó a cuartos",
+          "PORTUGAL no llegó a cuartos"
+        ]
+      },
+      "semifinales": {
+        "aciertos": [
+          "FRANCIA",
+          "ESPAÑA",
+          "INGLATERRA",
+          "ARGENTINA"
+        ],
+        "errores": []
+      },
+      "finales": {
+        "aciertos": [
+          "campeon: ESPAÑA (+20)",
+          "segundo: ARGENTINA (+11)"
+        ],
+        "errores": [
+          "tercero: predijo FRANCIA, real: INGLATERRA (0 pts)",
+          "cuarto: predijo INGLATERRA, real: FRANCIA (0 pts)"
+        ]
+      }
+    },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 29,
+            "count": 29,
+            "detalle": "29 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 18,
+            "count": 18,
+            "detalle": "18 (+1 c/u)"
+          }
+        ],
+        "subtotal": 47
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 18,
+            "count": 9,
+            "detalle": "9 (×2 pts)"
+          }
+        ],
+        "subtotal": 18
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 12,
+            "count": 4,
+            "detalle": "4 (×3 pts)"
+          }
+        ],
+        "subtotal": 12
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 16,
+            "count": 4,
+            "detalle": "4 (×4 pts)"
+          }
+        ],
+        "subtotal": 16
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "?",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "?",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "FRANCIA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "INGLATERRA",
+            "hit": false
+          }
+        ],
+        "subtotal": 31
       }
     },
     "polla_letra": "A"
@@ -225,8 +662,8 @@
       "8avos": 22,
       "cuartos": 18,
       "semifinales": 16,
-      "finales": 0,
-      "total": 100
+      "finales": 20,
+      "total": 120
     },
     "detalle": {
       "16avos": {
@@ -342,10 +779,11 @@
         "errores": []
       },
       "finales": {
-        "aciertos": [],
+        "aciertos": [
+          "campeon: ESPAÑA (+20)"
+        ],
         "errores": [
-          "campeon: predijo ESPAÑA, real:  (0 pts)",
-          "segundo: predijo INGLATERRA, real:  (0 pts)",
+          "segundo: predijo INGLATERRA, real: ARGENTINA (0 pts)",
           "tercero: predijo FRANCIA, real: INGLATERRA (0 pts)",
           "cuarto: predijo ARGENTINA, real: FRANCIA (0 pts)"
         ]
@@ -407,7 +845,7 @@
           {
             "label": "Campeón",
             "puntos": 0,
-            "equipo": "ESPAÑA",
+            "equipo": "?",
             "hit": false
           },
           {
@@ -429,7 +867,7 @@
             "hit": false
           }
         ],
-        "subtotal": 0
+        "subtotal": 20
       }
     },
     "polla_letra": "A"
@@ -442,8 +880,8 @@
       "8avos": 22,
       "cuartos": 18,
       "semifinales": 16,
-      "finales": 0,
-      "total": 98
+      "finales": 20,
+      "total": 118
     },
     "detalle": {
       "16avos": {
@@ -557,10 +995,11 @@
         "errores": []
       },
       "finales": {
-        "aciertos": [],
+        "aciertos": [
+          "campeon: ESPAÑA (+20)"
+        ],
         "errores": [
-          "campeon: predijo ESPAÑA, real:  (0 pts)",
-          "segundo: predijo INGLATERRA, real:  (0 pts)",
+          "segundo: predijo INGLATERRA, real: ARGENTINA (0 pts)",
           "tercero: predijo FRANCIA, real: INGLATERRA (0 pts)",
           "cuarto: predijo ARGENTINA, real: FRANCIA (0 pts)"
         ]
@@ -622,7 +1061,7 @@
           {
             "label": "Campeón",
             "puntos": 0,
-            "equipo": "ESPAÑA",
+            "equipo": "?",
             "hit": false
           },
           {
@@ -644,7 +1083,7 @@
             "hit": false
           }
         ],
-        "subtotal": 0
+        "subtotal": 20
       }
     },
     "polla_letra": "A"
@@ -657,8 +1096,8 @@
       "8avos": 26,
       "cuartos": 15,
       "semifinales": 12,
-      "finales": 0,
-      "total": 97
+      "finales": 20,
+      "total": 117
     },
     "detalle": {
       "16avos": {
@@ -774,10 +1213,11 @@
         ]
       },
       "finales": {
-        "aciertos": [],
+        "aciertos": [
+          "campeon: ESPAÑA (+20)"
+        ],
         "errores": [
-          "campeon: predijo ESPAÑA, real:  (0 pts)",
-          "segundo: predijo INGLATERRA, real:  (0 pts)",
+          "segundo: predijo INGLATERRA, real: ARGENTINA (0 pts)",
           "tercero: predijo FRANCIA, real: INGLATERRA (0 pts)",
           "cuarto: predijo PORTUGAL, real: FRANCIA (0 pts)"
         ]
@@ -839,7 +1279,7 @@
           {
             "label": "Campeón",
             "puntos": 0,
-            "equipo": "ESPAÑA",
+            "equipo": "?",
             "hit": false
           },
           {
@@ -861,7 +1301,1522 @@
             "hit": false
           }
         ],
-        "subtotal": 0
+        "subtotal": 20
+      }
+    },
+    "polla_letra": "A"
+  },
+  {
+    "participante": "Joaquin Cordero",
+    "archivo": "Polla Mundialista J.C.xlsx",
+    "puntajes": {
+      "16avos": 44,
+      "8avos": 24,
+      "cuartos": 12,
+      "semifinales": 16,
+      "finales": 20,
+      "total": 116
+    },
+    "detalle": {
+      "16avos": {
+        "aciertos_equipo": [
+          "ALEMANIA",
+          "FRANCIA",
+          "PARAGUAY",
+          "CANADÁ",
+          "PAISES BAJOS",
+          "MARRUECOS",
+          "COLOMBIA",
+          "CROACIA",
+          "ESPAÑA",
+          "AUSTRIA",
+          "USA",
+          "SENEGAL",
+          "BÉLGICA",
+          "COSTA DE MARFIL",
+          "BRASIL",
+          "JAPÓN",
+          "ECUADOR",
+          "NORUEGA",
+          "MÉXICO",
+          "INGLATERRA",
+          "ARGELIA",
+          "ARGENTINA",
+          "EGIPTO",
+          "SUIZA",
+          "PORTUGAL",
+          "SUECIA"
+        ],
+        "aciertos_posicion": [
+          "ALEMANIA @ 1E",
+          "FRANCIA @ 1I",
+          "CANADÁ @ 2B",
+          "PAISES BAJOS @ 1F",
+          "MARRUECOS @ 2C",
+          "CROACIA @ 2L",
+          "ESPAÑA @ 1H",
+          "AUSTRIA @ 2J",
+          "USA @ 1D",
+          "BÉLGICA @ 1G",
+          "BRASIL @ 1C",
+          "JAPÓN @ 2F",
+          "NORUEGA @ 2I",
+          "MÉXICO @ 1A",
+          "INGLATERRA @ 1L",
+          "ARGENTINA @ 1J",
+          "EGIPTO @ 2G",
+          "SUIZA @ 1B"
+        ],
+        "errores": [
+          "COREA DEL SUR no clasificó a 16avos",
+          "PARAGUAY en 3 CDFGH (real: SUECIA)",
+          "REPUBLICA CHECA no clasificó a 16avos",
+          "COLOMBIA en 2K (real: PORTUGAL)",
+          "SENEGAL en 3 BEFIJ (real: BOSNIA)",
+          "COSTA DE MARFIL en 3 AEFHIJ (real: SENEGAL)",
+          "ECUADOR en 2E (real: COSTA DE MARFIL)",
+          "ESCOCIA no clasificó a 16avos",
+          "ARGELIA en 3 EHIJK (real: REPUBLICA DEL CONGO)",
+          "URUGUAY no clasificó a 16avos",
+          "TURQUÍA no clasificó a 16avos",
+          "ARABIA SAUDÍ no clasificó a 16avos",
+          "PORTUGAL en 1K (real: COLOMBIA)",
+          "SUECIA en 3 DEIJL (real: GHANA)"
+        ]
+      },
+      "8avos": {
+        "aciertos": [
+          "FRANCIA",
+          "CANADÁ",
+          "COLOMBIA",
+          "ESPAÑA",
+          "USA",
+          "BÉLGICA",
+          "BRASIL",
+          "MÉXICO",
+          "INGLATERRA",
+          "ARGENTINA",
+          "SUIZA",
+          "PORTUGAL"
+        ],
+        "errores": [
+          "ALEMANIA no llegó a 8avos",
+          "PAISES BAJOS no llegó a 8avos",
+          "ECUADOR no llegó a 8avos",
+          "TURQUÍA no llegó a 8avos"
+        ]
+      },
+      "cuartos": {
+        "aciertos": [
+          "FRANCIA",
+          "ESPAÑA",
+          "INGLATERRA",
+          "ARGENTINA"
+        ],
+        "errores": [
+          "PAISES BAJOS no llegó a cuartos",
+          "USA no llegó a cuartos",
+          "BRASIL no llegó a cuartos",
+          "PORTUGAL no llegó a cuartos"
+        ]
+      },
+      "semifinales": {
+        "aciertos": [
+          "FRANCIA",
+          "ESPAÑA",
+          "INGLATERRA",
+          "ARGENTINA"
+        ],
+        "errores": []
+      },
+      "finales": {
+        "aciertos": [
+          "campeon: ESPAÑA (+20)"
+        ],
+        "errores": [
+          "segundo: predijo INGLATERRA, real: ARGENTINA (0 pts)",
+          "tercero: predijo FRANCIA, real: INGLATERRA (0 pts)",
+          "cuarto: predijo ARGENTINA, real: FRANCIA (0 pts)"
+        ]
+      }
+    },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 26,
+            "count": 26,
+            "detalle": "26 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 18,
+            "count": 18,
+            "detalle": "18 (+1 c/u)"
+          }
+        ],
+        "subtotal": 44
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 24,
+            "count": 12,
+            "detalle": "12 (×2 pts)"
+          }
+        ],
+        "subtotal": 24
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 12,
+            "count": 4,
+            "detalle": "4 (×3 pts)"
+          }
+        ],
+        "subtotal": 12
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 16,
+            "count": 4,
+            "detalle": "4 (×4 pts)"
+          }
+        ],
+        "subtotal": 16
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "?",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "INGLATERRA",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "FRANCIA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "ARGENTINA",
+            "hit": false
+          }
+        ],
+        "subtotal": 20
+      }
+    },
+    "polla_letra": "A"
+  },
+  {
+    "participante": "FERNANDA CORDOVA",
+    "archivo": "Polla Mundialista Fer.xlsx",
+    "puntajes": {
+      "16avos": 38,
+      "8avos": 18,
+      "cuartos": 12,
+      "semifinales": 16,
+      "finales": 31,
+      "total": 115
+    },
+    "detalle": {
+      "16avos": {
+        "aciertos_equipo": [
+          "ALEMANIA",
+          "CANADÁ",
+          "FRANCIA",
+          "MÉXICO",
+          "BOSNIA",
+          "PAISES BAJOS",
+          "MARRUECOS",
+          "COLOMBIA",
+          "CROACIA",
+          "ESPAÑA",
+          "ARGELIA",
+          "PARAGUAY",
+          "COSTA DE MARFIL",
+          "BRASIL",
+          "ECUADOR",
+          "NORUEGA",
+          "CABO VERDE",
+          "INGLATERRA",
+          "SENEGAL",
+          "ARGENTINA",
+          "USA",
+          "BÉLGICA",
+          "SUIZA",
+          "AUSTRIA",
+          "PORTUGAL",
+          "GHANA"
+        ],
+        "aciertos_posicion": [
+          "ALEMANIA @ 1E",
+          "FRANCIA @ 1I",
+          "PAISES BAJOS @ 1F",
+          "MARRUECOS @ 2C",
+          "CROACIA @ 2L",
+          "ESPAÑA @ 1H",
+          "BRASIL @ 1C",
+          "NORUEGA @ 2I",
+          "INGLATERRA @ 1L",
+          "ARGENTINA @ 1J",
+          "SUIZA @ 1B",
+          "GHANA @ 3 DEIJL"
+        ],
+        "errores": [
+          "CANADÁ en 3 ABCDF (real: PARAGUAY)",
+          "ESCOCIA no clasificó a 16avos",
+          "MÉXICO en 2A (real: SUDÁFRICA)",
+          "BOSNIA en 2B (real: CANADÁ)",
+          "COLOMBIA en 2K (real: PORTUGAL)",
+          "ARGELIA en 2J (real: AUSTRIA)",
+          "PARAGUAY en 1D (real: USA)",
+          "COSTA DE MARFIL en 3 BEFIJ (real: BOSNIA)",
+          "NUEVA ZELANDA no clasificó a 16avos",
+          "IRÁN no clasificó a 16avos",
+          "TÚNEZ no clasificó a 16avos",
+          "ECUADOR en 2E (real: COSTA DE MARFIL)",
+          "COREA DEL SUR no clasificó a 16avos",
+          "CABO VERDE en 3 CEFHI (real: ECUADOR)",
+          "SENEGAL en 3 EHIJK (real: REPUBLICA DEL CONGO)",
+          "URUGUAY no clasificó a 16avos",
+          "USA en 2D (real: AUSTRALIA)",
+          "BÉLGICA en 2G (real: EGIPTO)",
+          "AUSTRIA en 3 EFGIJ (real: ARGELIA)",
+          "PORTUGAL en 1K (real: COLOMBIA)"
+        ]
+      },
+      "8avos": {
+        "aciertos": [
+          "FRANCIA",
+          "MÉXICO",
+          "ESPAÑA",
+          "BRASIL",
+          "INGLATERRA",
+          "ARGENTINA",
+          "BÉLGICA",
+          "SUIZA",
+          "PORTUGAL"
+        ],
+        "errores": [
+          "ALEMANIA no llegó a 8avos",
+          "PAISES BAJOS no llegó a 8avos",
+          "CROACIA no llegó a 8avos",
+          "COSTA DE MARFIL no llegó a 8avos",
+          "NUEVA ZELANDA no llegó a 8avos",
+          "ECUADOR no llegó a 8avos",
+          "CABO VERDE no llegó a 8avos"
+        ]
+      },
+      "cuartos": {
+        "aciertos": [
+          "FRANCIA",
+          "ESPAÑA",
+          "INGLATERRA",
+          "ARGENTINA"
+        ],
+        "errores": [
+          "PAISES BAJOS no llegó a cuartos",
+          "COSTA DE MARFIL no llegó a cuartos",
+          "BRASIL no llegó a cuartos",
+          "PORTUGAL no llegó a cuartos"
+        ]
+      },
+      "semifinales": {
+        "aciertos": [
+          "FRANCIA",
+          "ESPAÑA",
+          "INGLATERRA",
+          "ARGENTINA"
+        ],
+        "errores": []
+      },
+      "finales": {
+        "aciertos": [
+          "campeon: ESPAÑA (+20)",
+          "segundo: ARGENTINA (+11)"
+        ],
+        "errores": [
+          "tercero: predijo FRANCIA, real: INGLATERRA (0 pts)",
+          "cuarto: predijo INGLATERRA, real: FRANCIA (0 pts)"
+        ]
+      }
+    },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 26,
+            "count": 26,
+            "detalle": "26 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 12,
+            "count": 12,
+            "detalle": "12 (+1 c/u)"
+          }
+        ],
+        "subtotal": 38
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 18,
+            "count": 9,
+            "detalle": "9 (×2 pts)"
+          }
+        ],
+        "subtotal": 18
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 12,
+            "count": 4,
+            "detalle": "4 (×3 pts)"
+          }
+        ],
+        "subtotal": 12
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 16,
+            "count": 4,
+            "detalle": "4 (×4 pts)"
+          }
+        ],
+        "subtotal": 16
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "?",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "?",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "FRANCIA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "INGLATERRA",
+            "hit": false
+          }
+        ],
+        "subtotal": 31
+      }
+    },
+    "polla_letra": "A"
+  },
+  {
+    "participante": "Rodrigo Ayala E.",
+    "archivo": "Polla Mundialista Final RAyala.xlsx",
+    "puntajes": {
+      "16avos": 39,
+      "8avos": 16,
+      "cuartos": 9,
+      "semifinales": 12,
+      "finales": 39,
+      "total": 115
+    },
+    "detalle": {
+      "16avos": {
+        "aciertos_equipo": [
+          "ECUADOR",
+          "FRANCIA",
+          "USA",
+          "CANADÁ",
+          "PAISES BAJOS",
+          "MARRUECOS",
+          "COLOMBIA",
+          "CROACIA",
+          "ESPAÑA",
+          "AUSTRIA",
+          "AUSTRALIA",
+          "BOSNIA",
+          "BRASIL",
+          "JAPÓN",
+          "ALEMANIA",
+          "NORUEGA",
+          "MÉXICO",
+          "INGLATERRA",
+          "SENEGAL",
+          "ARGENTINA",
+          "PARAGUAY",
+          "EGIPTO",
+          "SUECIA",
+          "PORTUGAL",
+          "GHANA"
+        ],
+        "aciertos_posicion": [
+          "FRANCIA @ 1I",
+          "CANADÁ @ 2B",
+          "PAISES BAJOS @ 1F",
+          "MARRUECOS @ 2C",
+          "CROACIA @ 2L",
+          "ESPAÑA @ 1H",
+          "AUSTRIA @ 2J",
+          "BRASIL @ 1C",
+          "JAPÓN @ 2F",
+          "NORUEGA @ 2I",
+          "MÉXICO @ 1A",
+          "INGLATERRA @ 1L",
+          "ARGENTINA @ 1J",
+          "EGIPTO @ 2G"
+        ],
+        "errores": [
+          "ECUADOR en 1E (real: ALEMANIA)",
+          "ESCOCIA no clasificó a 16avos",
+          "REPUBLICA CHECA no clasificó a 16avos",
+          "COLOMBIA en 2K (real: PORTUGAL)",
+          "AUSTRALIA en 1D (real: USA)",
+          "NUEVA ZELANDA no clasificó a 16avos",
+          "COREA DEL SUR no clasificó a 16avos",
+          "ALEMANIA en 2E (real: COSTA DE MARFIL)",
+          "CURAZAO no clasificó a 16avos",
+          "URUGUAY no clasificó a 16avos",
+          "PARAGUAY en 2D (real: AUSTRALIA)",
+          "QATAR no clasificó a 16avos",
+          "PORTUGAL en 1K (real: COLOMBIA)"
+        ]
+      },
+      "8avos": {
+        "aciertos": [
+          "FRANCIA",
+          "COLOMBIA",
+          "ESPAÑA",
+          "BRASIL",
+          "MÉXICO",
+          "INGLATERRA",
+          "ARGENTINA",
+          "PARAGUAY"
+        ],
+        "errores": [
+          "ECUADOR no llegó a 8avos",
+          "REPUBLICA CHECA no llegó a 8avos",
+          "PAISES BAJOS no llegó a 8avos",
+          "AUSTRALIA no llegó a 8avos",
+          "NUEVA ZELANDA no llegó a 8avos",
+          "ALEMANIA no llegó a 8avos",
+          "SUECIA no llegó a 8avos",
+          "GHANA no llegó a 8avos"
+        ]
+      },
+      "cuartos": {
+        "aciertos": [
+          "ESPAÑA",
+          "INGLATERRA",
+          "ARGENTINA"
+        ],
+        "errores": [
+          "ECUADOR no llegó a cuartos",
+          "PAISES BAJOS no llegó a cuartos",
+          "AUSTRALIA no llegó a cuartos",
+          "BRASIL no llegó a cuartos",
+          "SUECIA no llegó a cuartos"
+        ]
+      },
+      "semifinales": {
+        "aciertos": [
+          "ESPAÑA",
+          "INGLATERRA",
+          "ARGENTINA"
+        ],
+        "errores": [
+          "PAISES BAJOS no llegó a semifinales"
+        ]
+      },
+      "finales": {
+        "aciertos": [
+          "campeon: ESPAÑA (+20)",
+          "segundo: ARGENTINA (+11)",
+          "tercero: INGLATERRA (+8)"
+        ],
+        "errores": [
+          "cuarto: predijo PAISES BAJOS, real: FRANCIA (0 pts)"
+        ]
+      }
+    },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 25,
+            "count": 25,
+            "detalle": "25 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 14,
+            "count": 14,
+            "detalle": "14 (+1 c/u)"
+          }
+        ],
+        "subtotal": 39
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 16,
+            "count": 8,
+            "detalle": "8 (×2 pts)"
+          }
+        ],
+        "subtotal": 16
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 9,
+            "count": 3,
+            "detalle": "3 (×3 pts)"
+          }
+        ],
+        "subtotal": 9
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 12,
+            "count": 3,
+            "detalle": "3 (×4 pts)"
+          }
+        ],
+        "subtotal": 12
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "?",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "?",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "?",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "PAISES BAJOS",
+            "hit": false
+          }
+        ],
+        "subtotal": 39
+      }
+    },
+    "polla_letra": "A"
+  },
+  {
+    "participante": "Maya María Jaramillo Arboleda",
+    "archivo": "Maya María Jaramillo Arboleda.pdf",
+    "puntajes": {
+      "16avos": 41,
+      "8avos": 22,
+      "cuartos": 15,
+      "semifinales": 16,
+      "finales": 20,
+      "total": 114
+    },
+    "detalle": {
+      "16avos": {
+        "aciertos_equipo": [
+          "ALEMANIA",
+          "FRANCIA",
+          "MÉXICO",
+          "SUIZA",
+          "PAISES BAJOS",
+          "MARRUECOS",
+          "COLOMBIA",
+          "CROACIA",
+          "ESPAÑA",
+          "AUSTRIA",
+          "USA",
+          "BOSNIA",
+          "BÉLGICA",
+          "COSTA DE MARFIL",
+          "BRASIL",
+          "JAPÓN",
+          "ECUADOR",
+          "NORUEGA",
+          "SUECIA",
+          "INGLATERRA",
+          "ARGENTINA",
+          "PARAGUAY",
+          "EGIPTO",
+          "CANADÁ",
+          "PORTUGAL"
+        ],
+        "aciertos_posicion": [
+          "ALEMANIA @ 1E",
+          "FRANCIA @ 1I",
+          "PAISES BAJOS @ 1F",
+          "MARRUECOS @ 2C",
+          "CROACIA @ 2L",
+          "ESPAÑA @ 1H",
+          "AUSTRIA @ 2J",
+          "USA @ 1D",
+          "BOSNIA @ 3 BEFIJ",
+          "BÉLGICA @ 1G",
+          "BRASIL @ 1C",
+          "JAPÓN @ 2F",
+          "NORUEGA @ 2I",
+          "INGLATERRA @ 1L",
+          "ARGENTINA @ 1J",
+          "EGIPTO @ 2G"
+        ],
+        "errores": [
+          "REPUBLICA CHECA no clasificó a 16avos",
+          "ESCOCIA no clasificó a 16avos",
+          "MÉXICO en 2A (real: SUDÁFRICA)",
+          "SUIZA en 2B (real: CANADÁ)",
+          "COLOMBIA en 2K (real: PORTUGAL)",
+          "COSTA DE MARFIL en 3 AEFHIJ (real: SENEGAL)",
+          "ECUADOR en 2E (real: COSTA DE MARFIL)",
+          "COREA DEL SUR no clasificó a 16avos",
+          "SUECIA en 3 CEFHI (real: ECUADOR)",
+          "ARABIA SAUDÍ no clasificó a 16avos",
+          "URUGUAY no clasificó a 16avos",
+          "PARAGUAY en 2D (real: AUSTRALIA)",
+          "CANADÁ en 1B (real: SUIZA)",
+          "NUEVA ZELANDA no clasificó a 16avos",
+          "PORTUGAL en 1K (real: COLOMBIA)",
+          "TURQUÍA no clasificó a 16avos"
+        ]
+      },
+      "8avos": {
+        "aciertos": [
+          "FRANCIA",
+          "MÉXICO",
+          "ESPAÑA",
+          "USA",
+          "BÉLGICA",
+          "BRASIL",
+          "INGLATERRA",
+          "ARGENTINA",
+          "EGIPTO",
+          "CANADÁ",
+          "PORTUGAL"
+        ],
+        "errores": [
+          "ALEMANIA no llegó a 8avos",
+          "PAISES BAJOS no llegó a 8avos",
+          "CROACIA no llegó a 8avos",
+          "ECUADOR no llegó a 8avos",
+          "COREA DEL SUR no llegó a 8avos"
+        ]
+      },
+      "cuartos": {
+        "aciertos": [
+          "FRANCIA",
+          "ESPAÑA",
+          "BÉLGICA",
+          "INGLATERRA",
+          "ARGENTINA"
+        ],
+        "errores": [
+          "PAISES BAJOS no llegó a cuartos",
+          "ECUADOR no llegó a cuartos",
+          "PORTUGAL no llegó a cuartos"
+        ]
+      },
+      "semifinales": {
+        "aciertos": [
+          "FRANCIA",
+          "ESPAÑA",
+          "INGLATERRA",
+          "ARGENTINA"
+        ],
+        "errores": []
+      },
+      "finales": {
+        "aciertos": [
+          "campeon: ESPAÑA (+20)"
+        ],
+        "errores": [
+          "segundo: predijo INGLATERRA, real: ARGENTINA (0 pts)",
+          "tercero: predijo FRANCIA, real: INGLATERRA (0 pts)",
+          "cuarto: predijo ARGENTINA, real: FRANCIA (0 pts)"
+        ]
+      }
+    },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 25,
+            "count": 25,
+            "detalle": "25 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 16,
+            "count": 16,
+            "detalle": "16 (+1 c/u)"
+          }
+        ],
+        "subtotal": 41
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 22,
+            "count": 11,
+            "detalle": "11 (×2 pts)"
+          }
+        ],
+        "subtotal": 22
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 15,
+            "count": 5,
+            "detalle": "5 (×3 pts)"
+          }
+        ],
+        "subtotal": 15
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 16,
+            "count": 4,
+            "detalle": "4 (×4 pts)"
+          }
+        ],
+        "subtotal": 16
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "?",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "INGLATERRA",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "FRANCIA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "ARGENTINA",
+            "hit": false
+          }
+        ],
+        "subtotal": 20
+      }
+    },
+    "polla_letra": "A"
+  },
+  {
+    "participante": "MARIA ELENA AYALA",
+    "archivo": "Polla Mundialista Final MAYALA 2.xlsx [CORREGIDA]",
+    "puntajes": {
+      "16avos": 40,
+      "8avos": 22,
+      "cuartos": 12,
+      "semifinales": 8,
+      "finales": 31,
+      "total": 113
+    },
+    "detalle": {
+      "16avos": {
+        "aciertos_equipo": [
+          "ECUADOR",
+          "GHANA",
+          "FRANCIA",
+          "CANADÁ",
+          "PAISES BAJOS",
+          "MARRUECOS",
+          "COLOMBIA",
+          "CROACIA",
+          "ESPAÑA",
+          "AUSTRIA",
+          "USA",
+          "ARGELIA",
+          "BÉLGICA",
+          "COSTA DE MARFIL",
+          "BRASIL",
+          "SUECIA",
+          "ALEMANIA",
+          "NORUEGA",
+          "MÉXICO",
+          "INGLATERRA",
+          "SENEGAL",
+          "ARGENTINA",
+          "SUIZA",
+          "PORTUGAL",
+          "PARAGUAY"
+        ],
+        "aciertos_posicion": [
+          "FRANCIA @ 1I",
+          "CANADÁ @ 2B",
+          "PAISES BAJOS @ 1F",
+          "MARRUECOS @ 2C",
+          "CROACIA @ 2L",
+          "ESPAÑA @ 1H",
+          "AUSTRIA @ 2J",
+          "USA @ 1D",
+          "BÉLGICA @ 1G",
+          "BRASIL @ 1C",
+          "NORUEGA @ 2I",
+          "MÉXICO @ 1A",
+          "INGLATERRA @ 1L",
+          "ARGENTINA @ 1J",
+          "SUIZA @ 1B"
+        ],
+        "errores": [
+          "ECUADOR en 1E (real: ALEMANIA)",
+          "GHANA en 3 ABCDF (real: PARAGUAY)",
+          "ARABIA SAUDÍ no clasificó a 16avos",
+          "REPUBLICA CHECA no clasificó a 16avos",
+          "COLOMBIA en 2K (real: PORTUGAL)",
+          "ARGELIA en 3 BEFIJ (real: BOSNIA)",
+          "COSTA DE MARFIL en 3 AEFHIJ (real: SENEGAL)",
+          "SUECIA en 2F (real: JAPÓN)",
+          "ALEMANIA en 2E (real: COSTA DE MARFIL)",
+          "ESCOCIA no clasificó a 16avos",
+          "SENEGAL en 3 EHIJK (real: REPUBLICA DEL CONGO)",
+          "URUGUAY no clasificó a 16avos",
+          "TURQUÍA no clasificó a 16avos",
+          "NUEVA ZELANDA no clasificó a 16avos",
+          "PORTUGAL en 1K (real: COLOMBIA)",
+          "PARAGUAY en 3 DEIJL (real: GHANA)"
+        ]
+      },
+      "8avos": {
+        "aciertos": [
+          "FRANCIA",
+          "COLOMBIA",
+          "ESPAÑA",
+          "USA",
+          "BÉLGICA",
+          "BRASIL",
+          "MÉXICO",
+          "INGLATERRA",
+          "ARGENTINA",
+          "SUIZA",
+          "PORTUGAL"
+        ],
+        "errores": [
+          "ECUADOR no llegó a 8avos",
+          "REPUBLICA CHECA no llegó a 8avos",
+          "PAISES BAJOS no llegó a 8avos",
+          "ALEMANIA no llegó a 8avos",
+          "TURQUÍA no llegó a 8avos"
+        ]
+      },
+      "cuartos": {
+        "aciertos": [
+          "ESPAÑA",
+          "BÉLGICA",
+          "INGLATERRA",
+          "ARGENTINA"
+        ],
+        "errores": [
+          "ECUADOR no llegó a cuartos",
+          "PAISES BAJOS no llegó a cuartos",
+          "BRASIL no llegó a cuartos",
+          "PORTUGAL no llegó a cuartos"
+        ]
+      },
+      "semifinales": {
+        "aciertos": [
+          "ESPAÑA",
+          "ARGENTINA"
+        ],
+        "errores": [
+          "PAISES BAJOS no llegó a semifinales",
+          "BRASIL no llegó a semifinales"
+        ]
+      },
+      "finales": {
+        "aciertos": [
+          "campeon: ESPAÑA (+20)",
+          "segundo: ARGENTINA (+11)"
+        ],
+        "errores": [
+          "tercero: predijo PAISES BAJOS, real: INGLATERRA (0 pts)",
+          "cuarto: predijo BRASIL, real: FRANCIA (0 pts)"
+        ]
+      }
+    },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 25,
+            "count": 25,
+            "detalle": "25 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 15,
+            "count": 15,
+            "detalle": "15 (+1 c/u)"
+          }
+        ],
+        "subtotal": 40
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 22,
+            "count": 11,
+            "detalle": "11 (×2 pts)"
+          }
+        ],
+        "subtotal": 22
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 12,
+            "count": 4,
+            "detalle": "4 (×3 pts)"
+          }
+        ],
+        "subtotal": 12
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 8,
+            "count": 2,
+            "detalle": "2 (×4 pts)"
+          }
+        ],
+        "subtotal": 8
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "?",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "?",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "PAISES BAJOS",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "BRASIL",
+            "hit": false
+          }
+        ],
+        "subtotal": 31
+      }
+    },
+    "polla_letra": "A"
+  },
+  {
+    "participante": "Fabiola Córdova C",
+    "archivo": "Fabiola Córdova C.jpeg",
+    "puntajes": {
+      "16avos": 45,
+      "8avos": 20,
+      "cuartos": 15,
+      "semifinales": 12,
+      "finales": 20,
+      "total": 112
+    },
+    "detalle": {
+      "16avos": {
+        "aciertos_equipo": [
+          "ALEMANIA",
+          "SUECIA",
+          "FRANCIA",
+          "COSTA DE MARFIL",
+          "SUDÁFRICA",
+          "CANADÁ",
+          "PAISES BAJOS",
+          "MARRUECOS",
+          "COLOMBIA",
+          "CROACIA",
+          "ESPAÑA",
+          "ARGELIA",
+          "USA",
+          "SENEGAL",
+          "BÉLGICA",
+          "BRASIL",
+          "JAPÓN",
+          "ECUADOR",
+          "NORUEGA",
+          "MÉXICO",
+          "INGLATERRA",
+          "ARGENTINA",
+          "PARAGUAY",
+          "EGIPTO",
+          "SUIZA",
+          "GHANA",
+          "PORTUGAL"
+        ],
+        "aciertos_posicion": [
+          "ALEMANIA @ 1E",
+          "FRANCIA @ 1I",
+          "SUDÁFRICA @ 2A",
+          "CANADÁ @ 2B",
+          "PAISES BAJOS @ 1F",
+          "MARRUECOS @ 2C",
+          "CROACIA @ 2L",
+          "ESPAÑA @ 1H",
+          "USA @ 1D",
+          "BÉLGICA @ 1G",
+          "BRASIL @ 1C",
+          "JAPÓN @ 2F",
+          "NORUEGA @ 2I",
+          "MÉXICO @ 1A",
+          "INGLATERRA @ 1L",
+          "ARGENTINA @ 1J",
+          "EGIPTO @ 2G",
+          "SUIZA @ 1B"
+        ],
+        "errores": [
+          "SUECIA en 3 ABCDF (real: PARAGUAY)",
+          "COSTA DE MARFIL en 3 CDFGH (real: SUECIA)",
+          "COLOMBIA en 2K (real: PORTUGAL)",
+          "ARGELIA en 2J (real: AUSTRIA)",
+          "SENEGAL en 3 BEFIJ (real: BOSNIA)",
+          "REPUBLICA CHECA no clasificó a 16avos",
+          "ECUADOR en 2E (real: COSTA DE MARFIL)",
+          "ESCOCIA no clasificó a 16avos",
+          "ARABIA SAUDÍ no clasificó a 16avos",
+          "URUGUAY no clasificó a 16avos",
+          "PARAGUAY en 2D (real: AUSTRALIA)",
+          "GHANA en 3 EFGIJ (real: ARGELIA)",
+          "PORTUGAL en 1K (real: COLOMBIA)",
+          "TURQUÍA no clasificó a 16avos"
+        ]
+      },
+      "8avos": {
+        "aciertos": [
+          "FRANCIA",
+          "CANADÁ",
+          "ESPAÑA",
+          "BÉLGICA",
+          "BRASIL",
+          "MÉXICO",
+          "INGLATERRA",
+          "ARGENTINA",
+          "EGIPTO",
+          "PORTUGAL"
+        ],
+        "errores": [
+          "ALEMANIA no llegó a 8avos",
+          "PAISES BAJOS no llegó a 8avos",
+          "CROACIA no llegó a 8avos",
+          "SENEGAL no llegó a 8avos",
+          "ECUADOR no llegó a 8avos",
+          "GHANA no llegó a 8avos"
+        ]
+      },
+      "cuartos": {
+        "aciertos": [
+          "FRANCIA",
+          "ESPAÑA",
+          "BÉLGICA",
+          "INGLATERRA",
+          "ARGENTINA"
+        ],
+        "errores": [
+          "PAISES BAJOS no llegó a cuartos",
+          "BRASIL no llegó a cuartos",
+          "PORTUGAL no llegó a cuartos"
+        ]
+      },
+      "semifinales": {
+        "aciertos": [
+          "FRANCIA",
+          "ESPAÑA",
+          "INGLATERRA"
+        ],
+        "errores": [
+          "PORTUGAL no llegó a semifinales"
+        ]
+      },
+      "finales": {
+        "aciertos": [
+          "campeon: ESPAÑA (+20)"
+        ],
+        "errores": [
+          "segundo: predijo PORTUGAL, real: ARGENTINA (0 pts)",
+          "tercero: predijo FRANCIA, real: INGLATERRA (0 pts)",
+          "cuarto: predijo INGLATERRA, real: FRANCIA (0 pts)"
+        ]
+      }
+    },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 27,
+            "count": 27,
+            "detalle": "27 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 18,
+            "count": 18,
+            "detalle": "18 (+1 c/u)"
+          }
+        ],
+        "subtotal": 45
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 20,
+            "count": 10,
+            "detalle": "10 (×2 pts)"
+          }
+        ],
+        "subtotal": 20
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 15,
+            "count": 5,
+            "detalle": "5 (×3 pts)"
+          }
+        ],
+        "subtotal": 15
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 12,
+            "count": 3,
+            "detalle": "3 (×4 pts)"
+          }
+        ],
+        "subtotal": 12
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "?",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "PORTUGAL",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "FRANCIA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "INGLATERRA",
+            "hit": false
+          }
+        ],
+        "subtotal": 20
+      }
+    },
+    "polla_letra": "A"
+  },
+  {
+    "participante": "Santiago Amoroso Carvallo",
+    "archivo": "Polla Mundialista  S.Amoroso2.xlsx",
+    "puntajes": {
+      "16avos": 42,
+      "8avos": 22,
+      "cuartos": 18,
+      "semifinales": 8,
+      "finales": 20,
+      "total": 110
+    },
+    "detalle": {
+      "16avos": {
+        "aciertos_equipo": [
+          "ALEMANIA",
+          "COSTA DE MARFIL",
+          "FRANCIA",
+          "PARAGUAY",
+          "CANADÁ",
+          "PAISES BAJOS",
+          "MARRUECOS",
+          "COLOMBIA",
+          "GHANA",
+          "ESPAÑA",
+          "ARGELIA",
+          "USA",
+          "BÉLGICA",
+          "SUECIA",
+          "BRASIL",
+          "JAPÓN",
+          "ECUADOR",
+          "NORUEGA",
+          "MÉXICO",
+          "SENEGAL",
+          "INGLATERRA",
+          "AUSTRIA",
+          "ARGENTINA",
+          "SUIZA",
+          "EGIPTO",
+          "PORTUGAL",
+          "CROACIA"
+        ],
+        "aciertos_posicion": [
+          "ALEMANIA @ 1E",
+          "FRANCIA @ 1I",
+          "CANADÁ @ 2B",
+          "PAISES BAJOS @ 1F",
+          "MARRUECOS @ 2C",
+          "ESPAÑA @ 1H",
+          "USA @ 1D",
+          "BÉLGICA @ 1G",
+          "BRASIL @ 1C",
+          "JAPÓN @ 2F",
+          "NORUEGA @ 2I",
+          "MÉXICO @ 1A",
+          "INGLATERRA @ 1L",
+          "ARGENTINA @ 1J",
+          "SUIZA @ 1B"
+        ],
+        "errores": [
+          "COSTA DE MARFIL en 3 ABCDF (real: PARAGUAY)",
+          "PARAGUAY en 3 CDFGH (real: SUECIA)",
+          "REPUBLICA CHECA no clasificó a 16avos",
+          "COLOMBIA en 2K (real: PORTUGAL)",
+          "GHANA en 2L (real: CROACIA)",
+          "ARGELIA en 2J (real: AUSTRIA)",
+          "SUECIA en 3 AEFHIJ (real: SENEGAL)",
+          "ECUADOR en 2E (real: COSTA DE MARFIL)",
+          "SENEGAL en 3 CEFHI (real: ECUADOR)",
+          "AUSTRIA en 3 EHIJK (real: REPUBLICA DEL CONGO)",
+          "URUGUAY no clasificó a 16avos",
+          "TURQUÍA no clasificó a 16avos",
+          "NUEVA ZELANDA no clasificó a 16avos",
+          "EGIPTO en 3 EFGIJ (real: ARGELIA)",
+          "PORTUGAL en 1K (real: COLOMBIA)",
+          "CROACIA en 3 DEIJL (real: GHANA)"
+        ]
+      },
+      "8avos": {
+        "aciertos": [
+          "FRANCIA",
+          "CANADÁ",
+          "MARRUECOS",
+          "COLOMBIA",
+          "ESPAÑA",
+          "BÉLGICA",
+          "BRASIL",
+          "INGLATERRA",
+          "ARGENTINA",
+          "SUIZA",
+          "PORTUGAL"
+        ],
+        "errores": [
+          "ALEMANIA no llegó a 8avos",
+          "COSTA DE MARFIL no llegó a 8avos",
+          "ECUADOR no llegó a 8avos",
+          "SENEGAL no llegó a 8avos",
+          "TURQUÍA no llegó a 8avos"
+        ]
+      },
+      "cuartos": {
+        "aciertos": [
+          "FRANCIA",
+          "MARRUECOS",
+          "ESPAÑA",
+          "BÉLGICA",
+          "INGLATERRA",
+          "ARGENTINA"
+        ],
+        "errores": [
+          "BRASIL no llegó a cuartos",
+          "PORTUGAL no llegó a cuartos"
+        ]
+      },
+      "semifinales": {
+        "aciertos": [
+          "FRANCIA",
+          "ESPAÑA"
+        ],
+        "errores": [
+          "BRASIL no llegó a semifinales",
+          "PORTUGAL no llegó a semifinales"
+        ]
+      },
+      "finales": {
+        "aciertos": [
+          "campeon: ESPAÑA (+20)"
+        ],
+        "errores": [
+          "segundo: predijo PORTUGAL, real: ARGENTINA (0 pts)",
+          "tercero: predijo FRANCIA, real: INGLATERRA (0 pts)",
+          "cuarto: predijo BRASIL, real: FRANCIA (0 pts)"
+        ]
+      }
+    },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 27,
+            "count": 27,
+            "detalle": "27 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 15,
+            "count": 15,
+            "detalle": "15 (+1 c/u)"
+          }
+        ],
+        "subtotal": 42
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 22,
+            "count": 11,
+            "detalle": "11 (×2 pts)"
+          }
+        ],
+        "subtotal": 22
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 18,
+            "count": 6,
+            "detalle": "6 (×3 pts)"
+          }
+        ],
+        "subtotal": 18
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 8,
+            "count": 2,
+            "detalle": "2 (×4 pts)"
+          }
+        ],
+        "subtotal": 8
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "?",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "PORTUGAL",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "FRANCIA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "BRASIL",
+            "hit": false
+          }
+        ],
+        "subtotal": 20
       }
     },
     "polla_letra": "A"
@@ -874,8 +2829,8 @@
       "8avos": 22,
       "cuartos": 15,
       "semifinales": 16,
-      "finales": 0,
-      "total": 97
+      "finales": 11,
+      "total": 108
     },
     "detalle": {
       "16avos": {
@@ -992,10 +2947,11 @@
         "errores": []
       },
       "finales": {
-        "aciertos": [],
+        "aciertos": [
+          "segundo: ARGENTINA (+11)"
+        ],
         "errores": [
-          "campeon: predijo FRANCIA, real:  (0 pts)",
-          "segundo: predijo ARGENTINA, real:  (0 pts)",
+          "campeon: predijo FRANCIA, real: ESPAÑA (0 pts)",
           "tercero: predijo ESPAÑA, real: INGLATERRA (0 pts)",
           "cuarto: predijo INGLATERRA, real: FRANCIA (0 pts)"
         ]
@@ -1063,7 +3019,7 @@
           {
             "label": "Segundo",
             "puntos": 0,
-            "equipo": "ARGENTINA",
+            "equipo": "?",
             "hit": false
           },
           {
@@ -1079,7 +3035,661 @@
             "hit": false
           }
         ],
-        "subtotal": 0
+        "subtotal": 11
+      }
+    },
+    "polla_letra": "A"
+  },
+  {
+    "participante": "Pablo Fernández de Córdova",
+    "archivo": "PabloFernándezDeCordova.jpeg",
+    "puntajes": {
+      "16avos": 43,
+      "8avos": 22,
+      "cuartos": 12,
+      "semifinales": 8,
+      "finales": 20,
+      "total": 105
+    },
+    "detalle": {
+      "16avos": {
+        "aciertos_equipo": [
+          "ALEMANIA",
+          "SUECIA",
+          "FRANCIA",
+          "BOSNIA",
+          "MÉXICO",
+          "CANADÁ",
+          "JAPÓN",
+          "COLOMBIA",
+          "CROACIA",
+          "ESPAÑA",
+          "AUSTRIA",
+          "AUSTRALIA",
+          "NORUEGA",
+          "BÉLGICA",
+          "BRASIL",
+          "PAISES BAJOS",
+          "ECUADOR",
+          "SENEGAL",
+          "SUDÁFRICA",
+          "PARAGUAY",
+          "INGLATERRA",
+          "REPUBLICA DEL CONGO",
+          "ARGENTINA",
+          "USA",
+          "EGIPTO",
+          "SUIZA",
+          "COSTA DE MARFIL",
+          "PORTUGAL",
+          "GHANA"
+        ],
+        "aciertos_posicion": [
+          "ALEMANIA @ 1E",
+          "FRANCIA @ 1I",
+          "CANADÁ @ 2B",
+          "CROACIA @ 2L",
+          "ESPAÑA @ 1H",
+          "AUSTRIA @ 2J",
+          "BÉLGICA @ 1G",
+          "BRASIL @ 1C",
+          "INGLATERRA @ 1L",
+          "REPUBLICA DEL CONGO @ 3 EHIJK",
+          "ARGENTINA @ 1J",
+          "EGIPTO @ 2G",
+          "SUIZA @ 1B",
+          "GHANA @ 3 DEIJL"
+        ],
+        "errores": [
+          "SUECIA en 3 ABCDF (real: PARAGUAY)",
+          "BOSNIA en 3 CDFGH (real: SUECIA)",
+          "MÉXICO en 2A (real: SUDÁFRICA)",
+          "JAPÓN en 1F (real: PAISES BAJOS)",
+          "ESCOCIA no clasificó a 16avos",
+          "COLOMBIA en 2K (real: PORTUGAL)",
+          "AUSTRALIA en 1D (real: USA)",
+          "NORUEGA en 3 BEFIJ (real: BOSNIA)",
+          "REPUBLICA CHECA no clasificó a 16avos",
+          "PAISES BAJOS en 2F (real: JAPÓN)",
+          "ECUADOR en 2E (real: COSTA DE MARFIL)",
+          "SENEGAL en 2I (real: NORUEGA)",
+          "SUDÁFRICA en 1A (real: MÉXICO)",
+          "PARAGUAY en 3 CEFHI (real: ECUADOR)",
+          "URUGUAY no clasificó a 16avos",
+          "USA en 2D (real: AUSTRALIA)",
+          "COSTA DE MARFIL en 3 EFGIJ (real: ARGELIA)",
+          "PORTUGAL en 1K (real: COLOMBIA)"
+        ]
+      },
+      "8avos": {
+        "aciertos": [
+          "FRANCIA",
+          "CANADÁ",
+          "COLOMBIA",
+          "ESPAÑA",
+          "NORUEGA",
+          "BÉLGICA",
+          "BRASIL",
+          "INGLATERRA",
+          "ARGENTINA",
+          "USA",
+          "PORTUGAL"
+        ],
+        "errores": [
+          "ALEMANIA no llegó a 8avos",
+          "JAPÓN no llegó a 8avos",
+          "ECUADOR no llegó a 8avos",
+          "SUDÁFRICA no llegó a 8avos",
+          "COSTA DE MARFIL no llegó a 8avos"
+        ]
+      },
+      "cuartos": {
+        "aciertos": [
+          "ESPAÑA",
+          "BÉLGICA",
+          "INGLATERRA",
+          "ARGENTINA"
+        ],
+        "errores": [
+          "ALEMANIA no llegó a cuartos",
+          "JAPÓN no llegó a cuartos",
+          "ECUADOR no llegó a cuartos",
+          "COSTA DE MARFIL no llegó a cuartos"
+        ]
+      },
+      "semifinales": {
+        "aciertos": [
+          "ESPAÑA",
+          "ARGENTINA"
+        ],
+        "errores": [
+          "ALEMANIA no llegó a semifinales",
+          "ECUADOR no llegó a semifinales"
+        ]
+      },
+      "finales": {
+        "aciertos": [
+          "campeon: ESPAÑA (+20)"
+        ],
+        "errores": [
+          "segundo: predijo ECUADOR, real: ARGENTINA (0 pts)",
+          "tercero: predijo ARGENTINA, real: INGLATERRA (0 pts)",
+          "cuarto: predijo ALEMANIA, real: FRANCIA (0 pts)"
+        ]
+      }
+    },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 29,
+            "count": 29,
+            "detalle": "29 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 14,
+            "count": 14,
+            "detalle": "14 (+1 c/u)"
+          }
+        ],
+        "subtotal": 43
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 22,
+            "count": 11,
+            "detalle": "11 (×2 pts)"
+          }
+        ],
+        "subtotal": 22
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 12,
+            "count": 4,
+            "detalle": "4 (×3 pts)"
+          }
+        ],
+        "subtotal": 12
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 8,
+            "count": 2,
+            "detalle": "2 (×4 pts)"
+          }
+        ],
+        "subtotal": 8
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "?",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "ECUADOR",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "ARGENTINA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "ALEMANIA",
+            "hit": false
+          }
+        ],
+        "subtotal": 20
+      }
+    },
+    "polla_letra": "A"
+  },
+  {
+    "participante": "SEBASTIEN PAGÉ",
+    "archivo": "Polla Mundialista Seb.xlsx",
+    "puntajes": {
+      "16avos": 43,
+      "8avos": 24,
+      "cuartos": 15,
+      "semifinales": 8,
+      "finales": 11,
+      "total": 101
+    },
+    "detalle": {
+      "16avos": {
+        "aciertos_equipo": [
+          "ALEMANIA",
+          "COSTA DE MARFIL",
+          "FRANCIA",
+          "BOSNIA",
+          "PAISES BAJOS",
+          "MARRUECOS",
+          "PORTUGAL",
+          "CROACIA",
+          "ESPAÑA",
+          "ARGELIA",
+          "AUSTRALIA",
+          "CANADÁ",
+          "BÉLGICA",
+          "AUSTRIA",
+          "BRASIL",
+          "JAPÓN",
+          "ECUADOR",
+          "SENEGAL",
+          "MÉXICO",
+          "INGLATERRA",
+          "ARGENTINA",
+          "USA",
+          "EGIPTO",
+          "SUIZA",
+          "COLOMBIA",
+          "GHANA"
+        ],
+        "aciertos_posicion": [
+          "ALEMANIA @ 1E",
+          "FRANCIA @ 1I",
+          "PAISES BAJOS @ 1F",
+          "MARRUECOS @ 2C",
+          "PORTUGAL @ 2K",
+          "CROACIA @ 2L",
+          "ESPAÑA @ 1H",
+          "BÉLGICA @ 1G",
+          "BRASIL @ 1C",
+          "JAPÓN @ 2F",
+          "MÉXICO @ 1A",
+          "INGLATERRA @ 1L",
+          "ARGENTINA @ 1J",
+          "EGIPTO @ 2G",
+          "SUIZA @ 1B",
+          "COLOMBIA @ 1K",
+          "GHANA @ 3 DEIJL"
+        ],
+        "errores": [
+          "COSTA DE MARFIL en 3 ABCDF (real: PARAGUAY)",
+          "ESCOCIA no clasificó a 16avos",
+          "COREA DEL SUR no clasificó a 16avos",
+          "BOSNIA en 2B (real: CANADÁ)",
+          "ARGELIA en 2J (real: AUSTRIA)",
+          "AUSTRALIA en 1D (real: USA)",
+          "CANADÁ en 3 BEFIJ (real: BOSNIA)",
+          "AUSTRIA en 3 AEFHIJ (real: SENEGAL)",
+          "ECUADOR en 2E (real: COSTA DE MARFIL)",
+          "SENEGAL en 2I (real: NORUEGA)",
+          "ARABIA SAUDÍ no clasificó a 16avos",
+          "UZBEKISTÁN no clasificó a 16avos",
+          "URUGUAY no clasificó a 16avos",
+          "USA en 2D (real: AUSTRALIA)",
+          "NUEVA ZELANDA no clasificó a 16avos"
+        ]
+      },
+      "8avos": {
+        "aciertos": [
+          "FRANCIA",
+          "PORTUGAL",
+          "ESPAÑA",
+          "CANADÁ",
+          "BÉLGICA",
+          "BRASIL",
+          "MÉXICO",
+          "INGLATERRA",
+          "ARGENTINA",
+          "EGIPTO",
+          "SUIZA",
+          "COLOMBIA"
+        ],
+        "errores": [
+          "ALEMANIA no llegó a 8avos",
+          "COREA DEL SUR no llegó a 8avos",
+          "PAISES BAJOS no llegó a 8avos",
+          "ECUADOR no llegó a 8avos"
+        ]
+      },
+      "cuartos": {
+        "aciertos": [
+          "FRANCIA",
+          "ESPAÑA",
+          "BÉLGICA",
+          "INGLATERRA",
+          "ARGENTINA"
+        ],
+        "errores": [
+          "PAISES BAJOS no llegó a cuartos",
+          "ECUADOR no llegó a cuartos",
+          "COLOMBIA no llegó a cuartos"
+        ]
+      },
+      "semifinales": {
+        "aciertos": [
+          "ESPAÑA",
+          "ARGENTINA"
+        ],
+        "errores": [
+          "PAISES BAJOS no llegó a semifinales",
+          "ECUADOR no llegó a semifinales"
+        ]
+      },
+      "finales": {
+        "aciertos": [
+          "segundo: ARGENTINA (+11)"
+        ],
+        "errores": [
+          "campeon: predijo PAISES BAJOS, real: ESPAÑA (0 pts)",
+          "tercero: predijo ESPAÑA, real: INGLATERRA (0 pts)",
+          "cuarto: predijo ECUADOR, real: FRANCIA (0 pts)"
+        ]
+      }
+    },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 26,
+            "count": 26,
+            "detalle": "26 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 17,
+            "count": 17,
+            "detalle": "17 (+1 c/u)"
+          }
+        ],
+        "subtotal": 43
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 24,
+            "count": 12,
+            "detalle": "12 (×2 pts)"
+          }
+        ],
+        "subtotal": 24
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 15,
+            "count": 5,
+            "detalle": "5 (×3 pts)"
+          }
+        ],
+        "subtotal": 15
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 8,
+            "count": 2,
+            "detalle": "2 (×4 pts)"
+          }
+        ],
+        "subtotal": 8
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "PAISES BAJOS",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "?",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "ESPAÑA",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "ECUADOR",
+            "hit": false
+          }
+        ],
+        "subtotal": 11
+      }
+    },
+    "polla_letra": "A"
+  },
+  {
+    "participante": "Carlos Jaramillo Medina",
+    "archivo": "CarlosJaramillo.jpeg",
+    "puntajes": {
+      "16avos": 41,
+      "8avos": 18,
+      "cuartos": 12,
+      "semifinales": 8,
+      "finales": 19,
+      "total": 98
+    },
+    "detalle": {
+      "16avos": {
+        "aciertos_equipo": [
+          "ALEMANIA",
+          "SUDÁFRICA",
+          "FRANCIA",
+          "CANADÁ",
+          "PAISES BAJOS",
+          "MARRUECOS",
+          "COLOMBIA",
+          "CROACIA",
+          "ESPAÑA",
+          "AUSTRIA",
+          "BOSNIA",
+          "BÉLGICA",
+          "COSTA DE MARFIL",
+          "BRASIL",
+          "SUECIA",
+          "ECUADOR",
+          "NORUEGA",
+          "MÉXICO",
+          "INGLATERRA",
+          "ARGENTINA",
+          "USA",
+          "SUIZA",
+          "SENEGAL",
+          "PORTUGAL",
+          "ARGELIA"
+        ],
+        "aciertos_posicion": [
+          "ALEMANIA @ 1E",
+          "FRANCIA @ 1I",
+          "CANADÁ @ 2B",
+          "PAISES BAJOS @ 1F",
+          "MARRUECOS @ 2C",
+          "CROACIA @ 2L",
+          "ESPAÑA @ 1H",
+          "AUSTRIA @ 2J",
+          "BOSNIA @ 3 BEFIJ",
+          "BÉLGICA @ 1G",
+          "BRASIL @ 1C",
+          "NORUEGA @ 2I",
+          "MÉXICO @ 1A",
+          "INGLATERRA @ 1L",
+          "ARGENTINA @ 1J",
+          "SUIZA @ 1B"
+        ],
+        "errores": [
+          "SUDÁFRICA en 3 ABCDF (real: PARAGUAY)",
+          "ESCOCIA no clasificó a 16avos",
+          "REPUBLICA CHECA no clasificó a 16avos",
+          "COLOMBIA en 2K (real: PORTUGAL)",
+          "TURQUÍA no clasificó a 16avos",
+          "COSTA DE MARFIL en 3 AEFHIJ (real: SENEGAL)",
+          "SUECIA en 2F (real: JAPÓN)",
+          "ECUADOR en 2E (real: COSTA DE MARFIL)",
+          "TÚNEZ no clasificó a 16avos",
+          "ARABIA SAUDÍ no clasificó a 16avos",
+          "URUGUAY no clasificó a 16avos",
+          "USA en 2D (real: AUSTRALIA)",
+          "SENEGAL en 3 EFGIJ (real: ARGELIA)",
+          "PORTUGAL en 1K (real: COLOMBIA)",
+          "ARGELIA en 3 DEIJL (real: GHANA)"
+        ]
+      },
+      "8avos": {
+        "aciertos": [
+          "FRANCIA",
+          "MARRUECOS",
+          "COLOMBIA",
+          "ESPAÑA",
+          "BRASIL",
+          "MÉXICO",
+          "INGLATERRA",
+          "ARGENTINA",
+          "PORTUGAL"
+        ],
+        "errores": [
+          "ALEMANIA no llegó a 8avos",
+          "REPUBLICA CHECA no llegó a 8avos",
+          "TURQUÍA no llegó a 8avos",
+          "COSTA DE MARFIL no llegó a 8avos",
+          "ECUADOR no llegó a 8avos",
+          "SENEGAL no llegó a 8avos"
+        ]
+      },
+      "cuartos": {
+        "aciertos": [
+          "MARRUECOS",
+          "ESPAÑA",
+          "INGLATERRA",
+          "ARGENTINA"
+        ],
+        "errores": [
+          "ALEMANIA no llegó a cuartos",
+          "COSTA DE MARFIL no llegó a cuartos",
+          "BRASIL no llegó a cuartos",
+          "SENEGAL no llegó a cuartos"
+        ]
+      },
+      "semifinales": {
+        "aciertos": [
+          "INGLATERRA",
+          "ARGENTINA"
+        ],
+        "errores": [
+          "ALEMANIA no llegó a semifinales",
+          "COSTA DE MARFIL no llegó a semifinales"
+        ]
+      },
+      "finales": {
+        "aciertos": [
+          "segundo: ARGENTINA (+11)",
+          "tercero: INGLATERRA (+8)"
+        ],
+        "errores": [
+          "campeon: predijo ALEMANIA, real: ESPAÑA (0 pts)",
+          "cuarto: predijo COSTA DE MARFIL, real: FRANCIA (0 pts)"
+        ]
+      }
+    },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 25,
+            "count": 25,
+            "detalle": "25 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 16,
+            "count": 16,
+            "detalle": "16 (+1 c/u)"
+          }
+        ],
+        "subtotal": 41
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 18,
+            "count": 9,
+            "detalle": "9 (×2 pts)"
+          }
+        ],
+        "subtotal": 18
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 12,
+            "count": 4,
+            "detalle": "4 (×3 pts)"
+          }
+        ],
+        "subtotal": 12
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 8,
+            "count": 2,
+            "detalle": "2 (×4 pts)"
+          }
+        ],
+        "subtotal": 8
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "ALEMANIA",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "?",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "?",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "COSTA DE MARFIL",
+            "hit": false
+          }
+        ],
+        "subtotal": 19
       }
     },
     "polla_letra": "A"
@@ -1211,8 +3821,8 @@
       "finales": {
         "aciertos": [],
         "errores": [
-          "campeon: predijo FRANCIA, real:  (0 pts)",
-          "segundo: predijo INGLATERRA, real:  (0 pts)",
+          "campeon: predijo FRANCIA, real: ESPAÑA (0 pts)",
+          "segundo: predijo INGLATERRA, real: ARGENTINA (0 pts)",
           "tercero: predijo ESPAÑA, real: INGLATERRA (0 pts)",
           "cuarto: predijo ARGENTINA, real: FRANCIA (0 pts)"
         ]
@@ -1420,8 +4030,8 @@
       "finales": {
         "aciertos": [],
         "errores": [
-          "campeon: predijo INGLATERRA, real:  (0 pts)",
-          "segundo: predijo ESPAÑA, real:  (0 pts)",
+          "campeon: predijo INGLATERRA, real: ESPAÑA (0 pts)",
+          "segundo: predijo ESPAÑA, real: ARGENTINA (0 pts)",
           "tercero: predijo ECUADOR, real: INGLATERRA (0 pts)",
           "cuarto: predijo ARGENTINA, real: FRANCIA (0 pts)"
         ]
@@ -1633,8 +4243,8 @@
       "finales": {
         "aciertos": [],
         "errores": [
-          "campeon: predijo INGLATERRA, real:  (0 pts)",
-          "segundo: predijo ESPAÑA, real:  (0 pts)",
+          "campeon: predijo INGLATERRA, real: ESPAÑA (0 pts)",
+          "segundo: predijo ESPAÑA, real: ARGENTINA (0 pts)",
           "tercero: predijo FRANCIA, real: INGLATERRA (0 pts)",
           "cuarto: predijo ARGENTINA, real: FRANCIA (0 pts)"
         ]
@@ -1847,8 +4457,8 @@
       "finales": {
         "aciertos": [],
         "errores": [
-          "campeon: predijo FRANCIA, real:  (0 pts)",
-          "segundo: predijo INGLATERRA, real:  (0 pts)",
+          "campeon: predijo FRANCIA, real: ESPAÑA (0 pts)",
+          "segundo: predijo INGLATERRA, real: ARGENTINA (0 pts)",
           "tercero: predijo ESPAÑA, real: INGLATERRA (0 pts)",
           "cuarto: predijo ARGENTINA, real: FRANCIA (0 pts)"
         ]
@@ -1923,437 +4533,6 @@
             "label": "Tercero",
             "puntos": 0,
             "equipo": "ESPAÑA",
-            "hit": false
-          },
-          {
-            "label": "Cuarto",
-            "puntos": 0,
-            "equipo": "ARGENTINA",
-            "hit": false
-          }
-        ],
-        "subtotal": 0
-      }
-    },
-    "polla_letra": "A"
-  },
-  {
-    "participante": "Joaquin Cordero",
-    "archivo": "Polla Mundialista J.C.xlsx",
-    "puntajes": {
-      "16avos": 44,
-      "8avos": 24,
-      "cuartos": 12,
-      "semifinales": 16,
-      "finales": 0,
-      "total": 96
-    },
-    "detalle": {
-      "16avos": {
-        "aciertos_equipo": [
-          "ALEMANIA",
-          "FRANCIA",
-          "PARAGUAY",
-          "CANADÁ",
-          "PAISES BAJOS",
-          "MARRUECOS",
-          "COLOMBIA",
-          "CROACIA",
-          "ESPAÑA",
-          "AUSTRIA",
-          "USA",
-          "SENEGAL",
-          "BÉLGICA",
-          "COSTA DE MARFIL",
-          "BRASIL",
-          "JAPÓN",
-          "ECUADOR",
-          "NORUEGA",
-          "MÉXICO",
-          "INGLATERRA",
-          "ARGELIA",
-          "ARGENTINA",
-          "EGIPTO",
-          "SUIZA",
-          "PORTUGAL",
-          "SUECIA"
-        ],
-        "aciertos_posicion": [
-          "ALEMANIA @ 1E",
-          "FRANCIA @ 1I",
-          "CANADÁ @ 2B",
-          "PAISES BAJOS @ 1F",
-          "MARRUECOS @ 2C",
-          "CROACIA @ 2L",
-          "ESPAÑA @ 1H",
-          "AUSTRIA @ 2J",
-          "USA @ 1D",
-          "BÉLGICA @ 1G",
-          "BRASIL @ 1C",
-          "JAPÓN @ 2F",
-          "NORUEGA @ 2I",
-          "MÉXICO @ 1A",
-          "INGLATERRA @ 1L",
-          "ARGENTINA @ 1J",
-          "EGIPTO @ 2G",
-          "SUIZA @ 1B"
-        ],
-        "errores": [
-          "COREA DEL SUR no clasificó a 16avos",
-          "PARAGUAY en 3 CDFGH (real: SUECIA)",
-          "REPUBLICA CHECA no clasificó a 16avos",
-          "COLOMBIA en 2K (real: PORTUGAL)",
-          "SENEGAL en 3 BEFIJ (real: BOSNIA)",
-          "COSTA DE MARFIL en 3 AEFHIJ (real: SENEGAL)",
-          "ECUADOR en 2E (real: COSTA DE MARFIL)",
-          "ESCOCIA no clasificó a 16avos",
-          "ARGELIA en 3 EHIJK (real: REPUBLICA DEL CONGO)",
-          "URUGUAY no clasificó a 16avos",
-          "TURQUÍA no clasificó a 16avos",
-          "ARABIA SAUDÍ no clasificó a 16avos",
-          "PORTUGAL en 1K (real: COLOMBIA)",
-          "SUECIA en 3 DEIJL (real: GHANA)"
-        ]
-      },
-      "8avos": {
-        "aciertos": [
-          "FRANCIA",
-          "CANADÁ",
-          "COLOMBIA",
-          "ESPAÑA",
-          "USA",
-          "BÉLGICA",
-          "BRASIL",
-          "MÉXICO",
-          "INGLATERRA",
-          "ARGENTINA",
-          "SUIZA",
-          "PORTUGAL"
-        ],
-        "errores": [
-          "ALEMANIA no llegó a 8avos",
-          "PAISES BAJOS no llegó a 8avos",
-          "ECUADOR no llegó a 8avos",
-          "TURQUÍA no llegó a 8avos"
-        ]
-      },
-      "cuartos": {
-        "aciertos": [
-          "FRANCIA",
-          "ESPAÑA",
-          "INGLATERRA",
-          "ARGENTINA"
-        ],
-        "errores": [
-          "PAISES BAJOS no llegó a cuartos",
-          "USA no llegó a cuartos",
-          "BRASIL no llegó a cuartos",
-          "PORTUGAL no llegó a cuartos"
-        ]
-      },
-      "semifinales": {
-        "aciertos": [
-          "FRANCIA",
-          "ESPAÑA",
-          "INGLATERRA",
-          "ARGENTINA"
-        ],
-        "errores": []
-      },
-      "finales": {
-        "aciertos": [],
-        "errores": [
-          "campeon: predijo ESPAÑA, real:  (0 pts)",
-          "segundo: predijo INGLATERRA, real:  (0 pts)",
-          "tercero: predijo FRANCIA, real: INGLATERRA (0 pts)",
-          "cuarto: predijo ARGENTINA, real: FRANCIA (0 pts)"
-        ]
-      }
-    },
-    "desglose": {
-      "16avos": {
-        "items": [
-          {
-            "label": "Aciertos de equipo",
-            "puntos": 26,
-            "count": 26,
-            "detalle": "26 (+1 c/u)"
-          },
-          {
-            "label": "Aciertos de posición",
-            "puntos": 18,
-            "count": 18,
-            "detalle": "18 (+1 c/u)"
-          }
-        ],
-        "subtotal": 44
-      },
-      "8avos": {
-        "items": [
-          {
-            "label": "Aciertos",
-            "puntos": 24,
-            "count": 12,
-            "detalle": "12 (×2 pts)"
-          }
-        ],
-        "subtotal": 24
-      },
-      "cuartos": {
-        "items": [
-          {
-            "label": "Aciertos",
-            "puntos": 12,
-            "count": 4,
-            "detalle": "4 (×3 pts)"
-          }
-        ],
-        "subtotal": 12
-      },
-      "semifinales": {
-        "items": [
-          {
-            "label": "Aciertos",
-            "puntos": 16,
-            "count": 4,
-            "detalle": "4 (×4 pts)"
-          }
-        ],
-        "subtotal": 16
-      },
-      "finales": {
-        "items": [
-          {
-            "label": "Campeón",
-            "puntos": 0,
-            "equipo": "ESPAÑA",
-            "hit": false
-          },
-          {
-            "label": "Segundo",
-            "puntos": 0,
-            "equipo": "INGLATERRA",
-            "hit": false
-          },
-          {
-            "label": "Tercero",
-            "puntos": 0,
-            "equipo": "FRANCIA",
-            "hit": false
-          },
-          {
-            "label": "Cuarto",
-            "puntos": 0,
-            "equipo": "ARGENTINA",
-            "hit": false
-          }
-        ],
-        "subtotal": 0
-      }
-    },
-    "polla_letra": "A"
-  },
-  {
-    "participante": "Maya María Jaramillo Arboleda",
-    "archivo": "Maya María Jaramillo Arboleda.pdf",
-    "puntajes": {
-      "16avos": 41,
-      "8avos": 22,
-      "cuartos": 15,
-      "semifinales": 16,
-      "finales": 0,
-      "total": 94
-    },
-    "detalle": {
-      "16avos": {
-        "aciertos_equipo": [
-          "ALEMANIA",
-          "FRANCIA",
-          "MÉXICO",
-          "SUIZA",
-          "PAISES BAJOS",
-          "MARRUECOS",
-          "COLOMBIA",
-          "CROACIA",
-          "ESPAÑA",
-          "AUSTRIA",
-          "USA",
-          "BOSNIA",
-          "BÉLGICA",
-          "COSTA DE MARFIL",
-          "BRASIL",
-          "JAPÓN",
-          "ECUADOR",
-          "NORUEGA",
-          "SUECIA",
-          "INGLATERRA",
-          "ARGENTINA",
-          "PARAGUAY",
-          "EGIPTO",
-          "CANADÁ",
-          "PORTUGAL"
-        ],
-        "aciertos_posicion": [
-          "ALEMANIA @ 1E",
-          "FRANCIA @ 1I",
-          "PAISES BAJOS @ 1F",
-          "MARRUECOS @ 2C",
-          "CROACIA @ 2L",
-          "ESPAÑA @ 1H",
-          "AUSTRIA @ 2J",
-          "USA @ 1D",
-          "BOSNIA @ 3 BEFIJ",
-          "BÉLGICA @ 1G",
-          "BRASIL @ 1C",
-          "JAPÓN @ 2F",
-          "NORUEGA @ 2I",
-          "INGLATERRA @ 1L",
-          "ARGENTINA @ 1J",
-          "EGIPTO @ 2G"
-        ],
-        "errores": [
-          "REPUBLICA CHECA no clasificó a 16avos",
-          "ESCOCIA no clasificó a 16avos",
-          "MÉXICO en 2A (real: SUDÁFRICA)",
-          "SUIZA en 2B (real: CANADÁ)",
-          "COLOMBIA en 2K (real: PORTUGAL)",
-          "COSTA DE MARFIL en 3 AEFHIJ (real: SENEGAL)",
-          "ECUADOR en 2E (real: COSTA DE MARFIL)",
-          "COREA DEL SUR no clasificó a 16avos",
-          "SUECIA en 3 CEFHI (real: ECUADOR)",
-          "ARABIA SAUDÍ no clasificó a 16avos",
-          "URUGUAY no clasificó a 16avos",
-          "PARAGUAY en 2D (real: AUSTRALIA)",
-          "CANADÁ en 1B (real: SUIZA)",
-          "NUEVA ZELANDA no clasificó a 16avos",
-          "PORTUGAL en 1K (real: COLOMBIA)",
-          "TURQUÍA no clasificó a 16avos"
-        ]
-      },
-      "8avos": {
-        "aciertos": [
-          "FRANCIA",
-          "MÉXICO",
-          "ESPAÑA",
-          "USA",
-          "BÉLGICA",
-          "BRASIL",
-          "INGLATERRA",
-          "ARGENTINA",
-          "EGIPTO",
-          "CANADÁ",
-          "PORTUGAL"
-        ],
-        "errores": [
-          "ALEMANIA no llegó a 8avos",
-          "PAISES BAJOS no llegó a 8avos",
-          "CROACIA no llegó a 8avos",
-          "ECUADOR no llegó a 8avos",
-          "COREA DEL SUR no llegó a 8avos"
-        ]
-      },
-      "cuartos": {
-        "aciertos": [
-          "FRANCIA",
-          "ESPAÑA",
-          "BÉLGICA",
-          "INGLATERRA",
-          "ARGENTINA"
-        ],
-        "errores": [
-          "PAISES BAJOS no llegó a cuartos",
-          "ECUADOR no llegó a cuartos",
-          "PORTUGAL no llegó a cuartos"
-        ]
-      },
-      "semifinales": {
-        "aciertos": [
-          "FRANCIA",
-          "ESPAÑA",
-          "INGLATERRA",
-          "ARGENTINA"
-        ],
-        "errores": []
-      },
-      "finales": {
-        "aciertos": [],
-        "errores": [
-          "campeon: predijo ESPAÑA, real:  (0 pts)",
-          "segundo: predijo INGLATERRA, real:  (0 pts)",
-          "tercero: predijo FRANCIA, real: INGLATERRA (0 pts)",
-          "cuarto: predijo ARGENTINA, real: FRANCIA (0 pts)"
-        ]
-      }
-    },
-    "desglose": {
-      "16avos": {
-        "items": [
-          {
-            "label": "Aciertos de equipo",
-            "puntos": 25,
-            "count": 25,
-            "detalle": "25 (+1 c/u)"
-          },
-          {
-            "label": "Aciertos de posición",
-            "puntos": 16,
-            "count": 16,
-            "detalle": "16 (+1 c/u)"
-          }
-        ],
-        "subtotal": 41
-      },
-      "8avos": {
-        "items": [
-          {
-            "label": "Aciertos",
-            "puntos": 22,
-            "count": 11,
-            "detalle": "11 (×2 pts)"
-          }
-        ],
-        "subtotal": 22
-      },
-      "cuartos": {
-        "items": [
-          {
-            "label": "Aciertos",
-            "puntos": 15,
-            "count": 5,
-            "detalle": "5 (×3 pts)"
-          }
-        ],
-        "subtotal": 15
-      },
-      "semifinales": {
-        "items": [
-          {
-            "label": "Aciertos",
-            "puntos": 16,
-            "count": 4,
-            "detalle": "4 (×4 pts)"
-          }
-        ],
-        "subtotal": 16
-      },
-      "finales": {
-        "items": [
-          {
-            "label": "Campeón",
-            "puntos": 0,
-            "equipo": "ESPAÑA",
-            "hit": false
-          },
-          {
-            "label": "Segundo",
-            "puntos": 0,
-            "equipo": "INGLATERRA",
-            "hit": false
-          },
-          {
-            "label": "Tercero",
-            "puntos": 0,
-            "equipo": "FRANCIA",
             "hit": false
           },
           {
@@ -2498,8 +4677,8 @@
       "finales": {
         "aciertos": [],
         "errores": [
-          "campeon: predijo ARGENTINA, real:  (0 pts)",
-          "segundo: predijo FRANCIA, real:  (0 pts)",
+          "campeon: predijo ARGENTINA, real: ESPAÑA (0 pts)",
+          "segundo: predijo FRANCIA, real: ARGENTINA (0 pts)",
           "tercero: predijo PORTUGAL, real: INGLATERRA (0 pts)",
           "cuarto: predijo BRASIL, real: FRANCIA (0 pts)"
         ]
@@ -2589,231 +4768,15 @@
     "polla_letra": "A"
   },
   {
-    "participante": "Alejandra Córdova Valdiviezo",
-    "archivo": "Alejandra Córdova Valdiviezo.jpeg",
+    "participante": "Anina y Lu",
+    "archivo": "Polla Mundialista Final Anina y Lu.xlsx",
     "puntajes": {
       "16avos": 43,
-      "8avos": 22,
-      "cuartos": 12,
-      "semifinales": 16,
-      "finales": 0,
-      "total": 93
-    },
-    "detalle": {
-      "16avos": {
-        "aciertos_equipo": [
-          "ALEMANIA",
-          "FRANCIA",
-          "CANADÁ",
-          "PAISES BAJOS",
-          "MARRUECOS",
-          "COLOMBIA",
-          "CROACIA",
-          "ESPAÑA",
-          "AUSTRIA",
-          "USA",
-          "SENEGAL",
-          "BÉLGICA",
-          "JAPÓN",
-          "BRASIL",
-          "SUECIA",
-          "ECUADOR",
-          "NORUEGA",
-          "MÉXICO",
-          "COSTA DE MARFIL",
-          "INGLATERRA",
-          "ARGELIA",
-          "ARGENTINA",
-          "PARAGUAY",
-          "EGIPTO",
-          "SUIZA",
-          "PORTUGAL"
-        ],
-        "aciertos_posicion": [
-          "ALEMANIA @ 1E",
-          "FRANCIA @ 1I",
-          "CANADÁ @ 2B",
-          "PAISES BAJOS @ 1F",
-          "MARRUECOS @ 2C",
-          "CROACIA @ 2L",
-          "ESPAÑA @ 1H",
-          "AUSTRIA @ 2J",
-          "USA @ 1D",
-          "BÉLGICA @ 1G",
-          "BRASIL @ 1C",
-          "NORUEGA @ 2I",
-          "MÉXICO @ 1A",
-          "INGLATERRA @ 1L",
-          "ARGENTINA @ 1J",
-          "EGIPTO @ 2G",
-          "SUIZA @ 1B"
-        ],
-        "errores": [
-          "ESCOCIA no clasificó a 16avos",
-          "ARABIA SAUDÍ no clasificó a 16avos",
-          "COREA DEL SUR no clasificó a 16avos",
-          "COLOMBIA en 2K (real: PORTUGAL)",
-          "SENEGAL en 3 BEFIJ (real: BOSNIA)",
-          "JAPÓN en 3 AEFHIJ (real: SENEGAL)",
-          "SUECIA en 2F (real: JAPÓN)",
-          "ECUADOR en 2E (real: COSTA DE MARFIL)",
-          "COSTA DE MARFIL en 3 CEFHI (real: ECUADOR)",
-          "ARGELIA en 3 EHIJK (real: REPUBLICA DEL CONGO)",
-          "URUGUAY no clasificó a 16avos",
-          "PARAGUAY en 2D (real: AUSTRALIA)",
-          "IRÁN no clasificó a 16avos",
-          "PORTUGAL en 1K (real: COLOMBIA)",
-          "TURQUÍA no clasificó a 16avos"
-        ]
-      },
-      "8avos": {
-        "aciertos": [
-          "FRANCIA",
-          "CANADÁ",
-          "COLOMBIA",
-          "ESPAÑA",
-          "BRASIL",
-          "MÉXICO",
-          "INGLATERRA",
-          "ARGENTINA",
-          "PARAGUAY",
-          "SUIZA",
-          "PORTUGAL"
-        ],
-        "errores": [
-          "ALEMANIA no llegó a 8avos",
-          "PAISES BAJOS no llegó a 8avos",
-          "SENEGAL no llegó a 8avos",
-          "JAPÓN no llegó a 8avos",
-          "ECUADOR no llegó a 8avos"
-        ]
-      },
-      "cuartos": {
-        "aciertos": [
-          "FRANCIA",
-          "ESPAÑA",
-          "INGLATERRA",
-          "ARGENTINA"
-        ],
-        "errores": [
-          "PAISES BAJOS no llegó a cuartos",
-          "JAPÓN no llegó a cuartos",
-          "ECUADOR no llegó a cuartos",
-          "PORTUGAL no llegó a cuartos"
-        ]
-      },
-      "semifinales": {
-        "aciertos": [
-          "FRANCIA",
-          "ESPAÑA",
-          "INGLATERRA",
-          "ARGENTINA"
-        ],
-        "errores": []
-      },
-      "finales": {
-        "aciertos": [],
-        "errores": [
-          "campeon: predijo ESPAÑA, real:  (0 pts)",
-          "segundo: predijo ARGENTINA, real:  (0 pts)",
-          "tercero: predijo FRANCIA, real: INGLATERRA (0 pts)",
-          "cuarto: predijo INGLATERRA, real: FRANCIA (0 pts)"
-        ]
-      }
-    },
-    "desglose": {
-      "16avos": {
-        "items": [
-          {
-            "label": "Aciertos de equipo",
-            "puntos": 26,
-            "count": 26,
-            "detalle": "26 (+1 c/u)"
-          },
-          {
-            "label": "Aciertos de posición",
-            "puntos": 17,
-            "count": 17,
-            "detalle": "17 (+1 c/u)"
-          }
-        ],
-        "subtotal": 43
-      },
-      "8avos": {
-        "items": [
-          {
-            "label": "Aciertos",
-            "puntos": 22,
-            "count": 11,
-            "detalle": "11 (×2 pts)"
-          }
-        ],
-        "subtotal": 22
-      },
-      "cuartos": {
-        "items": [
-          {
-            "label": "Aciertos",
-            "puntos": 12,
-            "count": 4,
-            "detalle": "4 (×3 pts)"
-          }
-        ],
-        "subtotal": 12
-      },
-      "semifinales": {
-        "items": [
-          {
-            "label": "Aciertos",
-            "puntos": 16,
-            "count": 4,
-            "detalle": "4 (×4 pts)"
-          }
-        ],
-        "subtotal": 16
-      },
-      "finales": {
-        "items": [
-          {
-            "label": "Campeón",
-            "puntos": 0,
-            "equipo": "ESPAÑA",
-            "hit": false
-          },
-          {
-            "label": "Segundo",
-            "puntos": 0,
-            "equipo": "ARGENTINA",
-            "hit": false
-          },
-          {
-            "label": "Tercero",
-            "puntos": 0,
-            "equipo": "FRANCIA",
-            "hit": false
-          },
-          {
-            "label": "Cuarto",
-            "puntos": 0,
-            "equipo": "INGLATERRA",
-            "hit": false
-          }
-        ],
-        "subtotal": 0
-      }
-    },
-    "polla_letra": "A"
-  },
-  {
-    "participante": "Ana Lucía Pesántez",
-    "archivo": "Polla Mundialista Final-Anita Pesántez.xlsx",
-    "puntajes": {
-      "16avos": 47,
-      "8avos": 18,
-      "cuartos": 12,
-      "semifinales": 16,
-      "finales": 0,
-      "total": 93
+      "8avos": 26,
+      "cuartos": 6,
+      "semifinales": 8,
+      "finales": 11,
+      "total": 94
     },
     "detalle": {
       "16avos": {
@@ -2821,340 +4784,121 @@
           "ALEMANIA",
           "SUECIA",
           "FRANCIA",
-          "MÉXICO",
-          "SUIZA",
-          "PAISES BAJOS",
-          "MARRUECOS",
-          "COLOMBIA",
-          "CROACIA",
-          "ESPAÑA",
-          "AUSTRIA",
-          "USA",
-          "COSTA DE MARFIL",
-          "BÉLGICA",
-          "SENEGAL",
-          "BRASIL",
-          "JAPÓN",
-          "ECUADOR",
-          "NORUEGA",
-          "SUDÁFRICA",
           "CABO VERDE",
-          "INGLATERRA",
-          "REPUBLICA DEL CONGO",
-          "ARGENTINA",
-          "AUSTRALIA",
-          "EGIPTO",
-          "CANADÁ",
-          "PORTUGAL",
-          "PARAGUAY"
-        ],
-        "aciertos_posicion": [
-          "ALEMANIA @ 1E",
-          "FRANCIA @ 1I",
-          "PAISES BAJOS @ 1F",
-          "MARRUECOS @ 2C",
-          "CROACIA @ 2L",
-          "ESPAÑA @ 1H",
-          "AUSTRIA @ 2J",
-          "USA @ 1D",
-          "BÉLGICA @ 1G",
-          "SENEGAL @ 3 AEFHIJ",
-          "BRASIL @ 1C",
-          "JAPÓN @ 2F",
-          "NORUEGA @ 2I",
-          "INGLATERRA @ 1L",
-          "REPUBLICA DEL CONGO @ 3 EHIJK",
-          "ARGENTINA @ 1J",
-          "AUSTRALIA @ 2D",
-          "EGIPTO @ 2G"
-        ],
-        "errores": [
-          "SUECIA en 3 ABCDF (real: PARAGUAY)",
-          "IRÁN no clasificó a 16avos",
-          "MÉXICO en 2A (real: SUDÁFRICA)",
-          "SUIZA en 2B (real: CANADÁ)",
-          "COLOMBIA en 2K (real: PORTUGAL)",
-          "COSTA DE MARFIL en 3 BEFIJ (real: BOSNIA)",
-          "ECUADOR en 2E (real: COSTA DE MARFIL)",
-          "SUDÁFRICA en 1A (real: MÉXICO)",
-          "CABO VERDE en 3 CEFHI (real: ECUADOR)",
-          "URUGUAY no clasificó a 16avos",
-          "CANADÁ en 1B (real: SUIZA)",
-          "JORDANIA no clasificó a 16avos",
-          "PORTUGAL en 1K (real: COLOMBIA)",
-          "PARAGUAY en 3 DEIJL (real: GHANA)"
-        ]
-      },
-      "8avos": {
-        "aciertos": [
-          "FRANCIA",
-          "MÉXICO",
-          "ESPAÑA",
-          "BRASIL",
-          "INGLATERRA",
-          "ARGENTINA",
-          "EGIPTO",
-          "CANADÁ",
-          "PORTUGAL"
-        ],
-        "errores": [
-          "ALEMANIA no llegó a 8avos",
-          "PAISES BAJOS no llegó a 8avos",
-          "CROACIA no llegó a 8avos",
-          "COSTA DE MARFIL no llegó a 8avos",
-          "SENEGAL no llegó a 8avos",
-          "ECUADOR no llegó a 8avos",
-          "SUDÁFRICA no llegó a 8avos"
-        ]
-      },
-      "cuartos": {
-        "aciertos": [
-          "FRANCIA",
-          "ESPAÑA",
-          "INGLATERRA",
-          "ARGENTINA"
-        ],
-        "errores": [
-          "PAISES BAJOS no llegó a cuartos",
-          "SENEGAL no llegó a cuartos",
-          "ECUADOR no llegó a cuartos",
-          "PORTUGAL no llegó a cuartos"
-        ]
-      },
-      "semifinales": {
-        "aciertos": [
-          "FRANCIA",
-          "ESPAÑA",
-          "INGLATERRA",
-          "ARGENTINA"
-        ],
-        "errores": []
-      },
-      "finales": {
-        "aciertos": [],
-        "errores": [
-          "campeon: predijo ESPAÑA, real:  (0 pts)",
-          "segundo: predijo ARGENTINA, real:  (0 pts)",
-          "tercero: predijo FRANCIA, real: INGLATERRA (0 pts)",
-          "cuarto: predijo INGLATERRA, real: FRANCIA (0 pts)"
-        ]
-      }
-    },
-    "desglose": {
-      "16avos": {
-        "items": [
-          {
-            "label": "Aciertos de equipo",
-            "puntos": 29,
-            "count": 29,
-            "detalle": "29 (+1 c/u)"
-          },
-          {
-            "label": "Aciertos de posición",
-            "puntos": 18,
-            "count": 18,
-            "detalle": "18 (+1 c/u)"
-          }
-        ],
-        "subtotal": 47
-      },
-      "8avos": {
-        "items": [
-          {
-            "label": "Aciertos",
-            "puntos": 18,
-            "count": 9,
-            "detalle": "9 (×2 pts)"
-          }
-        ],
-        "subtotal": 18
-      },
-      "cuartos": {
-        "items": [
-          {
-            "label": "Aciertos",
-            "puntos": 12,
-            "count": 4,
-            "detalle": "4 (×3 pts)"
-          }
-        ],
-        "subtotal": 12
-      },
-      "semifinales": {
-        "items": [
-          {
-            "label": "Aciertos",
-            "puntos": 16,
-            "count": 4,
-            "detalle": "4 (×4 pts)"
-          }
-        ],
-        "subtotal": 16
-      },
-      "finales": {
-        "items": [
-          {
-            "label": "Campeón",
-            "puntos": 0,
-            "equipo": "ESPAÑA",
-            "hit": false
-          },
-          {
-            "label": "Segundo",
-            "puntos": 0,
-            "equipo": "ARGENTINA",
-            "hit": false
-          },
-          {
-            "label": "Tercero",
-            "puntos": 0,
-            "equipo": "FRANCIA",
-            "hit": false
-          },
-          {
-            "label": "Cuarto",
-            "puntos": 0,
-            "equipo": "INGLATERRA",
-            "hit": false
-          }
-        ],
-        "subtotal": 0
-      }
-    },
-    "polla_letra": "A"
-  },
-  {
-    "participante": "Fabiola Córdova C",
-    "archivo": "Fabiola Córdova C.jpeg",
-    "puntajes": {
-      "16avos": 45,
-      "8avos": 20,
-      "cuartos": 15,
-      "semifinales": 12,
-      "finales": 0,
-      "total": 92
-    },
-    "detalle": {
-      "16avos": {
-        "aciertos_equipo": [
-          "ALEMANIA",
-          "SUECIA",
-          "FRANCIA",
-          "COSTA DE MARFIL",
           "SUDÁFRICA",
-          "CANADÁ",
+          "SUIZA",
           "PAISES BAJOS",
           "MARRUECOS",
           "COLOMBIA",
           "CROACIA",
           "ESPAÑA",
-          "ARGELIA",
+          "AUSTRIA",
           "USA",
-          "SENEGAL",
+          "COSTA DE MARFIL",
           "BÉLGICA",
           "BRASIL",
           "JAPÓN",
           "ECUADOR",
-          "NORUEGA",
+          "SENEGAL",
           "MÉXICO",
           "INGLATERRA",
+          "NORUEGA",
           "ARGENTINA",
           "PARAGUAY",
           "EGIPTO",
-          "SUIZA",
-          "GHANA",
+          "CANADÁ",
           "PORTUGAL"
         ],
         "aciertos_posicion": [
           "ALEMANIA @ 1E",
           "FRANCIA @ 1I",
           "SUDÁFRICA @ 2A",
-          "CANADÁ @ 2B",
           "PAISES BAJOS @ 1F",
           "MARRUECOS @ 2C",
           "CROACIA @ 2L",
           "ESPAÑA @ 1H",
+          "AUSTRIA @ 2J",
           "USA @ 1D",
           "BÉLGICA @ 1G",
           "BRASIL @ 1C",
           "JAPÓN @ 2F",
-          "NORUEGA @ 2I",
           "MÉXICO @ 1A",
           "INGLATERRA @ 1L",
           "ARGENTINA @ 1J",
-          "EGIPTO @ 2G",
-          "SUIZA @ 1B"
+          "EGIPTO @ 2G"
         ],
         "errores": [
           "SUECIA en 3 ABCDF (real: PARAGUAY)",
-          "COSTA DE MARFIL en 3 CDFGH (real: SUECIA)",
+          "CABO VERDE en 3 CDFGH (real: SUECIA)",
+          "SUIZA en 2B (real: CANADÁ)",
           "COLOMBIA en 2K (real: PORTUGAL)",
-          "ARGELIA en 2J (real: AUSTRIA)",
-          "SENEGAL en 3 BEFIJ (real: BOSNIA)",
-          "REPUBLICA CHECA no clasificó a 16avos",
+          "COSTA DE MARFIL en 3 BEFIJ (real: BOSNIA)",
+          "COREA DEL SUR no clasificó a 16avos",
           "ECUADOR en 2E (real: COSTA DE MARFIL)",
-          "ESCOCIA no clasificó a 16avos",
-          "ARABIA SAUDÍ no clasificó a 16avos",
+          "SENEGAL en 2I (real: NORUEGA)",
+          "NORUEGA en 3 EHIJK (real: REPUBLICA DEL CONGO)",
           "URUGUAY no clasificó a 16avos",
           "PARAGUAY en 2D (real: AUSTRALIA)",
-          "GHANA en 3 EFGIJ (real: ARGELIA)",
+          "CANADÁ en 1B (real: SUIZA)",
+          "NUEVA ZELANDA no clasificó a 16avos",
           "PORTUGAL en 1K (real: COLOMBIA)",
-          "TURQUÍA no clasificó a 16avos"
+          "PANAMÁ no clasificó a 16avos"
         ]
       },
       "8avos": {
         "aciertos": [
           "FRANCIA",
-          "CANADÁ",
+          "SUIZA",
+          "COLOMBIA",
           "ESPAÑA",
+          "USA",
           "BÉLGICA",
           "BRASIL",
           "MÉXICO",
           "INGLATERRA",
           "ARGENTINA",
-          "EGIPTO",
+          "PARAGUAY",
+          "CANADÁ",
           "PORTUGAL"
         ],
         "errores": [
           "ALEMANIA no llegó a 8avos",
           "PAISES BAJOS no llegó a 8avos",
-          "CROACIA no llegó a 8avos",
-          "SENEGAL no llegó a 8avos",
-          "ECUADOR no llegó a 8avos",
-          "GHANA no llegó a 8avos"
+          "ECUADOR no llegó a 8avos"
         ]
       },
       "cuartos": {
         "aciertos": [
-          "FRANCIA",
           "ESPAÑA",
-          "BÉLGICA",
-          "INGLATERRA",
           "ARGENTINA"
         ],
         "errores": [
+          "ALEMANIA no llegó a cuartos",
           "PAISES BAJOS no llegó a cuartos",
-          "BRASIL no llegó a cuartos",
+          "USA no llegó a cuartos",
+          "ECUADOR no llegó a cuartos",
+          "MÉXICO no llegó a cuartos",
           "PORTUGAL no llegó a cuartos"
         ]
       },
       "semifinales": {
         "aciertos": [
-          "FRANCIA",
           "ESPAÑA",
-          "INGLATERRA"
+          "ARGENTINA"
         ],
         "errores": [
-          "PORTUGAL no llegó a semifinales"
+          "ALEMANIA no llegó a semifinales",
+          "ECUADOR no llegó a semifinales"
         ]
       },
       "finales": {
-        "aciertos": [],
+        "aciertos": [
+          "segundo: ARGENTINA (+11)"
+        ],
         "errores": [
-          "campeon: predijo ESPAÑA, real:  (0 pts)",
-          "segundo: predijo PORTUGAL, real:  (0 pts)",
-          "tercero: predijo FRANCIA, real: INGLATERRA (0 pts)",
-          "cuarto: predijo INGLATERRA, real: FRANCIA (0 pts)"
+          "campeon: predijo ALEMANIA, real: ESPAÑA (0 pts)",
+          "tercero: predijo ESPAÑA, real: INGLATERRA (0 pts)",
+          "cuarto: predijo ECUADOR, real: FRANCIA (0 pts)"
         ]
       }
     },
@@ -3169,74 +4913,74 @@
           },
           {
             "label": "Aciertos de posición",
-            "puntos": 18,
-            "count": 18,
-            "detalle": "18 (+1 c/u)"
+            "puntos": 16,
+            "count": 16,
+            "detalle": "16 (+1 c/u)"
           }
         ],
-        "subtotal": 45
+        "subtotal": 43
       },
       "8avos": {
         "items": [
           {
             "label": "Aciertos",
-            "puntos": 20,
-            "count": 10,
-            "detalle": "10 (×2 pts)"
+            "puntos": 26,
+            "count": 13,
+            "detalle": "13 (×2 pts)"
           }
         ],
-        "subtotal": 20
+        "subtotal": 26
       },
       "cuartos": {
         "items": [
           {
             "label": "Aciertos",
-            "puntos": 15,
-            "count": 5,
-            "detalle": "5 (×3 pts)"
+            "puntos": 6,
+            "count": 2,
+            "detalle": "2 (×3 pts)"
           }
         ],
-        "subtotal": 15
+        "subtotal": 6
       },
       "semifinales": {
         "items": [
           {
             "label": "Aciertos",
-            "puntos": 12,
-            "count": 3,
-            "detalle": "3 (×4 pts)"
+            "puntos": 8,
+            "count": 2,
+            "detalle": "2 (×4 pts)"
           }
         ],
-        "subtotal": 12
+        "subtotal": 8
       },
       "finales": {
         "items": [
           {
             "label": "Campeón",
             "puntos": 0,
-            "equipo": "ESPAÑA",
+            "equipo": "ALEMANIA",
             "hit": false
           },
           {
             "label": "Segundo",
             "puntos": 0,
-            "equipo": "PORTUGAL",
+            "equipo": "?",
             "hit": false
           },
           {
             "label": "Tercero",
             "puntos": 0,
-            "equipo": "FRANCIA",
+            "equipo": "ESPAÑA",
             "hit": false
           },
           {
             "label": "Cuarto",
             "puntos": 0,
-            "equipo": "INGLATERRA",
+            "equipo": "ECUADOR",
             "hit": false
           }
         ],
-        "subtotal": 0
+        "subtotal": 11
       }
     },
     "polla_letra": "A"
@@ -3367,8 +5111,8 @@
       "finales": {
         "aciertos": [],
         "errores": [
-          "campeon: predijo FRANCIA, real:  (0 pts)",
-          "segundo: predijo INGLATERRA, real:  (0 pts)",
+          "campeon: predijo FRANCIA, real: ESPAÑA (0 pts)",
+          "segundo: predijo INGLATERRA, real: ARGENTINA (0 pts)",
           "tercero: predijo ESPAÑA, real: INGLATERRA (0 pts)",
           "cuarto: predijo PORTUGAL, real: FRANCIA (0 pts)"
         ]
@@ -3585,8 +5329,8 @@
       "finales": {
         "aciertos": [],
         "errores": [
-          "campeon: predijo ARGENTINA, real:  (0 pts)",
-          "segundo: predijo FRANCIA, real:  (0 pts)",
+          "campeon: predijo ARGENTINA, real: ESPAÑA (0 pts)",
+          "segundo: predijo FRANCIA, real: ARGENTINA (0 pts)",
           "tercero: predijo BRASIL, real: INGLATERRA (0 pts)",
           "cuarto: predijo ESPAÑA, real: FRANCIA (0 pts)"
         ]
@@ -3671,6 +5415,225 @@
           }
         ],
         "subtotal": 0
+      }
+    },
+    "polla_letra": "A"
+  },
+  {
+    "participante": "José Córdova Reyes",
+    "archivo": "José Córdova Reyes.jpeg",
+    "puntajes": {
+      "16avos": 43,
+      "8avos": 20,
+      "cuartos": 9,
+      "semifinales": 8,
+      "finales": 11,
+      "total": 91
+    },
+    "detalle": {
+      "16avos": {
+        "aciertos_equipo": [
+          "ALEMANIA",
+          "FRANCIA",
+          "JAPÓN",
+          "CANADÁ",
+          "PAISES BAJOS",
+          "MARRUECOS",
+          "COLOMBIA",
+          "INGLATERRA",
+          "ESPAÑA",
+          "AUSTRIA",
+          "USA",
+          "SENEGAL",
+          "BÉLGICA",
+          "MÉXICO",
+          "BRASIL",
+          "SUECIA",
+          "ECUADOR",
+          "NORUEGA",
+          "COSTA DE MARFIL",
+          "CROACIA",
+          "REPUBLICA DEL CONGO",
+          "ARGENTINA",
+          "PARAGUAY",
+          "SUIZA",
+          "ARGELIA",
+          "PORTUGAL",
+          "GHANA"
+        ],
+        "aciertos_posicion": [
+          "ALEMANIA @ 1E",
+          "FRANCIA @ 1I",
+          "CANADÁ @ 2B",
+          "PAISES BAJOS @ 1F",
+          "MARRUECOS @ 2C",
+          "ESPAÑA @ 1H",
+          "AUSTRIA @ 2J",
+          "USA @ 1D",
+          "BÉLGICA @ 1G",
+          "BRASIL @ 1C",
+          "NORUEGA @ 2I",
+          "REPUBLICA DEL CONGO @ 3 EHIJK",
+          "ARGENTINA @ 1J",
+          "SUIZA @ 1B",
+          "ARGELIA @ 3 EFGIJ",
+          "GHANA @ 3 DEIJL"
+        ],
+        "errores": [
+          "ESCOCIA no clasificó a 16avos",
+          "JAPÓN en 3 CDFGH (real: SUECIA)",
+          "REPUBLICA CHECA no clasificó a 16avos",
+          "COLOMBIA en 2K (real: PORTUGAL)",
+          "INGLATERRA en 2L (real: CROACIA)",
+          "SENEGAL en 3 BEFIJ (real: BOSNIA)",
+          "MÉXICO en 3 AEFHIJ (real: SENEGAL)",
+          "SUECIA en 2F (real: JAPÓN)",
+          "ECUADOR en 2E (real: COSTA DE MARFIL)",
+          "COREA DEL SUR no clasificó a 16avos",
+          "COSTA DE MARFIL en 3 CEFHI (real: ECUADOR)",
+          "CROACIA en 1L (real: INGLATERRA)",
+          "URUGUAY no clasificó a 16avos",
+          "PARAGUAY en 2D (real: AUSTRALIA)",
+          "NUEVA ZELANDA no clasificó a 16avos",
+          "PORTUGAL en 1K (real: COLOMBIA)"
+        ]
+      },
+      "8avos": {
+        "aciertos": [
+          "FRANCIA",
+          "INGLATERRA",
+          "ESPAÑA",
+          "USA",
+          "BÉLGICA",
+          "BRASIL",
+          "ARGENTINA",
+          "PARAGUAY",
+          "SUIZA",
+          "PORTUGAL"
+        ],
+        "errores": [
+          "ALEMANIA no llegó a 8avos",
+          "REPUBLICA CHECA no llegó a 8avos",
+          "PAISES BAJOS no llegó a 8avos",
+          "ECUADOR no llegó a 8avos",
+          "COREA DEL SUR no llegó a 8avos",
+          "CROACIA no llegó a 8avos"
+        ]
+      },
+      "cuartos": {
+        "aciertos": [
+          "FRANCIA",
+          "ESPAÑA",
+          "ARGENTINA"
+        ],
+        "errores": [
+          "PAISES BAJOS no llegó a cuartos",
+          "USA no llegó a cuartos",
+          "BRASIL no llegó a cuartos",
+          "CROACIA no llegó a cuartos",
+          "PORTUGAL no llegó a cuartos"
+        ]
+      },
+      "semifinales": {
+        "aciertos": [
+          "ESPAÑA",
+          "ARGENTINA"
+        ],
+        "errores": [
+          "PAISES BAJOS no llegó a semifinales",
+          "BRASIL no llegó a semifinales"
+        ]
+      },
+      "finales": {
+        "aciertos": [
+          "segundo: ARGENTINA (+11)"
+        ],
+        "errores": [
+          "campeon: predijo PAISES BAJOS, real: ESPAÑA (0 pts)",
+          "tercero: predijo BRASIL, real: INGLATERRA (0 pts)",
+          "cuarto: predijo ESPAÑA, real: FRANCIA (0 pts)"
+        ]
+      }
+    },
+    "desglose": {
+      "16avos": {
+        "items": [
+          {
+            "label": "Aciertos de equipo",
+            "puntos": 27,
+            "count": 27,
+            "detalle": "27 (+1 c/u)"
+          },
+          {
+            "label": "Aciertos de posición",
+            "puntos": 16,
+            "count": 16,
+            "detalle": "16 (+1 c/u)"
+          }
+        ],
+        "subtotal": 43
+      },
+      "8avos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 20,
+            "count": 10,
+            "detalle": "10 (×2 pts)"
+          }
+        ],
+        "subtotal": 20
+      },
+      "cuartos": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 9,
+            "count": 3,
+            "detalle": "3 (×3 pts)"
+          }
+        ],
+        "subtotal": 9
+      },
+      "semifinales": {
+        "items": [
+          {
+            "label": "Aciertos",
+            "puntos": 8,
+            "count": 2,
+            "detalle": "2 (×4 pts)"
+          }
+        ],
+        "subtotal": 8
+      },
+      "finales": {
+        "items": [
+          {
+            "label": "Campeón",
+            "puntos": 0,
+            "equipo": "PAISES BAJOS",
+            "hit": false
+          },
+          {
+            "label": "Segundo",
+            "puntos": 0,
+            "equipo": "?",
+            "hit": false
+          },
+          {
+            "label": "Tercero",
+            "puntos": 0,
+            "equipo": "BRASIL",
+            "hit": false
+          },
+          {
+            "label": "Cuarto",
+            "puntos": 0,
+            "equipo": "ESPAÑA",
+            "hit": false
+          }
+        ],
+        "subtotal": 11
       }
     },
     "polla_letra": "A"
@@ -3803,8 +5766,8 @@
       "finales": {
         "aciertos": [],
         "errores": [
-          "campeon: predijo PORTUGAL, real:  (0 pts)",
-          "segundo: predijo FRANCIA, real:  (0 pts)",
+          "campeon: predijo PORTUGAL, real: ESPAÑA (0 pts)",
+          "segundo: predijo FRANCIA, real: ARGENTINA (0 pts)",
           "tercero: predijo ESPAÑA, real: INGLATERRA (0 pts)",
           "cuarto: predijo INGLATERRA, real: FRANCIA (0 pts)"
         ]
@@ -3885,440 +5848,6 @@
             "label": "Cuarto",
             "puntos": 0,
             "equipo": "INGLATERRA",
-            "hit": false
-          }
-        ],
-        "subtotal": 0
-      }
-    },
-    "polla_letra": "A"
-  },
-  {
-    "participante": "Santiago Amoroso Carvallo",
-    "archivo": "Polla Mundialista  S.Amoroso2.xlsx",
-    "puntajes": {
-      "16avos": 42,
-      "8avos": 22,
-      "cuartos": 18,
-      "semifinales": 8,
-      "finales": 0,
-      "total": 90
-    },
-    "detalle": {
-      "16avos": {
-        "aciertos_equipo": [
-          "ALEMANIA",
-          "COSTA DE MARFIL",
-          "FRANCIA",
-          "PARAGUAY",
-          "CANADÁ",
-          "PAISES BAJOS",
-          "MARRUECOS",
-          "COLOMBIA",
-          "GHANA",
-          "ESPAÑA",
-          "ARGELIA",
-          "USA",
-          "BÉLGICA",
-          "SUECIA",
-          "BRASIL",
-          "JAPÓN",
-          "ECUADOR",
-          "NORUEGA",
-          "MÉXICO",
-          "SENEGAL",
-          "INGLATERRA",
-          "AUSTRIA",
-          "ARGENTINA",
-          "SUIZA",
-          "EGIPTO",
-          "PORTUGAL",
-          "CROACIA"
-        ],
-        "aciertos_posicion": [
-          "ALEMANIA @ 1E",
-          "FRANCIA @ 1I",
-          "CANADÁ @ 2B",
-          "PAISES BAJOS @ 1F",
-          "MARRUECOS @ 2C",
-          "ESPAÑA @ 1H",
-          "USA @ 1D",
-          "BÉLGICA @ 1G",
-          "BRASIL @ 1C",
-          "JAPÓN @ 2F",
-          "NORUEGA @ 2I",
-          "MÉXICO @ 1A",
-          "INGLATERRA @ 1L",
-          "ARGENTINA @ 1J",
-          "SUIZA @ 1B"
-        ],
-        "errores": [
-          "COSTA DE MARFIL en 3 ABCDF (real: PARAGUAY)",
-          "PARAGUAY en 3 CDFGH (real: SUECIA)",
-          "REPUBLICA CHECA no clasificó a 16avos",
-          "COLOMBIA en 2K (real: PORTUGAL)",
-          "GHANA en 2L (real: CROACIA)",
-          "ARGELIA en 2J (real: AUSTRIA)",
-          "SUECIA en 3 AEFHIJ (real: SENEGAL)",
-          "ECUADOR en 2E (real: COSTA DE MARFIL)",
-          "SENEGAL en 3 CEFHI (real: ECUADOR)",
-          "AUSTRIA en 3 EHIJK (real: REPUBLICA DEL CONGO)",
-          "URUGUAY no clasificó a 16avos",
-          "TURQUÍA no clasificó a 16avos",
-          "NUEVA ZELANDA no clasificó a 16avos",
-          "EGIPTO en 3 EFGIJ (real: ARGELIA)",
-          "PORTUGAL en 1K (real: COLOMBIA)",
-          "CROACIA en 3 DEIJL (real: GHANA)"
-        ]
-      },
-      "8avos": {
-        "aciertos": [
-          "FRANCIA",
-          "CANADÁ",
-          "MARRUECOS",
-          "COLOMBIA",
-          "ESPAÑA",
-          "BÉLGICA",
-          "BRASIL",
-          "INGLATERRA",
-          "ARGENTINA",
-          "SUIZA",
-          "PORTUGAL"
-        ],
-        "errores": [
-          "ALEMANIA no llegó a 8avos",
-          "COSTA DE MARFIL no llegó a 8avos",
-          "ECUADOR no llegó a 8avos",
-          "SENEGAL no llegó a 8avos",
-          "TURQUÍA no llegó a 8avos"
-        ]
-      },
-      "cuartos": {
-        "aciertos": [
-          "FRANCIA",
-          "MARRUECOS",
-          "ESPAÑA",
-          "BÉLGICA",
-          "INGLATERRA",
-          "ARGENTINA"
-        ],
-        "errores": [
-          "BRASIL no llegó a cuartos",
-          "PORTUGAL no llegó a cuartos"
-        ]
-      },
-      "semifinales": {
-        "aciertos": [
-          "FRANCIA",
-          "ESPAÑA"
-        ],
-        "errores": [
-          "BRASIL no llegó a semifinales",
-          "PORTUGAL no llegó a semifinales"
-        ]
-      },
-      "finales": {
-        "aciertos": [],
-        "errores": [
-          "campeon: predijo ESPAÑA, real:  (0 pts)",
-          "segundo: predijo PORTUGAL, real:  (0 pts)",
-          "tercero: predijo FRANCIA, real: INGLATERRA (0 pts)",
-          "cuarto: predijo BRASIL, real: FRANCIA (0 pts)"
-        ]
-      }
-    },
-    "desglose": {
-      "16avos": {
-        "items": [
-          {
-            "label": "Aciertos de equipo",
-            "puntos": 27,
-            "count": 27,
-            "detalle": "27 (+1 c/u)"
-          },
-          {
-            "label": "Aciertos de posición",
-            "puntos": 15,
-            "count": 15,
-            "detalle": "15 (+1 c/u)"
-          }
-        ],
-        "subtotal": 42
-      },
-      "8avos": {
-        "items": [
-          {
-            "label": "Aciertos",
-            "puntos": 22,
-            "count": 11,
-            "detalle": "11 (×2 pts)"
-          }
-        ],
-        "subtotal": 22
-      },
-      "cuartos": {
-        "items": [
-          {
-            "label": "Aciertos",
-            "puntos": 18,
-            "count": 6,
-            "detalle": "6 (×3 pts)"
-          }
-        ],
-        "subtotal": 18
-      },
-      "semifinales": {
-        "items": [
-          {
-            "label": "Aciertos",
-            "puntos": 8,
-            "count": 2,
-            "detalle": "2 (×4 pts)"
-          }
-        ],
-        "subtotal": 8
-      },
-      "finales": {
-        "items": [
-          {
-            "label": "Campeón",
-            "puntos": 0,
-            "equipo": "ESPAÑA",
-            "hit": false
-          },
-          {
-            "label": "Segundo",
-            "puntos": 0,
-            "equipo": "PORTUGAL",
-            "hit": false
-          },
-          {
-            "label": "Tercero",
-            "puntos": 0,
-            "equipo": "FRANCIA",
-            "hit": false
-          },
-          {
-            "label": "Cuarto",
-            "puntos": 0,
-            "equipo": "BRASIL",
-            "hit": false
-          }
-        ],
-        "subtotal": 0
-      }
-    },
-    "polla_letra": "A"
-  },
-  {
-    "participante": "SEBASTIEN PAGÉ",
-    "archivo": "Polla Mundialista Seb.xlsx",
-    "puntajes": {
-      "16avos": 43,
-      "8avos": 24,
-      "cuartos": 15,
-      "semifinales": 8,
-      "finales": 0,
-      "total": 90
-    },
-    "detalle": {
-      "16avos": {
-        "aciertos_equipo": [
-          "ALEMANIA",
-          "COSTA DE MARFIL",
-          "FRANCIA",
-          "BOSNIA",
-          "PAISES BAJOS",
-          "MARRUECOS",
-          "PORTUGAL",
-          "CROACIA",
-          "ESPAÑA",
-          "ARGELIA",
-          "AUSTRALIA",
-          "CANADÁ",
-          "BÉLGICA",
-          "AUSTRIA",
-          "BRASIL",
-          "JAPÓN",
-          "ECUADOR",
-          "SENEGAL",
-          "MÉXICO",
-          "INGLATERRA",
-          "ARGENTINA",
-          "USA",
-          "EGIPTO",
-          "SUIZA",
-          "COLOMBIA",
-          "GHANA"
-        ],
-        "aciertos_posicion": [
-          "ALEMANIA @ 1E",
-          "FRANCIA @ 1I",
-          "PAISES BAJOS @ 1F",
-          "MARRUECOS @ 2C",
-          "PORTUGAL @ 2K",
-          "CROACIA @ 2L",
-          "ESPAÑA @ 1H",
-          "BÉLGICA @ 1G",
-          "BRASIL @ 1C",
-          "JAPÓN @ 2F",
-          "MÉXICO @ 1A",
-          "INGLATERRA @ 1L",
-          "ARGENTINA @ 1J",
-          "EGIPTO @ 2G",
-          "SUIZA @ 1B",
-          "COLOMBIA @ 1K",
-          "GHANA @ 3 DEIJL"
-        ],
-        "errores": [
-          "COSTA DE MARFIL en 3 ABCDF (real: PARAGUAY)",
-          "ESCOCIA no clasificó a 16avos",
-          "COREA DEL SUR no clasificó a 16avos",
-          "BOSNIA en 2B (real: CANADÁ)",
-          "ARGELIA en 2J (real: AUSTRIA)",
-          "AUSTRALIA en 1D (real: USA)",
-          "CANADÁ en 3 BEFIJ (real: BOSNIA)",
-          "AUSTRIA en 3 AEFHIJ (real: SENEGAL)",
-          "ECUADOR en 2E (real: COSTA DE MARFIL)",
-          "SENEGAL en 2I (real: NORUEGA)",
-          "ARABIA SAUDÍ no clasificó a 16avos",
-          "UZBEKISTÁN no clasificó a 16avos",
-          "URUGUAY no clasificó a 16avos",
-          "USA en 2D (real: AUSTRALIA)",
-          "NUEVA ZELANDA no clasificó a 16avos"
-        ]
-      },
-      "8avos": {
-        "aciertos": [
-          "FRANCIA",
-          "PORTUGAL",
-          "ESPAÑA",
-          "CANADÁ",
-          "BÉLGICA",
-          "BRASIL",
-          "MÉXICO",
-          "INGLATERRA",
-          "ARGENTINA",
-          "EGIPTO",
-          "SUIZA",
-          "COLOMBIA"
-        ],
-        "errores": [
-          "ALEMANIA no llegó a 8avos",
-          "COREA DEL SUR no llegó a 8avos",
-          "PAISES BAJOS no llegó a 8avos",
-          "ECUADOR no llegó a 8avos"
-        ]
-      },
-      "cuartos": {
-        "aciertos": [
-          "FRANCIA",
-          "ESPAÑA",
-          "BÉLGICA",
-          "INGLATERRA",
-          "ARGENTINA"
-        ],
-        "errores": [
-          "PAISES BAJOS no llegó a cuartos",
-          "ECUADOR no llegó a cuartos",
-          "COLOMBIA no llegó a cuartos"
-        ]
-      },
-      "semifinales": {
-        "aciertos": [
-          "ESPAÑA",
-          "ARGENTINA"
-        ],
-        "errores": [
-          "PAISES BAJOS no llegó a semifinales",
-          "ECUADOR no llegó a semifinales"
-        ]
-      },
-      "finales": {
-        "aciertos": [],
-        "errores": [
-          "campeon: predijo PAISES BAJOS, real:  (0 pts)",
-          "segundo: predijo ARGENTINA, real:  (0 pts)",
-          "tercero: predijo ESPAÑA, real: INGLATERRA (0 pts)",
-          "cuarto: predijo ECUADOR, real: FRANCIA (0 pts)"
-        ]
-      }
-    },
-    "desglose": {
-      "16avos": {
-        "items": [
-          {
-            "label": "Aciertos de equipo",
-            "puntos": 26,
-            "count": 26,
-            "detalle": "26 (+1 c/u)"
-          },
-          {
-            "label": "Aciertos de posición",
-            "puntos": 17,
-            "count": 17,
-            "detalle": "17 (+1 c/u)"
-          }
-        ],
-        "subtotal": 43
-      },
-      "8avos": {
-        "items": [
-          {
-            "label": "Aciertos",
-            "puntos": 24,
-            "count": 12,
-            "detalle": "12 (×2 pts)"
-          }
-        ],
-        "subtotal": 24
-      },
-      "cuartos": {
-        "items": [
-          {
-            "label": "Aciertos",
-            "puntos": 15,
-            "count": 5,
-            "detalle": "5 (×3 pts)"
-          }
-        ],
-        "subtotal": 15
-      },
-      "semifinales": {
-        "items": [
-          {
-            "label": "Aciertos",
-            "puntos": 8,
-            "count": 2,
-            "detalle": "2 (×4 pts)"
-          }
-        ],
-        "subtotal": 8
-      },
-      "finales": {
-        "items": [
-          {
-            "label": "Campeón",
-            "puntos": 0,
-            "equipo": "PAISES BAJOS",
-            "hit": false
-          },
-          {
-            "label": "Segundo",
-            "puntos": 0,
-            "equipo": "ARGENTINA",
-            "hit": false
-          },
-          {
-            "label": "Tercero",
-            "puntos": 0,
-            "equipo": "ESPAÑA",
-            "hit": false
-          },
-          {
-            "label": "Cuarto",
-            "puntos": 0,
-            "equipo": "ECUADOR",
             "hit": false
           }
         ],
@@ -4454,8 +5983,8 @@
       "finales": {
         "aciertos": [],
         "errores": [
-          "campeon: predijo ARGENTINA, real:  (0 pts)",
-          "segundo: predijo ESPAÑA, real:  (0 pts)",
+          "campeon: predijo ARGENTINA, real: ESPAÑA (0 pts)",
+          "segundo: predijo ESPAÑA, real: ARGENTINA (0 pts)",
           "tercero: predijo FRANCIA, real: INGLATERRA (0 pts)",
           "cuarto: predijo BRASIL, real: FRANCIA (0 pts)"
         ]
@@ -4671,8 +6200,8 @@
       "finales": {
         "aciertos": [],
         "errores": [
-          "campeon: predijo FRANCIA, real:  (0 pts)",
-          "segundo: predijo INGLATERRA, real:  (0 pts)",
+          "campeon: predijo FRANCIA, real: ESPAÑA (0 pts)",
+          "segundo: predijo INGLATERRA, real: ARGENTINA (0 pts)",
           "tercero: predijo ESPAÑA, real: INGLATERRA (0 pts)",
           "cuarto: predijo PORTUGAL, real: FRANCIA (0 pts)"
         ]
@@ -4888,8 +6417,8 @@
       "finales": {
         "aciertos": [],
         "errores": [
-          "campeon: predijo BRASIL, real:  (0 pts)",
-          "segundo: predijo FRANCIA, real:  (0 pts)",
+          "campeon: predijo BRASIL, real: ESPAÑA (0 pts)",
+          "segundo: predijo FRANCIA, real: ARGENTINA (0 pts)",
           "tercero: predijo ESPAÑA, real: INGLATERRA (0 pts)",
           "cuarto: predijo ARGENTINA, real: FRANCIA (0 pts)"
         ]
@@ -4974,221 +6503,6 @@
           }
         ],
         "subtotal": 0
-      }
-    },
-    "polla_letra": "A"
-  },
-  {
-    "participante": "Carlos Jaramillo Medina",
-    "archivo": "CarlosJaramillo.jpeg",
-    "puntajes": {
-      "16avos": 41,
-      "8avos": 18,
-      "cuartos": 12,
-      "semifinales": 8,
-      "finales": 8,
-      "total": 87
-    },
-    "detalle": {
-      "16avos": {
-        "aciertos_equipo": [
-          "ALEMANIA",
-          "SUDÁFRICA",
-          "FRANCIA",
-          "CANADÁ",
-          "PAISES BAJOS",
-          "MARRUECOS",
-          "COLOMBIA",
-          "CROACIA",
-          "ESPAÑA",
-          "AUSTRIA",
-          "BOSNIA",
-          "BÉLGICA",
-          "COSTA DE MARFIL",
-          "BRASIL",
-          "SUECIA",
-          "ECUADOR",
-          "NORUEGA",
-          "MÉXICO",
-          "INGLATERRA",
-          "ARGENTINA",
-          "USA",
-          "SUIZA",
-          "SENEGAL",
-          "PORTUGAL",
-          "ARGELIA"
-        ],
-        "aciertos_posicion": [
-          "ALEMANIA @ 1E",
-          "FRANCIA @ 1I",
-          "CANADÁ @ 2B",
-          "PAISES BAJOS @ 1F",
-          "MARRUECOS @ 2C",
-          "CROACIA @ 2L",
-          "ESPAÑA @ 1H",
-          "AUSTRIA @ 2J",
-          "BOSNIA @ 3 BEFIJ",
-          "BÉLGICA @ 1G",
-          "BRASIL @ 1C",
-          "NORUEGA @ 2I",
-          "MÉXICO @ 1A",
-          "INGLATERRA @ 1L",
-          "ARGENTINA @ 1J",
-          "SUIZA @ 1B"
-        ],
-        "errores": [
-          "SUDÁFRICA en 3 ABCDF (real: PARAGUAY)",
-          "ESCOCIA no clasificó a 16avos",
-          "REPUBLICA CHECA no clasificó a 16avos",
-          "COLOMBIA en 2K (real: PORTUGAL)",
-          "TURQUÍA no clasificó a 16avos",
-          "COSTA DE MARFIL en 3 AEFHIJ (real: SENEGAL)",
-          "SUECIA en 2F (real: JAPÓN)",
-          "ECUADOR en 2E (real: COSTA DE MARFIL)",
-          "TÚNEZ no clasificó a 16avos",
-          "ARABIA SAUDÍ no clasificó a 16avos",
-          "URUGUAY no clasificó a 16avos",
-          "USA en 2D (real: AUSTRALIA)",
-          "SENEGAL en 3 EFGIJ (real: ARGELIA)",
-          "PORTUGAL en 1K (real: COLOMBIA)",
-          "ARGELIA en 3 DEIJL (real: GHANA)"
-        ]
-      },
-      "8avos": {
-        "aciertos": [
-          "FRANCIA",
-          "MARRUECOS",
-          "COLOMBIA",
-          "ESPAÑA",
-          "BRASIL",
-          "MÉXICO",
-          "INGLATERRA",
-          "ARGENTINA",
-          "PORTUGAL"
-        ],
-        "errores": [
-          "ALEMANIA no llegó a 8avos",
-          "REPUBLICA CHECA no llegó a 8avos",
-          "TURQUÍA no llegó a 8avos",
-          "COSTA DE MARFIL no llegó a 8avos",
-          "ECUADOR no llegó a 8avos",
-          "SENEGAL no llegó a 8avos"
-        ]
-      },
-      "cuartos": {
-        "aciertos": [
-          "MARRUECOS",
-          "ESPAÑA",
-          "INGLATERRA",
-          "ARGENTINA"
-        ],
-        "errores": [
-          "ALEMANIA no llegó a cuartos",
-          "COSTA DE MARFIL no llegó a cuartos",
-          "BRASIL no llegó a cuartos",
-          "SENEGAL no llegó a cuartos"
-        ]
-      },
-      "semifinales": {
-        "aciertos": [
-          "INGLATERRA",
-          "ARGENTINA"
-        ],
-        "errores": [
-          "ALEMANIA no llegó a semifinales",
-          "COSTA DE MARFIL no llegó a semifinales"
-        ]
-      },
-      "finales": {
-        "aciertos": [
-          "tercero: INGLATERRA (+8)"
-        ],
-        "errores": [
-          "campeon: predijo ALEMANIA, real:  (0 pts)",
-          "segundo: predijo ARGENTINA, real:  (0 pts)",
-          "cuarto: predijo COSTA DE MARFIL, real: FRANCIA (0 pts)"
-        ]
-      }
-    },
-    "desglose": {
-      "16avos": {
-        "items": [
-          {
-            "label": "Aciertos de equipo",
-            "puntos": 25,
-            "count": 25,
-            "detalle": "25 (+1 c/u)"
-          },
-          {
-            "label": "Aciertos de posición",
-            "puntos": 16,
-            "count": 16,
-            "detalle": "16 (+1 c/u)"
-          }
-        ],
-        "subtotal": 41
-      },
-      "8avos": {
-        "items": [
-          {
-            "label": "Aciertos",
-            "puntos": 18,
-            "count": 9,
-            "detalle": "9 (×2 pts)"
-          }
-        ],
-        "subtotal": 18
-      },
-      "cuartos": {
-        "items": [
-          {
-            "label": "Aciertos",
-            "puntos": 12,
-            "count": 4,
-            "detalle": "4 (×3 pts)"
-          }
-        ],
-        "subtotal": 12
-      },
-      "semifinales": {
-        "items": [
-          {
-            "label": "Aciertos",
-            "puntos": 8,
-            "count": 2,
-            "detalle": "2 (×4 pts)"
-          }
-        ],
-        "subtotal": 8
-      },
-      "finales": {
-        "items": [
-          {
-            "label": "Campeón",
-            "puntos": 0,
-            "equipo": "ALEMANIA",
-            "hit": false
-          },
-          {
-            "label": "Segundo",
-            "puntos": 0,
-            "equipo": "ARGENTINA",
-            "hit": false
-          },
-          {
-            "label": "Tercero",
-            "puntos": 0,
-            "equipo": "?",
-            "hit": false
-          },
-          {
-            "label": "Cuarto",
-            "puntos": 0,
-            "equipo": "COSTA DE MARFIL",
-            "hit": false
-          }
-        ],
-        "subtotal": 8
       }
     },
     "polla_letra": "A"
@@ -5320,8 +6634,8 @@
       "finales": {
         "aciertos": [],
         "errores": [
-          "campeon: predijo PORTUGAL, real:  (0 pts)",
-          "segundo: predijo FRANCIA, real:  (0 pts)",
+          "campeon: predijo PORTUGAL, real: ESPAÑA (0 pts)",
+          "segundo: predijo FRANCIA, real: ARGENTINA (0 pts)",
           "tercero: predijo ESPAÑA, real: INGLATERRA (0 pts)",
           "cuarto: predijo INGLATERRA, real: FRANCIA (0 pts)"
         ]
@@ -5537,8 +6851,8 @@
       "finales": {
         "aciertos": [],
         "errores": [
-          "campeon: predijo ARGENTINA, real:  (0 pts)",
-          "segundo: predijo FRANCIA, real:  (0 pts)",
+          "campeon: predijo ARGENTINA, real: ESPAÑA (0 pts)",
+          "segundo: predijo FRANCIA, real: ARGENTINA (0 pts)",
           "tercero: predijo BRASIL, real: INGLATERRA (0 pts)",
           "cuarto: predijo NORUEGA, real: FRANCIA (0 pts)"
         ]
@@ -5755,8 +7069,8 @@
       "finales": {
         "aciertos": [],
         "errores": [
-          "campeon: predijo PORTUGAL, real:  (0 pts)",
-          "segundo: predijo FRANCIA, real:  (0 pts)",
+          "campeon: predijo PORTUGAL, real: ESPAÑA (0 pts)",
+          "segundo: predijo FRANCIA, real: ARGENTINA (0 pts)",
           "tercero: predijo ECUADOR, real: INGLATERRA (0 pts)",
           "cuarto: predijo ESPAÑA, real: FRANCIA (0 pts)"
         ]
@@ -5837,226 +7151,6 @@
             "label": "Cuarto",
             "puntos": 0,
             "equipo": "ESPAÑA",
-            "hit": false
-          }
-        ],
-        "subtotal": 0
-      }
-    },
-    "polla_letra": "A"
-  },
-  {
-    "participante": "Pablo Fernández de Córdova",
-    "archivo": "PabloFernándezDeCordova.jpeg",
-    "puntajes": {
-      "16avos": 43,
-      "8avos": 22,
-      "cuartos": 12,
-      "semifinales": 8,
-      "finales": 0,
-      "total": 85
-    },
-    "detalle": {
-      "16avos": {
-        "aciertos_equipo": [
-          "ALEMANIA",
-          "SUECIA",
-          "FRANCIA",
-          "BOSNIA",
-          "MÉXICO",
-          "CANADÁ",
-          "JAPÓN",
-          "COLOMBIA",
-          "CROACIA",
-          "ESPAÑA",
-          "AUSTRIA",
-          "AUSTRALIA",
-          "NORUEGA",
-          "BÉLGICA",
-          "BRASIL",
-          "PAISES BAJOS",
-          "ECUADOR",
-          "SENEGAL",
-          "SUDÁFRICA",
-          "PARAGUAY",
-          "INGLATERRA",
-          "REPUBLICA DEL CONGO",
-          "ARGENTINA",
-          "USA",
-          "EGIPTO",
-          "SUIZA",
-          "COSTA DE MARFIL",
-          "PORTUGAL",
-          "GHANA"
-        ],
-        "aciertos_posicion": [
-          "ALEMANIA @ 1E",
-          "FRANCIA @ 1I",
-          "CANADÁ @ 2B",
-          "CROACIA @ 2L",
-          "ESPAÑA @ 1H",
-          "AUSTRIA @ 2J",
-          "BÉLGICA @ 1G",
-          "BRASIL @ 1C",
-          "INGLATERRA @ 1L",
-          "REPUBLICA DEL CONGO @ 3 EHIJK",
-          "ARGENTINA @ 1J",
-          "EGIPTO @ 2G",
-          "SUIZA @ 1B",
-          "GHANA @ 3 DEIJL"
-        ],
-        "errores": [
-          "SUECIA en 3 ABCDF (real: PARAGUAY)",
-          "BOSNIA en 3 CDFGH (real: SUECIA)",
-          "MÉXICO en 2A (real: SUDÁFRICA)",
-          "JAPÓN en 1F (real: PAISES BAJOS)",
-          "ESCOCIA no clasificó a 16avos",
-          "COLOMBIA en 2K (real: PORTUGAL)",
-          "AUSTRALIA en 1D (real: USA)",
-          "NORUEGA en 3 BEFIJ (real: BOSNIA)",
-          "REPUBLICA CHECA no clasificó a 16avos",
-          "PAISES BAJOS en 2F (real: JAPÓN)",
-          "ECUADOR en 2E (real: COSTA DE MARFIL)",
-          "SENEGAL en 2I (real: NORUEGA)",
-          "SUDÁFRICA en 1A (real: MÉXICO)",
-          "PARAGUAY en 3 CEFHI (real: ECUADOR)",
-          "URUGUAY no clasificó a 16avos",
-          "USA en 2D (real: AUSTRALIA)",
-          "COSTA DE MARFIL en 3 EFGIJ (real: ARGELIA)",
-          "PORTUGAL en 1K (real: COLOMBIA)"
-        ]
-      },
-      "8avos": {
-        "aciertos": [
-          "FRANCIA",
-          "CANADÁ",
-          "COLOMBIA",
-          "ESPAÑA",
-          "NORUEGA",
-          "BÉLGICA",
-          "BRASIL",
-          "INGLATERRA",
-          "ARGENTINA",
-          "USA",
-          "PORTUGAL"
-        ],
-        "errores": [
-          "ALEMANIA no llegó a 8avos",
-          "JAPÓN no llegó a 8avos",
-          "ECUADOR no llegó a 8avos",
-          "SUDÁFRICA no llegó a 8avos",
-          "COSTA DE MARFIL no llegó a 8avos"
-        ]
-      },
-      "cuartos": {
-        "aciertos": [
-          "ESPAÑA",
-          "BÉLGICA",
-          "INGLATERRA",
-          "ARGENTINA"
-        ],
-        "errores": [
-          "ALEMANIA no llegó a cuartos",
-          "JAPÓN no llegó a cuartos",
-          "ECUADOR no llegó a cuartos",
-          "COSTA DE MARFIL no llegó a cuartos"
-        ]
-      },
-      "semifinales": {
-        "aciertos": [
-          "ESPAÑA",
-          "ARGENTINA"
-        ],
-        "errores": [
-          "ALEMANIA no llegó a semifinales",
-          "ECUADOR no llegó a semifinales"
-        ]
-      },
-      "finales": {
-        "aciertos": [],
-        "errores": [
-          "campeon: predijo ESPAÑA, real:  (0 pts)",
-          "segundo: predijo ECUADOR, real:  (0 pts)",
-          "tercero: predijo ARGENTINA, real: INGLATERRA (0 pts)",
-          "cuarto: predijo ALEMANIA, real: FRANCIA (0 pts)"
-        ]
-      }
-    },
-    "desglose": {
-      "16avos": {
-        "items": [
-          {
-            "label": "Aciertos de equipo",
-            "puntos": 29,
-            "count": 29,
-            "detalle": "29 (+1 c/u)"
-          },
-          {
-            "label": "Aciertos de posición",
-            "puntos": 14,
-            "count": 14,
-            "detalle": "14 (+1 c/u)"
-          }
-        ],
-        "subtotal": 43
-      },
-      "8avos": {
-        "items": [
-          {
-            "label": "Aciertos",
-            "puntos": 22,
-            "count": 11,
-            "detalle": "11 (×2 pts)"
-          }
-        ],
-        "subtotal": 22
-      },
-      "cuartos": {
-        "items": [
-          {
-            "label": "Aciertos",
-            "puntos": 12,
-            "count": 4,
-            "detalle": "4 (×3 pts)"
-          }
-        ],
-        "subtotal": 12
-      },
-      "semifinales": {
-        "items": [
-          {
-            "label": "Aciertos",
-            "puntos": 8,
-            "count": 2,
-            "detalle": "2 (×4 pts)"
-          }
-        ],
-        "subtotal": 8
-      },
-      "finales": {
-        "items": [
-          {
-            "label": "Campeón",
-            "puntos": 0,
-            "equipo": "ESPAÑA",
-            "hit": false
-          },
-          {
-            "label": "Segundo",
-            "puntos": 0,
-            "equipo": "ECUADOR",
-            "hit": false
-          },
-          {
-            "label": "Tercero",
-            "puntos": 0,
-            "equipo": "ARGENTINA",
-            "hit": false
-          },
-          {
-            "label": "Cuarto",
-            "puntos": 0,
-            "equipo": "ALEMANIA",
             "hit": false
           }
         ],
@@ -6192,8 +7286,8 @@
       "finales": {
         "aciertos": [],
         "errores": [
-          "campeon: predijo BRASIL, real:  (0 pts)",
-          "segundo: predijo ESPAÑA, real:  (0 pts)",
+          "campeon: predijo BRASIL, real: ESPAÑA (0 pts)",
+          "segundo: predijo ESPAÑA, real: ARGENTINA (0 pts)",
           "tercero: predijo ARGENTINA, real: INGLATERRA (0 pts)",
           "cuarto: predijo PAISES BAJOS, real: FRANCIA (0 pts)"
         ]
@@ -6278,434 +7372,6 @@
           }
         ],
         "subtotal": 0
-      }
-    },
-    "polla_letra": "A"
-  },
-  {
-    "participante": "FERNANDA CORDOVA",
-    "archivo": "Polla Mundialista Fer.xlsx",
-    "puntajes": {
-      "16avos": 38,
-      "8avos": 18,
-      "cuartos": 12,
-      "semifinales": 16,
-      "finales": 0,
-      "total": 84
-    },
-    "detalle": {
-      "16avos": {
-        "aciertos_equipo": [
-          "ALEMANIA",
-          "CANADÁ",
-          "FRANCIA",
-          "MÉXICO",
-          "BOSNIA",
-          "PAISES BAJOS",
-          "MARRUECOS",
-          "COLOMBIA",
-          "CROACIA",
-          "ESPAÑA",
-          "ARGELIA",
-          "PARAGUAY",
-          "COSTA DE MARFIL",
-          "BRASIL",
-          "ECUADOR",
-          "NORUEGA",
-          "CABO VERDE",
-          "INGLATERRA",
-          "SENEGAL",
-          "ARGENTINA",
-          "USA",
-          "BÉLGICA",
-          "SUIZA",
-          "AUSTRIA",
-          "PORTUGAL",
-          "GHANA"
-        ],
-        "aciertos_posicion": [
-          "ALEMANIA @ 1E",
-          "FRANCIA @ 1I",
-          "PAISES BAJOS @ 1F",
-          "MARRUECOS @ 2C",
-          "CROACIA @ 2L",
-          "ESPAÑA @ 1H",
-          "BRASIL @ 1C",
-          "NORUEGA @ 2I",
-          "INGLATERRA @ 1L",
-          "ARGENTINA @ 1J",
-          "SUIZA @ 1B",
-          "GHANA @ 3 DEIJL"
-        ],
-        "errores": [
-          "CANADÁ en 3 ABCDF (real: PARAGUAY)",
-          "ESCOCIA no clasificó a 16avos",
-          "MÉXICO en 2A (real: SUDÁFRICA)",
-          "BOSNIA en 2B (real: CANADÁ)",
-          "COLOMBIA en 2K (real: PORTUGAL)",
-          "ARGELIA en 2J (real: AUSTRIA)",
-          "PARAGUAY en 1D (real: USA)",
-          "COSTA DE MARFIL en 3 BEFIJ (real: BOSNIA)",
-          "NUEVA ZELANDA no clasificó a 16avos",
-          "IRÁN no clasificó a 16avos",
-          "TÚNEZ no clasificó a 16avos",
-          "ECUADOR en 2E (real: COSTA DE MARFIL)",
-          "COREA DEL SUR no clasificó a 16avos",
-          "CABO VERDE en 3 CEFHI (real: ECUADOR)",
-          "SENEGAL en 3 EHIJK (real: REPUBLICA DEL CONGO)",
-          "URUGUAY no clasificó a 16avos",
-          "USA en 2D (real: AUSTRALIA)",
-          "BÉLGICA en 2G (real: EGIPTO)",
-          "AUSTRIA en 3 EFGIJ (real: ARGELIA)",
-          "PORTUGAL en 1K (real: COLOMBIA)"
-        ]
-      },
-      "8avos": {
-        "aciertos": [
-          "FRANCIA",
-          "MÉXICO",
-          "ESPAÑA",
-          "BRASIL",
-          "INGLATERRA",
-          "ARGENTINA",
-          "BÉLGICA",
-          "SUIZA",
-          "PORTUGAL"
-        ],
-        "errores": [
-          "ALEMANIA no llegó a 8avos",
-          "PAISES BAJOS no llegó a 8avos",
-          "CROACIA no llegó a 8avos",
-          "COSTA DE MARFIL no llegó a 8avos",
-          "NUEVA ZELANDA no llegó a 8avos",
-          "ECUADOR no llegó a 8avos",
-          "CABO VERDE no llegó a 8avos"
-        ]
-      },
-      "cuartos": {
-        "aciertos": [
-          "FRANCIA",
-          "ESPAÑA",
-          "INGLATERRA",
-          "ARGENTINA"
-        ],
-        "errores": [
-          "PAISES BAJOS no llegó a cuartos",
-          "COSTA DE MARFIL no llegó a cuartos",
-          "BRASIL no llegó a cuartos",
-          "PORTUGAL no llegó a cuartos"
-        ]
-      },
-      "semifinales": {
-        "aciertos": [
-          "FRANCIA",
-          "ESPAÑA",
-          "INGLATERRA",
-          "ARGENTINA"
-        ],
-        "errores": []
-      },
-      "finales": {
-        "aciertos": [],
-        "errores": [
-          "campeon: predijo ESPAÑA, real:  (0 pts)",
-          "segundo: predijo ARGENTINA, real:  (0 pts)",
-          "tercero: predijo FRANCIA, real: INGLATERRA (0 pts)",
-          "cuarto: predijo INGLATERRA, real: FRANCIA (0 pts)"
-        ]
-      }
-    },
-    "desglose": {
-      "16avos": {
-        "items": [
-          {
-            "label": "Aciertos de equipo",
-            "puntos": 26,
-            "count": 26,
-            "detalle": "26 (+1 c/u)"
-          },
-          {
-            "label": "Aciertos de posición",
-            "puntos": 12,
-            "count": 12,
-            "detalle": "12 (+1 c/u)"
-          }
-        ],
-        "subtotal": 38
-      },
-      "8avos": {
-        "items": [
-          {
-            "label": "Aciertos",
-            "puntos": 18,
-            "count": 9,
-            "detalle": "9 (×2 pts)"
-          }
-        ],
-        "subtotal": 18
-      },
-      "cuartos": {
-        "items": [
-          {
-            "label": "Aciertos",
-            "puntos": 12,
-            "count": 4,
-            "detalle": "4 (×3 pts)"
-          }
-        ],
-        "subtotal": 12
-      },
-      "semifinales": {
-        "items": [
-          {
-            "label": "Aciertos",
-            "puntos": 16,
-            "count": 4,
-            "detalle": "4 (×4 pts)"
-          }
-        ],
-        "subtotal": 16
-      },
-      "finales": {
-        "items": [
-          {
-            "label": "Campeón",
-            "puntos": 0,
-            "equipo": "ESPAÑA",
-            "hit": false
-          },
-          {
-            "label": "Segundo",
-            "puntos": 0,
-            "equipo": "ARGENTINA",
-            "hit": false
-          },
-          {
-            "label": "Tercero",
-            "puntos": 0,
-            "equipo": "FRANCIA",
-            "hit": false
-          },
-          {
-            "label": "Cuarto",
-            "puntos": 0,
-            "equipo": "INGLATERRA",
-            "hit": false
-          }
-        ],
-        "subtotal": 0
-      }
-    },
-    "polla_letra": "A"
-  },
-  {
-    "participante": "Rodrigo Ayala E.",
-    "archivo": "Polla Mundialista Final RAyala.xlsx",
-    "puntajes": {
-      "16avos": 39,
-      "8avos": 16,
-      "cuartos": 9,
-      "semifinales": 12,
-      "finales": 8,
-      "total": 84
-    },
-    "detalle": {
-      "16avos": {
-        "aciertos_equipo": [
-          "ECUADOR",
-          "FRANCIA",
-          "USA",
-          "CANADÁ",
-          "PAISES BAJOS",
-          "MARRUECOS",
-          "COLOMBIA",
-          "CROACIA",
-          "ESPAÑA",
-          "AUSTRIA",
-          "AUSTRALIA",
-          "BOSNIA",
-          "BRASIL",
-          "JAPÓN",
-          "ALEMANIA",
-          "NORUEGA",
-          "MÉXICO",
-          "INGLATERRA",
-          "SENEGAL",
-          "ARGENTINA",
-          "PARAGUAY",
-          "EGIPTO",
-          "SUECIA",
-          "PORTUGAL",
-          "GHANA"
-        ],
-        "aciertos_posicion": [
-          "FRANCIA @ 1I",
-          "CANADÁ @ 2B",
-          "PAISES BAJOS @ 1F",
-          "MARRUECOS @ 2C",
-          "CROACIA @ 2L",
-          "ESPAÑA @ 1H",
-          "AUSTRIA @ 2J",
-          "BRASIL @ 1C",
-          "JAPÓN @ 2F",
-          "NORUEGA @ 2I",
-          "MÉXICO @ 1A",
-          "INGLATERRA @ 1L",
-          "ARGENTINA @ 1J",
-          "EGIPTO @ 2G"
-        ],
-        "errores": [
-          "ECUADOR en 1E (real: ALEMANIA)",
-          "ESCOCIA no clasificó a 16avos",
-          "REPUBLICA CHECA no clasificó a 16avos",
-          "COLOMBIA en 2K (real: PORTUGAL)",
-          "AUSTRALIA en 1D (real: USA)",
-          "NUEVA ZELANDA no clasificó a 16avos",
-          "COREA DEL SUR no clasificó a 16avos",
-          "ALEMANIA en 2E (real: COSTA DE MARFIL)",
-          "CURAZAO no clasificó a 16avos",
-          "URUGUAY no clasificó a 16avos",
-          "PARAGUAY en 2D (real: AUSTRALIA)",
-          "QATAR no clasificó a 16avos",
-          "PORTUGAL en 1K (real: COLOMBIA)"
-        ]
-      },
-      "8avos": {
-        "aciertos": [
-          "FRANCIA",
-          "COLOMBIA",
-          "ESPAÑA",
-          "BRASIL",
-          "MÉXICO",
-          "INGLATERRA",
-          "ARGENTINA",
-          "PARAGUAY"
-        ],
-        "errores": [
-          "ECUADOR no llegó a 8avos",
-          "REPUBLICA CHECA no llegó a 8avos",
-          "PAISES BAJOS no llegó a 8avos",
-          "AUSTRALIA no llegó a 8avos",
-          "NUEVA ZELANDA no llegó a 8avos",
-          "ALEMANIA no llegó a 8avos",
-          "SUECIA no llegó a 8avos",
-          "GHANA no llegó a 8avos"
-        ]
-      },
-      "cuartos": {
-        "aciertos": [
-          "ESPAÑA",
-          "INGLATERRA",
-          "ARGENTINA"
-        ],
-        "errores": [
-          "ECUADOR no llegó a cuartos",
-          "PAISES BAJOS no llegó a cuartos",
-          "AUSTRALIA no llegó a cuartos",
-          "BRASIL no llegó a cuartos",
-          "SUECIA no llegó a cuartos"
-        ]
-      },
-      "semifinales": {
-        "aciertos": [
-          "ESPAÑA",
-          "INGLATERRA",
-          "ARGENTINA"
-        ],
-        "errores": [
-          "PAISES BAJOS no llegó a semifinales"
-        ]
-      },
-      "finales": {
-        "aciertos": [
-          "tercero: INGLATERRA (+8)"
-        ],
-        "errores": [
-          "campeon: predijo ESPAÑA, real:  (0 pts)",
-          "segundo: predijo ARGENTINA, real:  (0 pts)",
-          "cuarto: predijo PAISES BAJOS, real: FRANCIA (0 pts)"
-        ]
-      }
-    },
-    "desglose": {
-      "16avos": {
-        "items": [
-          {
-            "label": "Aciertos de equipo",
-            "puntos": 25,
-            "count": 25,
-            "detalle": "25 (+1 c/u)"
-          },
-          {
-            "label": "Aciertos de posición",
-            "puntos": 14,
-            "count": 14,
-            "detalle": "14 (+1 c/u)"
-          }
-        ],
-        "subtotal": 39
-      },
-      "8avos": {
-        "items": [
-          {
-            "label": "Aciertos",
-            "puntos": 16,
-            "count": 8,
-            "detalle": "8 (×2 pts)"
-          }
-        ],
-        "subtotal": 16
-      },
-      "cuartos": {
-        "items": [
-          {
-            "label": "Aciertos",
-            "puntos": 9,
-            "count": 3,
-            "detalle": "3 (×3 pts)"
-          }
-        ],
-        "subtotal": 9
-      },
-      "semifinales": {
-        "items": [
-          {
-            "label": "Aciertos",
-            "puntos": 12,
-            "count": 3,
-            "detalle": "3 (×4 pts)"
-          }
-        ],
-        "subtotal": 12
-      },
-      "finales": {
-        "items": [
-          {
-            "label": "Campeón",
-            "puntos": 0,
-            "equipo": "ESPAÑA",
-            "hit": false
-          },
-          {
-            "label": "Segundo",
-            "puntos": 0,
-            "equipo": "ARGENTINA",
-            "hit": false
-          },
-          {
-            "label": "Tercero",
-            "puntos": 0,
-            "equipo": "?",
-            "hit": false
-          },
-          {
-            "label": "Cuarto",
-            "puntos": 0,
-            "equipo": "PAISES BAJOS",
-            "hit": false
-          }
-        ],
-        "subtotal": 8
       }
     },
     "polla_letra": "A"
@@ -6839,8 +7505,8 @@
       "finales": {
         "aciertos": [],
         "errores": [
-          "campeon: predijo PAISES BAJOS, real:  (0 pts)",
-          "segundo: predijo BRASIL, real:  (0 pts)",
+          "campeon: predijo PAISES BAJOS, real: ESPAÑA (0 pts)",
+          "segundo: predijo BRASIL, real: ARGENTINA (0 pts)",
           "tercero: predijo ARGENTINA, real: INGLATERRA (0 pts)",
           "cuarto: predijo ESPAÑA, real: FRANCIA (0 pts)"
         ]
@@ -6921,223 +7587,6 @@
             "label": "Cuarto",
             "puntos": 0,
             "equipo": "ESPAÑA",
-            "hit": false
-          }
-        ],
-        "subtotal": 0
-      }
-    },
-    "polla_letra": "A"
-  },
-  {
-    "participante": "Anina y Lu",
-    "archivo": "Polla Mundialista Final Anina y Lu.xlsx",
-    "puntajes": {
-      "16avos": 43,
-      "8avos": 26,
-      "cuartos": 6,
-      "semifinales": 8,
-      "finales": 0,
-      "total": 83
-    },
-    "detalle": {
-      "16avos": {
-        "aciertos_equipo": [
-          "ALEMANIA",
-          "SUECIA",
-          "FRANCIA",
-          "CABO VERDE",
-          "SUDÁFRICA",
-          "SUIZA",
-          "PAISES BAJOS",
-          "MARRUECOS",
-          "COLOMBIA",
-          "CROACIA",
-          "ESPAÑA",
-          "AUSTRIA",
-          "USA",
-          "COSTA DE MARFIL",
-          "BÉLGICA",
-          "BRASIL",
-          "JAPÓN",
-          "ECUADOR",
-          "SENEGAL",
-          "MÉXICO",
-          "INGLATERRA",
-          "NORUEGA",
-          "ARGENTINA",
-          "PARAGUAY",
-          "EGIPTO",
-          "CANADÁ",
-          "PORTUGAL"
-        ],
-        "aciertos_posicion": [
-          "ALEMANIA @ 1E",
-          "FRANCIA @ 1I",
-          "SUDÁFRICA @ 2A",
-          "PAISES BAJOS @ 1F",
-          "MARRUECOS @ 2C",
-          "CROACIA @ 2L",
-          "ESPAÑA @ 1H",
-          "AUSTRIA @ 2J",
-          "USA @ 1D",
-          "BÉLGICA @ 1G",
-          "BRASIL @ 1C",
-          "JAPÓN @ 2F",
-          "MÉXICO @ 1A",
-          "INGLATERRA @ 1L",
-          "ARGENTINA @ 1J",
-          "EGIPTO @ 2G"
-        ],
-        "errores": [
-          "SUECIA en 3 ABCDF (real: PARAGUAY)",
-          "CABO VERDE en 3 CDFGH (real: SUECIA)",
-          "SUIZA en 2B (real: CANADÁ)",
-          "COLOMBIA en 2K (real: PORTUGAL)",
-          "COSTA DE MARFIL en 3 BEFIJ (real: BOSNIA)",
-          "COREA DEL SUR no clasificó a 16avos",
-          "ECUADOR en 2E (real: COSTA DE MARFIL)",
-          "SENEGAL en 2I (real: NORUEGA)",
-          "NORUEGA en 3 EHIJK (real: REPUBLICA DEL CONGO)",
-          "URUGUAY no clasificó a 16avos",
-          "PARAGUAY en 2D (real: AUSTRALIA)",
-          "CANADÁ en 1B (real: SUIZA)",
-          "NUEVA ZELANDA no clasificó a 16avos",
-          "PORTUGAL en 1K (real: COLOMBIA)",
-          "PANAMÁ no clasificó a 16avos"
-        ]
-      },
-      "8avos": {
-        "aciertos": [
-          "FRANCIA",
-          "SUIZA",
-          "COLOMBIA",
-          "ESPAÑA",
-          "USA",
-          "BÉLGICA",
-          "BRASIL",
-          "MÉXICO",
-          "INGLATERRA",
-          "ARGENTINA",
-          "PARAGUAY",
-          "CANADÁ",
-          "PORTUGAL"
-        ],
-        "errores": [
-          "ALEMANIA no llegó a 8avos",
-          "PAISES BAJOS no llegó a 8avos",
-          "ECUADOR no llegó a 8avos"
-        ]
-      },
-      "cuartos": {
-        "aciertos": [
-          "ESPAÑA",
-          "ARGENTINA"
-        ],
-        "errores": [
-          "ALEMANIA no llegó a cuartos",
-          "PAISES BAJOS no llegó a cuartos",
-          "USA no llegó a cuartos",
-          "ECUADOR no llegó a cuartos",
-          "MÉXICO no llegó a cuartos",
-          "PORTUGAL no llegó a cuartos"
-        ]
-      },
-      "semifinales": {
-        "aciertos": [
-          "ESPAÑA",
-          "ARGENTINA"
-        ],
-        "errores": [
-          "ALEMANIA no llegó a semifinales",
-          "ECUADOR no llegó a semifinales"
-        ]
-      },
-      "finales": {
-        "aciertos": [],
-        "errores": [
-          "campeon: predijo ALEMANIA, real:  (0 pts)",
-          "segundo: predijo ARGENTINA, real:  (0 pts)",
-          "tercero: predijo ESPAÑA, real: INGLATERRA (0 pts)",
-          "cuarto: predijo ECUADOR, real: FRANCIA (0 pts)"
-        ]
-      }
-    },
-    "desglose": {
-      "16avos": {
-        "items": [
-          {
-            "label": "Aciertos de equipo",
-            "puntos": 27,
-            "count": 27,
-            "detalle": "27 (+1 c/u)"
-          },
-          {
-            "label": "Aciertos de posición",
-            "puntos": 16,
-            "count": 16,
-            "detalle": "16 (+1 c/u)"
-          }
-        ],
-        "subtotal": 43
-      },
-      "8avos": {
-        "items": [
-          {
-            "label": "Aciertos",
-            "puntos": 26,
-            "count": 13,
-            "detalle": "13 (×2 pts)"
-          }
-        ],
-        "subtotal": 26
-      },
-      "cuartos": {
-        "items": [
-          {
-            "label": "Aciertos",
-            "puntos": 6,
-            "count": 2,
-            "detalle": "2 (×3 pts)"
-          }
-        ],
-        "subtotal": 6
-      },
-      "semifinales": {
-        "items": [
-          {
-            "label": "Aciertos",
-            "puntos": 8,
-            "count": 2,
-            "detalle": "2 (×4 pts)"
-          }
-        ],
-        "subtotal": 8
-      },
-      "finales": {
-        "items": [
-          {
-            "label": "Campeón",
-            "puntos": 0,
-            "equipo": "ALEMANIA",
-            "hit": false
-          },
-          {
-            "label": "Segundo",
-            "puntos": 0,
-            "equipo": "ARGENTINA",
-            "hit": false
-          },
-          {
-            "label": "Tercero",
-            "puntos": 0,
-            "equipo": "ESPAÑA",
-            "hit": false
-          },
-          {
-            "label": "Cuarto",
-            "puntos": 0,
-            "equipo": "ECUADOR",
             "hit": false
           }
         ],
@@ -7274,8 +7723,8 @@
       "finales": {
         "aciertos": [],
         "errores": [
-          "campeon: predijo PAISES BAJOS, real:  (0 pts)",
-          "segundo: predijo PORTUGAL, real:  (0 pts)",
+          "campeon: predijo PAISES BAJOS, real: ESPAÑA (0 pts)",
+          "segundo: predijo PORTUGAL, real: ARGENTINA (0 pts)",
           "tercero: predijo ESPAÑA, real: INGLATERRA (0 pts)",
           "cuarto: predijo ECUADOR, real: FRANCIA (0 pts)"
         ]
@@ -7493,8 +7942,8 @@
       "finales": {
         "aciertos": [],
         "errores": [
-          "campeon: predijo BRASIL, real:  (0 pts)",
-          "segundo: predijo ESPAÑA, real:  (0 pts)",
+          "campeon: predijo BRASIL, real: ESPAÑA (0 pts)",
+          "segundo: predijo ESPAÑA, real: ARGENTINA (0 pts)",
           "tercero: predijo ECUADOR, real: INGLATERRA (0 pts)",
           "cuarto: predijo PORTUGAL, real: FRANCIA (0 pts)"
         ]
@@ -7703,8 +8152,8 @@
       "finales": {
         "aciertos": [],
         "errores": [
-          "campeon: predijo ARGENTINA, real:  (0 pts)",
-          "segundo: predijo ECUADOR, real:  (0 pts)",
+          "campeon: predijo ARGENTINA, real: ESPAÑA (0 pts)",
+          "segundo: predijo ECUADOR, real: ARGENTINA (0 pts)",
           "tercero: predijo ESPAÑA, real: INGLATERRA (0 pts)",
           "cuarto: predijo BRASIL, real: FRANCIA (0 pts)"
         ]
@@ -7779,221 +8228,6 @@
             "label": "Tercero",
             "puntos": 0,
             "equipo": "ESPAÑA",
-            "hit": false
-          },
-          {
-            "label": "Cuarto",
-            "puntos": 0,
-            "equipo": "BRASIL",
-            "hit": false
-          }
-        ],
-        "subtotal": 0
-      }
-    },
-    "polla_letra": "A"
-  },
-  {
-    "participante": "MARIA ELENA AYALA",
-    "archivo": "Polla Mundialista Final MAYALA 2.xlsx [CORREGIDA]",
-    "puntajes": {
-      "16avos": 40,
-      "8avos": 22,
-      "cuartos": 12,
-      "semifinales": 8,
-      "finales": 0,
-      "total": 82
-    },
-    "detalle": {
-      "16avos": {
-        "aciertos_equipo": [
-          "ECUADOR",
-          "GHANA",
-          "FRANCIA",
-          "CANADÁ",
-          "PAISES BAJOS",
-          "MARRUECOS",
-          "COLOMBIA",
-          "CROACIA",
-          "ESPAÑA",
-          "AUSTRIA",
-          "USA",
-          "ARGELIA",
-          "BÉLGICA",
-          "COSTA DE MARFIL",
-          "BRASIL",
-          "SUECIA",
-          "ALEMANIA",
-          "NORUEGA",
-          "MÉXICO",
-          "INGLATERRA",
-          "SENEGAL",
-          "ARGENTINA",
-          "SUIZA",
-          "PORTUGAL",
-          "PARAGUAY"
-        ],
-        "aciertos_posicion": [
-          "FRANCIA @ 1I",
-          "CANADÁ @ 2B",
-          "PAISES BAJOS @ 1F",
-          "MARRUECOS @ 2C",
-          "CROACIA @ 2L",
-          "ESPAÑA @ 1H",
-          "AUSTRIA @ 2J",
-          "USA @ 1D",
-          "BÉLGICA @ 1G",
-          "BRASIL @ 1C",
-          "NORUEGA @ 2I",
-          "MÉXICO @ 1A",
-          "INGLATERRA @ 1L",
-          "ARGENTINA @ 1J",
-          "SUIZA @ 1B"
-        ],
-        "errores": [
-          "ECUADOR en 1E (real: ALEMANIA)",
-          "GHANA en 3 ABCDF (real: PARAGUAY)",
-          "ARABIA SAUDÍ no clasificó a 16avos",
-          "REPUBLICA CHECA no clasificó a 16avos",
-          "COLOMBIA en 2K (real: PORTUGAL)",
-          "ARGELIA en 3 BEFIJ (real: BOSNIA)",
-          "COSTA DE MARFIL en 3 AEFHIJ (real: SENEGAL)",
-          "SUECIA en 2F (real: JAPÓN)",
-          "ALEMANIA en 2E (real: COSTA DE MARFIL)",
-          "ESCOCIA no clasificó a 16avos",
-          "SENEGAL en 3 EHIJK (real: REPUBLICA DEL CONGO)",
-          "URUGUAY no clasificó a 16avos",
-          "TURQUÍA no clasificó a 16avos",
-          "NUEVA ZELANDA no clasificó a 16avos",
-          "PORTUGAL en 1K (real: COLOMBIA)",
-          "PARAGUAY en 3 DEIJL (real: GHANA)"
-        ]
-      },
-      "8avos": {
-        "aciertos": [
-          "FRANCIA",
-          "COLOMBIA",
-          "ESPAÑA",
-          "USA",
-          "BÉLGICA",
-          "BRASIL",
-          "MÉXICO",
-          "INGLATERRA",
-          "ARGENTINA",
-          "SUIZA",
-          "PORTUGAL"
-        ],
-        "errores": [
-          "ECUADOR no llegó a 8avos",
-          "REPUBLICA CHECA no llegó a 8avos",
-          "PAISES BAJOS no llegó a 8avos",
-          "ALEMANIA no llegó a 8avos",
-          "TURQUÍA no llegó a 8avos"
-        ]
-      },
-      "cuartos": {
-        "aciertos": [
-          "ESPAÑA",
-          "BÉLGICA",
-          "INGLATERRA",
-          "ARGENTINA"
-        ],
-        "errores": [
-          "ECUADOR no llegó a cuartos",
-          "PAISES BAJOS no llegó a cuartos",
-          "BRASIL no llegó a cuartos",
-          "PORTUGAL no llegó a cuartos"
-        ]
-      },
-      "semifinales": {
-        "aciertos": [
-          "ESPAÑA",
-          "ARGENTINA"
-        ],
-        "errores": [
-          "PAISES BAJOS no llegó a semifinales",
-          "BRASIL no llegó a semifinales"
-        ]
-      },
-      "finales": {
-        "aciertos": [],
-        "errores": [
-          "campeon: predijo ESPAÑA, real:  (0 pts)",
-          "segundo: predijo ARGENTINA, real:  (0 pts)",
-          "tercero: predijo PAISES BAJOS, real: INGLATERRA (0 pts)",
-          "cuarto: predijo BRASIL, real: FRANCIA (0 pts)"
-        ]
-      }
-    },
-    "desglose": {
-      "16avos": {
-        "items": [
-          {
-            "label": "Aciertos de equipo",
-            "puntos": 25,
-            "count": 25,
-            "detalle": "25 (+1 c/u)"
-          },
-          {
-            "label": "Aciertos de posición",
-            "puntos": 15,
-            "count": 15,
-            "detalle": "15 (+1 c/u)"
-          }
-        ],
-        "subtotal": 40
-      },
-      "8avos": {
-        "items": [
-          {
-            "label": "Aciertos",
-            "puntos": 22,
-            "count": 11,
-            "detalle": "11 (×2 pts)"
-          }
-        ],
-        "subtotal": 22
-      },
-      "cuartos": {
-        "items": [
-          {
-            "label": "Aciertos",
-            "puntos": 12,
-            "count": 4,
-            "detalle": "4 (×3 pts)"
-          }
-        ],
-        "subtotal": 12
-      },
-      "semifinales": {
-        "items": [
-          {
-            "label": "Aciertos",
-            "puntos": 8,
-            "count": 2,
-            "detalle": "2 (×4 pts)"
-          }
-        ],
-        "subtotal": 8
-      },
-      "finales": {
-        "items": [
-          {
-            "label": "Campeón",
-            "puntos": 0,
-            "equipo": "ESPAÑA",
-            "hit": false
-          },
-          {
-            "label": "Segundo",
-            "puntos": 0,
-            "equipo": "ARGENTINA",
-            "hit": false
-          },
-          {
-            "label": "Tercero",
-            "puntos": 0,
-            "equipo": "PAISES BAJOS",
             "hit": false
           },
           {
@@ -8135,8 +8369,8 @@
       "finales": {
         "aciertos": [],
         "errores": [
-          "campeon: predijo BRASIL, real:  (0 pts)",
-          "segundo: predijo FRANCIA, real:  (0 pts)",
+          "campeon: predijo BRASIL, real: ESPAÑA (0 pts)",
+          "segundo: predijo FRANCIA, real: ARGENTINA (0 pts)",
           "tercero: predijo ESPAÑA, real: INGLATERRA (0 pts)",
           "cuarto: predijo PORTUGAL, real: FRANCIA (0 pts)"
         ]
@@ -8352,8 +8586,8 @@
       "finales": {
         "aciertos": [],
         "errores": [
-          "campeon: predijo BRASIL, real:  (0 pts)",
-          "segundo: predijo FRANCIA, real:  (0 pts)",
+          "campeon: predijo BRASIL, real: ESPAÑA (0 pts)",
+          "segundo: predijo FRANCIA, real: ARGENTINA (0 pts)",
           "tercero: predijo ESPAÑA, real: INGLATERRA (0 pts)",
           "cuarto: predijo PORTUGAL, real: FRANCIA (0 pts)"
         ]
@@ -8565,8 +8799,8 @@
       "finales": {
         "aciertos": [],
         "errores": [
-          "campeon: predijo MARRUECOS, real:  (0 pts)",
-          "segundo: predijo FRANCIA, real:  (0 pts)",
+          "campeon: predijo MARRUECOS, real: ESPAÑA (0 pts)",
+          "segundo: predijo FRANCIA, real: ARGENTINA (0 pts)",
           "tercero: predijo ESPAÑA, real: INGLATERRA (0 pts)",
           "cuarto: predijo INGLATERRA, real: FRANCIA (0 pts)"
         ]
@@ -8647,224 +8881,6 @@
             "label": "Cuarto",
             "puntos": 0,
             "equipo": "INGLATERRA",
-            "hit": false
-          }
-        ],
-        "subtotal": 0
-      }
-    },
-    "polla_letra": "A"
-  },
-  {
-    "participante": "José Córdova Reyes",
-    "archivo": "José Córdova Reyes.jpeg",
-    "puntajes": {
-      "16avos": 43,
-      "8avos": 20,
-      "cuartos": 9,
-      "semifinales": 8,
-      "finales": 0,
-      "total": 80
-    },
-    "detalle": {
-      "16avos": {
-        "aciertos_equipo": [
-          "ALEMANIA",
-          "FRANCIA",
-          "JAPÓN",
-          "CANADÁ",
-          "PAISES BAJOS",
-          "MARRUECOS",
-          "COLOMBIA",
-          "INGLATERRA",
-          "ESPAÑA",
-          "AUSTRIA",
-          "USA",
-          "SENEGAL",
-          "BÉLGICA",
-          "MÉXICO",
-          "BRASIL",
-          "SUECIA",
-          "ECUADOR",
-          "NORUEGA",
-          "COSTA DE MARFIL",
-          "CROACIA",
-          "REPUBLICA DEL CONGO",
-          "ARGENTINA",
-          "PARAGUAY",
-          "SUIZA",
-          "ARGELIA",
-          "PORTUGAL",
-          "GHANA"
-        ],
-        "aciertos_posicion": [
-          "ALEMANIA @ 1E",
-          "FRANCIA @ 1I",
-          "CANADÁ @ 2B",
-          "PAISES BAJOS @ 1F",
-          "MARRUECOS @ 2C",
-          "ESPAÑA @ 1H",
-          "AUSTRIA @ 2J",
-          "USA @ 1D",
-          "BÉLGICA @ 1G",
-          "BRASIL @ 1C",
-          "NORUEGA @ 2I",
-          "REPUBLICA DEL CONGO @ 3 EHIJK",
-          "ARGENTINA @ 1J",
-          "SUIZA @ 1B",
-          "ARGELIA @ 3 EFGIJ",
-          "GHANA @ 3 DEIJL"
-        ],
-        "errores": [
-          "ESCOCIA no clasificó a 16avos",
-          "JAPÓN en 3 CDFGH (real: SUECIA)",
-          "REPUBLICA CHECA no clasificó a 16avos",
-          "COLOMBIA en 2K (real: PORTUGAL)",
-          "INGLATERRA en 2L (real: CROACIA)",
-          "SENEGAL en 3 BEFIJ (real: BOSNIA)",
-          "MÉXICO en 3 AEFHIJ (real: SENEGAL)",
-          "SUECIA en 2F (real: JAPÓN)",
-          "ECUADOR en 2E (real: COSTA DE MARFIL)",
-          "COREA DEL SUR no clasificó a 16avos",
-          "COSTA DE MARFIL en 3 CEFHI (real: ECUADOR)",
-          "CROACIA en 1L (real: INGLATERRA)",
-          "URUGUAY no clasificó a 16avos",
-          "PARAGUAY en 2D (real: AUSTRALIA)",
-          "NUEVA ZELANDA no clasificó a 16avos",
-          "PORTUGAL en 1K (real: COLOMBIA)"
-        ]
-      },
-      "8avos": {
-        "aciertos": [
-          "FRANCIA",
-          "INGLATERRA",
-          "ESPAÑA",
-          "USA",
-          "BÉLGICA",
-          "BRASIL",
-          "ARGENTINA",
-          "PARAGUAY",
-          "SUIZA",
-          "PORTUGAL"
-        ],
-        "errores": [
-          "ALEMANIA no llegó a 8avos",
-          "REPUBLICA CHECA no llegó a 8avos",
-          "PAISES BAJOS no llegó a 8avos",
-          "ECUADOR no llegó a 8avos",
-          "COREA DEL SUR no llegó a 8avos",
-          "CROACIA no llegó a 8avos"
-        ]
-      },
-      "cuartos": {
-        "aciertos": [
-          "FRANCIA",
-          "ESPAÑA",
-          "ARGENTINA"
-        ],
-        "errores": [
-          "PAISES BAJOS no llegó a cuartos",
-          "USA no llegó a cuartos",
-          "BRASIL no llegó a cuartos",
-          "CROACIA no llegó a cuartos",
-          "PORTUGAL no llegó a cuartos"
-        ]
-      },
-      "semifinales": {
-        "aciertos": [
-          "ESPAÑA",
-          "ARGENTINA"
-        ],
-        "errores": [
-          "PAISES BAJOS no llegó a semifinales",
-          "BRASIL no llegó a semifinales"
-        ]
-      },
-      "finales": {
-        "aciertos": [],
-        "errores": [
-          "campeon: predijo PAISES BAJOS, real:  (0 pts)",
-          "segundo: predijo ARGENTINA, real:  (0 pts)",
-          "tercero: predijo BRASIL, real: INGLATERRA (0 pts)",
-          "cuarto: predijo ESPAÑA, real: FRANCIA (0 pts)"
-        ]
-      }
-    },
-    "desglose": {
-      "16avos": {
-        "items": [
-          {
-            "label": "Aciertos de equipo",
-            "puntos": 27,
-            "count": 27,
-            "detalle": "27 (+1 c/u)"
-          },
-          {
-            "label": "Aciertos de posición",
-            "puntos": 16,
-            "count": 16,
-            "detalle": "16 (+1 c/u)"
-          }
-        ],
-        "subtotal": 43
-      },
-      "8avos": {
-        "items": [
-          {
-            "label": "Aciertos",
-            "puntos": 20,
-            "count": 10,
-            "detalle": "10 (×2 pts)"
-          }
-        ],
-        "subtotal": 20
-      },
-      "cuartos": {
-        "items": [
-          {
-            "label": "Aciertos",
-            "puntos": 9,
-            "count": 3,
-            "detalle": "3 (×3 pts)"
-          }
-        ],
-        "subtotal": 9
-      },
-      "semifinales": {
-        "items": [
-          {
-            "label": "Aciertos",
-            "puntos": 8,
-            "count": 2,
-            "detalle": "2 (×4 pts)"
-          }
-        ],
-        "subtotal": 8
-      },
-      "finales": {
-        "items": [
-          {
-            "label": "Campeón",
-            "puntos": 0,
-            "equipo": "PAISES BAJOS",
-            "hit": false
-          },
-          {
-            "label": "Segundo",
-            "puntos": 0,
-            "equipo": "ARGENTINA",
-            "hit": false
-          },
-          {
-            "label": "Tercero",
-            "puntos": 0,
-            "equipo": "BRASIL",
-            "hit": false
-          },
-          {
-            "label": "Cuarto",
-            "puntos": 0,
-            "equipo": "ESPAÑA",
             "hit": false
           }
         ],
@@ -8998,8 +9014,8 @@
       "finales": {
         "aciertos": [],
         "errores": [
-          "campeon: predijo BRASIL, real:  (0 pts)",
-          "segundo: predijo COLOMBIA, real:  (0 pts)",
+          "campeon: predijo BRASIL, real: ESPAÑA (0 pts)",
+          "segundo: predijo COLOMBIA, real: ARGENTINA (0 pts)",
           "tercero: predijo ARGENTINA, real: INGLATERRA (0 pts)",
           "cuarto: predijo ALEMANIA, real: FRANCIA (0 pts)"
         ]
@@ -9214,8 +9230,8 @@
       "finales": {
         "aciertos": [],
         "errores": [
-          "campeon: predijo BRASIL, real:  (0 pts)",
-          "segundo: predijo ESPAÑA, real:  (0 pts)",
+          "campeon: predijo BRASIL, real: ESPAÑA (0 pts)",
+          "segundo: predijo ESPAÑA, real: ARGENTINA (0 pts)",
           "tercero: predijo ECUADOR, real: INGLATERRA (0 pts)",
           "cuarto: predijo ARGENTINA, real: FRANCIA (0 pts)"
         ]
@@ -9425,8 +9441,8 @@
       "finales": {
         "aciertos": [],
         "errores": [
-          "campeon: predijo ARGENTINA, real:  (0 pts)",
-          "segundo: predijo ECUADOR, real:  (0 pts)",
+          "campeon: predijo ARGENTINA, real: ESPAÑA (0 pts)",
+          "segundo: predijo ECUADOR, real: ARGENTINA (0 pts)",
           "tercero: predijo BRASIL, real: INGLATERRA (0 pts)",
           "cuarto: predijo COSTA DE MARFIL, real: FRANCIA (0 pts)"
         ]
@@ -9635,8 +9651,8 @@
       "finales": {
         "aciertos": [],
         "errores": [
-          "campeon: predijo INGLATERRA, real:  (0 pts)",
-          "segundo: predijo FRANCIA, real:  (0 pts)",
+          "campeon: predijo INGLATERRA, real: ESPAÑA (0 pts)",
+          "segundo: predijo FRANCIA, real: ARGENTINA (0 pts)",
           "tercero: predijo PORTUGAL, real: INGLATERRA (0 pts)",
           "cuarto: predijo COLOMBIA, real: FRANCIA (0 pts)"
         ]
@@ -9853,8 +9869,8 @@
       "finales": {
         "aciertos": [],
         "errores": [
-          "campeon: predijo PORTUGAL, real:  (0 pts)",
-          "segundo: predijo FRANCIA, real:  (0 pts)",
+          "campeon: predijo PORTUGAL, real: ESPAÑA (0 pts)",
+          "segundo: predijo FRANCIA, real: ARGENTINA (0 pts)",
           "tercero: predijo ECUADOR, real: INGLATERRA (0 pts)",
           "cuarto: predijo COSTA DE MARFIL, real: FRANCIA (0 pts)"
         ]
@@ -10068,8 +10084,8 @@
       "finales": {
         "aciertos": [],
         "errores": [
-          "campeon: predijo BRASIL, real:  (0 pts)",
-          "segundo: predijo PAISES BAJOS, real:  (0 pts)",
+          "campeon: predijo BRASIL, real: ESPAÑA (0 pts)",
+          "segundo: predijo PAISES BAJOS, real: ARGENTINA (0 pts)",
           "tercero: predijo ARGENTINA, real: INGLATERRA (0 pts)",
           "cuarto: predijo COLOMBIA, real: FRANCIA (0 pts)"
         ]
@@ -10285,8 +10301,8 @@
       "finales": {
         "aciertos": [],
         "errores": [
-          "campeon: predijo BRASIL, real:  (0 pts)",
-          "segundo: predijo COLOMBIA, real:  (0 pts)",
+          "campeon: predijo BRASIL, real: ESPAÑA (0 pts)",
+          "segundo: predijo COLOMBIA, real: ARGENTINA (0 pts)",
           "tercero: predijo ECUADOR, real: INGLATERRA (0 pts)",
           "cuarto: predijo ARGENTINA, real: FRANCIA (0 pts)"
         ]
@@ -10497,8 +10513,8 @@
       "finales": {
         "aciertos": [],
         "errores": [
-          "campeon: predijo BRASIL, real:  (0 pts)",
-          "segundo: predijo FRANCIA, real:  (0 pts)",
+          "campeon: predijo BRASIL, real: ESPAÑA (0 pts)",
+          "segundo: predijo FRANCIA, real: ARGENTINA (0 pts)",
           "tercero: predijo BÉLGICA, real: INGLATERRA (0 pts)",
           "cuarto: predijo USA, real: FRANCIA (0 pts)"
         ]
@@ -10714,8 +10730,8 @@
       "finales": {
         "aciertos": [],
         "errores": [
-          "campeon: predijo ECUADOR, real:  (0 pts)",
-          "segundo: predijo CROACIA, real:  (0 pts)",
+          "campeon: predijo ECUADOR, real: ESPAÑA (0 pts)",
+          "segundo: predijo CROACIA, real: ARGENTINA (0 pts)",
           "tercero: predijo BÉLGICA, real: INGLATERRA (0 pts)",
           "cuarto: predijo URUGUAY, real: FRANCIA (0 pts)"
         ]
@@ -10932,8 +10948,8 @@
       "finales": {
         "aciertos": [],
         "errores": [
-          "campeon: predijo PAISES BAJOS, real:  (0 pts)",
-          "segundo: predijo ESPAÑA, real:  (0 pts)",
+          "campeon: predijo PAISES BAJOS, real: ESPAÑA (0 pts)",
+          "segundo: predijo ESPAÑA, real: ARGENTINA (0 pts)",
           "tercero: predijo JAPÓN, real: INGLATERRA (0 pts)",
           "cuarto: predijo PORTUGAL, real: FRANCIA (0 pts)"
         ]
@@ -11147,8 +11163,8 @@
       "finales": {
         "aciertos": [],
         "errores": [
-          "campeon: predijo BÉLGICA, real:  (0 pts)",
-          "segundo: predijo COREA DEL SUR, real:  (0 pts)",
+          "campeon: predijo BÉLGICA, real: ESPAÑA (0 pts)",
+          "segundo: predijo COREA DEL SUR, real: ARGENTINA (0 pts)",
           "tercero: predijo SENEGAL, real: INGLATERRA (0 pts)",
           "cuarto: predijo CROACIA, real: FRANCIA (0 pts)"
         ]
@@ -11245,8 +11261,8 @@
       "8avos": 0,
       "cuartos": 0,
       "semifinales": 0,
-      "finales": 0,
-      "total": 0
+      "finales": 20,
+      "total": 20
     },
     "detalle": {
       "16avos": {
@@ -11267,10 +11283,11 @@
         "errores": []
       },
       "finales": {
-        "aciertos": [],
+        "aciertos": [
+          "campeon: ESPAÑA (+20)"
+        ],
         "errores": [
-          "campeon: predijo ESPAÑA, real:  (0 pts)",
-          "segundo: predijo BRASIL, real:  (0 pts)",
+          "segundo: predijo BRASIL, real: ARGENTINA (0 pts)",
           "tercero: predijo FRANCIA, real: INGLATERRA (0 pts)",
           "cuarto: predijo ARGENTINA, real: FRANCIA (0 pts)"
         ]
@@ -11332,7 +11349,7 @@
           {
             "label": "Campeón",
             "puntos": 0,
-            "equipo": "ESPAÑA",
+            "equipo": "?",
             "hit": false
           },
           {
@@ -11354,7 +11371,7 @@
             "hit": false
           }
         ],
-        "subtotal": 0
+        "subtotal": 20
       }
     },
     "polla_letra": "A"

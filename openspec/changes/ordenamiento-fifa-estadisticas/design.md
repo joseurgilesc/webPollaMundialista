@@ -1,0 +1,134 @@
+# Design: FIFA-Compliant Group Sorting + Stats Table Redesign
+
+## Technical Approach
+
+Two independent changes in the same pipeline: (1) replace naive group ranking with a FIFA Article 13 multi-pass sort engine in `scripts/fetch_resultados.py`, and (2) replace inline stats text with a structured HTML table in both the Python template (`scripts/generar_sitio.py`) and the JS renderer (`docs/index.html` via `generar_sitio.py`).
+
+## Architecture Decisions
+
+### Decision: Python stdlib for sort engine (no dependencies)
+
+| Option | Tradeoff | Decision |
+|--------|----------|----------|
+| Custom sort with `itertools.groupby` | Zero deps, understandable, no new failure modes | **Adopted** |
+| `pandas` groupby with custom agg | More expressive but adds dependency to a zero-dep pipeline | Rejected |
+| Generic tournament-ranking library | Overkill for 12 groups, hard to customize H2H logic | Rejected |
+
+**Rationale**: The engine is ~150 lines of pure stdlib (`groupby`, `sorted`, dicts). No external dependency justifies 9MB of `pandas` for 12 groups × 4 teams. The sort flow is: PTS/GD/GF sort → groupby tie bundle → H2H sort per bundle → manual fallback for remainder.
+
+### Decision: Console `input()` for unresolvable tiebreaks
+
+| Option | Tradeoff | Decision |
+|--------|----------|----------|
+| `input()` with validation | Interactive only, no automation, but FIFA will decide live | **Adopted** |
+| Random coin flip | Deterministic simulation, but wrong for real standings | Rejected |
+| Fair-play score from API | API does not expose yellow/red cards per team | Rejected |
+
+**Rationale**: FIFA Article 13 criteria 7 (fair play) and 8 (drawing of lots) are UNKNOWABLE from the API. The console prompt is the honest choice: it forces the operator to check FIFA.com and enter the official order. Validation (`sorted(indices) == range(1,N+1)`) prevents typos.
+
+### Decision: HTML `<table>` over inline `<span>` for stats
+
+| Option | Tradeoff | Decision |
+|--------|----------|----------|
+| `<table class="stats-table">` | Semantic, alignable, screen-reader friendly, fits 220px card | **Adopted** |
+| `display: grid` with same info | Visually equivalent, but non-semantic for data | Rejected |
+| Keep inline `<span>` with fixed-width fonts | Zero code change, but still hard to scan | Rejected |
+
+**Rationale**: A data table is the correct semantic element for tabular standings data (rank, team, PTS, GF, GA, GD). Modal cards are 220px wide; table with `font-size: 0.65rem` and compact padding fits without overflow. Same structure in Python template and JS renderer.
+
+### Decision: Stats table uses `REALES._stats` key, not duplicating calculation
+
+**Rationale**: `fetch_resultados.py` already computes PTS/GF/GA in `_stats` while iterating games. Rather than recalculating in JS, the JSON `_stats` dict is serialized as-is. Frontend only formats GD = GF - GA with sign prefix. This keeps the rendering layer dumb.
+
+## Data Flow
+
+```
+worldcup26.ir API
+      │
+      ▼
+fetch_resultados.py
+  │  ├── stats[grp][team] = {pts, gf, ga}   (from finished games)
+  │  ├── _sort_group(grp, tids, finished)
+  │  │    ├── PTS/GD/GF sort (criteria 1-3)
+  │  │    ├── groupby() → tie bundles
+  │  │    ├── _h2h_scores() → H2H pts/GD/GF (criteria 4-6)
+  │  │    ├── if unresolved: console input() prompt
+  │  │    └── return [(team, rank)]
+  │  ├── grupos_result[grp] = {team: rank}   ← FIFA-ordered
+  │  ├── best 3rds from grupos_result (PTS/GD/GF across groups)
+  │  ├── bracket fill from API KO games
+  │  └── _stats[grp][team] = {pts, gf, ga}
+      │
+      ▼
+data/resultados_reales.json
+  │  { grupos, _stats, ronda_16avos, ..., finales }
+      │
+      ▼
+generar_sitio.py ──→ docs/index.html
+  │  Python template:              JS verPolla():
+  │  <table class="stats-table">   <table class="stats-table">
+  │  # │ Eq │ PTS │ GF │ GA │ GD   # │ Eq │ PTS │ GF │ GA │ GD
+  │  CSS: .stats-table scoped      CSS: .stats-table scoped
+  │  under .modal-grupo            under .modal-grupo
+```
+
+## File Changes
+
+| File | Action | Description |
+|------|--------|-------------|
+| `scripts/fetch_resultados.py` | Modify | Added `_h2h_scores()`, `_fifa_sort_key()`, `_sort_group()` — FIFA-compliant group sort engine with interactive console tiebreak fallback. Best third-placed logic now reads from already-sorted `grupos_result`. |
+| `scripts/generar_sitio.py` | Modify | In `generar_publica()` template: replaced inline `<div>3pts 2-1 +1</div>` with `<table class="stats-table"><thead><tr><th>#</th><th>Eq</th><th>PTS</th><th>GF</th><th>GA</th><th>GD</th></tr></thead><tbody>`. Same change in JS `verPolla()` for client-side modal rendering. CSS rules for `.stats-table`, `.stats-table th`, `.stats-table td` added to `css_comun()`. |
+| `docs/index.html` | Modify (regenerated) | Same stats table structure in the inline JS `verPolla()` function. CSS rules embedded in the static `<style>` block. No manual edits — generated by `generar_sitio.py`. |
+| `data/resultados_reales.json` | Data | `_stats` key now populated by the engine. No schema change. |
+
+## Interfaces / Contracts
+
+```python
+# _h2h_scores signature
+def _h2h_scores(
+    grp: str,                          # group letter, e.g. "B"
+    tids_pool: list[str],              # tied team IDs to evaluate
+    team_list_raw: list[tuple]         # full group team list (unused, legacy param)
+) -> dict[str, dict]:                  # {tid: {"pts": int, "gf": int, "ga": int}}
+
+# _fifa_sort_key signature
+def _fifa_sort_key(item: tuple) -> tuple:
+    # item: (tid, pts, gd, gf)
+    # returns (-pts, -gd, -gf) — descending sort on all three
+
+# _sort_group signature
+def _sort_group(
+    grp: str,                          # group letter
+    tids: set[str],                    # team IDs in the group
+    has_finished: bool                 # any team has a played game?
+) -> list[tuple]:                      # [(tid, rank), ...]
+
+# _stats contract (JSON serialization)
+_stats: dict[str, dict[str, dict]]     # {grp: {team_name: {"pts": int, "gf": int, "ga": int}}}
+```
+
+```javascript
+// JS contract (in verPolla())
+// REALES._stats[group][teamName] = { pts, gf, ga }
+// GD rendered as: (s.gf - s.ga) with "+" prefix for positive
+// Empty cells when _stats entry missing
+```
+
+## Testing Strategy
+
+| Layer | What to Test | Approach |
+|-------|-------------|----------|
+| Manual | Complete pipeline: `fetch_resultados.py` → `calificar.py` → `generar_sitio.py` | Run the full pipeline when API returns data. Verify Grupo A (Mexico 1st, Korea 2nd), Grupo D (USA 1st, Australia 2nd), Grupo B 4-way tie triggers prompt, Grupo C Brazil/Morocco H2H. |
+| Manual | Stats table rendering | Open participant modal, verify `<table class="stats-table">` appears with `# Eq PTS GF GA GD` columns and correct values per team. |
+| Manual | Incomplete groups | Verify unfinished groups show rank-0 for all teams with empty stats cells |
+| Manual | Manual tiebreak input validation | Test valid input `2,1,3` accepted, invalid `1,2` or `a,b,c` rejected with re-prompt |
+| Manual | GD sign prefix | Verify `+3`, `0`, `-1` rendering in GD column |
+| Manual | Best third-placed selection | Verify top 8 3rds qualify from sorted `grupos_result` |
+
+## Migration / Rollout
+
+No migration required. The change is backward-compatible: old `resultados_reales.json` without `_stats` key will still render (empty stats cells). The existing `calificar.py` reads `resultados_reales.json` independently of sort order and is unaffected.
+
+## Open Questions
+
+None — change is already implemented.
